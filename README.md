@@ -37,3 +37,44 @@ Make second sequencing run directory
 ```
 [hpc-0356@wahab-01 pire_sphaeramia_orbicularis_lcwgs]$ mkdir 2nd_sequencing_run
 ```
+
+</p>
+
+---
+</details>
+
+
+<details><summary>1. Get raw data</summary>
+<p>
+
+## 1. Get raw data
+
+```
+[hpc-0356@wahab-01 pire_sphaeramia_orbicularis_lcwgs]$ rsync -r /archive/carpenterlab/pire/downloads/sphaeramia_orbicularis/2nd_sequencing_run/fq_raw 2nd_sequencing_run
+```
+
+</p>
+
+---
+</details>
+
+<details><summary>2. Proofread the decode file</summary>
+<p>
+
+## 2. Proofread the decode file
+
+Check that you got back sequencing data for all individuals in decode file, that they check out, and there are no duplicates of libraries
+
+```
+[hpc-0356@wahab-01 fq_raw]$ salloc
+[hpc-0356@wahab-01 fq_raw]$ bash
+
+[hpc-0356@d1-w6420a-05 fq_raw]$ ls *1.fq.gz | wc -l 
+142
+[hpc-0356@d1-w6420a-05 fq_raw]$ ls *2.fq.gz | wc -l 
+142
+[hpc-0356@d1-w6420a-05 fq_raw]$ wc -l Sor_lcwgs-SeqLane_SequenceNameDecode.tsv
+71 Sor_lcwgs-SeqLane_SequenceNameDecode.tsv
+[hpc-0356@d1-w6420a-05 fq_raw]$ cat Sor_lcwgs-SeqLane_SequenceNameDecode.tsv | sort | uniq | wc -l
+71
+```
