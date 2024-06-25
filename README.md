@@ -415,3 +415,10 @@ Sor-CPnd_072-Ex1-8C-lcwgs-1-2	23.4%	38.2%	95.6%	37.1%
 <p>
 
 ## 9. Remove duplicates with clumpify
+
+### 9a. Remove duplicates
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0356 20
+```
+
+### 9c. Check duplicate removal success
