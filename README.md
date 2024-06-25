@@ -4,7 +4,7 @@
 ---
 Analysis of low-coverage whole genome sequencing data for Sor 2nd_sequencing_run.
 
-fq_gz processing being done by Gianna Mazzei (began 6/20/24).
+fq_gz processing being done by Gianna Mazzei (started 6/20/24).
 
 ---
 
