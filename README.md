@@ -422,3 +422,25 @@ Sor-CPnd_072-Ex1-8C-lcwgs-1-2	23.4%	38.2%	95.6%	37.1%
 ```
 
 ### 9c. Check duplicate removal success
+
+Clumpify Successfully worked on all samples
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ salloc
+[hpc-0356@d1-w6420a-13 2nd_sequencing_run]$ enable_lmod
+[hpc-0356@d1-w6420a-13 2nd_sequencing_run]$ module load container_env R/4.3 
+[hpc-0356@d1-w6420a-13 2nd_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+[hpc-0356@d1-w6420a-13 2nd_sequencing_run]$ exit
+```
+
+### 9d. Clean the scratch drive
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0356 "*clumpify*temp*"
+```
+
+### 9e. Generate metadata on deduplicated FASTQ files
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+```
