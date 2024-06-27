@@ -414,7 +414,7 @@ Sor-CPnd_072-Ex1-8C-lcwgs-1-2	23.4%	38.2%	95.6%	37.1%
 <details><summary>9. Remove duplicates with clumpify</summary>
 <p>
 
-## 9. Remove duplicates with clumpify
+## 9. Remove duplicates with clumpify (*)
 
 ### 9a. Remove duplicates
 ```
@@ -439,8 +439,64 @@ Clumpify Successfully worked on all samples
 [hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0356 "*clumpify*temp*"
 ```
 
-### 9e. Generate metadata on deduplicated FASTQ files
+### 9e. Generate metadata on deduplicated FASTQ files (*)
 
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
+
+**Results** (fq_fp1_clmp/fqc_clmp_report.html): 
+* no samples found with any adapter content
+* GC content remained the same
+* total sequences went down
+* 35/44 Albatross samples flagged or failed for Per Sequence GC Content
+	* 1 Contemporary flagged: `Sor-CPnd_038-Ex1-2A-lcwgs-1-2.clmp.r1`
+
+```
+‣ % duplication - 
+    • Alb: 0.3-1.9%
+    • Contemp: 0.9-5.9%
+‣ length - 
+    • Alb: 70-105 bp
+    • Contemp: 99-139 bp
+‣ number of reads -
+    • Alb: 0.0-0.7 mil
+    • Contemp: 0.3-3.7 mil
+```
+---
+</details>
+
+<details><summary>10. Second trim (*)</summary>
+<p>
+
+## 10. Second trim (*)
+ 
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
+```
+
+### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
+After 2nd trim:
+* 
+* 
+* 
+
+```
+‣ % duplication -
+	• Alb: 
+	• Contemp: 
+‣ GC content -
+	• Alb: 
+	• Contemp: 
+‣ passing filter -
+	• Alb: 
+	• Contemp: 
+‣ % adapter -
+	• Alb: 
+	• Contemp: 
+‣ number of reads -
+	• Alb: 
+	• Contemp:
+```
+
+
