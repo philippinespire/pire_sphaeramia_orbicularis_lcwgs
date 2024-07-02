@@ -126,20 +126,27 @@ Executed `Multi_FASTQC.sh`
 ```
 
 ### MultiQC output (fq_raw/fqc_raw_report.html):
+* "Undetermined" read count is 317.9 mil
+	* All other reads are between 0-4.6 mil
+	* Potential problem with demultiplexing -> (TBD) reached out to Sharon 
 * GC content is higher on average for albatross samples
 * Smaller secondary peak around 62% for Per Sequence GC Content
 * High adapter content
+
 
 ```  
 ‣ % duplication - 
 	• Alb: 6.2 - 24.5%
  	• Contemp: 10.3 - 33.2%
+	• Undertermined: 28.1 - 30.5%
 ‣ GC content - 
 	• Alb: 45 - 54%
  	• Contemp: 39 - 46%
+	• Undetermined: 41 - 42%
 ‣ number of reads - 
 	• Alb: 0 - 0.9 mil
  	• Contemp: 0.4 - 4.6 mil
+	• Undetermined: 317.9 mil
 ```
 <details><summary>* Multi_FASTQC Report:</summary>
 <p>
@@ -286,6 +293,9 @@ Sor-CPnd_069-Ex1-6B-lcwgs-1-2.1		22.3%	41%	1.2
 Sor-CPnd_069-Ex1-6B-lcwgs-1-2.2		24.5%	43%	1.2
 Sor-CPnd_072-Ex1-8C-lcwgs-1-2.1		25.0%	41%	2.7
 Sor-CPnd_072-Ex1-8C-lcwgs-1-2.2		27.9%	42%	2.7
+
+Undetermined.1				28.1%	41%	317.9
+Undetermined.2				30.5%	42%	317.9
 ```
   
 </p>
@@ -307,24 +317,29 @@ Sor-CPnd_072-Ex1-8C-lcwgs-1-2.2		27.9%	42%	2.7
 ### Review the FastQC output (fq_fp1/1st_fastp_report.html):
 After 1st trim:
 *  High % adapter levels for Albatross samples, more variable for Contemporary
-*  Low number of reads
+*  Low number of reads, besides the undertermined sample
 
 ```  
 ‣ % duplication - 
     	• Alb: 5-15.9%
 	• Contemp: 9.2-32.9%
+	• Undetermined: 19.5%	
 ‣ GC content -
     	• Alb: 32.7-45%
 	• Contemp: 37-39%
+	• Undetermined: 37.9%	
 ‣ passing filter - 
     	• Alb: 83.8-96%
      	• Contemp: 91.9-97.4%
+	• Undetermined: 95.7%	
 ‣ % adapter - 
     	• Alb: 61.8-96.3%
      	• Contemp: 17.2-71.8%
+	• Undetermined: 54.4%
 ‣ number of reads - 
     	• Alb: 0-1.6 mil
      	• Contemp: 0.8-9 mil
+	• Undetermined: 635.8 mil
 ```
 <details><summary>* 1st FASTP Report:</summary>
 <p>
@@ -401,6 +416,8 @@ Sor-CPnd_063-Ex1-7D-lcwgs-1-2	12.2%	37.8%	96.1%	64.0%
 Sor-CPnd_066-Ex1-8B-lcwgs-1-2	16.8%	38.2%	95.0%	48.9%
 Sor-CPnd_069-Ex1-6B-lcwgs-1-2	21.6%	38.5%	95.0%	44.7%
 Sor-CPnd_072-Ex1-8C-lcwgs-1-2	23.4%	38.2%	95.6%	37.1%
+
+Undetermined			19.5%	37.9%	95.7%	54.4%
 ```
 
 </p>
@@ -456,13 +473,172 @@ Clumpify Successfully worked on all samples
 ‣ % duplication - 
     • Alb: 0.3-1.9%
     • Contemp: 0.9-5.9%
+    • Undetermined: 6.2 - 8.0%
 ‣ length - 
     • Alb: 70-105 bp
     • Contemp: 99-139 bp
+    • Undetermined: 122 bp
 ‣ number of reads -
     • Alb: 0.0-0.7 mil
     • Contemp: 0.3-3.7 mil
+    • Undetermined: 199.7 mil
 ```
+
+<details><summary>* 1st FASTP Report:</summary>
+<p>
+	
+```
+Sample Name				% Dups	% GC	Length	M Seqs
+Sor-ACeb_001-Ex1-8E-lcwgs-1-2.clmp.r1	1.0%	32%	90 bp	0.7
+Sor-ACeb_001-Ex1-8E-lcwgs-1-2.clmp.r2	1.2%	32%	90 bp	0.7
+Sor-ACeb_002-Ex1-9E-lcwgs-1-2.clmp.r1	1.4%	38%	88 bp	0.1
+Sor-ACeb_002-Ex1-9E-lcwgs-1-2.clmp.r2	1.4%	38%	88 bp	0.1
+Sor-ACeb_003-Ex1-10E-lcwgs-1-2.clmp.r1	0.3%	35%	76 bp	0.3
+Sor-ACeb_003-Ex1-10E-lcwgs-1-2.clmp.r2	0.4%	35%	76 bp	0.3
+Sor-ACeb_004-Ex1-11E-lcwgs-1-2.clmp.r1	0.7%	36%	70 bp	0.2
+Sor-ACeb_004-Ex1-11E-lcwgs-1-2.clmp.r2	0.6%	36%	70 bp	0.2
+Sor-ACeb_005-Ex1-12E-lcwgs-1-2.clmp.r1	1.3%	41%	95 bp	0.0
+Sor-ACeb_005-Ex1-12E-lcwgs-1-2.clmp.r2	1.3%	41%	95 bp	0.0
+Sor-ACeb_006-Ex1-1F-lcwgs-1-2.clmp.r1	0.7%	39%	91 bp	0.0
+Sor-ACeb_006-Ex1-1F-lcwgs-1-2.clmp.r2	0.8%	39%	91 bp	0.0
+Sor-ACeb_007-Ex1-2F-lcwgs-1-2.clmp.r1	0.7%	38%	90 bp	0.0
+Sor-ACeb_007-Ex1-2F-lcwgs-1-2.clmp.r2	0.7%	38%	90 bp	0.0
+Sor-ACeb_008-Ex1-3F-lcwgs-1-2.clmp.r1	0.4%	36%	82 bp	0.0
+Sor-ACeb_008-Ex1-3F-lcwgs-1-2.clmp.r2	0.5%	36%	82 bp	0.0
+Sor-ACeb_009-Ex1-4F-lcwgs-1-2.clmp.r1	0.3%	36%	75 bp	0.0
+Sor-ACeb_009-Ex1-4F-lcwgs-1-2.clmp.r2	0.5%	36%	76 bp	0.0
+Sor-ACeb_010-Ex1-5F-lcwgs-1-2.clmp.r1	0.9%	38%	84 bp	0.1
+Sor-ACeb_010-Ex1-5F-lcwgs-1-2.clmp.r2	0.9%	38%	84 bp	0.1
+Sor-ACeb_011-Ex1-6F-lcwgs-1-2.clmp.r1	1.5%	43%	105 bp	0.0
+Sor-ACeb_011-Ex1-6F-lcwgs-1-2.clmp.r2	1.7%	43%	105 bp	0.0
+Sor-ACeb_012-Ex1-7F-lcwgs-1-2.clmp.r1	1.2%	36%	88 bp	0.1
+Sor-ACeb_012-Ex1-7F-lcwgs-1-2.clmp.r2	1.1%	36%	88 bp	0.1
+Sor-ACeb_013-Ex1-8F-lcwgs-1-2.clmp.r1	1.8%	44%	105 bp	0.0
+Sor-ACeb_013-Ex1-8F-lcwgs-1-2.clmp.r2	1.9%	44%	105 bp	0.0
+Sor-ACeb_014-Ex1-9F-lcwgs-1-2.clmp.r1	1.2%	39%	88 bp	0.0
+Sor-ACeb_014-Ex1-9F-lcwgs-1-2.clmp.r2	1.2%	39%	88 bp	0.0
+Sor-ACeb_015-Ex1-10F-lcwgs-1-2.clmp.r1	1.0%	37%	88 bp	0.0
+Sor-ACeb_015-Ex1-10F-lcwgs-1-2.clmp.r2	0.9%	37%	88 bp	0.0
+Sor-ACeb_016-Ex1-11F-lcwgs-1-2.clmp.r1	0.7%	39%	71 bp	0.3
+Sor-ACeb_016-Ex1-11F-lcwgs-1-2.clmp.r2	0.7%	39%	71 bp	0.3
+Sor-ACeb_017-Ex1-12F-lcwgs-1-2.clmp.r1	1.0%	38%	80 bp	0.2
+Sor-ACeb_017-Ex1-12F-lcwgs-1-2.clmp.r2	0.9%	38%	80 bp	0.2
+Sor-ACeb_018-Ex1-1G-lcwgs-1-2.clmp.r1	0.9%	37%	99 bp	0.0
+Sor-ACeb_018-Ex1-1G-lcwgs-1-2.clmp.r2	1.1%	37%	99 bp	0.0
+Sor-ACeb_019-Ex1-3G-lcwgs-1-2.clmp.r1	0.5%	36%	99 bp	0.0
+Sor-ACeb_019-Ex1-3G-lcwgs-1-2.clmp.r2	0.8%	36%	99 bp	0.0
+Sor-ACeb_020-Ex1-2G-lcwgs-1-2.clmp.r1	0.7%	36%	96 bp	0.0
+Sor-ACeb_020-Ex1-2G-lcwgs-1-2.clmp.r2	1.0%	36%	96 bp	0.0
+Sor-ACeb_021-Ex1-4G-lcwgs-1-2.clmp.r1	0.8%	36%	87 bp	0.0
+Sor-ACeb_021-Ex1-4G-lcwgs-1-2.clmp.r2	1.2%	36%	87 bp	0.0
+Sor-ACeb_022-Ex1-5G-lcwgs-1-2.clmp.r1	1.3%	42%	98 bp	0.0
+Sor-ACeb_022-Ex1-5G-lcwgs-1-2.clmp.r2	1.4%	42%	98 bp	0.0
+Sor-CPnd_001-Ex1-3E-lcwgs-1-2.clmp.r1	1.5%	37%	110 bp	1.3
+Sor-CPnd_001-Ex1-3E-lcwgs-1-2.clmp.r2	1.8%	37%	110 bp	1.3
+Sor-CPnd_002-Ex1-5E-lcwgs-1-2.clmp.r1	1.2%	38%	99 bp	0.7
+Sor-CPnd_002-Ex1-5E-lcwgs-1-2.clmp.r2	1.4%	38%	99 bp	0.7
+Sor-CPnd_003-Ex1-2B-lcwgs-1-2.clmp.r1	1.5%	38%	113 bp	0.6
+Sor-CPnd_003-Ex1-2B-lcwgs-1-2.clmp.r2	1.8%	38%	113 bp	0.6
+Sor-CPnd_004-Ex1-1G-lcwgs-1-2.clmp.r1	1.4%	38%	112 bp	1.7
+Sor-CPnd_004-Ex1-1G-lcwgs-1-2.clmp.r2	1.7%	38%	112 bp	1.7
+Sor-CPnd_005-Ex1-3D-lcwgs-1-2.clmp.r1	2.3%	38%	126 bp	1.2
+Sor-CPnd_005-Ex1-3D-lcwgs-1-2.clmp.r2	2.8%	38%	126 bp	1.2
+Sor-CPnd_006-Ex1-2D-lcwgs-1-2.clmp.r1	1.6%	38%	109 bp	1.1
+Sor-CPnd_006-Ex1-2D-lcwgs-1-2.clmp.r2	1.9%	38%	109 bp	1.1
+Sor-CPnd_007-Ex1-1C-lcwgs-1-2.clmp.r1	1.4%	39%	117 bp	0.6
+Sor-CPnd_007-Ex1-1C-lcwgs-1-2.clmp.r2	1.7%	39%	117 bp	0.6
+Sor-CPnd_008-Ex1-1A-lcwgs-1-2.clmp.r1	4.2%	38%	139 bp	2.4
+Sor-CPnd_008-Ex1-1A-lcwgs-1-2.clmp.r2	5.9%	38%	139 bp	2.4
+Sor-CPnd_009-Ex1-6A-lcwgs-1-2.clmp.r1	2.4%	38%	121 bp	2.4
+Sor-CPnd_009-Ex1-6A-lcwgs-1-2.clmp.r2	3.3%	38%	121 bp	2.4
+Sor-CPnd_010-Ex1-1H-lcwgs-1-2.clmp.r1	1.1%	38%	114 bp	0.4
+Sor-CPnd_010-Ex1-1H-lcwgs-1-2.clmp.r2	1.5%	38%	114 bp	0.4
+Sor-CPnd_012-Ex1-5B-lcwgs-1-2.clmp.r1	1.5%	38%	111 bp	0.4
+Sor-CPnd_012-Ex1-5B-lcwgs-1-2.clmp.r2	1.9%	38%	111 bp	0.4
+Sor-CPnd_013-Ex1-7F-lcwgs-1-2.clmp.r1	1.3%	37%	112 bp	0.7
+Sor-CPnd_013-Ex1-7F-lcwgs-1-2.clmp.r2	1.7%	37%	112 bp	0.7
+Sor-CPnd_014-Ex1-1F-lcwgs-1-2.clmp.r1	2.0%	38%	117 bp	3.7
+Sor-CPnd_014-Ex1-1F-lcwgs-1-2.clmp.r2	2.6%	38%	117 bp	3.7
+Sor-CPnd_015-Ex1-5F-lcwgs-1-2.clmp.r1	1.1%	38%	100 bp	0.4
+Sor-CPnd_015-Ex1-5F-lcwgs-1-2.clmp.r2	1.3%	38%	100 bp	0.4
+Sor-CPnd_016-Ex1-1B-lcwgs-1-2.clmp.r1	2.4%	38%	133 bp	1.1
+Sor-CPnd_016-Ex1-1B-lcwgs-1-2.clmp.r2	3.1%	38%	133 bp	1.1
+Sor-CPnd_017-Ex1-3G-lcwgs-1-2.clmp.r1	1.1%	37%	108 bp	0.5
+Sor-CPnd_017-Ex1-3G-lcwgs-1-2.clmp.r2	1.4%	37%	108 bp	0.5
+Sor-CPnd_018-Ex1-1E-lcwgs-1-2.clmp.r1	1.4%	38%	111 bp	1.8
+Sor-CPnd_018-Ex1-1E-lcwgs-1-2.clmp.r2	1.9%	38%	111 bp	1.8
+Sor-CPnd_019-Ex1-6G-lcwgs-1-2.clmp.r1	1.7%	38%	111 bp	1.1
+Sor-CPnd_019-Ex1-6G-lcwgs-1-2.clmp.r2	2.2%	38%	111 bp	1.1
+Sor-CPnd_020-Ex1-2E-lcwgs-1-2.clmp.r1	1.8%	37%	114 bp	1.3
+Sor-CPnd_020-Ex1-2E-lcwgs-1-2.clmp.r2	2.3%	37%	115 bp	1.3
+Sor-CPnd_022-Ex1-7C-lcwgs-1-2.clmp.r1	1.9%	38%	116 bp	1.3
+Sor-CPnd_022-Ex1-7C-lcwgs-1-2.clmp.r2	2.5%	38%	116 bp	1.3
+Sor-CPnd_024-Ex1-5G-lcwgs-1-2.clmp.r1	1.2%	38%	103 bp	0.4
+Sor-CPnd_024-Ex1-5G-lcwgs-1-2.clmp.r2	1.4%	38%	103 bp	0.4
+Sor-CPnd_026-Ex1-3H-lcwgs-1-2.clmp.r1	1.7%	38%	119 bp	0.5
+Sor-CPnd_026-Ex1-3H-lcwgs-1-2.clmp.r2	2.1%	38%	119 bp	0.5
+Sor-CPnd_027-Ex1-3C-lcwgs-1-2.clmp.r1	2.2%	38%	127 bp	1.0
+Sor-CPnd_027-Ex1-3C-lcwgs-1-2.clmp.r2	2.8%	38%	127 bp	1.0
+Sor-CPnd_028-Ex1-3A-lcwgs-1-2.clmp.r1	2.3%	38%	122 bp	1.3
+Sor-CPnd_028-Ex1-3A-lcwgs-1-2.clmp.r2	2.9%	38%	122 bp	1.3
+Sor-CPnd_029-Ex1-8E-lcwgs-1-2.clmp.r1	2.0%	37%	111 bp	1.9
+Sor-CPnd_029-Ex1-8E-lcwgs-1-2.clmp.r2	2.4%	37%	111 bp	1.9
+Sor-CPnd_030-Ex1-2H-lcwgs-1-2.clmp.r1	1.5%	38%	109 bp	0.6
+Sor-CPnd_030-Ex1-2H-lcwgs-1-2.clmp.r2	1.8%	38%	109 bp	0.6
+Sor-CPnd_031-Ex1-5D-lcwgs-1-2.clmp.r1	2.0%	38%	116 bp	0.9
+Sor-CPnd_031-Ex1-5D-lcwgs-1-2.clmp.r2	2.4%	38%	116 bp	0.9
+Sor-CPnd_033-Ex1-2F-lcwgs-1-2.clmp.r1	1.5%	37%	113 bp	0.6
+Sor-CPnd_033-Ex1-2F-lcwgs-1-2.clmp.r2	1.8%	37%	113 bp	0.6
+Sor-CPnd_034-Ex1-4G-lcwgs-1-2.clmp.r1	1.2%	38%	101 bp	0.3
+Sor-CPnd_034-Ex1-4G-lcwgs-1-2.clmp.r2	1.4%	38%	101 bp	0.3
+Sor-CPnd_036-Ex1-5C-lcwgs-1-2.clmp.r1	1.8%	38%	109 bp	0.9
+Sor-CPnd_036-Ex1-5C-lcwgs-1-2.clmp.r2	2.1%	38%	109 bp	0.9
+Sor-CPnd_037-Ex1-6C-lcwgs-1-2.clmp.r1	2.2%	38%	115 bp	1.1
+Sor-CPnd_037-Ex1-6C-lcwgs-1-2.clmp.r2	2.8%	38%	115 bp	1.1
+Sor-CPnd_038-Ex1-2A-lcwgs-1-2.clmp.r1	2.4%	38%	124 bp	0.8
+Sor-CPnd_038-Ex1-2A-lcwgs-1-2.clmp.r2	3.0%	38%	124 bp	0.8
+Sor-CPnd_041-Ex1-7A-lcwgs-1-2.clmp.r1	1.2%	38%	115 bp	1.5
+Sor-CPnd_041-Ex1-7A-lcwgs-1-2.clmp.r2	1.7%	38%	115 bp	1.5
+Sor-CPnd_043-Ex1-1D-lcwgs-1-2.clmp.r1	1.9%	38%	121 bp	1.8
+Sor-CPnd_043-Ex1-1D-lcwgs-1-2.clmp.r2	2.4%	38%	121 bp	1.8
+Sor-CPnd_044-Ex1-8G-lcwgs-1-2.clmp.r1	1.4%	37%	108 bp	1.1
+Sor-CPnd_044-Ex1-8G-lcwgs-1-2.clmp.r2	1.8%	37%	108 bp	1.1
+Sor-CPnd_045-Ex1-7B-lcwgs-1-2.clmp.r1	2.1%	38%	122 bp	1.4
+Sor-CPnd_045-Ex1-7B-lcwgs-1-2.clmp.r2	2.6%	38%	122 bp	1.4
+Sor-CPnd_046-Ex1-5A-lcwgs-1-2.clmp.r1	1.2%	38%	104 bp	0.4
+Sor-CPnd_046-Ex1-5A-lcwgs-1-2.clmp.r2	1.5%	38%	104 bp	0.4
+Sor-CPnd_049-Ex1-3B-lcwgs-1-2.clmp.r1	1.4%	38%	115 bp	0.4
+Sor-CPnd_049-Ex1-3B-lcwgs-1-2.clmp.r2	1.8%	38%	115 bp	0.4
+Sor-CPnd_050-Ex1-3F-lcwgs-1-2.clmp.r1	1.6%	38%	112 bp	1.6
+Sor-CPnd_050-Ex1-3F-lcwgs-1-2.clmp.r2	2.1%	38%	112 bp	1.6
+Sor-CPnd_052-Ex1-6D-lcwgs-1-2.clmp.r1	1.3%	37%	105 bp	0.8
+Sor-CPnd_052-Ex1-6D-lcwgs-1-2.clmp.r2	1.6%	37%	105 bp	0.8
+Sor-CPnd_053-Ex1-2C-lcwgs-1-2.clmp.r1	2.1%	38%	118 bp	0.8
+Sor-CPnd_053-Ex1-2C-lcwgs-1-2.clmp.r2	2.6%	38%	118 bp	0.8
+Sor-CPnd_054-Ex1-8F-lcwgs-1-2.clmp.r1	0.9%	38%	99 bp	0.4
+Sor-CPnd_054-Ex1-8F-lcwgs-1-2.clmp.r2	1.1%	38%	99 bp	0.4
+Sor-CPnd_055-Ex1-7G-lcwgs-1-2.clmp.r1	1.3%	37%	106 bp	1.1
+Sor-CPnd_055-Ex1-7G-lcwgs-1-2.clmp.r2	1.5%	37%	106 bp	1.1
+Sor-CPnd_058-Ex1-2G-lcwgs-1-2.clmp.r1	1.3%	37%	108 bp	0.6
+Sor-CPnd_058-Ex1-2G-lcwgs-1-2.clmp.r2	1.6%	37%	108 bp	0.6
+Sor-CPnd_063-Ex1-7D-lcwgs-1-2.clmp.r1	1.3%	37%	109 bp	1.1
+Sor-CPnd_063-Ex1-7D-lcwgs-1-2.clmp.r2	1.7%	37%	109 bp	1.1
+Sor-CPnd_066-Ex1-8B-lcwgs-1-2.clmp.r1	1.7%	38%	117 bp	0.7
+Sor-CPnd_066-Ex1-8B-lcwgs-1-2.clmp.r2	2.2%	38%	117 bp	0.7
+Sor-CPnd_069-Ex1-6B-lcwgs-1-2.clmp.r1	2.3%	38%	120 bp	0.9
+Sor-CPnd_069-Ex1-6B-lcwgs-1-2.clmp.r2	2.9%	38%	120 bp	0.9
+Sor-CPnd_072-Ex1-8C-lcwgs-1-2.clmp.r1	2.8%	38%	124 bp	2.0
+Sor-CPnd_072-Ex1-8C-lcwgs-1-2.clmp.r2	3.6%	38%	124 bp	2.0
+
+Undetermined.clmp.r1			6.2%	37%	122 bp	199.7
+Undetermined.clmp.r2			8.0%	37%	122 bp	199.7
+```
+
+</p>
+</details>
+
+</p>
+
 ---
 </details>
 
@@ -477,26 +653,108 @@ Clumpify Successfully worked on all samples
 
 ### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
 After 2nd trim:
-* 
-* 
-* 
+* adapter at or below 1%
+* high variability for `Sor-ACeb_021-Ex1-4G` on the fastp: insert size distribution graph
 
 ```
 ‣ % duplication -
-	• Alb: 
-	• Contemp: 
+	• Alb: 0.4 - 1.4%
+	• Contemp: 0.9 - 5.1%
+	• Undetermined: 2.7%
 ‣ GC content -
-	• Alb: 
-	• Contemp: 
+	• Alb: 32.5 - 44.4%
+	• Contemp: 37.2 - 39.3%
+	• Undetermined: 37.8%
 ‣ passing filter -
-	• Alb: 
-	• Contemp: 
+	• Alb: 98.7 - 99.6%
+	• Contemp: 98.3 - 99.3%
+	• Undetermined: 98.7%
 ‣ % adapter -
-	• Alb: 
-	• Contemp: 
+	• Alb: 0.5 - 0.9%
+	• Contemp: 0.2 - 0.6%
+	• Undetermined: 0.5%
 ‣ number of reads -
-	• Alb: 
-	• Contemp:
+	• Alb: 0 - 1.4 mil
+	• Contemp: 0.6 - 7.3 mil
+	• Undetermined: 399 mil
 ```
 
+<details><summary>* 1st FASTP Report:</summary>
+<p>
+	
+```
+Sample Name					% Dups	% GC 	% PF	% Adapter
+Sor-ACeb_001-Ex1-8E-lcwgs-1-2.clmp.r1r2_fastp	0.8%	32.5%	99.4%	0.6%
+Sor-ACeb_002-Ex1-9E-lcwgs-1-2.clmp.r1r2_fastp	0.8%	38.6%	99.4%	0.6%
+Sor-ACeb_003-Ex1-10E-lcwgs-1-2.clmp.r1r2_fastp	0.4%	35.7%	99.6%	0.7%
+Sor-ACeb_004-Ex1-11E-lcwgs-1-2.clmp.r1r2_fastp	0.4%	36.9%	99.4%	0.8%
+Sor-ACeb_005-Ex1-12E-lcwgs-1-2.clmp.r1r2_fastp	0.9%	41.9%	99.3%	0.7%
+Sor-ACeb_006-Ex1-1F-lcwgs-1-2.clmp.r1r2_fastp	0.5%	39.0%	99.1%	0.9%
+Sor-ACeb_007-Ex1-2F-lcwgs-1-2.clmp.r1r2_fastp	0.6%	38.2%	99.0%	0.7%
+Sor-ACeb_008-Ex1-3F-lcwgs-1-2.clmp.r1r2_fastp	0.4%	36.1%	99.4%	0.6%
+Sor-ACeb_009-Ex1-4F-lcwgs-1-2.clmp.r1r2_fastp	0.5%	36.2%	99.5%	0.5%
+Sor-ACeb_010-Ex1-5F-lcwgs-1-2.clmp.r1r2_fastp	0.5%	38.3%	99.5%	0.6%
+Sor-ACeb_011-Ex1-6F-lcwgs-1-2.clmp.r1r2_fastp	1.4%	43.1%	99.0%	0.6%
+Sor-ACeb_012-Ex1-7F-lcwgs-1-2.clmp.r1r2_fastp	0.5%	36.2%	99.5%	0.6%
+Sor-ACeb_013-Ex1-8F-lcwgs-1-2.clmp.r1r2_fastp	1.4%	44.4%	99.0%	0.5%
+Sor-ACeb_014-Ex1-9F-lcwgs-1-2.clmp.r1r2_fastp	0.9%	39.3%	99.3%	0.7%
+Sor-ACeb_015-Ex1-10F-lcwgs-1-2.clmp.r1r2_fastp	0.6%	37.6%	99.5%	0.6%
+Sor-ACeb_016-Ex1-11F-lcwgs-1-2.clmp.r1r2_fastp	0.4%	39.7%	99.5%	0.6%
+Sor-ACeb_017-Ex1-12F-lcwgs-1-2.clmp.r1r2_fastp	0.6%	38.9%	99.4%	0.8%
+Sor-ACeb_018-Ex1-1G-lcwgs-1-2.clmp.r1r2_fastp	0.6%	37.5%	99.3%	0.7%
+Sor-ACeb_019-Ex1-3G-lcwgs-1-2.clmp.r1r2_fastp	0.6%	36.5%	99.2%	0.8%
+Sor-ACeb_020-Ex1-2G-lcwgs-1-2.clmp.r1r2_fastp	0.7%	36.8%	99.1%	0.8%
+Sor-ACeb_021-Ex1-4G-lcwgs-1-2.clmp.r1r2_fastp	1.1%	36.4%	98.7%	0.7%
+Sor-ACeb_022-Ex1-5G-lcwgs-1-2.clmp.r1r2_fastp	1.1%	42.8%	99.2%	0.6%
+Sor-CPnd_001-Ex1-3E-lcwgs-1-2.clmp.r1r2_fastp	1.5%	37.7%	99.1%	0.5%
+Sor-CPnd_002-Ex1-5E-lcwgs-1-2.clmp.r1r2_fastp	1.3%	38.4%	99.1%	0.6%
+Sor-CPnd_003-Ex1-2B-lcwgs-1-2.clmp.r1r2_fastp	1.7%	38.6%	99.1%	0.5%
+Sor-CPnd_004-Ex1-1G-lcwgs-1-2.clmp.r1r2_fastp	1.3%	37.9%	99.2%	0.4%
+Sor-CPnd_005-Ex1-3D-lcwgs-1-2.clmp.r1r2_fastp	2.4%	38.0%	98.9%	0.4%
+Sor-CPnd_006-Ex1-2D-lcwgs-1-2.clmp.r1r2_fastp	1.7%	38.2%	99.0%	0.5%
+Sor-CPnd_007-Ex1-1C-lcwgs-1-2.clmp.r1r2_fastp	1.4%	39.3%	99.1%	0.5%
+Sor-CPnd_008-Ex1-1A-lcwgs-1-2.clmp.r1r2_fastp	5.1%	38.7%	98.3%	0.2%
+Sor-CPnd_009-Ex1-6A-lcwgs-1-2.clmp.r1r2_fastp	2.5%	38.8%	99.1%	0.4%
+Sor-CPnd_010-Ex1-1H-lcwgs-1-2.clmp.r1r2_fastp	1.2%	38.2%	99.1%	0.5%
+Sor-CPnd_012-Ex1-5B-lcwgs-1-2.clmp.r1r2_fastp	1.8%	38.5%	99.1%	0.5%
+Sor-CPnd_013-Ex1-7F-lcwgs-1-2.clmp.r1r2_fastp	1.3%	37.8%	99.1%	0.6%
+Sor-CPnd_014-Ex1-1F-lcwgs-1-2.clmp.r1r2_fastp	1.7%	38.3%	99.2%	0.5%
+Sor-CPnd_015-Ex1-5F-lcwgs-1-2.clmp.r1r2_fastp	1.2%	38.7%	99.1%	0.5%
+Sor-CPnd_016-Ex1-1B-lcwgs-1-2.clmp.r1r2_fastp	2.7%	38.6%	98.9%	0.3%
+Sor-CPnd_017-Ex1-3G-lcwgs-1-2.clmp.r1r2_fastp	1.2%	37.5%	99.2%	0.5%
+Sor-CPnd_018-Ex1-1E-lcwgs-1-2.clmp.r1r2_fastp	1.4%	38.3%	99.1%	0.5%
+Sor-CPnd_019-Ex1-6G-lcwgs-1-2.clmp.r1r2_fastp	2.0%	38.3%	99.2%	0.5%
+Sor-CPnd_020-Ex1-2E-lcwgs-1-2.clmp.r1r2_fastp	2.0%	37.7%	99.0%	0.5%
+Sor-CPnd_022-Ex1-7C-lcwgs-1-2.clmp.r1r2_fastp	2.1%	38.0%	99.1%	0.4%
+Sor-CPnd_024-Ex1-5G-lcwgs-1-2.clmp.r1r2_fastp	1.3%	38.1%	99.1%	0.5%
+Sor-CPnd_026-Ex1-3H-lcwgs-1-2.clmp.r1r2_fastp	2.0%	38.0%	99.1%	0.4%
+Sor-CPnd_027-Ex1-3C-lcwgs-1-2.clmp.r1r2_fastp	2.6%	38.2%	98.9%	0.4%
+Sor-CPnd_028-Ex1-3A-lcwgs-1-2.clmp.r1r2_fastp	2.7%	38.3%	98.9%	0.4%
+Sor-CPnd_029-Ex1-8E-lcwgs-1-2.clmp.r1r2_fastp	2.1%	37.5%	99.0%	0.5%
+Sor-CPnd_030-Ex1-2H-lcwgs-1-2.clmp.r1r2_fastp	1.6%	38.1%	99.1%	0.5%
+Sor-CPnd_031-Ex1-5D-lcwgs-1-2.clmp.r1r2_fastp	2.2%	38.3%	99.0%	0.4%
+Sor-CPnd_033-Ex1-2F-lcwgs-1-2.clmp.r1r2_fastp	1.6%	37.6%	99.0%	0.5%
+Sor-CPnd_034-Ex1-4G-lcwgs-1-2.clmp.r1r2_fastp	1.3%	38.5%	99.3%	0.5%
+Sor-CPnd_036-Ex1-5C-lcwgs-1-2.clmp.r1r2_fastp	2.0%	38.0%	99.1%	0.5%
+Sor-CPnd_037-Ex1-6C-lcwgs-1-2.clmp.r1r2_fastp	2.5%	38.2%	99.1%	0.4%
+Sor-CPnd_038-Ex1-2A-lcwgs-1-2.clmp.r1r2_fastp	2.9%	38.2%	98.8%	0.4%
+Sor-CPnd_041-Ex1-7A-lcwgs-1-2.clmp.r1r2_fastp	1.1%	38.9%	99.3%	0.5%
+Sor-CPnd_043-Ex1-1D-lcwgs-1-2.clmp.r1r2_fastp	1.9%	38.2%	99.0%	0.4%
+Sor-CPnd_044-Ex1-8G-lcwgs-1-2.clmp.r1r2_fastp	1.6%	37.7%	99.1%	0.5%
+Sor-CPnd_045-Ex1-7B-lcwgs-1-2.clmp.r1r2_fastp	2.3%	38.2%	99.0%	0.4%
+Sor-CPnd_046-Ex1-5A-lcwgs-1-2.clmp.r1r2_fastp	1.3%	38.5%	99.1%	0.5%
+Sor-CPnd_049-Ex1-3B-lcwgs-1-2.clmp.r1r2_fastp	1.6%	38.1%	99.1%	0.4%
+Sor-CPnd_050-Ex1-3F-lcwgs-1-2.clmp.r1r2_fastp	1.7%	38.1%	99.1%	0.5%
+Sor-CPnd_052-Ex1-6D-lcwgs-1-2.clmp.r1r2_fastp	1.4%	37.5%	99.2%	0.5%
+Sor-CPnd_053-Ex1-2C-lcwgs-1-2.clmp.r1r2_fastp	2.5%	38.3%	98.9%	0.4%
+Sor-CPnd_054-Ex1-8F-lcwgs-1-2.clmp.r1r2_fastp	0.9%	38.2%	99.1%	0.6%
+Sor-CPnd_055-Ex1-7G-lcwgs-1-2.clmp.r1r2_fastp	1.2%	37.3%	99.2%	0.5%
+Sor-CPnd_058-Ex1-2G-lcwgs-1-2.clmp.r1r2_fastp	1.4%	37.2%	99.1%	0.5%
+Sor-CPnd_063-Ex1-7D-lcwgs-1-2.clmp.r1r2_fastp	1.4%	37.8%	99.2%	0.5%
+Sor-CPnd_066-Ex1-8B-lcwgs-1-2.clmp.r1r2_fastp	2.1%	38.2%	99.0%	0.4%
+Sor-CPnd_069-Ex1-6B-lcwgs-1-2.clmp.r1r2_fastp	2.7%	38.6%	99.1%	0.4%
+Sor-CPnd_072-Ex1-8C-lcwgs-1-2.clmp.r1r2_fastp	3.2%	38.3%	98.8%	0.3%
+
+Undetermined.clmp.r1r2_fastp			2.7%	37.8%	98.7%	0.5%
+```
 
