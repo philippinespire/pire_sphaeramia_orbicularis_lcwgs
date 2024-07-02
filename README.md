@@ -428,7 +428,7 @@ Undetermined			19.5%	37.9%	95.7%	54.4%
 ---
 </details>
 
-<details><summary>9. Remove duplicates with clumpify</summary>
+<details><summary>9. Remove duplicates with clumpify (*)</summary>
 <p>
 
 ## 9. Remove duplicates with clumpify (*)
@@ -757,4 +757,38 @@ Sor-CPnd_072-Ex1-8C-lcwgs-1-2.clmp.r1r2_fastp	3.2%	38.3%	98.8%	0.3%
 
 Undetermined.clmp.r1r2_fastp			2.7%	37.8%	98.7%	0.5%
 ```
+</p>
+</details>
 
+</p>
+
+---
+</details>
+
+<details><summary>11. Decontaminate files (*)</summary>
+<p>
+	
+## 11. Decontaminate files (*)
+
+<details><summary>11a. Run fastq_screen</summary>
+	
+### 11a. Run fastq_screen
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0356@wahab-01 2nd_sequencing_run]$ fqScrnPATH=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash
+indir=fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+nodes=20
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
+```
+---
+
+</details>
+
+<details><summary>11b. Check for Errors</summary>
+	
+### 11b. Check for Errors
+
+```
+```
