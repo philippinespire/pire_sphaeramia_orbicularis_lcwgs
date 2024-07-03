@@ -791,5 +791,88 @@ nodes=20
 ### 11b. Check for Errors
 
 ```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+```
+
+Check the `.out` file
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cat valiate_FQ_-3297653.out
+
+FASTQ VALIDATION REPORT -Paired Ends Not Tested
+
+Directory: /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+File Pattern: *filter.fastq.gz
+
+Number of fq files evaluated: 142
+Number of fq files validated: 142
+
+Errors Reported:
+```
+
+Check the $outdir/fqValidateReport.txt file
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ less -S $outdir/fqValidationReport.txt file
+```
+
+**Confirm files were successfully completed:** (no errors)
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0356@wahab-01 2nd_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+```
+
+Check that all 5 files were created for each fqgz file:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
+71
+71
+71
+71
+71
+71
+71
+71
+71
+71
+```
+For each, you should have the same number as the number of input files (number of fq.gz files):
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
+                                        ls $indir/*r2.fq.gz | wc -l
+71
+71
+```
+
+Check for any errors in the `*out` files: (none)
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ grep 'error' slurm-fqscrn.*out
+                                        grep 'No reads in' slurm-fqscrn.*out
+                                        grep 'FATAL' slurm-fqscrn.*out
+```
+
+---
+
+</details>
+
+<details><summary>11e. Move output files</summary>
+	
+### 11e. Move output files
 
 ```
+outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+fqscrndir=fq_fp1_clmp_fp2_fqscrn
+mkdir $fqscrndir
+screen mv $outdir $fqscrndir
+```
+---
+</details>
