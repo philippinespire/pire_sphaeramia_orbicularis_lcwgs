@@ -854,7 +854,7 @@ For each, you should have the same number as the number of input files (number o
 71
 ```
 
-Check for any errors in the `*out` files: (none)
+Check for any errors in the `*out` files:
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ grep 'error' slurm-fqscrn.*out
                                         grep 'No reads in' slurm-fqscrn.*out
@@ -906,3 +906,4 @@ Submitted batch job 3297805
 
 
 </details>
+
