@@ -454,12 +454,14 @@ Clumpify Successfully worked on all samples
 
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0356 "*clumpify*temp*"
+Submitted batch job 3274081
 ```
 
 ### 9e. Generate metadata on deduplicated FASTQ files (*)
 
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+Submitted batch job 3274084
 ```
 
 **Results** (fq_fp1_clmp/fqc_clmp_report.html): 
