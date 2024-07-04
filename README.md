@@ -772,7 +772,7 @@ Undetermined.clmp.r1r2_fastp			2.7%	37.8%	98.7%	0.5%
 
 <details><summary>11a. Run fastq_screen</summary>
 	
-### 11a. Run fastq_screen
+### 11a. Run `fastq_screen`
 
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ bash
@@ -793,6 +793,7 @@ nodes=20
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
 [hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+Submitted batch job 3297653
 ```
 
 Check the `.out` file
@@ -868,11 +869,40 @@ Check for any errors in the `*out` files: (none)
 	
 ### 11e. Move output files
 
+I had no issues with running `FastQ Screen`, so I moved the files back to my species dir
+
 ```
-outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
-fqscrndir=fq_fp1_clmp_fp2_fqscrn
-mkdir $fqscrndir
-screen mv $outdir $fqscrndir
+[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+					fqscrndir=fq_fp1_clmp_fp2_fqscrn
+					mkdir $fqscrndir
+					screen mv $outdir $fqscrndir
 ```
 ---
+
+</details>
+
+
+<details><summary>11f. Run MultiQC (*)</summary>
+	
+### 11f. Run MultiQC (*)
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+Submitted batch job 3297805
+```
+
+#### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
+* 
+
+```
+‣ no hits -
+	• Alb: 
+	• Contemp: 
+```
+
+</details>
+
+---
+
+
 </details>
