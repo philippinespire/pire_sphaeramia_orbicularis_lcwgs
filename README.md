@@ -317,7 +317,7 @@ Undetermined.2				30.5%	42%	317.9
 ### Review the FastQC output (fq_fp1/1st_fastp_report.html):
 After 1st trim:
 *  High % adapter levels for Albatross samples, more variable for Contemporary
-*  Low number of reads, besides the undertermined sample
+*  Low number of reads, besides the undetermined sample
 
 ```  
 ‣ % duplication - 
@@ -467,7 +467,6 @@ Submitted batch job 3274084
 **Results** (fq_fp1_clmp/fqc_clmp_report.html): 
 * no samples found with any adapter content
 * GC content remained the same
-* total sequences went down
 * 35/44 Albatross samples flagged or failed for Per Sequence GC Content
 	* 1 Contemporary flagged: `Sor-CPnd_038-Ex1-2A-lcwgs-1-2.clmp.r1`
 
