@@ -479,7 +479,7 @@ Submitted batch job 3274084
 ‣ GC content - 
     • Alb: 32 - 44%
     • Contemp: 37 - 39%
-    • Undetermined: 
+    • Undetermined: 37%
 ‣ length - 
     • Alb: 70-105 bp
     • Contemp: 99-139 bp
