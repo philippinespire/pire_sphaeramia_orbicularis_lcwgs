@@ -787,6 +787,8 @@ indir=fq_fp1_clmp_fp2
 nodes=20
 [hpc-0356@wahab-01 2nd_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
 ```
+JobID: 3296985
+
 ---
 
 </details>
