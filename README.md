@@ -872,6 +872,29 @@ Check for any errors in the `*out` files:
 
 </details>
 
+<details><summary>11d. Rerun files that failed</summary>
+	
+### 11d. Rerun files that failed
+
+I ran fq screen for Ostorhincus chrysopomus right after I ran it for Sor, and because the outdir for both was the same scratch directory, some things got jumbled up. Because the Undertermined files for both species have the same name, Och's Undetermined replaces Sor's in my scratch. I need to rerun Sor's Undetermined files. 
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0356@wahab-01 2nd_sequencing_run]$ indir="fq_fp1_clmp_fp2"
+					outdir="/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn"
+					nodes=1
+					rerun_files=("Undetermined.clmp.fp2_r1.fq.gz" "Undetermined.clmp.fp2_r2.fq.gz")
+[hpc-0356@wahab-01 2nd_sequencing_run]$ for rerun_file in "${rerun_files[@]}"; do
+					    sbatch --wrap="bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash $indir $outdir $nodes $rerun_file"
+					done
+Submitted batch job 3304202
+Submitted batch job 3304203
+```
+
+---
+
+</details>
+
 <details><summary>11e. Move output files</summary>
 	
 ### 11e. Move output files
