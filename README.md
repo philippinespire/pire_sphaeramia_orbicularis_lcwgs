@@ -845,7 +845,6 @@ Errors Reported:
 ```
 
 **Confirm files were successfully completed:** 
-(no errors)
 ```
 [hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ bash
 [hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ indir=/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2
@@ -883,7 +882,7 @@ For each, you should have the same number as the number of input files (number o
 71
 ```
 
-Check for any errors in the `*out` files:
+Check for any errors in the `*out` files: (NONE)
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ grep 'error' slurm-fqscrn.*out
                                         grep 'No reads in' slurm-fqscrn.*out
