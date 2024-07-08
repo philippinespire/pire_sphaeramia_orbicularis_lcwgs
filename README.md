@@ -782,9 +782,9 @@ Undetermined.clmp.r1r2_fastp			2.7%	37.8%	98.7%	0.5%
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ bash
 [hpc-0356@wahab-01 2nd_sequencing_run]$ fqScrnPATH=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash
-indir=fq_fp1_clmp_fp2
+					indir=fq_fp1_clmp_fp2
 [hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
-nodes=20
+					nodes=20
 [hpc-0356@wahab-01 2nd_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
 ```
 JobID: 3296985
@@ -796,20 +796,46 @@ JobID: 3296985
 <details><summary>11b. Check for Errors</summary>
 	
 ### 11b. Check for Errors
+To preface this next section, I ran fq screen for another species at the same time (Ostorhincus chrysopomus, Och). The outdir was set to the same scratch directory, so some things had to be done differently than normal to account for this mix up. 
+
+First, I had to rerun fq screen for my Undetermined files. 
+I ran Och just after Sor, which caused the Undetermined files to be replaced by Och's since they had the exact same name. To get them back, I ran this (modified from step 11d):
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0356@wahab-01 2nd_sequencing_run]$ indir="fq_fp1_clmp_fp2"
+					outdir="/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn"
+					nodes=1
+					rerun_files=("Undetermined.clmp.fp2_r1.fq.gz" "Undetermined.clmp.fp2_r2.fq.gz")
+[hpc-0356@wahab-01 2nd_sequencing_run]$ for rerun_file in "${rerun_files[@]}"; do
+					    sbatch --wrap="bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash $indir $outdir $nodes $rerun_file"
+					done
+Submitted batch job 3304202
+Submitted batch job 3304203
+```
+Once that was finished, I prematurely moved all my Sor files from my scratch to the intended `fq_fp1_clmp_fp2_fqscrn` directory. This typically would be a later step (11e), but I had to move them earlier due to the other species' files in my scratch. 
+```
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ mv /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Sor* /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mv /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined* /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+```
+
+Now, I was able to begin to check for errors. 
+I began by confirming that the `filter.fastq.gz` files are complete and correctly formatted.
 
 ```
-[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
 [hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
-Submitted batch job 3297653
+Submitted batch job 3311561
+
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ cat fqValidationReport.txt
 ```
 
 Check the `.out` file
 ```
-[hpc-0356@wahab-01 2nd_sequencing_run]$ cat valiate_FQ_-3297653.out
-
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cat valiate_FQ_-3311561.out
 FASTQ VALIDATION REPORT -Paired Ends Not Tested
 
-Directory: /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+Directory: /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
 File Pattern: *filter.fastq.gz
 
 Number of fq files evaluated: 142
@@ -818,30 +844,26 @@ Number of fq files validated: 142
 Errors Reported:
 ```
 
-Check the $outdir/fqValidateReport.txt file
+**Confirm files were successfully completed:** 
+(no errors)
 ```
-[hpc-0356@wahab-01 2nd_sequencing_run]$ less -S $outdir/fqValidationReport.txt file
-```
-
-**Confirm files were successfully completed:** (no errors)
-```
-[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
-[hpc-0356@wahab-01 2nd_sequencing_run]$ indir=fq_fp1_clmp_fp2
-[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ bash
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ indir=/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ outdir=/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
 ```
 
 Check that all 5 files were created for each fqgz file:
 ```
-[hpc-0356@wahab-01 2nd_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
-					ls $outdir/*r2.tagged.fastq.gz | wc -l
-					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
-					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
-					ls $outdir/*r1_screen.txt | wc -l
-					ls $outdir/*r2_screen.txt | wc -l
-					ls $outdir/*r1_screen.png | wc -l
-					ls $outdir/*r2_screen.png | wc -l
-					ls $outdir/*r1_screen.html | wc -l
-					ls $outdir/*r2_screen.html | wc -l
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					    ls $outdir/*r2.tagged.fastq.gz | wc -l
+					    ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					    ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					    ls $outdir/*r1_screen.txt | wc -l
+					    ls $outdir/*r2_screen.txt | wc -l
+					    ls $outdir/*r1_screen.png | wc -l
+					    ls $outdir/*r2_screen.png | wc -l
+					    ls $outdir/*r1_screen.html | wc -l
+					    ls $outdir/*r2_screen.html | wc -l
 71
 71
 71
@@ -855,8 +877,8 @@ Check that all 5 files were created for each fqgz file:
 ```
 For each, you should have the same number as the number of input files (number of fq.gz files):
 ```
-[hpc-0356@wahab-01 2nd_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
-                                        ls $indir/*r2.fq.gz | wc -l
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ ls $indir/*r1.fq.gz | wc -l
+                                            ls $indir/*r2.fq.gz | wc -l
 71
 71
 ```
@@ -872,53 +894,13 @@ Check for any errors in the `*out` files:
 
 </details>
 
-<details><summary>11d. Rerun files that failed</summary>
-	
-### 11d. Rerun files that failed
-
-I ran fq screen for Ostorhincus chrysopomus right after I ran it for Sor, and because the outdir for both was the same scratch directory, some things got jumbled up. Because the Undertermined files for both species have the same name, Och's Undetermined replaces Sor's in my scratch. I need to rerun Sor's Undetermined files. 
-
-```
-[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
-[hpc-0356@wahab-01 2nd_sequencing_run]$ indir="fq_fp1_clmp_fp2"
-					outdir="/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn"
-					nodes=1
-					rerun_files=("Undetermined.clmp.fp2_r1.fq.gz" "Undetermined.clmp.fp2_r2.fq.gz")
-[hpc-0356@wahab-01 2nd_sequencing_run]$ for rerun_file in "${rerun_files[@]}"; do
-					    sbatch --wrap="bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash $indir $outdir $nodes $rerun_file"
-					done
-Submitted batch job 3304202
-Submitted batch job 3304203
-```
-
----
-
-</details>
-
-<details><summary>11e. Move output files</summary>
-	
-### 11e. Move output files
-
-I had no issues with running `FastQ Screen`, so I moved the files back to my species dir
-
-```
-[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
-					fqscrndir=fq_fp1_clmp_fp2_fqscrn
-					mkdir $fqscrndir
-					screen mv $outdir $fqscrndir
-```
----
-
-</details>
-
-
 <details><summary>11f. Run MultiQC (*)</summary>
 	
 ### 11f. Run MultiQC (*)
 
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
-Submitted batch job 3297805
+Submitted batch job 3311623
 ```
 
 #### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
