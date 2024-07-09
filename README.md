@@ -929,6 +929,54 @@ Submitted batch job 3311623
 
 ---
 
-
 </details>
+
+<details><summary>12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)</summary>
+<p>
+
+## 12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)
+
+#### Execute `runREPAIR.sbatch`
+
+Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) and reverse (r2) reads so that the *1.fq.gz and *2.fq.gz files have reads in the same order
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
+Submitted batch job 3311766
+```
+##############################################################################################
+
+\ \ not run yet / /
+
+Confirm that the paired end fq.gz files are complete and formatted correctly:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+[hpc-0356@wahab-01 1st_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch
+					DIR=fq_fp1_clmp_fp2_fqscrn_rprd
+					fqPATTERN="*fq.gz"
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+```
+
+#### Run `Multi_FASTQC`
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+```
+
+#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fastqc_report.html):
+* 
+
+```
+‣ % duplication -
+	• Alb: 
+	• Contemp:
+	• Undetermined: 
+‣ GC content -
+	• Alb: 
+	• Contemp:
+	• Undetermined: 
+‣ number of reads -
+	• Alb: 
+	• Contemp:
+	• Undetermined: 
+```
+
 
