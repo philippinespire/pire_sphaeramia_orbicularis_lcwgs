@@ -971,25 +971,51 @@ Errors Reported:
 
 #### Run `Multi_FASTQC`
 ```
-[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+Submitted batch job 3316184
 ```
 
-#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fastqc_report.html):
-* 
+#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
+* low read counts for both Albatross and Contemporary libraries
+* per base sequence content: some variation between 1-10 bp
+* per sequence GC content: 4 failing reads
+	* .R1 and .R2 for `Sor-ACeb_005-Ex1-12E`
+ 	* `Sor-ACeb_013-Ex1-8F-lcwgs-1-2.clmp.fp2_repr.R1`
+	* `Sor-ACeb_022-Ex1-5G-lcwgs-1-2.clmp.fp2_repr.R2`
 
 ```
 ‣ % duplication -
-	• Alb: 
-	• Contemp:
-	• Undetermined: 
+	• Alb: 0.3-1.3%
+	• Contemp: 0.7-4.3%
+	• Undetermined: 5.2-6.5%
 ‣ GC content -
-	• Alb: 
-	• Contemp:
-	• Undetermined: 
+	• Alb: 32-41%
+	• Contemp: 37-39%
+	• Undetermined: 37%
 ‣ number of reads -
-	• Alb: 
-	• Contemp:
-	• Undetermined: 
+	• Alb: 0.0-0.6 mil
+	• Contemp: 0.3-3.3 mil
+	• Undetermined: 178.1 mil
 ```
+
+---
+
+</details>
+
+
+<details><summary>14. Clean Up</summary>
+<p>
+
+## 14. Clean Up
+
+Move any .out files into the logs dir
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir logs
+[hpc-0356@wahab-01 1st_sequencing_run]$ mv *out logs/
+```
+
+---
+
+</details>
 
 
