@@ -1014,8 +1014,108 @@ Move any .out files into the logs dir
 [hpc-0356@wahab-01 1st_sequencing_run]$ mv *out logs/
 ```
 
+</details>
+
+---
+</details>
+
+
+<details><summary>2. Get your reference genome</summary>
+
+## 2. Get your reference genome
+
+Make a new directory `refGenome` and `cd` into it
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mkdir refGenome
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cd refGenome/
+```
+
+Download the [genome from NCBI](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/902/148/855/GCF_902148855.1_fSphaOr1.1/): `GCF_902148855.1_fSphaOr1.1_genomic.fna.gz`
+```
+[hpc-0356@wahab-01 refGenome]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/902/148/855/GCF_902148855.1_fSphaOr1.1/GCF_902148855.1_fSphaOr1.1_genomic.fna.gz
+```
+Get the line num for every chrom, contig, and scaffold in the genome download and save to file
+```
+[hpc-0356@wahab-01 refGenome]$ zgrep -n '^>' GCF_902148855.1_fSphaOr1.1_genomic.fna.gz > GCF_902148855.1_fSphaOr1.1_genomic_linenums.txt
+```
+After assessing the `GCF_902148855.1_fSphaOr1.1_genomic_linenums.txt` file, no scaffolds appear to be idintified as mtDNA.
+
+***Skip step 3: Curate the reference genome, because there aren't any scaffolds identified as mtDNA.***
+
 ---
 
 </details>
 
+<details><summary>4. Map your reads to your reference genome</summary>
+
+## 4. Map your reads to your reference genome
+Start by cloning the `dDocentHPC` repo to gain access to the scripts we need to run:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
+```
+Create a `mkBAM_ddocent` directory and copy all `fq.gz` files from `fq_fp1_clmp_fp2_fqscrn_rprd` into this new directory
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mkdir mkBAM_ddocent
+[hpc-0356@wahab-01 2nd_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
+```
+
+Copy the reference genome to `mkBAM_ddocent` as well as the scripts we need to run
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cp refGenome/GCF_902148855.1_fSphaOr1.1_genomic.fna.gz mkBAM_ddocent/reference.genbank.Sor.fasta
+
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cd mkBAM_ddocent/
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/configs/config.6.lcwgs .
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
+```
+Before moving forward, I needed to edit the `config.6.lcwgs` file to suit this species:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano config.6.lcwgs
+
+# within file:
+# change Cutoff1 and Cutoff2 to "genbank" and "Sor"
+
+----------mkREF: Settings for de novo assembly of the reference genome----------------------------------------->
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRA>
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdh>
+genbank         Cutoff1 (integer)                                                                              >
+Sor             Cutoff2 (integer)                                                                              >
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-base>
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-base>
+--------------------------------------------------------------------------------------------------------------->
+```
+Then, I needed to alter the `dDocentHPC.sbatch` file to load the newer version:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano dDocentHPC.sbatch
+
+# within file:
+# change where the "#" is
+
+enable_lmod
+# module load container_env ddocent/2.7.8
+module load container_env ddocent/2.9.4
+```
+Now, I am able to map my reads.
+
+Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns raw sequencing reads (in FASTQ format) to a reference genome and creates BAM files (Binary Alignment Map files)
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+Submitted batch job 3330814
+```
+
+---
+
+</details>
+
+<details><summary>5. Filter the binary alignment maps</summary>
+
+## 5. Filter the binary alignment maps
+
+Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
+```
+
+---
+
+</details>
 
