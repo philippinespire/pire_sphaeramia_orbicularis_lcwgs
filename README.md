@@ -943,17 +943,30 @@ Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) an
 [hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
 Submitted batch job 3311766
 ```
-##############################################################################################
+#### Confirm that the paired end fq.gz files are complete and formatted correctly:
 
-\ \ not run yet / /
-
-Confirm that the paired end fq.gz files are complete and formatted correctly:
+Start by running the script:
 ```
-[hpc-0356@wahab-01 1st_sequencing_run]$ bash
-[hpc-0356@wahab-01 1st_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0356@wahab-01 2nd_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch
 					DIR=fq_fp1_clmp_fp2_fqscrn_rprd
 					fqPATTERN="*fq.gz"
-[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+Submitted batch job 3311772
+```
+Check the SLURM `out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cat valiate_FQ_-3311772.out
+PAIRED END FASTQ VALIDATION REPORT
+
+Directory: fq_fp1_clmp_fp2_fqscrn_rprd
+File Pattern: *fq.gz
+File extensions found: .R1.fq.gz .R2.fq.gz
+
+Number of paired end fq files evaluated: 71
+Number of paired end fq files validated: 71
+
+Errors Reported:
 ```
 
 #### Run `Multi_FASTQC`
