@@ -903,12 +903,26 @@ Submitted batch job 3311623
 ```
 
 #### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
-* 
+* Contemporary samples were all fairly consistent
+* Bacterial presence was higher in Albatross samples
+	* ~0.0-8.2% for Albatross
+	* ~0.0-0.1% for Contemporary
+* Samples with highest amounts of bacteria:
+	* `Sor-ACeb_022-Ex1-5G` (8.2%)
+	* `Sor-ACeb_013-Ex1-8F` (6.6%)
+	* `Sor-ACeb_005-Ex1-12E` (5.8%)
+	* `Sor-ACeb_011-Ex1-6F` (5.7%)
+ * `Sor-ACeb_005-Ex1-12E` also had a notable amount of human contamination- 3.0%
 
 ```
+‣ multiple genomes -
+	• Alb: 2.8-7.8%
+	• Contemp: 3.6-7.3%
+	• Undetermined: 5.6%
 ‣ no hits -
-	• Alb: 
-	• Contemp: 
+	• Alb: 81.7-95.7%
+	• Contemp: 90.3-94.9%
+	• Undetermined: 92.4%
 ```
 
 </details>
