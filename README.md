@@ -8,8 +8,6 @@ fq_gz processing being done by Gianna Mazzei (started 6/20/24).
 
 ---
 
-<details><summary>1. fq.gz Pre-processing</summary>
-	
 ## 1. fq.gz Pre-processing
 → (*) _denotes steps with MultiQC Report Analyses_
 <details><summary>0. Set-up</summary>
@@ -1014,15 +1012,18 @@ Move any .out files into the logs dir
 [hpc-0356@wahab-01 1st_sequencing_run]$ mv *out logs/
 ```
 
-</details>
-
 ---
+
 </details>
 
+<details><summary>15. Map Repaired `fq.gz` to Reference Genome</summary>
+<p>
 
-<details><summary>2. Get your reference genome</summary>
+## 15. Map Repaired `fq.gz` to Reference Genome
 
-## 2. Get your reference genome
+The following steps are from the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+
+### Get your reference genome
 
 Make a new directory `refGenome` and `cd` into it
 ```
@@ -1038,17 +1039,10 @@ Get the line num for every chrom, contig, and scaffold in the genome download an
 ```
 [hpc-0356@wahab-01 refGenome]$ zgrep -n '^>' GCF_902148855.1_fSphaOr1.1_genomic.fna.gz > GCF_902148855.1_fSphaOr1.1_genomic_linenums.txt
 ```
-After assessing the `GCF_902148855.1_fSphaOr1.1_genomic_linenums.txt` file, no scaffolds appear to be idintified as mtDNA.
+After assessing the `GCF_902148855.1_fSphaOr1.1_genomic_linenums.txt` file, no scaffolds appear to be idintified as mtDNA, so I am moving to the next section.
 
-***Skip step 3: Curate the reference genome, because there aren't any scaffolds identified as mtDNA.***
+### Map your reads to your reference genome
 
----
-
-</details>
-
-<details><summary>4. Map your reads to your reference genome</summary>
-
-## 4. Map your reads to your reference genome
 Start by cloning the `dDocentHPC` repo to gain access to the scripts we need to run:
 ```
 [hpc-0356@wahab-01 2nd_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
@@ -1106,9 +1100,9 @@ Submitted batch job 3330814
 
 </details>
 
-<details><summary>5. Filter the binary alignment maps</summary>
+<details><summary>16. Filter BAM Files</summary>
 
-## 5. Filter the binary alignment maps
+## 16. Filter BAM Files
 
 Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
 ```
@@ -1119,4 +1113,49 @@ Submitted batch job 3343281
 ---
 
 </details>
+
+<details><summary>17. Generate Number of Mapped Reads</summary>
+
+## 17. Generate Number of Mapped Reads
+
+First, I needed to unzip the reference genome: `reference.genbank.Sor.fasta`
+
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ mv reference.genbank.Sor.fasta reference.genbank.Sor.fasta.gz
+[hpc-0356@wahab-01 mkBAM_ddocent]$ gunzip reference.genbank.Sor.fasta.gz
+[hpc-0356@wahab-01 mkBAM_ddocent]$ less reference.genbank.Sor.fasta
+```
+
+Then I generated the number of mapped reads:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cd ..
+[hpc-0356@wahab-01 2nd_sequencing_run]$  sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
+Submitted batch job 3345488
+```
+
+#### Review Output (coverageMappedReads/out__ReadStats.tsv):
+* 
+
+---
+
+</details>
+
+<details><summary>18. Extract mitochondrial genomes from read data</summary>
+
+## 18. Extract mitochondrial genomes from read data
+
+If there are potential cryptic species in my data, I should try to extract mitochondrial genes from the read data to get an idea of species IDs. You use MitoZ to do so.
+
+Copy the runMitoZ bash and sbatch scripts to your sequencing project directory
+```
+[hpc-0356@wahab-01 pire_sphaeramia_orbicularis_lcwgs]$ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMitoZ* 2nd_sequencing_run
+```
+* The `runMitoZ_array.bash` and `runMitoZ_array.sbatch` scripts need to be altered before running. Using nano, I had to edit every instance of `_clmp.fp2_r1.fq.gz` and change it to `.clmp.fp2_r1.fq.gz`.
+
+Now, execute the runMitoZ script:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2 32
+Submitted batch job 3345494
+```
+
 
