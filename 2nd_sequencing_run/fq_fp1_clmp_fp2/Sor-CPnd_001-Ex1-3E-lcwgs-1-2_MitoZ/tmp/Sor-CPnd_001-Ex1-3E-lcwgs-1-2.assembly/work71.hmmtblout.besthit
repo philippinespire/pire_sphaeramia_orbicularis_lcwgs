@@ -1,0 +1,15 @@
+# target name        accession  query name           accession  hmmfrom hmm to alifrom  ali to envfrom  env to  sq len strand   E-value  score  bias  description of target
+#------------------- ---------- -------------------- ---------- ------- ------- ------- ------- ------- ------- ------- ------ --------- ------ ----- ---------------------
+scaffold3            -          ATP6                 -                1     683    3131    2449    3131    2448   16622    -    9.7e-148  488.3  36.6  Locus_1341_0  9.3 LINEAR
+scaffold3            -          ATP8                 -                1     161    3289    3122    3289    3122   16622    -     5.9e-24   82.5  12.2  Locus_1341_0  9.3 LINEAR
+scaffold3            -          COX1                 -                1    1542    5758    4217    5758    4204   16622    -           0 1422.2  29.6  Locus_1341_0  9.3 LINEAR
+scaffold3            -          COX2                 -                1     681    4055    3375    4055    3372   16622    -    8.7e-173  571.5   8.6  Locus_1341_0  9.3 LINEAR
+scaffold3            -          COX3                 -                1     784    2448    1665    2448    1664   16622    -    1.9e-207  686.7  18.8  Locus_1341_0  9.3 LINEAR
+scaffold3            -          CYTB                 -                1    1132   13358   12227   13358   12216   16622    -    2.7e-280  927.6  51.7  Locus_1341_0  9.3 LINEAR
+scaffold3            -          ND1                  -                9     971    8379    7415    8388    7414   16622    -    1.9e-229  758.7  45.6  Locus_1341_0  9.3 LINEAR
+scaffold3            -          ND2                  -                1    1039    7201    6163    7201    6160   16622    -    1.8e-202  670.2  67.7  Locus_1341_0  9.3 LINEAR
+scaffold3            -          ND3                  -                1     349    1593    1245    1593    1245   16622    -     2.6e-65  216.9  23.1  Locus_1341_0  9.3 LINEAR
+scaffold3            -          ND4                  -                1     880     885       1     885       1   16622    -    5.4e-189  625.6  28.3  Locus_1341_0  9.3 LINEAR
+scaffold3            -          ND4L                 -               13     297    1163     879    1175     879   16622    -     3.1e-47  157.9  20.0  Locus_1341_0  9.3 LINEAR
+scaffold3            -          ND5                  -               14    1816   15774   13970   15789   13950   16622    -           0 1360.2  83.1  Locus_1341_0  9.3 LINEAR
+scaffold3            -          ND6                  -               11     508   13444   13953   13430   13955   16622    +     1.9e-68  227.6  39.2  Locus_1341_0  9.3 LINEAR

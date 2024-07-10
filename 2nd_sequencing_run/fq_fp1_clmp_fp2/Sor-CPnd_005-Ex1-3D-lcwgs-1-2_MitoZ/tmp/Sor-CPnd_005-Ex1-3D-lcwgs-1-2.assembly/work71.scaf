@@ -1,0 +1,57 @@
+>scaffold1 2 301 Locus_7_0 LINEAR
+1883       0          +   174 
+5453       108        -   264 
+>scaffold2 2 427 Locus_20_0 LINEAR
+6282       0          +   391 
+1909       320        +   178 
+>scaffold3 2 294 Locus_41_0 LINEAR
+1951       0          +   184 
+5135       113        -   252 
+>scaffold4 4 722 Locus_48_0 FORK
+5753       0          -   285 
+5389       214        +   262 
+2085       422        +   208 
+1965       606        +   187 
+>scaffold5 2 350 Locus_48_1 FORK
+5753       0          -   285 
+2075       214        +   207 
+>scaffold6 2 281 Locus_65_0 LINEAR
+2015       0          +   193 
+1999       160        +   192 
+>scaffold7 2 262 Locus_86_0 LINEAR
+2059       0          +   205 
+2043       134        +   199 
+>scaffold8 2 886 Locus_90_0 LINEAR
+6504       0          +   822 
+2051       754        +   203 
+>scaffold9 2 751 Locus_97_0 LINEAR
+2067       0          +   206 
+6482       135        -   687 
+>scaffold10 3 617 Locus_98_0 LINEAR
+6069       0          -   324 
+2069       260        +   206 
+5867       395        -   293 
+>scaffold11 2 734 Locus_1153_0 LINEAR
+6468       0          -   642 
+4183       577        +   228 
+>scaffold12 2 524 Locus_1847_0 LINEAR
+5577       0          +   271 
+6238       215        -   380 
+>scaffold13 2 427 Locus_1906_0 LINEAR
+5695       0          +   279 
+5791       211        -   287 
+>scaffold14 2 568 Locus_1999_0 FORK
+6097       0          +   332 
+6220       265        -   374 
+>scaffold15 2 560 Locus_1999_1 FORK
+6097       0          +   332 
+5887       335        +   296 
+>scaffold16 2 558 Locus_2101_0 LINEAR
+6206       0          -   369 
+6093       298        +   331 
+>scaffold17 2 1063 Locus_2277_0 LINEAR
+6454       0          +   593 
+6456       540        +   594 
+>scaffold18 2 5088 Locus_2308_0 LINEAR
+6536       0          +   4107 
+6524       4043       +   1116 

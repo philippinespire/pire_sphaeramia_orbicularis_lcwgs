@@ -1,0 +1,85 @@
+<-- Information for assembly Scaffold 'work71.scafSeq'.(cut_off_length < 100bp) -->
+
+Size_includeN	573303
+Size_withoutN	573127
+Scaffold_Num	2449
+Mean_Size	234
+Median_Size	220
+Longest_Seq	16507
+Shortest_Seq	100
+Singleton_Num	2435
+Average_length_of_break(N)_in_scaffold	0
+
+Known_genome_size	NaN
+Total_scaffold_length_as_percentage_of_known_genome_size	NaN
+
+scaffolds>100 	2443	99.76%
+scaffolds>500 	54	2.20%
+scaffolds>1K  	12	0.49%
+scaffolds>10K 	1	0.04%
+scaffolds>100K	0	0.00%
+scaffolds>1M  	0	0.00%
+
+Nucleotide_A	181217	31.61%
+Nucleotide_C	115597	20.16%
+Nucleotide_G	110022	19.19%
+Nucleotide_T	166291	29.01%
+GapContent_N	176	0.03%
+Non_ACGTN	0	0.00%
+GC_Content	39.37%		(G+C)/(A+C+G+T)
+
+N10	609	42
+N20	312	189
+N30	263	393
+N40	242	620
+N50	227	866
+N60	221	1122
+N70	217	1383
+N80	213	1650
+N90	143	2000
+
+NG50	NaN	NaN
+N50_scaffold-NG50_scaffold_length_difference	NaN
+
+<-- Information for assembly Contig 'work71.contig'.(cut_off_length < 100bp) -->
+
+Size_includeN	573045
+Size_withoutN	573045
+Contig_Num	2465
+Mean_Size	232
+Median_Size	220
+Longest_Seq	16507
+Shortest_Seq	100
+
+Contig>100 	2458	99.72%
+Contig>500 	49	1.99%
+Contig>1K  	10	0.41%
+Contig>10K 	1	0.04%
+Contig>100K	0	0.00%
+Contig>1M  	0	0.00%
+
+Nucleotide_A	181008	31.59%
+Nucleotide_C	115663	20.18%
+Nucleotide_G	109973	19.19%
+Nucleotide_T	166401	29.04%
+GapContent_N	0	0.00%
+Non_ACGTN	0	0.00%
+GC_Content	39.37%		(G+C)/(A+C+G+T)
+
+N10	518	49
+N20	309	203
+N30	262	408
+N40	241	636
+N50	227	881
+N60	221	1137
+N70	217	1399
+N80	213	1665
+N90	143	2016
+
+NG50	NaN	NaN
+N50_contig-NG50_contig_length_difference	NaN
+
+Number_of_contigs_in_scaffolds(Singleton)	2435
+Number_of_contigs_not_in_scaffolds	30
+Average_number_of_contigs_per_scaffold	1.0
+

@@ -1,0 +1,64 @@
+>scaffold1 2 466 Locus_14_0 FORK
+2132       0          +   173 
+7435       102        -   435 
+>scaffold2 2 216 Locus_14_1 FORK
+2132       0          +   173 
+2242       103        +   184 
+>scaffold3 4 847 Locus_21_0 FORK
+2146       0          +   173 
+7477       117        +   472 
+6375       518        -   266 
+2284       729        +   189 
+>scaffold4 2 314 Locus_21_1 FORK
+6201       0          +   259 
+2284       196        +   189 
+>scaffold5 2 251 Locus_58_0 LINEAR
+2416       0          -   207 
+2220       141        +   181 
+>scaffold6 2 579 Locus_114_0 FORK
+5499       0          +   242 
+7487       171        +   479 
+>scaffold7 3 544 Locus_114_1 FORK
+5499       0          +   242 
+2336       195        +   195 
+6283       353        +   262 
+>scaffold8 2 470 Locus_154_0 LINEAR
+7393       0          -   405 
+2418       334        +   207 
+>scaffold9 2 376 Locus_804_0 LINEAR
+6875       0          +   298 
+3715       227        +   220 
+>scaffold10 2 416 Locus_1510_0 FORK
+5127       0          +   234 
+7111       163        -   324 
+>scaffold11 2 752 Locus_1510_1 FORK
+7549       0          -   563 
+7111       499        -   324 
+>scaffold12 3 839 Locus_1537_0 LINEAR
+7503       0          +   500 
+5181       439        +   235 
+6867       613        +   297 
+>scaffold13 2 558 Locus_1980_0 LINEAR
+6069       0          +   254 
+7445       183        +   446 
+>scaffold14 2 732 Locus_2128_0 LINEAR
+6369       0          +   266 
+7569       199        -   604 
+>scaffold15 2 868 Locus_2150_0 LINEAR
+7621       0          +   743 
+6415       672        +   267 
+>scaffold16 2 413 Locus_2175_0 LINEAR
+6739       0          -   286 
+6465       215        +   269 
+>scaffold17 2 576 Locus_2342_0 FORK
+6801       0          +   289 
+7427       218        -   429 
+>scaffold18 2 753 Locus_2342_1 FORK
+7463       0          +   460 
+7427       395        -   429 
+>scaffold19 2 533 Locus_2472_0 LINEAR
+7065       0          +   317 
+7239       257        +   347 
+>scaffold20 2 696 Locus_2604_0 LINEAR
+7457       0          -   458 
+7333       387        +   380 

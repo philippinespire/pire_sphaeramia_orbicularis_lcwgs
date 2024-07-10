@@ -1,0 +1,32 @@
+# target name        accession  query name           accession  hmmfrom hmm to alifrom  ali to envfrom  env to  sq len strand   E-value  score  bias  description of target
+#------------------- ---------- -------------------- ---------- ------- ------- ------- ------- ------- ------- ------- ------ --------- ------ ----- ---------------------
+C6538                -          ATP6                 -                1     683    3181    3863    3181    3864   16570    +    1.6e-147  488.3  36.6  17.0
+C6538                -          ATP6                 -              210     290    4112    4192    4088    4208   16570    +         1.1    3.8   4.6  17.0
+C6538                -          ATP8                 -                1     161    3023    3190    3023    3190   16570    +     9.8e-24   82.5  12.2  17.0
+C5367                -          ATP8                 -               20      87     114     213     104     233     261    +         2.7    6.8   5.6  2.0
+C6538                -          COX1                 -                1    1542     554    2095     554    2108   16570    +           0 1422.7  29.8  17.0
+C6538                -          COX2                 -                1     681    2257    2937    2257    2940   16570    +    1.4e-172  571.5   8.6  17.0
+C6538                -          COX3                 -                1     784    3864    4647    3864    4648   16570    +    3.2e-207  686.7  18.8  17.0
+C6538                -          CYTB                 -                1    1132    9455   10586    9455   10597   16570    +    4.4e-280  927.6  51.7  17.0
+C6538                -          ND1                  -                9     971   14432   15396   14423   15397   16570    +    3.1e-229  758.7  45.6  17.0
+C6538                -          ND2                  -                1     957   15610   16563   15610   16570   16570    +    3.1e-196  650.3  58.4  17.0
+C6538                -          ND2                  -              895    1039       2     149       1     152   16570    +     6.7e-07   24.1  20.4  17.0
+C6538                -          ND2                  -              503     789    7913    8217    7861    8237   16570    +      0.0046   11.4  16.0  17.0
+C6538                -          ND2                  -              459     581    6209    6331    6184    6352   16570    +      0.0061   11.1   2.1  17.0
+C6538                -          ND2                  -              605     817    2357    2552    2337    2570   16570    +         5.3    1.3  21.3  17.0
+C6538                -          ND3                  -                1     349    4719    5067    4719    5067   16570    +     5.5e-65  216.6  23.0  17.0
+C6538                -          ND4                  -                1    1371    5427    6802    5427    6807   16570    +    5.6e-302 1000.3  48.5  17.0
+C6538                -          ND4L                 -               13     297    5149    5433    5137    5433   16570    +     5.1e-47  157.9  20.0  17.0
+C6538                -          ND5                  -               14    1816    7039    8843    7024    8863   16570    +           0 1358.2  82.7  17.0
+C6538                -          ND5                  -             1201    1312    6555    6678    6535    6700   16570    +         9.1   -0.5   6.1  17.0
+C6538                -          ND6                  -               11     508    9369    8860    9383    8858   16570    -     3.1e-68  227.6  39.2  17.0
+#
+# Program:         nhmmer
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /opt/MitoZ/bin/profiles/CDS_HMM/Chordata_CDS.hmm
+# Target file:     /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2/Sor-CPnd_005-Ex1-3D-lcwgs-1-2_MitoZ/tmp/Sor-CPnd_005-Ex1-3D-lcwgs-1-2.assembly/work71.scafSeq
+# Option settings: nhmmer -o work71.hmmout --tblout work71.hmmtblout --cpu 8 /opt/MitoZ/bin/profiles/CDS_HMM/Chordata_CDS.hmm /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2/Sor-CPnd_005-Ex1-3D-lcwgs-1-2_MitoZ/tmp/Sor-CPnd_005-Ex1-3D-lcwgs-1-2.assembly/work71.scafSeq 
+# Current dir:     /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2/Sor-CPnd_005-Ex1-3D-lcwgs-1-2_MitoZ/tmp/Sor-CPnd_005-Ex1-3D-lcwgs-1-2.assembly
+# Date:            Wed Jul 10 15:47:27 2024
+# [ok]

@@ -1,0 +1,1156 @@
+# nhmmer :: search a DNA model or alignment against a DNA database
+# HMMER 3.1b2 (February 2015); http://hmmer.org/
+# Copyright (C) 2015 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query file:                      /opt/MitoZ/bin/profiles/CDS_HMM/Chordata_CDS.hmm
+# target sequence database:        /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2/Sor-CPnd_004-Ex1-1G-lcwgs-1-2_MitoZ/tmp/Sor-CPnd_004-Ex1-1G-lcwgs-1-2.assembly/work71.scafSeq
+# output directed to file:         work71.hmmout
+# hits tabular output:             work71.hmmtblout
+# number of worker threads:        8
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       ATP6  [M=684]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+   1.9e-147  488.3  36.6  scaffold1   3769   4451  Locus_67_0 10.0 LINEAR
+  ------ inclusion threshold ------
+        1.3    3.8   4.6  scaffold1   4700   4780  Locus_67_0 10.0 LINEAR
+
+
+Annotation for each hit  (and alignments):
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  488.3  36.6  1.9e-147         1       683 [.      3769      4451 ..      3769      4452 ..      7907    1.00
+
+  Alignment:
+  score: 488.3 bits
+       ATP6    1 atgatactaagcttatTtgaccaatttataagcccaacattcttaggaattcccttaattgtccttgctattatttttccatgaattctattcccaac 98  
+                 atga actaagctt tT ga+ca+tttataagccca++ t c t+ggaattcc++t at g++ct+gc+ t++   t ccatga ttct+tt+cc ac
+  scaffold1 3769 ATGACACTAAGCTTCTTCGATCAGTTTATAAGCCCAGTCTACCTGGGAATTCCTCTTATAGCGCTAGCACTAGCCCTCCCATGACTTCTTTTTCCCAC 3866
+                 79************************************************************************************************ PP
+
+       ATP6   99 cccaacaaatcgatgactaaataaccgtcttattactcttcaaagatgatttattaaccaattcacaaaacaaataataattcctctaaacataaaag 196 
+                 +cc +ca+  cgatga+taaa aaccgtct  t+ac cttca +g tgatttattaacc+att+ac  a caa ta t  ttcct t aac t+++ g
+  scaffold1 3867 ACCTTCAGCACGATGAATAAACAACCGTCTCCTAACCCTTCAGGGCTGATTTATTAACCGATTTACCCACCAATTATTTCTTCCTATTAACCTGGGCG 3964
+                 ************************************************************************************************** PP
+
+       ATP6  197 gacataaatgagctcttattttaatatccctaataatttttcttatttcaataaacatactaggcctactaCCatacacatttacccctacaactcaa 294 
+                 g+ca+aa+tg+gc+   at +ta+t tccctaataatttttct+ t tc  taaa+at+ctaggcct ct CC ta+acatttac+cc+ac actcaa
+  scaffold1 3965 GGCACAAGTGGGCAACCATCCTAGTCTCCCTAATAATTTTTCTACTCTCCCTAAATATGCTAGGCCTGCTCCCCTATACATTTACACCAACCACTCAA 4062
+                 ************************************************************************************************** PP
+
+       ATP6  295 ctatcaataaataTaggctTagccgtccctctaTGactagccacagttattattggcttacgaaatcaaccaacagactctcTaggccacctcctaCc 392 
+                  t+tc  t aa+aT+gg+ T gc gtccc ct+TGact gccac+gt  t+a  gg++t+cgaaa ca+cc+ac  a++c cT ggccacctcct Cc
+  scaffold1 4063 TTGTCCCTCAACATGGGAATTGCAGTCCCCCTGTGACTCGCCACTGTCTTAACCGGAATGCGAAACCAGCCTACCCATGCCCTCGGCCACCTCCTCCC 4160
+                 ************************************************************************************************** PP
+
+       ATP6  393 agaaggaaccCctacccctcTaatcccaattcTaattattatcgaaacaattAGcctatTtattCgacCtctagcccTaggagTaCGacTaacagctA 490 
+                 agaaggaaccCc+ac cc cT+at+cc +ttcT at at atcgaaacaat AGcctatT at+Cg cC ct gcccT ggagT CGacT acagctA
+  scaffold1 4161 AGAAGGAACCCCAACACCCCTGATTCCTGTTCTCATCATCATCGAAACAATCAGCCTATTCATCCGTCCGCTGGCCCTCGGAGTTCGACTCACAGCTA 4258
+                 ************************************************************************************************** PP
+
+       ATP6  491 AccTtacagCagGtCAccTacTaaTtcaactaattgctacagcagcttttgtcctaatatctattataccaacagtagccatactaacatttattatt 588 
+                 A+ T+acagC gG CAccT+cT aT caactaa tgctac gc +c tttgt+ct  t  ctat ataccaac gt+gc++ actaaca+ ++   t+
+  scaffold1 4259 ATTTAACAGCCGGCCACCTTCTCATCCAACTAACTGCTACTGCCACCTTTGTTCTTCTCCCTATGATACCAACCGTGGCAGGACTAACAGCAGCCCTA 4356
+                 ************************************************************************************************** PP
+
+       ATP6  589 ctatttctactaacaattcTaGAagttgcagtagctataaTtCAagccTAtGTaTttgttctccTattaagcctaTAcctacaagaaaacattta 683 
+                 ct tt ct ct+a   t cTaGAagt gc gt gc+ataaTtCAagccTA+GTaTttgt ct cT  taagcctaTA+ctacaagaaaac+ttta
+  scaffold1 4357 CTTTTCCTCCTTAGCCTCCTAGAAGTGGCCGTTGCAATAATTCAAGCCTACGTATTTGTCCTTCTTCTAAGCCTATATCTACAAGAAAACGTTTA 4451
+                 ********************************************************************************************998 PP
+
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ ?    3.8   4.6       1.3       210       290 ..      4700      4780 ..      4676      4796 ..      7907    0.62
+
+  Alignment:
+  score: 3.8 bits
+       ATP6  210 tcttattttaatatccctaataatttttcttatttcaataaacatactaggcctactaCCataca.catttacccctacaac 290 
+                 + tt+t+tt at  c++ +  a t+t t tt tttc   +a ++t ct ggcct+ctaCCat ca    tt+cccc+ac+ c
+  scaffold1 4700 AATTCTATTCATCACATCGGAAGTAT-TTTTCTTTCTTGGATTCTTCTGGGCCTTCTACCATTCAaGCCTTGCCCCAACCCC 4780
+                 34444445544444444433333333.33445556667788999****************9866423445667777775444 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (684 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:            162059  (0.0947); expected (0.02)
+Residues passing bias filter:            57854  (0.0338); expected (0.02)
+Residues passing Vit filter:             10979  (0.00641); expected (0.003)
+Residues passing Fwd filter:              6843  (0.004); expected (3e-05)
+Total number of hits:                        2  (0.000446)
+# CPU time: 0.46u 0.04s 00:00:00.50 Elapsed: 00:00:00.24
+# Mc/sec: 4877.97
+//
+Query:       ATP8  [M=161]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+    1.1e-23   82.5  12.2  scaffold1   3611   3778  Locus_67_0 10.0 LINEAR
+
+
+Annotation for each hit  (and alignments):
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !   82.5  12.2   1.1e-23         1       161 []      3611      3778 ..      3611      3778 ..      7907    0.92
+
+  Alignment:
+  score: 82.5 bits
+       ATP8    1 aTgCcacAactaaacccagccccaTgatttttaattattttatttacatgatttattttttttattatttttccaccaaaaattttaacacacacctt 98  
+                 aTgCc cAact aaccc gcccc Tgatt +taatt t +t tt +c tga t++t ttt+t+a t+tt t cc cc aaa+tt+t +c cac cctt
+  scaffold1 3611 ATGCCCCAACTCAACCCCGCCCCCTGATTCATAATTCTGGTCTTCTCGTGACTAGTATTTCTAACTGTTGTCCCCCCTAAAGTTATTGCCCACTCCTT 3708
+                 79************************************************************************************************ PP
+
+       ATP8   99 ccctaataaacccac.....aaaacacaaaaa..cctaaaacaaaaccctgaaactgaccatgacaataa 161 
+                 ccctaa++aacccac     aa+  ++a aaa  cc+aaaacaa +ccctgaaactgac atgaca taa
+  scaffold1 3709 CCCTAACGAACCCACatcccAAGCGGTACAAAagCCAAAAACAAGCCCCTGAAACTGACTATGACACTAA 3778
+                 *********9999966678744444444444456999999999**********************99985 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (161 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:            550472  (0.322); expected (0.02)
+Residues passing bias filter:           351518  (0.205); expected (0.02)
+Residues passing Vit filter:             14071  (0.00822); expected (0.003)
+Residues passing Fwd filter:              4842  (0.00283); expected (3e-05)
+Total number of hits:                        1  (9.82e-05)
+# CPU time: 0.31u 0.02s 00:00:00.33 Elapsed: 00:00:00.12
+# Mc/sec: 2296.35
+//
+Query:       COX1  [M=1548]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+          0 1423.6  30.1  scaffold1   1142   2683  Locus_67_0 10.0 LINEAR
+
+
+Annotation for each hit  (and alignments):
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ ! 1423.6  30.1         0         1      1542 [.      1142      2683 ..      1142      2696 ..      7907    1.00
+
+  Alignment:
+  score: 1423.6 bits
+       COX1    1 gtggcaattactcgttgatttttctcaactaaccacaaagacattggcaccctttatctagtatttggtgcctgagctggaatagtaggaactgccct 98  
+                 gtggcaat+ac+cg tgatt ttctc ac aaccacaaagacat+ggcaccctttatctagtatt+ggtgc+tgagc+ggaatagt gg+ac+gc ct
+  scaffold1 1142 GTGGCAATCACACGCTGATTCTTCTCCACCAACCACAAAGACATCGGCACCCTTTATCTAGTATTCGGTGCTTGAGCCGGAATAGTCGGGACAGCTCT 1239
+                 58999********************************************************************************************* PP
+
+       COX1   99 aagcctactaattcgagcagaactaagccaacctggagctcttctaggagatgaccaaatttataatgttattgttacagcccatgcctttgtaataa 196 
+                  agcct ct at+cgagc ga+ctaag+caacctggagc cttct gg ga+ga+caaat+tataatgt+at+gt+acagc catgcctt+gtaat+a
+  scaffold1 1240 TAGCCTGCTCATCCGAGCTGAGCTAAGTCAACCTGGAGCCCTTCTTGGCGACGATCAAATCTATAATGTAATCGTAACAGCGCATGCCTTCGTAATGA 1337
+                 ************************************************************************************************** PP
+
+       COX1  197 ttttctttatagtaataccaattataattggaggttttggaaactgactagttcctctaataattggagcccctgacatagcattccctcgaataaat 294 
+                 ttttctttatagtaat+ccaattat+attggagg tttgg+aa+tgacta+ttcctctaat+attgg gcccctga+atagcattccc cgaataaa+
+  scaffold1 1338 TTTTCTTTATAGTAATGCCAATTATGATTGGAGGCTTTGGGAATTGACTAATTCCTCTAATGATTGGCGCCCCTGATATAGCATTCCCCCGAATAAAC 1435
+                 ************************************************************************************************** PP
+
+       COX1  295 aacataagcttctgacttctacccccatcattccttctacttctagcctcttctggagttgaagctggggctggaacaggatgaactgtttacccccc 392 
+                 aacat+agcttctgacttct cc cc tc ttccttct ct ct gc tc tc+gg gt+gaagc ggggctgg+ac gg tg+ac gttta+ccccc
+  scaffold1 1436 AACATGAGCTTCTGACTTCTCCCGCCTTCGTTCCTTCTCCTCCTTGCGTCCTCAGGTGTAGAAGCCGGGGCTGGGACTGGTTGGACCGTTTATCCCCC 1533
+                 ************************************************************************************************** PP
+
+       COX1  393 tctagcaggaaacctagcccatgcaggagcatcagtagacctaactattttctctcttcacctagcaggtgtttcttcaattctaggggctattaact 490 
+                 tct gc gg aa+ct gc+ca+gc+gg+gc tc gt gac+taac+atttt+tctct ca+ct gcagg++tttc+tcaat+ct ggggctat aact
+  scaffold1 1534 TCTCGCCGGTAATCTTGCACACGCGGGGGCTTCCGTTGACTTAACAATTTTTTCTCTCCATCTTGCAGGAATTTCATCAATCCTCGGGGCTATCAACT 1631
+                 ************************************************************************************************** PP
+
+       COX1  491 ttattactacaattattaatataaaacccccagctatatctcaatatcaaacacctctatttgtttgatctgttctaattactgctgttctacttctt 588 
+                 ttat ac ac attattaa+ataaaaccccc+gc+at +c caata+ca+ac cct+tatttgt+tga+c+gt ct+attactgctgt ct+cttctt
+  scaffold1 1632 TTATCACGACCATTATTAACATAAAACCCCCTGCAATCACCCAATACCAGACCCCTTTATTTGTGTGAGCAGTCCTTATTACTGCTGTCCTTCTTCTT 1729
+                 ************************************************************************************************** PP
+
+       COX1  589 ctatctctaccagttctagctgctggtattacaatgcttctaacagaccgaaacctaaatacaactttctttgaccctgcaggaggaggagacccaat 686 
+                 ct tc+ct cc gt ct+gctgctgg at+acaatgct+ct acaga+cgaaa+ctaaa+acaactttctttgaccc gc ggaggagg+gacccaat
+  scaffold1 1730 CTCTCCCTTCCCGTCCTGGCTGCTGGCATCACAATGCTACTCACAGATCGAAATCTAAACACAACTTTCTTTGACCCGGCCGGAGGAGGGGACCCAAT 1827
+                 ************************************************************************************************** PP
+
+       COX1  687 tctataccaacacctattctgattctttggtcacccagaagtttatattctaattctaccaggatttggaataatttctcatattgttgcctactatt 784 
+                 +ct+taccaacacctattctgattctttgg caccc gaagt tatat+ct+attct cc gg tttgg at+atttc ca+at gt gcctactat+
+  scaffold1 1828 CCTTTACCAACACCTATTCTGATTCTTTGGCCACCCCGAAGTCTATATCCTTATTCTCCCCGGCTTTGGTATGATTTCCCACATCGTCGCCTACTATG 1925
+                 ************************************************************************************************** PP
+
+       COX1  785 caggtaaaaaagaaccatttggctatatgggaatagtttgagctataatagctattggcttcctaggctttattgtttgagcccaccacatgtttaca 882 
+                 c ggtaaaaaagaacc+tttggcta+atgggaat+gt+tg+gc at+atagc+attggc+t+ct ggctt+attgt+tgagcccaccacatgtt+aca
+  scaffold1 1926 CTGGTAAAAAAGAACCTTTTGGCTACATGGGAATGGTATGGGCCATGATAGCAATTGGCCTTCTTGGCTTCATTGTATGAGCCCACCACATGTTCACA 2023
+                 ************************************************************************************************** PP
+
+       COX1  883 gttggaatagacgtagacacacgagcctactttacatctgctacaataattattgctatcccaacaggagtaaaagtatttagctgactagctactct 980 
+                 gttggaat+ga+gt gacac cgagc+tactttacatc gc acaataattattgc atccc ac gg+gt+aaagt tttagctgact+gc ac ct
+  scaffold1 2024 GTTGGAATGGATGTTGACACTCGAGCATACTTTACATCCGCCACAATAATTATTGCCATCCCTACGGGGGTTAAAGTCTTTAGCTGACTGGCCACCCT 2121
+                 ************************************************************************************************** PP
+
+       COX1  981 tcatggaggaactattaaatgagaaacccctatactatgagccctaggctttattttcctatttacagtagggggactaacaggaattgttctagcta 1078
+                  catggagg++c+at+aaatgaga+acccct+t ct tg+gccct ggctttattttc tatttacagt+gg+gg+ctaacagg attgttct+gcta
+  scaffold1 2122 CCATGGAGGGGCAATCAAATGAGAGACCCCTCTCCTGTGGGCCCTGGGCTTTATTTTCTTATTTACAGTGGGAGGGCTAACAGGGATTGTTCTGGCTA 2219
+                 ************************************************************************************************** PP
+
+       COX1 1079 actcttctctagatattgttcttcatgacacatactatgtagtagcccacttccactatgtcctatcaataggagctgtatttgctattatagcagga 1176
+                 a+tc tctctaga+attgt ct+ca+gacacatacta+gtagtagcccacttcca+tatgtcct+tcaataggagc gt tttgc+at+ t gc g +
+  scaffold1 2220 ATTCCTCTCTAGACATTGTGCTACACGACACATACTACGTAGTAGCCCACTTCCATTATGTCCTGTCAATAGGAGCCGTCTTTGCCATCGTTGCTGCC 2317
+                 ************************************************************************************************** PP
+
+       COX1 1177 tttgttcactgattccccctattttcaggatatacccttcacgacacatgaacaaaaattcactttggagttatatttgtaggtgtaaacctaacttt 1274
+                 tttgt+cactgattccc ct ttt+cagg ta+accct+cac++ ac+tg  c aaa+t cactttgg gttatatttgt ggtgtaaa+ct ac+tt
+  scaffold1 2318 TTTGTACACTGATTCCCTCTTTTTACAGGCTACACCCTACACAGTACTTGGTCCAAAGTACACTTTGGCGTTATATTTGTGGGTGTAAATCTCACATT 2415
+                 ************************************************************************************************** PP
+
+       COX1 1275 cttcccacaacacttcctaggcctagcaggaatgccacgacgatactctgactacccagacgcctataccctatgaaatacagtttcatctattggct 1372
+                 cttccc+ca+cacttcctagg+ct gc gg atgccacgacgata+tctgactaccc ga+gccta+accct tgaaatacagt tc tc  ttggct
+  scaffold1 2416 CTTCCCTCAGCACTTCCTAGGACTTGCTGGTATGCCACGACGATATTCTGACTACCCTGATGCCTACACCCTCTGAAATACAGTCTCCTCCCTTGGCT 2513
+                 ************************************************************************************************** PP
+
+       COX1 1373 ctttaatctcactagtagcagtaattatattcttatttattatttgagaagcatttgctgctaaacgagaagtattatcagtagaactaactacaaca 1470
+                 c +ta+tctc ct+gt gc+gtaattat+ttctt+tttattat+tg+gaagc tttgc gctaaacg gaagt +t tc gt gaact act   ac 
+  scaffold1 2514 CCCTAGTCTCTCTGGTGGCTGTAATTATGTTCTTGTTTATTATCTGGGAAGCCTTTGCCGCTAAACGTGAAGTCCTGTCCGTTGAACTGACTCAGACC 2611
+                 ************************************************************************************************** PP
+
+       COX1 1471 aatgtagaatgacttcacggctgccctcctccataccacacatttgaagaaccagcatttgttcaagttcaa 1542
+                 aa+gtaga+tgact cacggctgccctcc+cc ta+cacac tt gaagaacc+gc tt+gt caagttcaa
+  scaffold1 2612 AACGTAGAGTGACTGCACGGCTGCCCTCCACCTTATCACACCTTCGAAGAACCTGCCTTCGTCCAAGTTCAA 2683
+                 ******************************************************************999886 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1548 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:             51325  (0.03); expected (0.02)
+Residues passing bias filter:            22890  (0.0134); expected (0.02)
+Residues passing Vit filter:              4342  (0.00254); expected (0.003)
+Residues passing Fwd filter:              3769  (0.0022); expected (3e-05)
+Total number of hits:                        1  (0.000901)
+# CPU time: 0.52u 0.03s 00:00:00.55 Elapsed: 00:00:00.21
+# Mc/sec: 12616.70
+//
+Query:       COX2  [M=684]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+   1.7e-172  571.5   8.6  scaffold1   2845   3525  Locus_67_0 10.0 LINEAR
+
+
+Annotation for each hit  (and alignments):
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  571.5   8.6  1.7e-172         1       681 [.      2845      3525 ..      2845      3528 ..      7907    0.99
+
+  Alignment:
+  score: 571.5 bits
+       COX2    1 atggcacatccctcacaactaggatttcaagAtgcagcatcccctgttatagaagaacttcttcactttcatgAccatgctctaataattgtattttt 98  
+                 atggcacatcc tc caactagg tt+caagA+gcagc+tc cc gt atagaaga+ct cttcactttcatgAcca+gctctaat+attgtatt++t
+  scaffold1 2845 ATGGCACATCCGTCGCAACTAGGTTTCCAAGACGCAGCTTCGCCCGTAATAGAAGAGCTCCTTCACTTTCATGACCACGCTCTAATGATTGTATTCCT 2942
+                 69************************************************************************************************ PP
+
+       COX2   99 aattagcactttagtactttatattattatagcaatagtaacaacaaaactaactaacaaatatattatagacgcccaagaagttgaaattatttgaA 196 
+                 +attagcac+tt gt ctttatattatt+tagc at+gtaac ac aa++t actaa+aaa+atat+ t gac+c caagaa+ttgaaattat+tgaA
+  scaffold1 2943 TATTAGCACCTTGGTCCTTTATATTATTGTAGCCATGGTAACTACTAAGTTGACTAATAAAAATATCCTCGACTCTCAAGAAATTGAAATTATCTGAA 3040
+                 ************************************************************************************************** PP
+
+       COX2  197 ctattctaccagctattattctaattttaattgccctcccatccctacgaattctatacctaatagatgaaattaatgaccctcacctaAcaattAAa 294 
+                 c+attct cc+gctattattct+at++taat gc ct cc+tcc+tacgaatt tatacctaat+gatgaa+t aat+a+cctcac+taAc++t AAa
+  scaffold1 3041 CAATTCTTCCTGCTATTATTCTTATCCTAATCGCTCTTCCCTCCTTACGAATTTTATACCTAATGGATGAAGTAAATAATCCTCACTTAACTGTCAAA 3138
+                 ************************************************************************************************** PP
+
+       COX2  295 gcaataggccatcaatGatactgaagctAtgaatacacagactatgaagacctaggatttgactcttatataatcccaacacaagacctaacaccagg 392 
+                 gc+at ggcca+ca+tGata+tgaag tAtga+ta+ac ga+tatga+ga ct gg tt+gactc tatat++tccc ac ca ga+ct ac+cc gg
+  scaffold1 3139 GCCATCGGCCACCAGTGATATTGAAGTTATGAGTATACCGATTATGAGGAGCTCGGCTTCGACTCGTATATGGTCCCCACCCAGGATCTGACCCCTGG 3236
+                 ************************************************************************************************** PP
+
+       COX2  393 acaattccgactactagAagtagAccaccgaatagttgttccaatagaatccccaattcgaatattagtttctgctgaaGAtGtccttcActcatgag 490 
+                 +caattccgact +t gAa +agAc+accg at+gttgt cc++t+ga+tcccca+ttcga+ta+t gt tc gc gaaGAtGtccttcActc tg g
+  scaffold1 3237 CCAATTCCGACTCTTGGAAACAGACAACCGCATGGTTGTGCCTGTTGAGTCCCCAGTTCGAGTACTTGTGTCCGCCGAAGATGTCCTTCACTCCTGGG 3334
+                 ************************************************************************************************** PP
+
+       COX2  491 ctgtcccatctctaggagtaAAaataGAtgcagtcccagGacGactaAatcaaacaacttttattgcttctcgaccaggagtattttatgGacaatGc 588 
+                 c+gt cc++c++taggagtaAAaataGA+gcagt+ccagG cGa t Aatcaaaca+ctttt t gc+tc cg ccaggagtatt+tatgG caatGc
+  scaffold1 3335 CAGTACCTGCCTTAGGAGTAAAAATAGACGCAGTTCCAGGGCGATTGAATCAAACAGCTTTTCTGGCATCACGCCCAGGAGTATTCTATGGGCAATGC 3432
+                 ************************************************************************************************** PP
+
+       COX2  589 tctGAaatctGtggagcaaaccAcagctttAtgcctattgtagttgaagcagttccactagaacactttgaaaactgatcttcattaatattt 681 
+                 tctGA+at+tG+gg+gc aaccAcagctttAt+cctat+gtagt+gaagc gttcc  t +aacactttgaa+a tgatc+tc + aat +t 
+  scaffold1 3433 TCTGAGATTTGCGGGGCCAACCACAGCTTTATACCTATCGTAGTAGAAGCGGTTCCGTTGAAACACTTTGAAGATTGATCCTCCCGAATGCTC 3525
+                 **********************************************************************************99988887765 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (684 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:             96907  (0.0566); expected (0.02)
+Residues passing bias filter:            37494  (0.0219); expected (0.02)
+Residues passing Vit filter:              3517  (0.00205); expected (0.003)
+Residues passing Fwd filter:              1839  (0.00107); expected (3e-05)
+Total number of hits:                        1  (0.000398)
+# CPU time: 0.26u 0.02s 00:00:00.28 Elapsed: 00:00:00.11
+# Mc/sec: 10642.84
+//
+Query:       COX3  [M=785]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+   4.2e-207  686.5  19.4  scaffold1   4452   5235  Locus_67_0 10.0 LINEAR
+
+
+Annotation for each hit  (and alignments):
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  686.5  19.4  4.2e-207         1       784 [.      4452      5235 ..      4452      5236 ..      7907    1.00
+
+  Alignment:
+  score: 686.5 bits
+       COX3    1 atggcccaccaagcacacgcatatcacatagttgacccaagcccatgacccctaacaggagcagtagctgccctactaataacatcaggtctagcaat 98  
+                 atggc ca+caagcacacgcatatca+atagt+gaccc ag ccatg+cc+ctaacagg+gc gtagctgccct +t+ataac tc+gg ct gc at
+  scaffold1 4452 ATGGCTCATCAAGCACACGCATATCATATAGTAGACCCCAGTCCATGGCCACTAACAGGGGCGGTAGCTGCCCTCTTGATAACCTCGGGCCTCGCCAT 4549
+                 69************************************************************************************************ PP
+
+       COX3   99 atgatttcacttcaactcaacaattctaataactctaggactaattcttattcttctaacaatatatcaatgatgacgagatattgttcgagaaggca 196 
+                  tgatt+cact+caactc a+aa+ +taat + t t+gg++ ++ttct +t+ct +taacaatatatcaatgatgacg+gatattgt cgaga+ggca
+  scaffold1 4550 CTGATTCCACTACAACTCCATAACCTTAATCTATATTGGTACTGTTCTCCTACTCTTAACAATATATCAATGATGACGGGATATTGTCCGAGAGGGCA 4647
+                 ************************************************************************************************** PP
+
+       COX3  197 cattccaaggacaccacacacctcctgtacaaaaaggcctacgatatggaataattctatttattacatcagaagtattcttcttcttaggattcttc 294 
+                 cat ccaaggacaccacac cctcc gt caaaaaggcct+cgatatgg ataattctatt+at acatc gaagtatt+ttctt++t+ggattcttc
+  scaffold1 4648 CATACCAAGGACACCACACCCCTCCCGTTCAAAAAGGCCTTCGATATGGGATAATTCTATTCATCACATCGGAAGTATTTTTCTTTCTTGGATTCTTC 4745
+                 ************************************************************************************************** PP
+
+       COX3  295 tgagccttttaccactcaagcctagccccaaccccagaactaggaggatgctgacccccaacaggaattacccccctagacccatttgaagtccctct 392 
+                 tg+gcctt+tacca+tcaagcct+gccccaacccc+gaa t gg+gg tgctgacc ccaac ggaattac+cc+ctagaccc tt gaagtccctct
+  scaffold1 4746 TGGGCCTTCTACCATTCAAGCCTTGCCCCAACCCCTGAAATTGGGGGCTGCTGACCGCCAACCGGAATTACACCACTAGACCCGTTCGAAGTCCCTCT 4843
+                 ************************************************************************************************** PP
+
+       COX3  393 actaaatacagctgttctactagcctcaggagtaacagttacatgagcccaccacagcattatagaaggaaatcgaaaacaagcaattcaagccctaa 490 
+                  ct aa+ac+gc gt ct ct gcctc+gg gtaacagttac tg+gcccaccacagc t+atagaagg +a+cga   ca+gcaattcaa+c+ct a
+  scaffold1 4844 CCTCAACACTGCCGTGCTGCTTGCCTCTGGCGTAACAGTTACCTGGGCCCACCACAGCCTAATAGAAGGCGAACGAGCCCAGGCAATTCAATCTCTTA 4941
+                 ************************************************************************************************** PP
+
+       COX3  491 ccctaacaattcttctaggattctactttacagtcctacaagccatagaatactatgaagccccttttacaattgcagacggagtttatggctcaaca 588 
+                 c+ct acaat+ct ctagg ttctactttaca tcct caagc+ tagaatactatgaagcccc tttacaat+gcagacgg+gt tatggctc+ac 
+  scaffold1 4942 CACTCACAATCCTCCTAGGTTTCTACTTTACAATCCTCCAAGCACTAGAATACTATGAAGCCCCCTTTACAATCGCAGACGGGGTCTATGGCTCTACC 5039
+                 ************************************************************************************************** PP
+
+       COX3  589 ttctttgtagcaacaggattccacggactacatgtaattattggatctacattcctagctgtctgccttctacgacaaattcaataccactttacatc 686 
+                 tt+tttgtagc ac gg ttccacggact+ca+gt+attattgg tc ac ttcct gc gt tgc+t+ct cgacaaatt+aataccactt+ac  c
+  scaffold1 5040 TTTTTTGTAGCCACCGGCTTCCACGGACTTCACGTTATTATTGGCTCGACCTTCCTTGCCGTATGCTTACTCCGACAAATTAAATACCACTTCACCAC 5137
+                 ************************************************************************************************** PP
+
+       COX3  687 tgaacaccactttggatttgaagcagctgcctgatactgacactttgtagacgtagtatgactattcctatatgtctctatctactgatgaggatcat 784 
+                 + a+caccactttgg+tt gaagcagc+gcctgatactgaca+tt+gt ga+gt gt tg ct ttcct ta++tctc atctactgatgaggatcat
+  scaffold1 5138 ACAGCACCACTTTGGGTTCGAAGCAGCAGCCTGATACTGACATTTCGTCGATGTCGTCTGGCTCTTCCTCTACATCTCCATCTACTGATGAGGATCAT 5235
+                 **********************************************************************************************9986 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (785 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:             96373  (0.0563); expected (0.02)
+Residues passing bias filter:            32553  (0.019); expected (0.02)
+Residues passing Vit filter:              3727  (0.00218); expected (0.003)
+Residues passing Fwd filter:              1326  (0.000775); expected (3e-05)
+Total number of hits:                        1  (0.000458)
+# CPU time: 0.26u 0.02s 00:00:00.28 Elapsed: 00:00:00.10
+# Mc/sec: 13435.81
+//
+Query:       CYTB  [M=1141]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+   1.6e-280  929.2  52.6  C7701      3895   2764  11.0
+
+
+Annotation for each hit  (and alignments):
+>> C7701  11.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  929.2  52.6  1.6e-280         1      1132 [.      3895      2764 ..      3895      2753 ..      6101    1.00
+
+  Alignment:
+  score: 929.2 bits
+   CYTB    1 atggccaacctacgaaaaacccacccactactaaaaattgttaacgacgcattaattgacctcccagccccatctaacatctcagcttgatgaaactttggc 102 
+             atggccaacct cgaaa acccaccc  t ct+aaaat g  aacgacgc +t +t gacct cc gc cc tc aacatctc  +ttgatg aactttggc
+  C7701 3895 ATGGCCAACCTCCGAAAGACCCACCCCTTGCTTAAAATCGCCAACGACGCTCTCGTGGACCTTCCTGCTCCCTCGAACATCTCTATTTGATGGAACTTTGGC 3794
+             799*************************************************************************************************** PP
+
+   CYTB  103 tcccttctaggactttgcctaattatacaaatcctaacaggactattcctagcaatacactacacagcagacatttcaacagccttctcatctgtagcccac 204 
+             tccct +t+ggact tgcct +  at+caa t+ct+ac ggactattcctagcaatacactacac gc gacat +c acagc+ttctcatc gtagcccac
+  C7701 3793 TCCCTCTTGGGACTCTGCCTTGGGATTCAACTTCTTACGGGACTATTCCTAGCAATACACTACACCGCCGACATCGCCACAGCATTCTCATCCGTAGCCCAC 3692
+             ****************************************************************************************************** PP
+
+   CYTB  205 atctgccgagatgtaaactacggctgactaatccgaaacatacatgcaaacggagcctctttcttctttatctgcatttaccttcacattggacgaggactt 306 
+             at+tgccg+ga+gt aact cggctgact atccgaaac+t ca+gc aacgg+gcctc+tt ttctt+atctg+atttacct cacat gg cgagg+ct 
+  C7701 3691 ATTTGCCGGGACGTCAACTTCGGCTGACTCATCCGAAACGTGCACGCCAACGGGGCCTCATTTTTCTTCATCTGTATTTACCTCCACATCGGCCGAGGGCTC 3590
+             ****************************************************************************************************** PP
+
+   CYTB  307 tactacggctcctacctatacaaagaaacatgaaacattggagttattctactacttttagttatagcaacagccttcgtaggctatgtcctaccatgagga 408 
+             tactacggctcctac tat +aa+gaaac tgaaacattgg+gt +ttct ct ctt t gt+at+++aac+gccttcgtaggcta+gt+ct+cc tgagg 
+  C7701 3589 TACTACGGCTCCTACATATTTAAGGAAACTTGAAACATTGGGGTCGTTCTTCTCCTTCTTGTAATGATAACTGCCTTCGTAGGCTACGTTCTTCCTTGAGGC 3488
+             ****************************************************************************************************** PP
+
+   CYTB  409 caaatatcattctgaggtgctacagtaattacaaacctactatcagctgtcccttatattggaaacaccctagtacaatgaatttgagggggattctcagta 510 
+             caaatatc ttctgaggtgctacagt attac aa+ct ct tc gc+gt+cc ta++t gg aacaccctagtacaatgaat+tgaggggg tt+tcagta
+  C7701 3487 CAAATATCCTTCTGAGGTGCTACAGTTATTACCAATCTCCTCTCCGCAGTTCCCTACGTCGGTAACACCCTAGTACAATGAATCTGAGGGGGCTTTTCAGTA 3386
+             ****************************************************************************************************** PP
+
+   CYTB  511 gacaacgcaaccctaacccgattctttgccttccacttccttcttccatttattattgcagcagtaactatagttcacctactattcctacacgaaacagga 612 
+             gacaacgc ac+ctaac+cgattctt+gc+ttccacttcct cttcc tt++t attgc gc gtaac  t  t cacct+ct ttcct cacgaaac gg 
+  C7701 3385 GACAACGCCACACTAACACGATTCTTCGCATTCCACTTCCTCCTTCCCTTCGTCATTGCCGCTGTAACGCTCCTACACCTGCTCTTCCTCCACGAAACGGGC 3284
+             ****************************************************************************************************** PP
+
+   CYTB  613 tcaaacaacccaataggactaaactcagacgcagacaaaatcccattccacccttacttctcttacaaagacattctaggatttgtaattatacttattgtt 714 
+             tcaaacaaccca+t gg ctaaac c +acgc ga+aaaat+cc ttccaccc tactt+tc+ta+aaagac ttctagg ttt+t++t  ta t  t g+ 
+  C7701 3283 TCAAACAACCCAGTCGGCCTAAACCCGAACGCCGATAAAATTCCCTTCCACCCCTACTTTTCATATAAAGACCTTCTAGGCTTTATTGTCTTATTCCTGGCC 3182
+             ****************************************************************************************************** PP
+
+   CYTB  715 ctaatatccctagccctattttcccctaacctactaggagacccagaaaactttaccccagcaaaccccctagttacccctcctcacattaaaccagaatga 816 
+             ct ++atccctagc+ t tt+tcccc aac   ct gg+gacccaga aactt+accccagc aaccccctagt acccctcctcacattaaaccagaatga
+  C7701 3181 CTCGCATCCCTAGCATTGTTCTCCCCCAACTACCTCGGGGACCCAGACAACTTCACCCCAGCCAACCCCCTAGTCACCCCTCCTCACATTAAACCAGAATGA 3080
+             ****************************************************************************************************** PP
+
+   CYTB  817 tacttcctatttgcctacgccatcctacgatctatccctaacaaactaggaggagttctagccctagtagtctctatcctagttctattatttgtcccattt 918 
+             tactt++tatttgccta+gc+atcct cgatc atccc aacaaactaggaggagt ctagccct  tag+ctctatcct +ttct +t  t+gtccc  t 
+  C7701 3079 TACTTTTTATTTGCCTATGCAATCCTCCGATCGATCCCCAACAAACTAGGAGGAGTCCTAGCCCTCCTAGCCTCTATCCTTATTCTCATGCTAGTCCCCCTC 2978
+             ****************************************************************************************************** PP
+
+   CYTB  919 cttcacacatctaaacaacgaggaataacattccgaccactcacccaattcctattctgaatcctagttgcagacattcttatcctaacatgaattggaggc 1020
+             cttcacacatc aaaca cga+g  t ac ttccg cc  tc+cccaa+t  t tt+tgaa+c+tagttgc+gac+tt+  atcctaacatgaattgg gg+
+  C7701 2977 CTTCACACATCCAAACACCGAAGCCTCACTTTCCGTCCTTTCTCCCAAATTATCTTTTGAACCTTAGTTGCGGACGTTGCCATCCTAACATGAATTGGCGGG 2876
+             ****************************************************************************************************** PP
+
+   CYTB 1021 ataccagtagaacacccattcattattattggacaaatagcatcaatcctttacttctccatattcctaatccttatcccaatagcaggcttaatagaaaac 1122
+             ataccagtagaa+a cc t+cattattattggacaaat gcatc +  ctttacttc + at ttcct +tc t +tccc  t gcagg+t+a taga+aac
+  C7701 2875 ATACCAGTAGAAGATCCTTACATTATTATTGGACAAATCGCATCTGCTCTTTACTTCCTGATTTTCCTCGTCTTCTTCCCCCTCGCAGGATGACTAGAGAAC 2774
+             ****************************************************************************************************** PP
+
+   CYTB 1123 aaaatactaa 1132
+             aaa t+cta+
+  C7701 2773 AAACTTCTAG 2764
+             ***9999876 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1141 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:             91699  (0.0536); expected (0.02)
+Residues passing bias filter:            30357  (0.0177); expected (0.02)
+Residues passing Vit filter:              4473  (0.00261); expected (0.003)
+Residues passing Fwd filter:              2028  (0.00118); expected (3e-05)
+Total number of hits:                        1  (0.000661)
+# CPU time: 0.36u 0.02s 00:00:00.38 Elapsed: 00:00:00.18
+# Mc/sec: 10849.44
+//
+Query:       ND1  [M=972]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+     1e-228  757.1  44.3  C7697       1542    578  9.0
+
+
+Annotation for each hit  (and alignments):
+>> C7697  9.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  757.1  44.3    1e-228         9       971 ..      1542       578 ..      1551       577 ..      2715    0.99
+
+  Alignment:
+  score: 757.1 bits
+    ND1    9 at..ttataatttacattattaaccccctattctttattgtcccagtcctactagcagtagctttcctaacactagttgAacGaaAagttctaggatatata 108 
+             a   tt t  tt acat attaa+ccccta++ct+ attgtccc+gtcct ct+gcagt gc+ttc+t aca+ta+t gAacGaaAagt++tagg ta ata
+  C7697 1542 ACcaTTTTCGTTCACATCATTAATCCCCTAGCCTACATTGTCCCTGTCCTCCTGGCAGTCGCATTCTTTACATTAATCGAACGAAAAGTATTAGGCTACATA 1441
+             44567778889999**************************************************************************************** PP
+
+    ND1  109 cAacttcGaaaagGcccaAatattgtaggaccctatgGactacttcAaccaattgcagAtggagtaAAactatttattAaagaaccaatccgcccatcaaca 210 
+             cA+ct cGaaaagG cc+Aat+t+gt ggacc+tatgG+ct+ct cAaccaat gcagA+gg+gt AAact tttattAaaga+cc at+cgccc tc aca
+  C7697 1440 CAGCTCCGAAAAGGACCTAATGTAGTTGGACCATATGGGCTTCTCCAACCAATCGCAGACGGGGTGAAACTCTTTATTAAAGAGCCCATTCGCCCCTCTACA 1339
+             ****************************************************************************************************** PP
+
+    ND1  211 tcttccccaattctatttatatttacccctattctagccctaaccctagccctaacaatatgagtccctatacctataccatacccactagttgacctaaac 312 
+             tc tcccc +ttctatt  t+ tt+cccctat+ct  +cct accct gc ct a+ +t tgag+ccc at+cctat+cc taccc +t +ttga++t+aac
+  C7697 1338 TCCTCCCCCGTTCTATTCCTTCTTGCCCCTATACTCAGCCTCACCCTTGCGCTTATCCTCTGAGCCCCCATGCCTATGCCCTACCCGGTGATTGATATTAAC 1237
+             ****************************************************************************************************** PP
+
+    ND1  313 ctaggcattctatttattctagccatatcaagcctagcagtatattctattctaggatcagGatgagcatcaaattcaaaatatgccctaattgGggcccta 414 
+             ctagg+at ct tt at ct gcc t tc+ag+ctagc gt+ta+tc at +tagg++cagGatgagc tc aa+tcaaaata+gc+ctaattgG+gccct 
+  C7697 1236 CTAGGAATCCTCTTCATCCTGGCCCTCTCTAGTCTAGCCGTTTACTCCATCTTAGGGGCAGGATGAGCCTCTAACTCAAAATACGCTCTAATTGGAGCCCTC 1135
+             ****************************************************************************************************** PP
+
+    ND1  415 cGagcagtagcccAaacaatttcttAtGAagtaagcctaggacttattcttctatccattattattttaacaggaggctttaccctacaaacatttattatt 516 
+             cGagc gt gcccAaac at+tc+tAtGAagt agcctagg ct attct ct ++cattatt t+ t +c gg + ctt+acc+tacaaac tt a  a t
+  C7697 1134 CGAGCTGTCGCCCAAACCATCTCATATGAAGTCAGCCTAGGCCTCATTCTCCTCAGCATTATTGTACTCGCCGGCAACTTCACCTTACAAACGTTCAGCACT 1033
+             ****************************************************************************************************** PP
+
+    ND1  517 acacaagaaaaaatatgactaattttcccagcatgacccctagctgtaatatgatatatctcaaccctagcagAaacaAAccgagccccatttgAcctaaca 618 
+             +c caagaa+  at+tgact at + +cc gc+tgacccct gc g+aatatgatatat+tc acc+tagcagAaac AAccgagc cc tt gA+ct ac 
+  C7697 1032 GCCCAAGAAGCCATTTGACTCATCGCTCCCGCTTGACCCCTTGCCGCAATATGATATATTTCCACCTTAGCAGAAACCAACCGAGCACCCTTCGATCTTACC 931 
+             ****************************************************************************************************** PP
+
+    ND1  619 GaagGagAatcaGAactaGtttcaggatttAAtgtagaatatgcaggaggcccattcgccctatttttcctagctgaatAtgcaaacattttattaataaat 720 
+             Ga+gGagAatcaGAact Gt+tc ggatttAAtgtagaatatgcag +ggccc+ttcgc ct+tt ttcctagc+gaatAtgc aacat+ t  t ataaat
+  C7697  930 GAGGGAGAATCAGAACTGGTATCGGGATTTAATGTAGAATATGCAGCGGGCCCTTTCGCACTGTTCTTCCTAGCAGAATATGCCAACATCCTCCTCATAAAT 829 
+             ****************************************************************************************************** PP
+
+    ND1  721 accctatctgctattctattcttaggagcatcctatatccctatcatcccagaactatccacaattaacctaataataaaagcagcactactatcattagtt 822 
+             accct tc gc a  ctattc+t ggagc tcc a++tccc+a   t cc gaacta+ccac attaacctaat+a+aaaagc gc ct ct tca+tagt 
+  C7697  828 ACCCTCTCCGCCACCCTATTCCTCGGAGCTTCCCACTTCCCAACGCTTCCTGAACTAACCACTATTAACCTAATGACAAAAGCGGCCCTCCTTTCAATAGTC 727 
+             ****************************************************************************************************** PP
+
+    ND1  823 ttcctatgagttcGagcctcatacccacGatttcgatatgaccaactaAtacacctaatatGaaaaaacttcctacccctaacactagccctattcatatga 924 
+             tt+ctatgagt cGagc+tc taccc cGatt+cgatatgaccaact Atacacct +t tGaaa aacttcct cccct ac ctagcc t++tcat+tga
+  C7697  726 TTTCTATGAGTCCGAGCATCCTACCCCCGATTCCGATATGACCAACTCATACACCTCGTGTGAAAGAACTTCCTCCCCCTCACCCTAGCCTTGGTCATTTGA 625 
+             ****************************************************************************************************** PP
+
+    ND1  925 cacatttccctaccaattgcatttgcaggccttcccccacaaatata 971 
+             cac t tccct cc+at gcatt gcagg  t+ccccc caa t ta
+  C7697  624 CACCTCTCCCTCCCTATCGCATTCGCAGGATTACCCCCGCAATTCTA 578 
+             ***************************************99887765 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (972 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:            139085  (0.0813); expected (0.02)
+Residues passing bias filter:            48479  (0.0283); expected (0.02)
+Residues passing Vit filter:              6940  (0.00405); expected (0.003)
+Residues passing Fwd filter:              4859  (0.00284); expected (3e-05)
+Total number of hits:                        1  (0.000564)
+# CPU time: 0.57u 0.01s 00:00:00.57 Elapsed: 00:00:00.22
+# Mc/sec: 7562.02
+//
+Query:       ND2  [M=1042]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+   4.6e-134  444.9  58.1  scaffold1      2    737  Locus_67_0 10.0 LINEAR
+    3.7e-76  253.4  14.7  C7697        364      3  9.0
+     0.0043   11.8  15.9  C7701       5437   5133  11.0
+     0.0045   11.7   2.3  scaffold1   6797   6919  Locus_67_0 10.0 LINEAR
+  ------ inclusion threshold ------
+        6.1    1.3  21.3  scaffold1   2945   3140  Locus_67_0 10.0 LINEAR
+
+
+Annotation for each hit  (and alignments):
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  444.9  58.1  4.6e-134       304      1039 ..         2       737 ..         1       740 [.      7907    0.98
+
+  Alignment:
+  score: 444.9 bits
+        ND2  304 cTagcaataAAaaTaggactagccCCattacActtctgacTaccagaagtattacaaggattagccctaacaacaggacTaaTtcTatcaacatgaca 401 
+                 cTagcaataAAa T gg ct gccCCa+tacActt tgacT cc+ga gt  t ca+gg  t g+cct ac ac gg cT+aT cT tc ac tg ca
+  scaffold1    2 CTAGCAATAAAAGTTGGCCTCGCCCCAATACACTTTTGACTCCCGGAGGTCCTGCAGGGCCTTGACCTTACCACTGGGCTTATCCTCTCCACGTGGCA 99  
+                 689*********************************************************************************************** PP
+
+        ND2  402 aaaacTtgccCCatTcacccTacTttttcaaatttccccatccattaacccaaaactacttattatcctaggaataatatctatcctagttggaggct 499 
+                  aaacTtgccCC tT++cccT cT+ t caa t+ cc +  +c     c c    ct +t+attat++tagg+ t   atc+a+c+ta+ttggaggct
+  scaffold1  100 GAAACTTGCCCCCTTTGCCCTCCTACTCCAACTGCCCGACCACT---CCTCCCCCCTTTTAATTATTTTAGGGCTCTCATCAACCTTAATTGGAGGCT 194 
+                 *****************************988888874444443...25556666799**************************************** PP
+
+        ND2  500 gaggaggacTaaaccaaaCacaactaCGaaAaaTccTagcatacTCatcaaTtgcccacatagGcTGaataattgttattctacaattttccccaaaa 597 
+                 gagg gg+cT aaccaaaC ca+ctaCG aA+aTccT gcatacTC+tcaaT gc cac t+gGcTGaataat  t++ttct caatt+tcccc    
+  scaffold1  195 GAGGCGGGCTTAACCAAACCCAGCTACGTAAGATCCTTGCATACTCTTCAATCGCACACCTGGGCTGAATAATCTTAGTTCTTCAATTCTCCCCCTCC 292 
+                 ************************************************************************************************** PP
+
+        ND2  598 ctaaccctcctaacctTcattattTatattattataactttctcaatatTcctaatatttaaattaatcaaaaccacaaaaattaaatcactagcaat 695 
+                 ct+ac ct+ct ac +T+at  t Ta++tt+  at+ac ttctc a atTc+t +tatt aaa+t a++aa  c ac aa attaa tc ct gc+a 
+  scaffold1  293 CTGACGCTTCTCACGCTTATCCTATACTTTGCCATGACCTTCTCCACATTCATTGTATTCAAAATCAATAAGTCGACCAACATTAACTCCCTTGCTAC 390 
+                 ************************************************************************************************** PP
+
+        ND2  696 ttcatgaacaaaaaccccaattctaacagcaattatactactaatccTacTatcccTaggaGGccTccCcccactaacaggaTTtataccaAAatgac 793 
+                 ttc tga+c+aaaacccca+  ct ac gcaattat c+ cta+t cT+cT tcccT gg GGccT cC cc cta+cagg TTtataccaAAatgac
+  scaffold1  391 TTCCTGAGCTAAAACCCCAGCCCTCACCGCAATTATCCCCCTAGTGCTTCTCTCCCTCGGCGGCCTGCCGCCCCTATCAGGTTTTATACCAAAATGAC 488 
+                 ************************************************************************************************** PP
+
+        ND2  794 taatttttcaagAacTaacaaaacaagacctaactataatagccacaataatagcaataacagctcTactaagcctattctTcTAcctacgacTatca 891 
+                 t att t caagA+cT++++   caag+ccta +    a  gccac+at a  gc  t +c gc cT ct agcct t+ctT+TAc+t cg cT+tc 
+  scaffold1  489 TCATTCTCCAAGAGCTGGTGGCCCAAGGCCTACTCCCCACCGCCACTATCACCGCGCTCTCCGCCCTCCTCAGCCTCTACTTTTACTTGCGCCTTTCC 586 
+                 ************************************************************************************************** PP
+
+        ND2  892 tacgcaataacactaaccatatccccaaacaccactaacttaataataccatgacgctttaaaaca...caactaaccctactcctagcaatcctaat 986 
+                 tacgc at acact accat tc+cc aacac+ c+a  ++  t a  cc tgacg+ t  a aca   ca+++ accct c+cct+gc  t++  a+
+  scaffold1  587 TACGCTATGACACTTACCATTTCACCTAACACACCAATAGGCCTCACCCCCTGACGACTCCACACAcacCAGAATACCCTTCCCCTTGCGGTTTGCAC 684 
+                 **********************************************************9988888888999*************************** PP
+
+        ND2  987 tatagtatctatctttcttctaccaataaccccaacaatcttaacattattta 1039
+                 tata+  +c at++ ++t+ct cc +t ac+cc  + atc+t ac  t ttta
+  scaffold1  685 TATAACCACCATTGCATTACTCCCCCTGACACCGCTTATCATCACCCTCTTTA 737 
+                 ***************************************99999988888776 PP
+
+>> C7697  9.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  253.4  14.7   3.7e-76         1       362 [.       364         3 ..       364         1 ..      2715    1.00
+
+  Alignment:
+  score: 253.4 bits
+    ND2   1 atgaaccccttcataatattaatttttatatcaagccTagtcctaggaacaaccattacttttgctagctcccactgacTcctagccTGaataggacTaGAaaT 104
+            atga+ccc+ttcat +ta++ att tt t tc++ ccT g+cctaggaac  c+attac+tttgc agctcccactg+cTc t gccTGaat gg cTaGAa T
+  C7697 364 ATGAGCCCTTTCATCTTAGCCATTCTTGTCTCTGCCCTTGGCCTAGGAACCGCAATTACATTTGCCAGCTCCCACTGGCTCGTCGCCTGAATCGGCCTAGAACT 261
+            79****************************************************************************************************** PP
+
+    ND2 105 taatactcTagccaTtattcccctaaTagcaaaacaacaccacccccgagcaatagaagccgcaacaaaaTAttTccTaatcCAagcaacagcatcagcaataa 208
+             aa+ac++Tagc+aT  t+cccctaaT +c  aacaac +cacccccgagca+t ga gccgc ac+aaaTA+tTccT at+CAagc +cag  +c gc a   
+  C7697 260 CAACACATTAGCTATACTCCCCCTAATGACCCAACAACCTCACCCCCGAGCAGTGGAGGCCGCCACTAAATACTTCCTCATTCAAGCCGCAGGGGCGGCCACCC 157
+            ******************************************************************************************************** PP
+
+    ND2 209 TactatttgcaagcataatcaacgcatgaatcacaggacaaTgagatattaaacaaatatccaacccaatctcaaccactataattactattgcccTagcaata 312
+            Ta+tatttgc++ ca+aa+caa+gcatg   cacagg caaTga+a att  +caaata cc accc  tc+ca +cac at +  ac+a tgcccTagcaata
+  C7697 156 TATTATTTGCTGCCACAACCAATGCATGGGCCACAGGCCAATGAAACATTTGTCAAATAGCCGACCCCTTCGCAGTCACCATCGCCACAACTGCCCTAGCAATA 53 
+            ******************************************************************************************************** PP
+
+    ND2 313 AAaaTaggactagccCCattacActtctgacTaccagaagtattacaagg 362
+            AAa T+gg ct gccCCa+tacActt+tgacT cc ga gt  t ca+gg
+  C7697  52 AAAGTTGGCCTCGCCCCAATACACTTTTGACTCCCGGAGGTCCTGCAGGG 3  
+            ***********************************************998 PP
+
+>> C7701  11.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !   11.8  15.9    0.0043       503       789 ..      5437      5133 ..      5490      5113 ..      6101    0.66
+
+  Alignment:
+  score: 11.8 bits
+    ND2  503 gaggacTaaaccaaaCacaactaCGaaAaaTccTagcatacTCatcaaTtgcccacatagGcTGaataattgttattctacaattttcc...ccaaaactaa 601 
+             g+g  cTaa +caaa  +a +t   aaAaaTc T gc t cTCa ca  +  +ca +t+gGc  aataat gt a t+t     tt++c   cca aact++
+  C7701 5437 GTGCCCTAACTCAAAACGACATCAAAAAAATCGTTGCTTTCTCAACATCCAGTCAACTGGGCCTAATAATGGTCACTATCGGCCTTAACcagCCACAACTGG 5336
+             6667788888899999999999999*****************************************************987777666542227999****** PP
+
+    ND2  602 ccctcctaacctTcattattTatattattataactttctcaatatTccta...............atatttaaattaatcaaaaccacaaaaattaaatcac 688 
+             cc+tcct  +  T++ ta   a+    t  t a + ++  a t+tTcct                at    a   taa++ a + +  a a at    + a 
+  C7701 5335 CCTTCCTGCATATTTGTACCCACGCCTTCTTCAAAGCAATACTTTTCCTCtgctcagggtctattATCCACAGCCTAAATGACGAACAAGACATCCGCAAAA 5234
+             ******************999**9999999999999999999999999987777777555333332222222222222222223333333333333333333 PP
+
+    ND2  689 tagcaatttcatgaacaaaaaccccaattctaacagcaattatactactaatccTac.....TatcccTagga...............GGccTccCcccact 770 
+             tag       + g+ac+  a  ccc                 + c++ ta   cT+c     T+ c+ Tagga               GGc  ccCc   ct
+  C7701 5233 TAG-------GAGGACTTCATACCC-------------TCCTCCCCTTTACCTCTTCctgctTGACAGTAGGAagcctcgctctaacaGGCACCCCCTTCCT 5152
+             333.......222233222222222.............2222222222222222222222244555666666611111111111111144444555556689 PP
+
+    ND2  771 aacaggaTTtataccaAAa 789 
+             a cagg TT++t  c AAa
+  C7701 5151 AGCAGGCTTCTTCTCCAAA 5133
+             9999999999999998885 PP
+
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !   11.7   2.3    0.0045       459       581 ..      6797      6919 ..      6771      6940 ..      7907    0.81
+
+  Alignment:
+  score: 11.7 bits
+        ND2  459 acttattatcctaggaataatatctatcctagttggaggctgaggaggacTaaaccaaaCacaactaCGaaAaaTccTagcatacTCatcaaTtgccc 556 
+                  +ttattat+ct g+ +ta  a   +t+ t +t    gg+t      g cT   cca aCa+a cta  a    Tc+T gc+ta TC tc  T+g  c
+  scaffold1 6797 TTTTATTATTCTGGCCCTATGAGGGGTAATCATGACCGGGTCTATTTGCCTTCGCCAGACAGACCTAAAATCCCTCATTGCCTATTCCTCCGTCGGAC 6894
+                 366778888889999998888888888888999989999999999999999999**********9976666667899********************* PP
+
+        ND2  557 acatagGcTGaataattgttattct 581 
+                 acatagG+T a t   tg ++  +t
+  scaffold1 6895 ACATAGGATTAGTCGCTGCAGCCAT 6919
+                 ********99888877777666655 PP
+
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ ?    1.3  21.3       6.1       605       817 ..      2945      3140 ..      2925      3158 ..      7907    0.71
+
+  Alignment:
+  score: 1.3 bits
+        ND2  605 tcctaacctTcattattTatattattataactttctcaatatTcctaatatttaaattaatcaaaaccacaaaaattaaatcactagcaatttcatga 702 
+                 t    acctT +t+ ttTatattatt+ta c++t + aa+  T ctaa  t +  a taa++a a cc c a+  t+aa + a t g aatt  +tga
+  scaffold1 2945 TTAGCACCTTGGTCCTTTATATTATTGTAGCCATGGTAAC--TACTAAGTTGACTAATAAAAATATCCTCGACTCTCAAGAAATT-GAAATTATCTGA 3039
+                 5556788999999999999999999999998888877765..5666655555555555555555566666666666555555544.667888888888 PP
+
+        ND2  703 acaaaaaccccaattctaacagcaattatactactaatccTacTatcccTaggaGGccTccCcccactaacaggaTTtataccaAA........atga 792 
+                 acaa     cc ++t+t              t ct atccTa T  c cT           Ccc  ct ac+   TTtatacc AA        +t a
+  scaffold1 3040 ACAATTCTTCCTGCTAT------------TATTCTTATCCTAATCGCTCTT----------CCCTCCTTACGAATTTTATACCTAAtggatgaaGTAA 3115
+                 87766666665444444............5556666677777766666664..........677888999**************99888888778888 PP
+
+        ND2  793 ctaatttttcaagAacTaacaaaac 817 
+                  taat++t     AacT+ caaa+c
+  scaffold1 3116 ATAATCCTCACTTAACTGTCAAAGC 3140
+                 9999999999999999998877765 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1042 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:            209247  (0.122); expected (0.02)
+Residues passing bias filter:            95988  (0.0561); expected (0.02)
+Residues passing Vit filter:             13775  (0.00805); expected (0.003)
+Residues passing Fwd filter:              8281  (0.00484); expected (3e-05)
+Total number of hits:                        5  (0.00101)
+# CPU time: 0.64u 0.01s 00:00:00.65 Elapsed: 00:00:00.23
+# Mc/sec: 7754.15
+//
+Query:       ND3  [M=349]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+    7.5e-65  216.3  23.3  scaffold1   5307   5655  Locus_67_0 10.0 LINEAR
+  ------ inclusion threshold ------
+        2.6    4.7   2.0  C6863        138    236  4.0
+
+
+Annotation for each hit  (and alignments):
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  216.3  23.3   7.5e-65         1       349 []      5307      5655 ..      5307      5655 ..      7907    0.99
+
+  Alignment:
+  score: 216.3 bits
+        ND3    1 atgaacttaattataattatttttattattgcaattattttatcctttattttagttattgtttctttttgactacctcaaataaacccagatacaga 98  
+                 atgaac t  tta aa   t++t+at att+ca+ t+ t t tcc+  at +t+g tattgtttc ttttgact cc caaat+aaccc ga+ +aga
+  scaffold1 5307 ATGAACCTTCTTACAACGGTAATAATCATTACAGCTGCTCTCTCCACCATCCTGGCTATTGTTTCCTTTTGACTCCCCCAAATGAACCCCGACCAAGA 5404
+                 689999999***************************************************************************************** PP
+
+        ND3   99 aaaactttcccctTAtGAgTGtGGaTttgaccctctaggatctgctcgacttcctttttCtatacgaTttTttctagTtgctaTtttaTTtcTgcTaT 196 
+                 +aa+ct tcccctTA GA+TG+GG+Tttgaccctct gg tc+gc cg ct cc tt tC+ tacg Tt+Tttct+gTtgc aT +t TT+ TgcT T
+  scaffold1 5405 GAAGCTCTCCCCTTACGAATGCGGGTTTGACCCTCTCGGCTCAGCCCGCCTCCCCTTCTCACTACGTTTCTTTCTTGTTGCCATCCTCTTCTTGCTCT 5502
+                 ************************************************************************************************** PP
+
+        ND3  197 TtGAccTaGAaaTtgctcTtcTtcttCCtcttccttgaggaattcaactacccacccctataataacttttttttgagcagtaatttttttaattctt 294 
+                 T GAccT+GA+aTtg tcTtcT ct CC cttcc tga g a+ ca +t ccc+c cc  t  t acttt t  tg+gcag+ ++t+t  t attctt
+  scaffold1 5503 TCGACCTGGAGATTGTTCTTCTCCTCCCCCTTCCCTGAAGCAACCAGTTCCCCTCGCCCCTCCTTACTTTCTCCTGGGCAGCCGCTATCCTCATTCTT 5600
+                 ************************************************************************************************** PP
+
+        ND3  295 cTaaccttaggcctaatttatgAgtgatttcaaggaggcctagaaTgggctgAat 349 
+                 cT ac tt+gg+ct atttatgA+tga+ +caaggaggcctagaaTgggc gAat
+  scaffold1 5601 CTTACTTTGGGGCTTATTTATGAATGAACACAAGGAGGCCTAGAATGGGCCGAAT 5655
+                 ****************************************************986 PP
+
+>> C6863  4.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ ?    4.7   2.0       2.6        49       116 ..       138       236 ..       123       242 ..       290    0.84
+
+  Alignment:
+  score: 4.7 bits
+    ND3  49 attttagttattgtttctttttgactacctcaaata...............................aacccagatacagaaaaactttcccctTAtGA 116
+             tttt g++ ttgttt++ttttga t    ca  t                                aa c+aga+ c   aaa+ct+ cccc+TA+GA
+  C6863 138 TTTTTGGCCTTTGTTTACTTTTGAATTTTACATGTTtaagctagtaccggctaagctaaaggggcttAAGCTAGACGCGTGAAAGCTAGCCCCATACGA 236
+            5678999999**************88777777666666777777778888888888888888888889999999999999999*************997 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (349 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:            318153  (0.186); expected (0.02)
+Residues passing bias filter:           108101  (0.0632); expected (0.02)
+Residues passing Vit filter:             10922  (0.00638); expected (0.003)
+Residues passing Fwd filter:              1997  (0.00117); expected (3e-05)
+Total number of hits:                        2  (0.000262)
+# CPU time: 0.24u 0.01s 00:00:00.25 Elapsed: 00:00:00.10
+# Mc/sec: 5973.37
+//
+Query:       ND4  [M=1376]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+   1.3e-301  999.3  47.4  scaffold1   6015   7390  Locus_67_0 10.0 LINEAR
+  ------ inclusion threshold ------
+       0.71    3.6   9.7  C7701       5666   5359  11.0
+
+
+Annotation for each hit  (and alignments):
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  999.3  47.4  1.3e-301         1      1371 [.      6015      7390 ..      6015      7395 ..      7907    0.99
+
+  Alignment:
+  score: 999.3 bits
+        ND4    1 aTgctaaaaattattattccaacaattatactaatcccaacaacctgattatctccaactaaatgactatgaactactaccacaactcatagcttttt 98  
+                 aTgctaaaaatt ttat+cc aca t at+cta+t    acaacctg+   + tc a+ctaa+tgactatg+ c+ ctac  + ac catagc+tt t
+  scaffold1 6015 ATGCTAAAAATTCTTATCCCCACAGTCATGCTAGTAGTCACAACCTGGAATGTTCGAGCTAAGTGACTATGGCCAGCTACTCTGACCCATAGCCTTCT 6112
+                 79************************************************************************************************ PP
+
+        ND4   99 aattgcctttattagcctaacatgattaaaataatcatcagaaacaggctgaacctttttcaacctttatatagccattgAcccactatcaacccccc 196 
+                  at  c+ t  t ag+ctaac tgatt+    a +c tc+ga+acaggctgaa+ t t t+aac+  ta+atagc+a++gAc  a+t tcaacccccc
+  scaffold1 6113 GATCTCTATGCTCAGTCTAACCTGATTTGCCCACACTTCTGAGACAGGCTGAAAATCTCTTAACTCGTACATAGCTACAGACTTAATCTCAACCCCCC 6210
+                 ************************************************************************************************** PP
+
+        ND4  197 TactagtcctaacctgctgactactcCccctaataattctagcaagccaaaaccacataaaaaaagaaccaattaaccgacaacgaatatatattact 294 
+                 T ctagt ct +c+tgctgacta t Cc+ t ataattct gc agccaaaaccac t+ +  aaga+cc +  aaccg caacgaa  tatat +c 
+  scaffold1 6211 TTCTAGTTCTCTCATGCTGACTATTGCCAATTATAATTCTCGCCAGCCAAAACCACCTGTCCCAAGAGCCGGCCAACCGCCAACGAACGTATATCTCC 6308
+                 ************************************************************************************************** PP
+
+        ND4  295 atactaatcttactacaaatttttctaattatagcatTttcagccacagaactaattatatTttatattatatttGAagccacccTaaTcCCaacccT 392 
+                  t ctaat+t+ ctaca at tt++taat  t gc tTttc  ccacagaa+t  tt t+tTtt++ t atatttGAagccacccT aTcCC ac++T
+  scaffold1 6309 CTGCTAATTTCCCTACAGATCTTCTTAATCCTTGCCTTTTCCTCCACAGAAATCGTTTTGTTTTTCTTAATATTTGAAGCCACCCTCATCCCCACATT 6406
+                 ************************************************************************************************** PP
+
+        ND4  393 aattaTtaTtactcgaTgagGaaaccAaacagaacGactaaatgcaggcacttActTtttattttatacacTagtaggctccctcccccTacTagttg 490 
+                 aat aTtaTtac cg TgagG+a +cA++c gaacG ctaaa+gcaggcac tA+tT++t tt+ta+ac cT g+agg tc ct ccccT++Tagt  
+  scaffold1 6407 AATGATTATTACCCGCTGAGGGAGTCAGGCCGAACGTCTAAACGCAGGCACCTATTTCCTCTTCTACACCCTTGCAGGGTCGCTTCCCCTTTTAGTCT 6504
+                 ************************************************************************************************** PP
+
+        ND4  491 ccctactatttctacaaaacaatataggcaccctatccatactaatacttcaatactcacaccca.....actaaactcctgatcagacaaattttga 583 
+                 cc t ct t+  t+caaa c + ++ gg+acc   tcc t +taat+ct ca tac c c + c      + taa  tc+t   cagacaaa t t+a
+  scaffold1 6505 CCATCCTCTACATTCAAACCTGCGCTGGAACCACCTCCCTCTTAATTCTGCACTACGCCCCAGCCcttccTATAACATCATTCGCAGACAAACTCTTA 6602
+                 *****************************************************9999444444334665555557888888877************** PP
+
+        ND4  584 tgagtagcctgcataatagcatTtctagtaAAaatacCacTaTAtggagtaCAcctaTGacTaCCaAAaGCcCAtGTaGAaGCccCaaTtgcagGcTC 681 
+                 tgag +g+ctgc t  t+gc tT++t gt+AAaatacC cT TA+gga t CAc t+TGacT CC AAaGCcCAtGTaGAaGCccC aT gcagG+TC
+  scaffold1 6603 TGAGCGGGCTGCCTGCTGGCTTTCTTGGTTAAAATACCCCTCTACGGAATTCACTTGTGACTGCCCAAAGCCCATGTAGAAGCCCCTATCGCAGGGTC 6700
+                 ************************************************************************************************** PP
+
+        ND4  682 aATagTtcTaGcagcagttcTacTaAAactagGagGaTatgGaaTaaTaCGaattataattatactagaccccctaacaaaagaactagcctacccat 779 
+                 aAT+gT cT Gc gc gt+cTa+TaAA+ctagG+gG TatgG aT+aT+CGaattata+t at ct ga cccctaacaaaagaact  +ctaccc t
+  scaffold1 6701 AATGGTGCTGGCGGCCGTACTATTAAAGCTAGGGGGTTATGGCATGATGCGAATTATAGTCATCCTTGAGCCCCTAACAAAAGAACTTTGCTACCCTT 6798
+                 ************************************************************************************************** PP
+
+        ND4  780 ttattatttTagccctatgagGaataattataacaggctcaatttgcctacgacaaacaGAcctaAAatctctaaTtGCctactcaTCagTaagcCAc 877 
+                 ttattatt+T+gccctatgagG +taat at+ac gg tc+atttgcct cg ca+acaGAcctaAAatc ct aTtGCcta+tc TC gT +g CAc
+  scaffold1 6799 TTATTATTCTGGCCCTATGAGGGGTAATCATGACCGGGTCTATTTGCCTTCGCCAGACAGACCTAAAATCCCTCATTGCCTATTCCTCCGTCGGACAC 6896
+                 ************************************************************************************************** PP
+
+        ND4  878 ATaggcctagttgttgcaggaattctaattcaaaccccatgaggctttacagGagcaataattcTaataaTtgcccAcggacTaacatcctcagtacT 975 
+                 ATagg+ tagt g+tgcag+ attct attca ac cc tga+g tttacagG+gc  taattcT+at aTtgcccAcgg cT acatc+tcag+ cT
+  scaffold1 6897 ATAGGATTAGTCGCTGCAGCCATTCTCATTCAGACGCCTTGAAGTTTTACAGGGGCCCTAATTCTGATGATTGCCCACGGCCTGACATCTTCAGCCCT 6994
+                 ************************************************************************************************** PP
+
+        ND4  976 aTTctgcctagctaacacaaacTAtgAacgaacccacagccgaactataattctagcacgaggactacaaataattctaccactaatagcaacctgat 1073
+                  TTctgcct gc aacac aacTA+gAacg acccacagccg ac at+ ttct gc cgagg ctaca+  aat +t cc +t atagca cctgat
+  scaffold1 6995 CTTCTGCCTGGCCAACACCAACTACGAACGGACCCACAGCCGTACCATGCTTCTTGCGCGAGGCCTACAGGCAATCTTCCCCTTGATAGCATCCTGAT 7092
+                 ************************************************************************************************** PP
+
+        ND4 1074 gatttattgctagcctagctaAccTagccctacccCCtataattAaccTtataggaGAacTaataattattacttctttatttaactgatccacctta 1171
+                 g+ttt ttgc agc+tagctaA+cT gc+ct cc+CCt+ta++ Aa+cTtat+ggaGAacTaataat  ttac tc +t tt+aactg+tcc  +tt+
+  scaffold1 7093 GGTTTCTTGCCAGCTTAGCTAATCTCGCACTCCCTCCTTTACCCAATCTTATGGGAGAACTAATAATCGTTACCTCCCTGTTCAACTGGTCCTGATTT 7190
+                 ************************************************************************************************** PP
+
+        ND4 1172 acaattattctaacaggagtaggaactctaaTtacagcagtatactccctatatatattcataataacacaacgaggcccactaccaaaccacattat 1269
+                 ac  tt t+ct ac ggag agg act taaT ac gc g++ta+tccct tatat+ttc t+ataac caacgaggccc ct cca+ +cacat+ t
+  scaffold1 7191 ACCCTTCTACTCACCGGAGCAGGCACTTTAATCACCGCCGGCTATTCCCTTTATATGTTCCTTATAACCCAACGAGGCCCGCTTCCAGTACACATCCT 7288
+                 ************************************************************************************************** PP
+
+        ND4 1270 taccctacaaccctcccacacacgagaacacctactaataaccctacaccttatcccactaattcttctaatcctaaaaCcagaactaatttgaggct 1367
+                  + +cta+aacc+tc+cac c cgagaacacct+ct  t accct ca+ct  t+cc ct +t ct ct at++t aa+Cc+gaact at tgaggct
+  scaffold1 7289 GGGACTAGAACCATCTCACTCCCGAGAACACCTTCTCCTCACCCTCCATCTCTTACCCCTCCTCCTCCTGATTATGAAGCCTGAACTTATCTGAGGCT 7386
+                 ************************************************************************************************99 PP
+
+        ND4 1368 gatc 1371
+                 g+ c
+  scaffold1 7387 GGGC 7390
+                 8765 PP
+
+>> C7701  11.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ ?    3.6   9.7      0.71       590       900 ..      5666      5359 ..      5688      5338 ..      6101    0.66
+
+  Alignment:
+  score: 3.6 bits
+    ND4  590 gcctgcataatagcatTtctagtaAAaatacCacTaTAtggagtaCAcctaTGacTaCCa..........AAaGCcCAtGTaGAaGCccCaaTtgcag.... 677 
+             g+c ++at+at gc   ++  g aAA+    C+c aT tgg  taCA+c +TGacT CC           AA+GCcCA        CccC++T  c g    
+  C7701 5666 GGCCTTATTATCGCCGCCACGGGAAAGTCCGCTCAATTTGGCCTACATCCTTGACTCCCCtctgccatagAAGGCCCAA-------CCCCTGTCTCCGccct 5572
+             3444444555555555555556777777777777788899999999999999999999954444444444888888873.......7777777654444444 PP
+
+    ND4  678 ...........GcTCaATagTtcTaGcagcagttcTacTaAAactagGagGaTatgGaaTaaTaCGaattataattatactagaccccctaacaaaagaact 768 
+                        Gc C ATagT  T Gcag+ +t +T+cT                    TaaT CGaat+a      t+ctaga+            gaa  
+  C7701 5571 gctccactcaaGCACCATAGTAGTCGCAGGCATCTTTCTT------------------CTAATCCGAATAAACCCCCTTCTAGAAGG----------GAATC 5498
+             2222222222277788999999999999999999999994..................78999999998877777777777555432..........22222 PP
+
+    ND4  769 a.gcctacccatttattatttTagccctatgagGaataattataacaggctcaa........tttg.cctacgacaaacaGAcctaAAatctctaaTtGCct 860 
+             a  cc  cc    tat    +T  +cct    gGa+ a t a aac   +t++a        t tg ccta  +caaa  GAc t AAa  + t  TtGC+t
+  C7701 5497 AgACCGCCCTGACTATCTGCCTCTGCCTC---GGAGCACTAACAACCTTGTTTAcagccaccTGTGcCCTAACTCAAAACGACATCAAAAAAATCGTTGCTT 5399
+             21222222222333333334455555554...566666666666665433333211111111333312455557899999********************** PP
+
+    ND4  861 actcaTCagTaagcCAcATaggcctagttgttgcaggaat 900 
+              ctca Ca   ag+CA  T+ggccta t++t g+  ++at
+  C7701 5398 TCTCAACATCCAGTCAACTGGGCCTAATAATGGTCACTAT 5359
+             ****9999999***************99999998776655 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1376 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:            169284  (0.0989); expected (0.02)
+Residues passing bias filter:            54459  (0.0318); expected (0.02)
+Residues passing Vit filter:              5421  (0.00317); expected (0.003)
+Residues passing Fwd filter:              4134  (0.00242); expected (3e-05)
+Total number of hits:                        2  (0.000984)
+# CPU time: 0.64u 0.02s 00:00:00.66 Elapsed: 00:00:00.26
+# Mc/sec: 9058.14
+//
+Query:       ND4L  [M=297]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+    4.3e-47  158.3  20.5  scaffold1   5737   6021  Locus_67_0 10.0 LINEAR
+
+
+Annotation for each hit  (and alignments):
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  158.3  20.5   4.3e-47        13       297 .]      5737      6021 ..      5725      6021 ..      7907    0.96
+
+  Alignment:
+  score: 158.3 bits
+       ND4L   13 cattttatttttttctcagcatttattctaggtatattaGgacTatcatttcaccgaacccaccTactttcagctctacTttgcctagaaggaataaT 110 
+                 catt  +  ttt+ +++ gc ttt tt  agg  t+t  Gg cTa+catt  accg a+ccaccT ct tc  c ct cT tgc+taga+g aataaT
+  scaffold1 5737 CATTCAGCATTTACAATTGCCTTTCTTACAGGACTTTCTGGCCTAGCATTCAACCGTATCCACCTCCTCTCCTCCCTCCTCTGCTTAGAGGCAATAAT 5834
+                 555555666777889999******************************************************************************** PP
+
+       ND4L  111 actatctatatttattgttctagccctatgaaccctacaaatagaatcaacaaccttatccataatcccaataattttacTagcttTctctgcctgtG 208 
+                 act+tc+ t tt+ t+g  ct +ccct+tgaa +ct caa ta+  +c ac acc t+ c+++ a++ccaat  tt t++Tagc  Tctc g ctgtG
+  scaffold1 5835 ACTTTCACTCTTCCTAGGCCTCTCCCTTTGAATACTTCAACTAAGCACTACCACCCTTGCTGCCACACCAATCCTTCTTTTAGCCCTCTCGGTCTGTG 5932
+                 ************************************************************************************************** PP
+
+       ND4L  209 AagcaggcgtaggccTagctcTttTagTtgccacagcccgaacccAcggaacagaccacctacaaaaccttaacctactacaatgcTaA 297 
+                 A+gc +gcg+ ggccTagc cT tTagT gccaca+c+cg ac+cA+gg +c gacc+cctacaaaaccttaacct ctacaatgcTaA
+  scaffold1 5933 AGGCCAGCGCCGGCCTAGCCCTGTTAGTCGCCACAACACGCACTCATGGCTCGGACCGCCTACAAAACCTTAACCTTCTACAATGCTAA 6021
+                 ***************************************************************************************97 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (297 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:            322536  (0.188); expected (0.02)
+Residues passing bias filter:            96409  (0.0563); expected (0.02)
+Residues passing Vit filter:             16328  (0.00954); expected (0.003)
+Residues passing Fwd filter:              4729  (0.00276); expected (3e-05)
+Total number of hits:                        1  (0.000167)
+# CPU time: 0.28u 0.00s 00:00:00.28 Elapsed: 00:00:00.13
+# Mc/sec: 3910.27
+//
+Query:       ND5  [M=1835]
+Scores for complete hits:
+    E-value  score  bias  Sequence   start    end  Description
+    ------- ------ -----  --------   -----  -----  -----------
+          0 1267.8  66.5  C7701       6098   4507  11.0
+    8.7e-33  109.1  18.9  scaffold1   7626   7907  Locus_67_0 10.0 LINEAR
+    4.8e-25   83.5   8.9  C2642          4    182  5.0
+
+
+Annotation for each hit  (and alignments):
+>> C7701  11.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ ! 1267.8  66.5         0       227      1816 ..      6098      4507 ..      6101      4487 ..      6101    0.99
+
+  Alignment:
+  score: 1267.8 bits
+    ND5  227 aaaacctttaacattaatattagctttaaatttgActtctactcaattatcTTtatcccagttgccctatttgTaacatgatctATtctagaaTttgcaata 328 
+             a+ ac ttt+a+atta t t agc ttaaatt gAc +cta+tc at atcTTta+ cc gt gccctat+tgTaac tgatctATt+tagaaTttgc ++ 
+  C7701 6098 ATCACTTTTGATATTATTGTCAGCCTTAAATTCGACCACTATTCGATCATCTTTACTCCCGTGGCCCTATATGTAACGTGATCTATTTTAGAATTTGCCTCG 5997
+             5678899*********************************************************************************************** PP
+
+    ND5  329 tgaTAtaTacactcagaccctaacataaaccgaTTctttaaataccTactaataTTccTaattgccATaattattcTagttacagctaacaacatatttcaa 430 
+             tgaTA+aT+cac+c gaccc +acataaaccg+TTctttaaataccT ctaat+TTccT at gc+ATaatt ttcT gttac gc+aacaacat+tttcaa
+  C7701 5996 TGATACATGCACGCCGACCCCTACATAAACCGGTTCTTTAAATACCTGCTAATTTTCCTCATCGCAATAATTGTTCTTGTTACGGCAAACAACATGTTTCAA 5895
+             ****************************************************************************************************** PP
+
+    ND5  431 cTatTtattggcTGaGAaggagTagGaattaTaTCcttccTacTaATtggcTGaTgatatggaCGagcagacgCtaacacagcagccctacAaGCagTtatt 532 
+             cT+tTtat gg+TG+GA+ggagTagG attaTaTCcttccT cT AT+ggcTG+Tga atg  CG+gc gacgCtaa+acagc gccctacAaGCagT  t 
+  C7701 5894 CTGTTTATCGGGTGGGAGGGAGTAGGCATTATATCCTTCCTCCTCATCGGCTGGTGACATGCCCGGGCCGACGCTAATACAGCCGCCCTACAAGCAGTCCTC 5793
+             ****************************************************************************************************** PP
+
+    ND5  533 TAcAAccGagttggagAtattggacTaattctagccatagcatgatttgcaataaacctaaactcatgagaaatacaacaaatctttttaatatccaaaaac 634 
+             TAcAA+cGagt ggagA+ ttgg cT+ t++t gc atagc+tg +ttgcaa+ aa+ct aactcatgagaaat caaca atctt+t++at++c+   aa+
+  C7701 5792 TACAATCGAGTAGGAGACGTTGGCCTTCTCTTCGCAATAGCCTGGATTGCAACGAATCTGAACTCATGAGAAATGCAACAGATCTTCTCTATTGCTGGTAAT 5691
+             ****************************************************************************************99999999888888 PP
+
+    ND5  635 ttt.acctaacccttcccctaataggcctaatcctagctgcaacaggaAAaTCagCccaatttggccTtCAcccaTGacTaccttctGCcATaGAagGcCCa 735 
+             t t acct ac+  tcc+ct at ggcct+at+ t gc gc ac ggaAA+TC gC+caatttggccT+CA+cc TGacT cc tctGCcATaGAagGcCCa
+  C7701 5690 TATgACCTTACATATCCACTTATTGGCCTTATTATCGCCGCCACGGGAAAGTCCGCTCAATTTGGCCTACATCCTTGACTCCCCTCTGCCATAGAAGGCCCA 5589
+             77789999********************************************************************************************** PP
+
+    ND5  736 ACcCCaGTcTCtgCccTacTtCActcaagcACtATaGTtgtaGCagGaattTtccTactaattcgatttcaccccctaatagaaaataaccaaacagcccta 837 
+             ACcCC GTcTC gCccT cT CActcaagcAC ATaGT+gt GCagG at Tt+cT ctaat+cga+t++accccct+ tagaa+  aa+ca ac gccct+
+  C7701 5588 ACCCCTGTCTCCGCCCTGCTCCACTCAAGCACCATAGTAGTCGCAGGCATCTTTCTTCTAATCCGAATAAACCCCCTTCTAGAAGGGAATCAGACCGCCCTG 5487
+             ****************************************************************************************************** PP
+
+    ND5  838 acaatctgcctatgcctagGagccctaaCcacactatttacagcaacctgtgccctaaccCAaaatGAtaTtAAaAAaaTtgTtGCtttctcaACatcaagc 939 
+             ac atctgcct tgcct gGagc+ctaaC+ac+ t tttacagc acctgtgccctaac CAaaa GA+aT+AAaAAaaT+gTtGCtttctcaACatc ag+
+  C7701 5486 ACTATCTGCCTCTGCCTCGGAGCACTAACAACCTTGTTTACAGCCACCTGTGCCCTAACTCAAAACGACATCAAAAAAATCGTTGCTTTCTCAACATCCAGT 5385
+             ****************************************************************************************************** PP
+
+    ND5  940 CAacTagGccTaATaatagtaacaaTtggactaaaccaaccacaacTagccttcctccAcaTctgcaccCAcgccttctttAAagctatacTaTTccTatgc 1041
+             CAacT gGccTaATaat+gt ac+aT gg ct+aacca+ccacaacT+gccttcct cA+aT+tg+accCAcgccttctt+AAagc+atacT TTccT tgc
+  C7701 5384 CAACTGGGCCTAATAATGGTCACTATCGGCCTTAACCAGCCACAACTGGCCTTCCTGCATATTTGTACCCACGCCTTCTTCAAAGCAATACTTTTCCTCTGC 5283
+             ****************************************************************************************************** PP
+
+    ND5 1042 tccgGctcaattAtcCAcagcctaaatgatgaaCAagAcatccgaaaaataggaggcctacataaaataataccattcacctcttcctgcctaacaattggc 1143
+             tc+gG+tc+attAtcCAcagcctaaatga+gaaCAagAcatccg aaaataggagg+ct+cata   t  t cc tt+acctcttcctgc+t aca+t gg+
+  C7701 5282 TCAGGGTCTATTATCCACAGCCTAAATGACGAACAAGACATCCGCAAAATAGGAGGACTTCATACCCTCCTCCCCTTTACCTCTTCCTGCTTGACAGTAGGA 5181
+             ****************************************************************************************************** PP
+
+    ND5 1144 agcctagcccTaacagGaaccCCcTtccTagcaggaTtcTactcaAAaGAcgcaaTtaTtGAagccataaacacatcctacctaaacgcctgagcccttatc 1245
+             agcct gc cTaacagG accCCcTtccTagcagg TtcT+ctc AAaGAcgc aT+aT GA+gcc t aacac tcc acctaaacgcctgagccct a+ 
+  C7701 5180 AGCCTCGCTCTAACAGGCACCCCCTTCCTAGCAGGCTTCTTCTCCAAAGACGCCATCATCGAGGCCCTCAACACCTCCCACCTAAACGCCTGAGCCCTCACT 5079
+             ****************************************************************************************************** PP
+
+    ND5 1246 ctaacactaattgccacctccttcacagcagtcTAcagccttcgaataattttctttgtattaataggacacccacgatttacccccctatccccaattaat 1347
+             +t+ac ct+ ttgccacctc+tt+ac gc+gt+TAcag cttcg++t+attt+ctttgtat+ ataggaca cc cgattt cc c+ct tcccc+attaat
+  C7701 5078 ATTACTCTTCTTGCCACCTCTTTTACCGCTGTTTACAGTCTTCGGGTGATTTACTTTGTATCCATAGGACAACCCCGATTTCCCTCACTCTCCCCTATTAAT 4977
+             ****************************************************************************************************** PP
+
+    ND5 1348 gAaaacaacccaacagtaattaaccctattaaacgactagccttaggaagcattattgcaggatttttaattacatcaaacattctcccaacaaaaacccca 1449
+             gAaaacaaccc +c gtaattaaccc atta acg ct gc+t+aggaag+at at gc gg +t  t+attac  c a  at +t+cca + aaaac+cc 
+  C7701 4976 GAAAACAACCCCGCCGTAATTAACCCCATTACACGCCTGGCATGAGGAAGTATCATCGCCGGCCTGGTTATTACCGCCACAATGATTCCACTGAAAACACCC 4875
+             ****************************************************************************************************** PP
+
+    ND5 1450 ataataacaataccccccttcataaaactagcagccctaatagtaacaattataggccttataatagccctagaactagcaaacataacaaacaaacaaatt 1551
+             +taataac+atacccccc+t +t aaa ta+ +gccct+at gt aca+t  t ggcct  ta+  gccct gaactagca+   t acaa +aaacaa+tt
+  C7701 4874 GTAATAACTATACCCCCCATGCTCAAATTAAGTGCCCTTATTGTTACAGTCCTCGGCCTCTTAGCGGCCCTTGAACTAGCATCACTCACAACTAAACAATTT 4773
+             ****************************************************************************************************** PP
+
+    ND5 1552 aaaacaaccccaaaac.aaccccccacaacttctcaaacatactaggattcttccccacaattattcaccgattaatcccaaaaattaacctaaacttaggc 1652
+             aaa c   ccc+a ac  + cccccac a+ttctcaaacatactagg t+ctt+cc+ac +t    ca+cg  t+  ccc   a ttaacct ++c taggc
+  C7701 4772 AAACCCTTCCCTATACtCGTCCCCCACCATTTCTCAAACATACTAGGTTACTTTCCAACTGTCTCCCATCGCCTTCCCCCGCTACTTAACCTCGTCCTAGGC 4671
+             ***************989999999****************************************************************************** PP
+
+    ND5 1653 caaaaaattgccacccaaataattgacctaacatgattagaaaaaataggcccaaaaggcattgcaaacatacaaataccaataattaaaatcacaagcaac 1754
+             ca a  attgcca ccaaa aat ga+c++ac tg++taga aaaa aggccc aaag c t +c++ c t +a at+cc  t++t a+aa++acaagcaac
+  C7701 4670 CACATCATTGCCAGCCAAACAATCGATCAGACTTGGCTAGAGAAAACAGGCCCCAAAGCCCTCACTTCCCTCAACATGCCCTTGGTAACAACAACAAGCAAC 4569
+             ****************************************************************************************************** PP
+
+    ND5 1755 atccaaaaaggcctaattaaaacctacctaaccatcttctttataaccctaatcctaatcat 1816
+             at caa a ggc+ a t a +ac ta+ct a c+tcttc t ata+cccta++ ct+++c t
+  C7701 4568 ATGCAATACGGCAAAGTCACGACTTATCTTATCTTCTTCGTCATAGCCCTAGCACTGGCCCT 4507
+             ******************************999999**************999998887433 PP
+
+>> scaffold1  Locus_67_0 10.0 LINEAR
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  109.1  18.9   8.7e-33        13       294 ..      7626      7907 .]      7612      7907 .]      7907    0.96
+
+  Alignment:
+  score: 109.1 bits
+        ND5   13 actaataataacctcaaccataattataatttttattatcctaatattccccctaattacaaccctaatcccaaaacctcaaaaactaaactgagcct 110 
+                 a   ataataac tcaa+c taat at at tt + t tcct a+ t+cccc+t+ ttac accct   cccaaaacc c     c   a tgagc+ 
+  scaffold1 7626 AACCATAATAACGTCAAGCCTAATCATCATCTTCGGTCTCCTTACGTACCCCATTCTTACCACCCTTTCCCCAAAACCCCTGCTCCCCCATTGAGCAC 7723
+                 4556788999********************************************************99888888888888888888888999****** PP
+
+        ND5  111 tcacccatgttaaaacagcagtaaaaatagcattctttattagcctaatcccactatttatattcataaactaaggaatagaaacaatcattaccaac 208 
+                 t+a +ca+gt+aaaacagc gt aa+ tagc tt+tt +ttagcct+ tccc+ ta t  t tt+ t + c+a+gg+++agaaac at+attac a c
+  scaffold1 7724 TTATGCAAGTAAAAACAGCCGTCAAGTTAGCTTTTTTCGTTAGCCTTTTCCCCTTACTCCTTTTTCTCGCCGAGGGGGCAGAAACTATTATTACGACC 7821
+                 ************************************************************************************************** PP
+
+        ND5  209 tgaaactgaataaacatcaaaacctttaacattaatattagctttaaatttgActtctactcaattatcTTtatcccagttgccct 294 
+                 tgaa ctgaa +aa+a+ a  ac ttt+a+atta t t agc ttaaatt gAc +cta+tc at atcTTta+ cc gt gccct
+  scaffold1 7822 TGAACCTGAACGAATACTATCACTTTTGATATTATTGTCAGCCTTAAATTCGACCACTATTCGATCATCTTTACTCCCGTGGCCCT 7907
+                 **********************************************************************************9875 PP
+
+>> C2642  5.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !   83.5   8.9   4.8e-25       116       294 ..         4       182 .]         1       182 []       182    0.98
+
+  Alignment:
+  score: 83.5 bits
+    ND5 116 catgttaaaacagcagtaaaaatagcattctttattagcctaatcccactatttatattcataaactaaggaatagaaacaatcattaccaactgaaactgaat 219
+            ca+gt+aaaacagc gt aa+ tagc tt+tt +ttagcct  tccc+ ta t+ t tt++t + c+aagg+++agaaac at attac a ctgaa ctgaa 
+  C2642   4 CAAGTAAAAACAGCCGTCAAGTTAGCTTTTTTCGTTAGCCTTTTCCCCTTACTCCTTTTTCTCGCCGAAGGGGCAGAAACTATTATTACGACCTGAACCTGAAC 107
+            568999************************************************************************************************** PP
+
+    ND5 220 aaacatcaaaacctttaacattaatattagctttaaatttgActtctactcaattatcTTtatcccagttgccct 294
+            +aaca+ a  ac ttt+a atta t t+agc ttaaatt gAc++cta tc at+atcTTta+ cc gt gccct
+  C2642 108 GAACACTATCACTTTTGATATTATTGTCAGCCTTAAATTCGACCACTATTCGATCATCTTTACTCCCGTGGCCCT 182
+            ***********************************************************************9985 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (1835 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:            181330  (0.106); expected (0.02)
+Residues passing bias filter:            80427  (0.047); expected (0.02)
+Residues passing Vit filter:              5335  (0.00312); expected (0.003)
+Residues passing Fwd filter:              3302  (0.00193); expected (3e-05)
+Total number of hits:                        3  (0.0012)
+# CPU time: 0.86u 0.04s 00:00:00.90 Elapsed: 00:00:00.38
+# Mc/sec: 8265.07
+//
+Query:       ND6  [M=510]
+Scores for complete hits:
+    E-value  score  bias  Sequence  start    end  Description
+    ------- ------ -----  --------  -----  -----  -----------
+      9e-68  226.3  39.5  C7701      3981   4490  11.0
+
+
+Annotation for each hit  (and alignments):
+>> C7701  11.0
+    score  bias    Evalue   hmmfrom    hmm to     alifrom    ali to      envfrom    env to       sq len      acc
+   ------ ----- ---------   -------   -------    --------- ---------    --------- ---------    ---------    ----
+ !  226.3  39.5     9e-68        11       508 ..      3981      4490 ..      3967      4492 ..      6101    0.87
+
+  Alignment:
+  score: 226.3 bits
+    ND6   11 ttatgtttttatttttgtttggttttgtttttgggtttgttggtgTtgcttctaatccttctccttattttggtgctttaggtttggttgttgttgctggtg 112 
+              t t+tt ttattttt+tttggtt +gt  ttgggt ++ttg tgTtgct ctaa+ccttc cc ta+tt g+ gc tt gg+tt+gt+ ttgt+gc gg++
+  C7701 3981 CTGTATTATTATTTTTATTTGGTTGAGTGGTTGGGTCAATTGTTGTTGCTGCTAACCCTTCACCCTACTTCGCCGCGTTGGGGTTAGTATTTGTAGCGGGAA 4082
+             445677778888889999************************************************************************************ PP
+
+    ND6  113 ttgggtgtggtattttggtgggttttgggggttctTttttatcttTagTttTgttttTaaTtTAttTgGGgGGgaTgtTagTtgTtTTtgctTattctgctg 214 
+             t+gg  g   ++tttt+gt   +++tgg g ttc T   t+t ttT gT tT+ t tTa T TAt+T GGgGGgaTg+T+gT gT+TTtgc Tat+ct c g
+  C7701 4083 TGGGTGGGTCAGTTTTAGTCCTACATGGCGCTTCGTACCTGTGTTTTGTGTTACTCTTAGTGTATCTTGGGGGGATGCTGGTGGTGTTTGCCTATACTTCCG 4184
+             ****************************************************************************************************** PP
+
+    ND6  215 ctttggctgctgagccttatcctgaggcttgggggagttggtctgttttagtgtatgttgtggtttattttttgggggttgttttggttgttggtttgt..t 314 
+             c +tggc gc ga cctta+cctga++ct   ggg  tt +   gtt t + +  t t g  gt tattttt  gg  tt t +t gt    +  t  t  t
+  C7701 4185 CCATGGCCGCCGATCCTTACCCTGAAACTCTTGGGTCTTTAGGGGTTCTTAAAAGTCTGGCTGTCTATTTTTCTGGTCTTCTCATTGTGTGCATCT--TtgT 4284
+             ***************************998888888888888889999997777777778888888877777666666666666666664443322..1234 PP
+
+    ND6  315 ttgaggggggtggtatgg............tgggt.......ttgatgagtttggggggttttttgtggttcggggggattttggtggggttgctttattat 397 
+              tgaggg gg g+    g            tg+ t       ttga+g    tg+ g+gtt   t+tg   cg+ggggat+ttg+ ggggt gc t  +t+t
+  C7701 4285 ATGAGGGCGGCGAG---GggcagagtctggTGA-TttttcttTTGAAG---GTGATGAGTTCGGTATGTGCCGAGGGGATATTGAGGGGGTGGCGTACATGT 4379
+             44444322222221...1122223445333444.14567555555544...66999999999999999999******************************* PP
+
+    ND6  398 attcttttgggggggggatgttagttgtttgtggttgggttttgtttttgacttTgtttgttgttttagagtttactcgtgggttaagtcgaggggcttttc 499 
+             a+tc  + ggggg  gga   t++t++ ttg gg tggg+tttgtt+ t act+T tttgttgt++tagag+tta+tcg gg + aag+cg ggggc +ttc
+  C7701 4380 ACTCGGCGGGGGGCTGGACCCTGATAACTTGCGGGTGGGCTTTGTTACTTACTCTCTTTGTTGTAATAGAGCTTATTCGGGGCCCAAGCCGGGGGGCGCTTC 4481
+             ****************************************************************************************************** PP
+
+    ND6  500 gggcagttt 508 
+             gggcagt++
+  C7701 4482 GGGCAGTAA 4490
+             *****9987 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (510 nodes)
+Target sequences:                         3697  (1711568 residues searched)
+Residues passing SSV filter:            331540  (0.194); expected (0.02)
+Residues passing bias filter:           151557  (0.0885); expected (0.02)
+Residues passing Vit filter:             29531  (0.0173); expected (0.003)
+Residues passing Fwd filter:              1236  (0.000722); expected (3e-05)
+Total number of hits:                        1  (0.000298)
+# CPU time: 0.36u 0.01s 00:00:00.37 Elapsed: 00:00:00.14
+# Mc/sec: 6235.00
+//
+[ok]

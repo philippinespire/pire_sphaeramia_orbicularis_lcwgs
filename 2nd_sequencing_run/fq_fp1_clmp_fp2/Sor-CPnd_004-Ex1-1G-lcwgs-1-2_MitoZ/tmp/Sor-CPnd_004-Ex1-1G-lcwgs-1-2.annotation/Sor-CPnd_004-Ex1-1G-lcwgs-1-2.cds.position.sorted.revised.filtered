@@ -1,0 +1,15 @@
+>scaffold1
+ND2	8	745	+
+COX1	1142	2692	+
+COX2	2845	3543	+
+ATP8	3611	3778	+
+ATP6	3769	4452	+
+COX3	4452	5237	+
+ND3	5307	5657	+
+ND4L	5725	6021	+
+ND4	6015	7400	+
+ND5	7612	>7905	+
+>C7701_FivePCGs
+CYTB	2755	3895	-	TAA stop codon is completed by the addition of 3' Aresidues to the mRNA
+ND6	3971	4492	+
+ND5	4490	6098	-	TAA stop codon is completed by the addition of 3' Aresidues to the mRNA
