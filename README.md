@@ -1021,7 +1021,7 @@ Move any .out files into the logs dir
 
 ## 15. Map Repaired `fq.gz` to Reference Genome
 
-The following steps are from the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+The following steps 15 & 16 are from the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
 
 ### Get your reference genome
 
