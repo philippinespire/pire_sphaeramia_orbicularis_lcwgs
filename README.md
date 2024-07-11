@@ -1159,5 +1159,137 @@ Now, execute the runMitoZ script:
 [hpc-0356@wahab-01 2nd_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2 32
 Submitted batch job 3345494
 ```
+For the next script to work, I need my MitoZ output files to be in my `fq_fp1_clmp_fp2` directory.
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mv MitoZ*.out fq_fp1_clmp_fp2/
+```
+Then, after copying it, I was able to run the `process_MitoZ_outputs.sh` script
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cd fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/process_MitoZ_outputs.sh .
 
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ sh process_MitoZ_outputs.sh
+```
+<details><summary>Individuals that succeeded/failed:</summary>
+<p>
+	
+The `runMitoZ` scripts did not work on one individual: `Sor-ACeb_021-Ex1-4G-lcwgs-1-2` 
+* output file: MitoZ-3345515.out
 
+**Individuals that succeeded:**
+```
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_success.txt
+Undetermined
+Sor-CPnd_001-Ex1-3E-lcwgs-1-2
+Sor-CPnd_004-Ex1-1G-lcwgs-1-2
+Sor-CPnd_005-Ex1-3D-lcwgs-1-2
+Sor-CPnd_007-Ex1-1C-lcwgs-1-2
+Sor-CPnd_008-Ex1-1A-lcwgs-1-2
+Sor-CPnd_009-Ex1-6A-lcwgs-1-2
+Sor-CPnd_014-Ex1-1F-lcwgs-1-2
+Sor-CPnd_016-Ex1-1B-lcwgs-1-2
+Sor-CPnd_018-Ex1-1E-lcwgs-1-2
+Sor-CPnd_020-Ex1-2E-lcwgs-1-2
+Sor-CPnd_027-Ex1-3C-lcwgs-1-2
+Sor-CPnd_028-Ex1-3A-lcwgs-1-2
+Sor-CPnd_029-Ex1-8E-lcwgs-1-2
+Sor-CPnd_041-Ex1-7A-lcwgs-1-2
+Sor-CPnd_043-Ex1-1D-lcwgs-1-2
+Sor-CPnd_050-Ex1-3F-lcwgs-1-2
+Sor-CPnd_072-Ex1-8C-lcwgs-1-2
+```
+
+**Individuals that failed:**
+```
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_failure_lowdepth.txt
+Sor-ACeb_001-Ex1-8E-lcwgs-1-2
+Sor-ACeb_002-Ex1-9E-lcwgs-1-2
+Sor-ACeb_003-Ex1-10E-lcwgs-1-2
+Sor-ACeb_004-Ex1-11E-lcwgs-1-2
+Sor-ACeb_005-Ex1-12E-lcwgs-1-2
+Sor-ACeb_006-Ex1-1F-lcwgs-1-2
+Sor-ACeb_007-Ex1-2F-lcwgs-1-2
+Sor-ACeb_008-Ex1-3F-lcwgs-1-2
+Sor-ACeb_009-Ex1-4F-lcwgs-1-2
+Sor-ACeb_010-Ex1-5F-lcwgs-1-2
+Sor-ACeb_011-Ex1-6F-lcwgs-1-2
+Sor-ACeb_012-Ex1-7F-lcwgs-1-2
+Sor-ACeb_013-Ex1-8F-lcwgs-1-2
+Sor-ACeb_014-Ex1-9F-lcwgs-1-2
+Sor-ACeb_015-Ex1-10F-lcwgs-1-2
+Sor-ACeb_016-Ex1-11F-lcwgs-1-2
+Sor-ACeb_017-Ex1-12F-lcwgs-1-2
+Sor-ACeb_018-Ex1-1G-lcwgs-1-2
+Sor-ACeb_019-Ex1-3G-lcwgs-1-2
+Sor-ACeb_020-Ex1-2G-lcwgs-1-2
+Sor-ACeb_022-Ex1-5G-lcwgs-1-2
+Sor-CPnd_002-Ex1-5E-lcwgs-1-2
+Sor-CPnd_003-Ex1-2B-lcwgs-1-2
+Sor-CPnd_006-Ex1-2D-lcwgs-1-2
+Sor-CPnd_010-Ex1-1H-lcwgs-1-2
+Sor-CPnd_012-Ex1-5B-lcwgs-1-2
+Sor-CPnd_013-Ex1-7F-lcwgs-1-2
+Sor-CPnd_015-Ex1-5F-lcwgs-1-2
+Sor-CPnd_017-Ex1-3G-lcwgs-1-2
+Sor-CPnd_019-Ex1-6G-lcwgs-1-2
+Sor-CPnd_022-Ex1-7C-lcwgs-1-2
+Sor-CPnd_024-Ex1-5G-lcwgs-1-2
+Sor-CPnd_026-Ex1-3H-lcwgs-1-2
+Sor-CPnd_030-Ex1-2H-lcwgs-1-2
+Sor-CPnd_031-Ex1-5D-lcwgs-1-2
+Sor-CPnd_033-Ex1-2F-lcwgs-1-2
+Sor-CPnd_034-Ex1-4G-lcwgs-1-2
+Sor-CPnd_036-Ex1-5C-lcwgs-1-2
+Sor-CPnd_037-Ex1-6C-lcwgs-1-2
+Sor-CPnd_038-Ex1-2A-lcwgs-1-2
+Sor-CPnd_044-Ex1-8G-lcwgs-1-2
+Sor-CPnd_045-Ex1-7B-lcwgs-1-2
+Sor-CPnd_046-Ex1-5A-lcwgs-1-2
+Sor-CPnd_049-Ex1-3B-lcwgs-1-2
+Sor-CPnd_052-Ex1-6D-lcwgs-1-2
+Sor-CPnd_053-Ex1-2C-lcwgs-1-2
+Sor-CPnd_054-Ex1-8F-lcwgs-1-2
+Sor-CPnd_055-Ex1-7G-lcwgs-1-2
+Sor-CPnd_058-Ex1-2G-lcwgs-1-2
+Sor-CPnd_063-Ex1-7D-lcwgs-1-2
+Sor-CPnd_066-Ex1-8B-lcwgs-1-2
+Sor-CPnd_069-Ex1-6B-lcwgs-1-2
+```
+</p>
+
+</details>
+
+### Results:
+<p>
+The FASTA formatted sequences were uploaded to [BOLD](https://www.boldsystems.org/index.php) to identify species matches.
+
+COI sequences were able to be recovered for some of the samples that passed MitoZ (sequences in `MitoZ_output.fasta)`. 
+
+Unfortunately, only Contemporary samples passed MitoZ, but they were all 100% similar to Sor! Our Undetermined read, though, was 100% human which suggests contamination. MitoZ likely just pulls out the most abundant mitochondrial “species", though, so there possibly may still be some reads we can rescue from there and reassess. 
+
+</p>
+
+| Query ID |	Best ID |	Search DB |	Top %	| Low % |
+| ----- | -----|------|------|-----|
+| Sor-CPnd_001-Ex1-3E-lcwgs-1-2	| Sphaeramia orbicularis |	COI SPECIES DATABASE	| 100	| 85.1|
+|Sor-CPnd_004-Ex1-1G-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_005-Ex1-3D-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_007-Ex1-1C-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_008-Ex1-1A-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_009-Ex1-6A-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_014-Ex1-1F-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_016-Ex1-1B-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_018-Ex1-1E-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_020-Ex1-2E-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_027-Ex1-3C-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_028-Ex1-3A-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_029-Ex1-8E-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_041-Ex1-7A-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_043-Ex1-1D-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_050-Ex1-3F-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
+|Sor-CPnd_072-Ex1-8C-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.05|
+| Undetermined |	Homo sapiens|	COI SPECIES DATABASE|	100|	100 |
+
+---
+
+</details>
