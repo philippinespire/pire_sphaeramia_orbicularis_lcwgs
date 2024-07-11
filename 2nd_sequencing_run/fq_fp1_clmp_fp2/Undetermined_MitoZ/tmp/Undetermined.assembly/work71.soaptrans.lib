@@ -1,8 +1,0 @@
-max_rd_len=150
-[LIB]
-avg_ins=250
-reverse_seq=0
-asm_flags=3
-map_len=32
-q1=/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2/Undetermined.clmp.fp2_r1.fq.gz
-q2=/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2/Undetermined.clmp.fp2_r2.fq.gz
