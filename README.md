@@ -4,6 +4,8 @@
 ---
 Analysis of low-coverage whole genome sequencing data for Sor 2nd_sequencing_run.
 
+Something to note about this dataset is that 82.2% of its reads came back as Undetermined. Pre-processing is being done regardless, but results are likely to change as the Undetermined reads become sorted out. 
+
 fq_gz processing being done by Gianna Mazzei (started 6/20/24).
 
 ---
@@ -126,7 +128,7 @@ Executed `Multi_FASTQC.sh`
 ### MultiQC output (fq_raw/fqc_raw_report.html):
 * "Undetermined" read count is 317.9 mil
 	* All other reads are between 0-4.6 mil
-	* Potential problem with demultiplexing -> (TBD) reached out to Sharon 
+	* Potential problem with demultiplexing -> (TBD) 
 * GC content is higher on average for albatross samples
 * Smaller secondary peak around 62% for Per Sequence GC Content
 * High adapter content
