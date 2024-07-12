@@ -6,7 +6,7 @@ Analysis of low-coverage whole genome sequencing data for Sor 2nd_sequencing_run
 
 Something to note about this dataset is that 82.2% of its reads came back as Undetermined. Pre-processing is being done regardless, but results are likely to change as the Undetermined reads become sorted out. 
 
-fq_gz pre-processing being done by Gianna Mazzei (completed 7/11/24).
+fq.gz pre-processing being done by Gianna Mazzei (completed 7/11/24).
 
 ---
 <details><summary>1. fq.gz Pre-processing</summary>
