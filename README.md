@@ -1136,7 +1136,14 @@ Submitted batch job 3345488
 ```
 
 #### Review Output (coverageMappedReads/out__ReadStats.tsv):
-* 
+* Number of Reads are generally low (aside from Undetermined: 306,533,930)
+	* Albatross: 1,431 - 943,779 
+ 	* Contemporary: 503,986 - 5,647,028
+* Mean depth with coverage: all ~1, aside from Undetermined: 19
+* Percent of positions with coverage, pretty low for Albatross
+ 	* Albatross: 0.005, 0.05 - 3%: alb
+		 * `Sor-ACeb_021-Ex1-4G-lcwgs-1-2.clmp.fp2_repr.genbank.Sor-RG.bam`: 0.005%
+	* Contemporary: 2.1 - 24% 
 
 ---
 
