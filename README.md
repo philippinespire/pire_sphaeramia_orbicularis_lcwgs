@@ -1040,7 +1040,7 @@ Make a new directory `refGenome` and `cd` into it
 [hpc-0356@wahab-01 2nd_sequencing_run]$ cd refGenome/
 ```
 
-Download the [genome from NCBI](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/902/148/855/GCF_902148855.1_fSphaOr1.1/): `GCF_902148855.1_fSphaOr1.1_genomic.fna.gz`
+Download the [genome from NCBI](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_902148855.1/): `GCF_902148855.1_fSphaOr1.1_genomic.fna.gz`
 ```
 [hpc-0356@wahab-01 refGenome]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/902/148/855/GCF_902148855.1_fSphaOr1.1/GCF_902148855.1_fSphaOr1.1_genomic.fna.gz
 ```
