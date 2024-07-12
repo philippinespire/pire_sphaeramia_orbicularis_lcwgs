@@ -995,6 +995,10 @@ Submitted batch job 3316184
 	• Alb: 32-41%
 	• Contemp: 37-39%
 	• Undetermined: 37%
+‣ length -
+	• Alb: 69 - 102 bp
+	• Contemp: 98 - 139 bp
+	• Undetermined: 121 bp
 ‣ number of reads -
 	• Alb: 0.0-0.6 mil
 	• Contemp: 0.3-3.3 mil
