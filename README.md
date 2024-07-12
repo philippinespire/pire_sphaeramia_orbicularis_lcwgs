@@ -1,3 +1,5 @@
+<img src="http://www.fishbiosystem.ru/PERCIFORMES/Apogonidae/Foto/(Sphaeramia%20orbicularis)%2092f.jpg" alt="Sor" width="300"/>
+
 # _Sphaeramia orbicularis_ lcWGS
 
 ## 2nd sequencing run
