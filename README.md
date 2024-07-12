@@ -9,6 +9,7 @@ Something to note about this dataset is that 82.2% of its reads came back as Und
 fq_gz processing being done by Gianna Mazzei (started 6/20/24).
 
 ---
+<details><summary>1. fq.gz Pre-processing</summary>
 
 ## 1. fq.gz Pre-processing
 → (*) _denotes steps with MultiQC Report Analyses_
@@ -1267,9 +1268,10 @@ Sor-CPnd_069-Ex1-6B-lcwgs-1-2
 </details>
 
 ### Results:
-<p>
+
 The FASTA formatted sequences were uploaded to [BOLD](https://www.boldsystems.org/index.php) to identify species matches.
 
+<p>
 COI sequences were able to be recovered for some of the samples that passed MitoZ (sequences in `MitoZ_output.fasta)`. 
 
 Unfortunately, only Contemporary samples passed MitoZ, but they were all 100% similar to Sor! Our Undetermined read, though, was 100% human which suggests contamination. MitoZ likely just pulls out the most abundant mitochondrial “species", though, so there possibly may still be some reads we can rescue from there and reassess. 
@@ -1297,6 +1299,12 @@ Unfortunately, only Contemporary samples passed MitoZ, but they were all 100% si
 |Sor-CPnd_072-Ex1-8C-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.05|
 | Undetermined |	Homo sapiens|	COI SPECIES DATABASE|	100|	100 |
 
+</details>
+
+---
 ---
 
 </details>
+
+
+
