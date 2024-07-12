@@ -1013,8 +1013,8 @@ Submitted batch job 3316184
 
 Move any .out files into the logs dir
 ```
-[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir logs
-[hpc-0356@wahab-01 1st_sequencing_run]$ mv *out logs/
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mkdir logs
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mv *out logs/
 ```
 
 ---
