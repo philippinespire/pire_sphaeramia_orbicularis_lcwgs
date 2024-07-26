@@ -11,7 +11,6 @@ Something to note about this dataset is that 82.2% of its reads came back as Und
 fq.gz pre-processing done by Gianna Mazzei (completed 7/11/24).
 
 ---
-<details><summary>1. fq.gz Pre-processing</summary>
 
 ## 1. fq.gz Pre-processing
 → (*) _denotes steps with MultiQC Report Analyses_
@@ -1304,11 +1303,6 @@ Unfortunately, only Contemporary samples passed MitoZ, but they were all 100% si
 |Sor-CPnd_050-Ex1-3F-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.1|
 |Sor-CPnd_072-Ex1-8C-lcwgs-1-2|	Sphaeramia orbicularis|	COI SPECIES DATABASE|	100|	85.05|
 | Undetermined |	Homo sapiens|	COI SPECIES DATABASE|	100|	100 |
-
-</details>
-
----
----
 
 </details>
 
