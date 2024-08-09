@@ -1008,6 +1008,130 @@ Submitted batch job 3316184
 
 </details>
 
+<details><summary> → Overview: Compare MultiQC Report Results (*)</summary>
+
+### Compare MultiQC Report Results:
+
+<table>
+	
+<tr>
+<td> Raw Data - Step 7 </td> <td> 1st Trim - Step 8 (combined reads) </td> <td> Deduplication/Clumpify - Step 9 </td>  <td> 2nd Trim - Step 10 (combined reads) </td> <td> Re-pairing - Step 12 </td>  
+</tr>
+<tr>
+<td>
+
+```
+‣ % duplication - 
+    • Alb: 6.2 - 24.5%
+    • Contemp: 10.3 - 33.2%
+    • Undertermined: 28.1 - 30.5%
+‣ GC content - 
+    • Alb: 45 - 54%
+    • Contemp: 39 - 46%
+    • Undetermined: 41 - 42%
+‣ number of reads - 
+    • Alb: 0 - 0.9 mil
+    • Contemp: 0.4 - 4.6 mil
+    • Undetermined: 317.9 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication - 
+    • Alb: 5 - 15.9%
+    • Contemp: 9.2 - 32.9%
+    • Undetermined: 19.5%	
+‣ GC content -
+    • Alb: 32.7 - 45%
+    • Contemp: 37 - 39%
+    • Undetermined: 37.9%	
+‣ passing filter - 
+    • Alb: 83.8 - 96%
+    • Contemp: 91.9 - 97.4%
+    • Undetermined: 95.7%	
+‣ % adapter - 
+    • Alb: 61.8 - 96.3%
+    • Contemp: 17.2 - 71.8%
+    • Undetermined: 54.4%
+‣ number of reads - 
+    • Alb: 0 - 1.6 mil
+    • Contemp: 0.8 - 9 mil
+    • Undetermined: 635.8 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication - 
+    • Alb: 0.3 - 1.9%
+    • Contemp: 0.9 - 5.9%
+    • Undetermined: 6.2 - 8.0%
+‣ GC content - 
+    • Alb: 32 - 44%
+    • Contemp: 37 - 39%
+    • Undetermined: 37%
+‣ length - 
+    • Alb: 70 - 105 bp
+    • Contemp: 99 - 139 bp
+    • Undetermined: 122 bp
+‣ number of reads -
+    • Alb: 0.0 - 0.7 mil
+    • Contemp: 0.3 - 3.7 mil
+    • Undetermined: 199.7 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication -
+    • Alb: 0.4 - 1.4%
+    • Contemp: 0.9 - 5.1%
+    • Undetermined: 2.7%
+‣ GC content -
+    • Alb: 32.5 - 44.4%
+    • Contemp: 37.2 - 39.3%
+    • Undetermined: 37.8%
+‣ passing filter -
+    • Alb: 98.7 - 99.6%
+    • Contemp: 98.3 - 99.3%
+    • Undetermined: 98.7%
+‣ % adapter -
+    • Alb: 0.5 - 0.9%
+    • Contemp: 0.2 - 0.6%
+    • Undetermined: 0.5%
+‣ number of reads -
+    • Alb: 0 - 1.4 mil
+    • Contemp: 0.6 - 7.3 mil
+    • Undetermined: 399 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication -
+    • Alb: 0.3 - 1.3%
+    • Contemp: 0.7 - 4.3%
+    • Undetermined: 5.2 - 6.5%
+‣ GC content -
+    • Alb: 32 - 41%
+    • Contemp: 37 - 39%
+    • Undetermined: 37%
+‣ length -
+    • Alb: 69 - 102 bp
+    • Contemp: 98 - 139 bp
+    • Undetermined: 121 bp
+‣ number of reads -
+    • Alb: 0.0 - 0.6 mil
+    • Contemp: 0.3 - 3.3 mil
+    • Undetermined: 178.1 mil
+```
+</td>
+</tr>
+</table>
+
+</details>
+
 
 <details><summary>14. Clean Up</summary>
 <p>
