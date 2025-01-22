@@ -1,0 +1,2 @@
+/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_orbicularis/fq_fp1_clmp_fp2_stragglers/Sor-ABur_010-Ex1-3H-lcwgs-1-T.clmp.fp2_r2.fq.gz
+/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_orbicularis/fq_fp1_clmp_fp2_stragglers/Sor-ABur_010-Ex1-3H-lcwgs-1-T.clmp.fp2_r1.fq.gz
