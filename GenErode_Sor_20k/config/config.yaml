@@ -20,7 +20,7 @@
 # headers without special characters and has to be uncompressed. 
 # The file name will be reused by the pipeline and can have the file 
 # name extensions *.fasta, *.fa or *.fna.
-ref_path: "/home/breid/GenErode_testrun_whiterhino_onedir/reference/GCF_000283155.1_CerSimSim1.0_genomic.Sc9M7eS_2_HRSCAF_41.fasta"
+ref_path: "/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/GenErode_Sor_20k/reference/reference.genbank.Sor20k.fasta"
 #################################################################
 
 
@@ -170,7 +170,7 @@ historical_bam_mapDamage: True
 # List has to be left empty ([]) if mapDamage2 is not run.
 # Keep the list of sample names for the entire pipeline run 
 # if rescaled BAM files should be used in downstream analyses.
-historical_rescaled_samplenames: []
+historical_rescaled_samplenames: ["SorACeb001","SorACeb002","SorACeb003","SorACeb004","SorACeb005","SorACeb006","SorACeb007","SorACeb008","SorACeb009","SorACeb010","SorACeb011","SorACeb012","SorACeb013","SorACeb014","SorACeb015","SorACeb016","SorACeb017","SorACeb018","SorACeb019","SorACeb020","SorACeb021","SorACeb022"]
 #####
 
 
@@ -489,7 +489,7 @@ gerp: True
 # FASTA format for GERP++ score estimation.
 # Files must be gzipped and FASTA file name extensions can be 
 # "*.fa.gz", "*.fasta.gz" or "*.fna.gz".
-gerp_ref_path: "/home/breid/GenErode_testrun_whiterhino_onedir/gerp_outgroups"
+gerp_ref_path: "/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/GenErode_Sor_20k/gerp_outgroups"
 
 # Full path to phylogenetic tree of all species included in the analysis 
 # (including the target species) in NEWICK format and including divergence 
@@ -498,7 +498,7 @@ gerp_ref_path: "/home/breid/GenErode_testrun_whiterhino_onedir/gerp_outgroups"
 # of GERP scores (see dated phylogenetic trees from www.timetree.org).
 # Species names in the tree must be identical to the FASTA file names 
 # without ".fa.gz", ".fasta.gz" or ".fna.gz".
-tree: "/home/breid/GenErode_testrun_whiterhino_onedir/gerp_tree.nwk"
+tree: "/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/GenErode_Sor_20k/gerp_outgroups/gerp_tree.nwk"
 
 # Minimum and maximum GERP score for a site to be included into calculations 
 # of relative mutational load.
