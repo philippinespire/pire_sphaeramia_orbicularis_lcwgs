@@ -69,7 +69,7 @@ Count the number of *Undetermined* files.
 ls /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_raw/Undetermined*.fq.gz | wc -l
 4 
 ```
-The *Undetermined* files are not included in the decode file. Undetermined files just become `Undetermined.1.fq.gz` & `Undetermined.2.fq.gz`. 
+The *Undetermined* files are not included in the decode file. Undetermined files just become `Undetermined-L#-1.fq.gz` & `Undetermined-L#-2.fq.gz`.
 
 Count the number of *determined* files.
 ```
@@ -173,7 +173,7 @@ SoC0607208C     Sor-CPnd_072-Ex1-8C-lcwgs-1-2
 
 Compare the decode file to the actual raw \*.fq.gz files. 
 
-Make the file `origFileNames_ALL.txt`. 
+Make the file `origFileNames_ALL.txt` with all of the original file names. 
 ```
 ls So*.fq.gz > origFileNames_ALL.txt
 ```
@@ -472,7 +472,7 @@ SoC0607208C_CKDL230038844-1A_22FF32LT3_L3_2.fq.gz
 </p>
 </details>
 
-Create a script `process_decode_FileNames_all.sh` to use the input files `Sor_lcwgs-SeqLane_SequenceNameDecode.tsv` & `origFileNames_ALL.txt` to create the decode file `Sor_lcwgs-SeqLane_SequenceNameDecode_ALL.tsv` with all of the file names including the lane ID. This file should have 141 lines, including a header with 140 file names. 
+Create a script `process_decode_FileNames_all.sh` to use the input files `Sor_lcwgs-SeqLane_SequenceNameDecode.tsv` & `origFileNames_ALL.txt` to create the decode file `Sor_lcwgs-SeqLane_SequenceNameDecode_ALL.tsv` with all of the file names including the lane ID. This output file .tsv should have 141 lines, including a header with 140 file names. 
 
 Create the script `process_decode_FileNames_all.sh`. 
 
@@ -539,7 +539,7 @@ Output:
 Processing complete. Output saved to Sor_lcwgs-SeqLane_SequenceNameDecode_ALL.tsv
 ```
 
-Check output file. 
+Check output file `Sor_lcwgs-SeqLane_SequenceNameDecode_ALL.tsv`. 
 ```
 cat Sor_lcwgs-SeqLane_SequenceNameDecode_ALL.tsv | wc -l
 141
