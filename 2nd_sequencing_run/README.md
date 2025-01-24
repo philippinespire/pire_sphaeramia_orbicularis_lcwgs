@@ -582,3 +582,294 @@ ls *.fq.gz | wc -l
 All files were correctly renamed and all files were maintained! New file names include the lane ID. 
 
 </details>
+
+
+<details><summary>6. Check PHRED quality scores of Undetermined\*.fq.gz files</summary>
+
+### 6. Check PHRED quality scores of Undetermined\*.fq.gz files
+
+1. Create a new directory to analyze raw .fq.gz file phred quality scores.
+```
+cd /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run
+
+mkdir fq_raw_phred
+```
+
+2. Create a List of .fq.gz File Names.
+
+Run the following command to generate a .txt file containing the list of all .fq.gz files in the directory:
+```
+ls fq_raw/*.fq.gz > fq_file_list.txt
+```
+
+3. Create a Bash Script to Extract the First 100 Reads.
+
+Create a script called `extract_reads.sh`:
+```
+#!/bin/bash
+
+# Define the number of lines to extract (100 reads = 400 lines)
+NUM_LINES=400
+
+# Ensure the output directory exists
+mkdir -p fq_raw_phred
+
+# Read file names from fq_file_list.txt and process each file
+while read -r fq_file; do
+    # Extract only the filename (basename) without the full path
+    filename=$(basename "$fq_file")
+
+    # Generate output file name within fq_raw_phred/
+    output_file="fq_raw_phred/${filename%.fq.gz}_subset.fastq"
+
+    # Extract the first 100 reads (400 lines) and save to the output file
+    zcat "$fq_file" | head -n $NUM_LINES > "$output_file"
+
+    # Print status message
+    echo "Extracted first 100 reads from $fq_file into $output_file"
+done < fq_file_list.txt
+```
+
+4. Run the script `extract_reads.sh`.
+```
+bash extract_reads.sh
+```
+
+5. Create a List of Subset FASTQ Files.
+```
+ls fq_raw_phred/*.fastq > fq_phred_file_list.txt
+```
+
+6. Create a Script to Extract Quality Scores.
+
+Create a script named `extract_phred_scores.sh` in 2nd_sequencing_run/:
+```
+#!/bin/bash
+
+# Ensure output directory exists
+mkdir -p fq_raw_phred_scores
+
+# Read each subset FASTQ file from the list
+while read -r fastq_file; do
+    # Extract only the filename (without path)
+    filename=$(basename "$fastq_file")
+
+    # Define the output file name inside fq_raw_phred_scores
+    output_file="fq_raw_phred_scores/${filename%.fastq}_quality.txt"
+
+    # Extract only the Phred quality score lines (every 4th line in the FASTQ file)
+    awk 'NR%4==0' "$fastq_file" > "$output_file"
+
+    echo "Extracted quality scores from $fastq_file to $output_file"
+done < fq_phred_file_list.txt
+```
+
+7. Run the script. 
+```
+bash extract_phred_scores.sh
+```
+
+8. Convert ASCII-Encoded Quality Scores to Numeric Phred Scores.
+
+Create a Python script to convert ASCII scores to numeric Phred scores. Save this as convert_phred.py inside 2nd_sequencing_run/:
+```
+import numpy as np
+import os
+
+# Function to convert ASCII-encoded Phred quality scores to numeric values
+def phred_to_qscore(quality_str):
+    return [ord(q) - 33 for q in quality_str.strip()]
+
+# Define input/output directories
+input_dir = "fq_raw_phred_scores"
+output_dir = "fq_raw_phred_scores_numeric"
+os.makedirs(output_dir, exist_ok=True)
+
+# Process each quality score file
+for quality_file in os.listdir(input_dir):
+    if quality_file.endswith("_quality.txt"):
+        input_path = os.path.join(input_dir, quality_file)
+        output_path = os.path.join(output_dir, quality_file.replace("_quality.txt", "_phred_scores.csv"))
+
+        # Read quality scores and convert to Phred scores
+        with open(input_path, 'r') as infile:
+            all_scores = [phred_to_qscore(line) for line in infile]
+
+        # Convert to NumPy array for easy calculations
+        scores_array = np.array(all_scores)
+
+        # Save as CSV for further analysis
+        np.savetxt(output_path, scores_array, delimiter=",", fmt="%d")
+
+        print(f"Converted {quality_file} to numeric Phred scores -> {output_path}")
+```
+
+9. Run the script `convert_phred.py`.
+```
+module load container_env python3
+
+crun.python3 python convert_phred.py
+```
+
+10. Verify the Output
+
+Now, the numeric Phred scores should be stored in fq_raw_phred_scores_numeric/ as CSV files. Each file (e.g., Undetermined_1_subset_phred_scores.csv) will contain Phred scores as numerical values.
+
+Check the directory:
+```
+ls fq_raw_phred_scores_numeric/
+```
+
+11. Compare Phred Scores Between Undetermined and Sample Reads.
+
+Once the CSV files are generated, we can analyze the scores. Plot Quality Score Distributions. Create plot_phred.py inside 2nd_sequencing_run/:
+```
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+import scipy.stats as stats
+
+# Define input directory
+input_dir = "fq_raw_phred_scores_numeric"
+
+# Lists to store Phred quality scores
+undetermined_scores = []
+sample_scores = []
+
+# Read all numeric Phred score CSV files
+for file in os.listdir(input_dir):
+    if file.endswith("_phred_scores.csv"):
+        filepath = os.path.join(input_dir, file)
+        data = np.loadtxt(filepath, delimiter=",")
+
+        # Compute mean Phred score per read
+        mean_scores = np.mean(data, axis=1)
+
+        # Categorize the scores based on filename
+        if "Undetermined" in file:
+            undetermined_scores.extend(mean_scores)
+        else:
+            sample_scores.extend(mean_scores)
+
+# Convert to NumPy arrays for statistical analysis
+undetermined_scores = np.array(undetermined_scores)
+sample_scores = np.array(sample_scores)
+
+# Create a histogram
+plt.figure(figsize=(10, 6))
+plt.hist(undetermined_scores, bins=20, alpha=0.5, label="Undetermined Reads", color="red", edgecolor='black')
+plt.hist(sample_scores, bins=20, alpha=0.5, label="Sample Reads", color="blue", edgecolor='black')
+plt.xlabel("Mean Phred Quality Score")
+plt.ylabel("Read Count")
+plt.legend()
+plt.title("Quality Score Distribution: Undetermined vs. Sample Reads")
+
+# Save histogram to file
+histogram_path = "quality_score_comparison.png"
+plt.savefig(histogram_path, dpi=300)
+print(f"Histogram saved to {histogram_path}")
+
+# Perform t-test
+t_stat, p_value = stats.ttest_ind(undetermined_scores, sample_scores, equal_var=False)
+
+# Print results
+print("\nStatistical Analysis (T-Test Results)")
+print(f"T-Statistic: {t_stat:.4f}")
+print(f"P-Value: {p_value:.4e}")
+
+# Save results to a text file
+with open("quality_score_analysis.txt", "w") as f:
+    f.write("Statistical Analysis (T-Test Results)\n")
+    f.write(f"T-Statistic: {t_stat:.4f}\n")
+    f.write(f"P-Value: {p_value:.4e}\n")
+
+print("Statistical analysis saved to quality_score_analysis.txt")
+```
+
+12. Run the Plotting Script
+```
+crun.python3 python plot_phred.py
+```
+
+Output:
+```
+Histogram saved to quality_score_comparison.png
+
+Statistical Analysis (T-Test Results)
+T-Statistic: 0.0779
+P-Value: 9.3792e-01
+Statistical analysis saved to quality_score_analysis.txt
+```
+
+13. Python Script to Calculate Average & Standard Deviation of Phred Quality Scores.
+
+This `compute_phred_stats.py` script:
+- Computes the mean and standard deviation of Phred quality scores.
+- Separates results for Undetermined and Sample files.
+- Saves the results in phred_quality_stats.txt.
+```
+import numpy as np
+import os
+
+# Define input directory
+input_dir = "fq_raw_phred_scores_numeric"
+
+# Lists to store Phred quality scores
+undetermined_scores = []
+sample_scores = []
+
+# Read all numeric Phred score CSV files
+for file in os.listdir(input_dir):
+    if file.endswith("_phred_scores.csv"):
+        filepath = os.path.join(input_dir, file)
+        data = np.loadtxt(filepath, delimiter=",")
+
+        # Compute mean Phred score per read
+        mean_scores = np.mean(data, axis=1)
+
+        # Categorize the scores based on filename
+        if "Undetermined" in file:
+            undetermined_scores.extend(mean_scores)
+        else:
+            sample_scores.extend(mean_scores)
+
+# Convert lists to NumPy arrays
+undetermined_scores = np.array(undetermined_scores)
+sample_scores = np.array(sample_scores)
+
+# Compute statistics
+undetermined_mean = np.mean(undetermined_scores)
+undetermined_std = np.std(undetermined_scores)
+
+sample_mean = np.mean(sample_scores)
+sample_std = np.std(sample_scores)
+
+# Print results to console
+print("\nPhred Quality Score Statistics")
+print(f"Undetermined Reads - Mean: {undetermined_mean:.2f}, Std Dev: {undetermined_std:.2f}")
+print(f"Sample Reads - Mean: {sample_mean:.2f}, Std Dev: {sample_std:.2f}")
+
+# Save results to a text file
+with open("phred_quality_stats.txt", "w") as f:
+    f.write("Phred Quality Score Statistics\n")
+    f.write(f"Undetermined Reads - Mean: {undetermined_mean:.2f}, Std Dev: {undetermined_std:.2f}\n")
+    f.write(f"Sample Reads - Mean: {sample_mean:.2f}, Std Dev: {sample_std:.2f}\n")
+
+print("\nStatistics saved to phred_quality_stats.txt")
+```
+
+14. Run the `compute_phred_stats.py` script:
+```
+crun.python3 python compute_phred_stats.py
+```
+
+Output:
+```
+Phred Quality Score Statistics
+Undetermined Reads - Mean: 37.95, Std Dev: 2.82
+Sample Reads - Mean: 37.94, Std Dev: 3.15
+```
+
+There is not a significant difference between the phred quality score of the first 100 reads of the Undetermined\*.fq.gz files compared to the Sor\*.fq.gz files for the 2nd sequencing run. 
+
+</details>
