@@ -1,0 +1,3 @@
+Phred Quality Score Statistics
+Undetermined Reads - Mean: 37.95, Std Dev: 2.82
+Sample Reads - Mean: 37.94, Std Dev: 3.15
