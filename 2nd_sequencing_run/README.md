@@ -1,20 +1,20 @@
 <img src="http://www.fishbiosystem.ru/PERCIFORMES/Apogonidae/Foto/(Sphaeramia%20orbicularis)%2092f.jpg" alt="Sor" width="300"/>
 
-# *Sphaeramia orbicularis* lcWGS data analysis of the 2nd Sequencing Run
+# *Sphaeramia orbicularis* lcWGS Analysis 
 
-Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbicularis* from the 2nd_sequencing_run. Albatross individuals are from the Cebu City Market. Contemporary individuals are from Pandanon Island. 
+## 2nd Sequencing Run
 
-\*Many reads were undetermined. Pre-processing is being done regardless.
+Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbicularis* from Cebu City Market (ACeb) and Pandanon Island (CPnd). 
 
-```
-/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run
-```
+_Many reads were undetermined. Pre-processing is being done regardless._
 
 ---
 
 ## fq.gz Pre-processing
 
 This portion follows the instructions in the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repository. 
+
+→ (*) _denotes steps with MultiQC Report Analyses_
 
 <details><summary>1. Set-up</summary>
 
@@ -30,7 +30,7 @@ cd /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_r
 
 nano README.md
 ```
-
+---
 </details>
 
 
@@ -78,6 +78,7 @@ ls /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_r
 ```
 The `Sor_lcwgs-SeqLane_SequenceNameDecode.tsv` file should have 141 total lines not 71. There are 280 So\*.fq.gz and each forward and reverse read get their own line, so it should be 140 file names and 1 header column with Sequence_Name & Extraction_ID.
 
+---
 </details>
 
 
@@ -546,6 +547,7 @@ cat Sor_lcwgs-SeqLane_SequenceNameDecode_ALL.tsv | wc -l
 ```
 This is the correct number of lines for the decode file. 
 
+---
 </details>
 
 
@@ -561,6 +563,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ_keeplane2.bash
 ```
 The decode dry run looks good!
 
+---
 </details>
 
 
@@ -581,6 +584,7 @@ ls *.fq.gz | wc -l
 
 All files were correctly renamed and all files were maintained! New file names include the lane ID. 
 
+---
 </details>
 
 
@@ -872,4 +876,35 @@ Sample Reads - Mean: 37.94, Std Dev: 3.15
 
 There is not a significant difference between the phred quality score of the first 100 reads of the Undetermined\*.fq.gz files compared to the Sor\*.fq.gz files for the 2nd sequencing run. 
 
+---
+</details>
+
+<details><summary>7. Check the quality of raw data (*)</summary>
+
+## 7. Check the quality of raw data (*)
+
+Execute `Multi_FASTQC.sh`:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
+Submitted batch job 4188441
+```
+
+### MultiQC output (fq_raw/fqc_raw_report.html):
+*
+
+```
+‣ % duplication - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ GC content - 
+    • Alb: 
+    • Contemp: 
+    • Undetermined: 
+‣ number of reads - 
+    • Alb: 
+    • Contemp: 
+    • Undetermined: 
+```
+---
 </details>
