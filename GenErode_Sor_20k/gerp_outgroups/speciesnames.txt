@@ -9,7 +9,6 @@ Chelmon_rostratus
 Cottoperca_gobio
 Cromileptes_altivelis
 Cyclopterus_lumpus
-Epinephelus_lanceolatus
 Etheostoma_cragini
 Etheostoma_spectabile
 Fundulus_heteroclitus
