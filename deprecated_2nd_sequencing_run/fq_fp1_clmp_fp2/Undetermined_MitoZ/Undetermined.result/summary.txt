@@ -1,0 +1,51 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C5706103       16569          yes            Homo heidelbergensis
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C5706103       1      775    775        -          rRNA   l-rRNA     16S ribosomal RNA                 2              
+C5706103       773    842    70         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C5706103       842    1796   955        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C5706103       1796   1867   72         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C5706103       2990   3058   69         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C5706103       3060   3126   67         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C5706103       3106   4267   1162       -          CDS    CYTB       cytochrome b                      1              
+C5706103       4271   4340   70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C5706103       4340   4865   526        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C5706103       4865   6677   1813       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C5706103       6677   6748   72         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+C5706103       6748   6807   60         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C5706103       6807   6876   70         -          tRNA   trnH(gug)  tRNA-His                          1              
+C5706103       6876   8254   1379       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C5706103       8247   8544   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C5706103       8544   8609   66         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C5706103       8609   8955   347        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C5706103       8955   9023   69         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C5706103       9022   9807   786        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C5706103       9806   10487  682        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C5706103       10441  10648  208        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C5706103       10649  10719  71         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C5706103       10744  11428  685        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C5706103       11428  11496  69         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C5706103       11499  11568  70         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+C5706103       11568  13110  1543       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C5706103       13122  13187  66         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C5706103       13187  13253  67         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C5706103       13284  13357  74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C5706103       13358  13427  70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C5706103       13434  13502  69         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C5706103       13499  14540  1042       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C5706103       14544  14612  69         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C5706103       14613  14685  73         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C5706103       14682  14751  70         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C5706103       14750  15707  958        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C5706103       15709  15784  76         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C5706103       15784  16570  787        -          rRNA   l-rRNA     16S ribosomal RNA                 2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            3
+--------------------------------------
+Genes totally found:                38
