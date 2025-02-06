@@ -67,7 +67,7 @@ reference_repeat_identification: False
 # Adapter sequences are automatically detected.
 # Automatic detection of NovaSeq or NextSeq samples and activation of
 # poly-G tail trimming.
-fastq_processing: True
+fastq_processing: False
 
 # Minimum read length.
 # Historical samples (after trimming and read merging)
@@ -162,7 +162,7 @@ maxDP: 10
 # Will rescale base qualities at potentially damaged sites and 
 # calculate statistics on DNA damage patterns in realigned BAM 
 # files.
-historical_bam_mapDamage: True
+historical_bam_mapDamage: False
 
 # List of historical samples on which mapDamage2 should be run. 
 # Sample names without lane or index number in quotation marks, 
@@ -170,7 +170,7 @@ historical_bam_mapDamage: True
 # List has to be left empty ([]) if mapDamage2 is not run.
 # Keep the list of sample names for the entire pipeline run 
 # if rescaled BAM files should be used in downstream analyses.
-historical_rescaled_samplenames: ["SorACeb001","SorACeb002","SorACeb003","SorACeb004","SorACeb005","SorACeb006","SorACeb007","SorACeb008","SorACeb009","SorACeb010","SorACeb011","SorACeb012","SorACeb013","SorACeb014","SorACeb015","SorACeb016","SorACeb017","SorACeb018","SorACeb019","SorACeb020","SorACeb021","SorACeb022"]
+historical_rescaled_samplenames: []
 #####
 
 
