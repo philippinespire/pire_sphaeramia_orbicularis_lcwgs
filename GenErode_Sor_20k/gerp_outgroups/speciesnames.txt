@@ -15,8 +15,8 @@ Fundulus_heteroclitus
 Gasterosteus_aculeatus
 Knipowitschia_caucasica
 Larimichthys_crocea
-Lutjanus_erythropterus
 Micropterus_dolomieu
+Micropterus_salmoides
 Mugilogobius_chulae
 Oreochromis_niloticus
 Oryzias_latipes
