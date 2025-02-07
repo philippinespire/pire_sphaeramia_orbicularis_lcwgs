@@ -1,0 +1,20 @@
+PCAngsd v1.21
+Time: 06/02/2025 19:41:01
+Directory: /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/ANGSD_Sor
+Options:
+	--beagle angsd_depth1_15_notrans.beagle.gz
+	--threads 16
+	--out angsd_admix_notrans_it2000
+	--maf 0.001
+	--iter 2000
+	--admix
+
+Loaded 44126 sites and 86 individuals.
+Number of sites after MAF filtering (0.001): 44126
+
+PCAngsd converged in 846 iterations using 1 eigenvectors.
+Saved covariance matrix as angsd_admix_notrans_it2000.cov
+Saved admixture proportions as angsd_admix_notrans_it2000.admix.2.Q
+Saved ancestral allele frequencies proportions as angsd_admix_notrans_it2000.admix.2.P
+
+Total elapsed time: 2m7s
