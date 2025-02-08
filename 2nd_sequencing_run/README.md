@@ -945,3 +945,17 @@ Submitted batch job 4265444
 ```
 ---
 </details>
+
+<details><summary>9. Remove duplicates with clumpify (*)</summary>
+
+## 9. Remove duplicates with clumpify (*)
+
+<details><summary>6a. Remove duplicates</summary>
+	
+### 9a. Remove duplicates
+
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0373 20
+Submitted batch job XXXXXXX
+```
+</details>
