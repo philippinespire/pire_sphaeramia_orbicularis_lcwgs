@@ -954,6 +954,7 @@ Submitted batch job 4265444
 	
 ### 9a. Remove duplicates
 
+XXXXXX do not run until Sin is on step 8d XXXXXX
 ```
 [hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0373 20
 Submitted batch job XXXXXXX
