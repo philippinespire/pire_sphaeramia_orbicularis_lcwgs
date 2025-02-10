@@ -9,15 +9,15 @@ mv angsd_depth1_15_notrans.beagle.gz.saf.pos.gz angsd_depth1_15_notrans_snplist.
 mv angsd_depth1_15_notrans.beagle.gz.saf.idx angsd_depth1_15_notrans_snplist.saf.idx
 
 # Git move files that are tracked with the correct naming pattern
-git mv angsd_depth1_15_notrans.beagle.gz.arg angsd_depth1_15_notrans_snplist.arg
-git mv angsd_depth1_15_notrans.beagle.gz.depthSample angsd_depth1_15_notrans_snplist.depthSample
-git mv angsd_depth1_15_notrans.beagle.gz.depthGlobal angsd_depth1_15_notrans_snplist.depthGlobal
+mv angsd_depth1_15_notrans.beagle.gz.arg angsd_depth1_15_notrans_snplist.arg
+mv angsd_depth1_15_notrans.beagle.gz.depthSample angsd_depth1_15_notrans_snplist.depthSample
+mv angsd_depth1_15_notrans.beagle.gz.depthGlobal angsd_depth1_15_notrans_snplist.depthGlobal
 
 # Git add changes
-git add angsd_depth1_15_notrans_snplist.arg angsd_depth1_15_notrans_snplist.depthSample angsd_depth1_15_notrans_snplist.depthGlobal
+#git add angsd_depth1_15_notrans_snplist.arg angsd_depth1_15_notrans_snplist.depthSample angsd_depth1_15_notrans_snplist.depthGlobal
 
 # Commit the changes with a detailed message
-git commit -m "Renaming output files from the script get_beagle.gz to standardize the outfile pattern as 'angsd_depth1_15_notrans_snplist' instead of 'angsd_depth1_15_notrans.beagle.gz', which was confusing."
+#git commit -m "Renaming output files from the script get_beagle.gz to standardize the outfile pattern as 'angsd_depth1_15_notrans_snplist' instead of 'angsd_depth1_15_notrans.beagle.gz', which was confusing."
 
 # Push changes to the repository
-git push
+#git push

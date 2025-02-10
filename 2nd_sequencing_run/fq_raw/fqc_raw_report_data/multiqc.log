@@ -1,0 +1,981 @@
+[2025-02-08 01:19:27,422] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2025-02-08 01:19:27,423] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/hpc-0373/.multiqc_config.yaml
+[2025-02-08 01:19:27,424] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2025-02-08 01:19:27,426] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2025-02-08 01:19:27,426] multiqc                                            [DEBUG  ]  New config 'max_table_rows': 3000
+[2025-02-08 01:19:27,427] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename fqc_raw_report --outdir fq_raw fq_raw
+[2025-02-08 01:19:27,562] multiqc                                            [DEBUG  ]  Could not connect to multiqc.info for version check: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1076)>
+[2025-02-08 01:19:27,565] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2025-02-08 01:19:27,565] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename fqc_raw_report --outdir fq_raw fq_raw
+[2025-02-08 01:19:27,566] multiqc                                            [DEBUG  ]  Working dir : /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run
+[2025-02-08 01:19:27,566] multiqc                                            [INFO   ]  Template    : default
+[2025-02-08 01:19:27,567] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2025-02-08 01:19:27,567] multiqc                                            [INFO   ]  Searching   : /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_raw
+[2025-02-08 01:19:27,568] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2025-02-08 01:19:27,569] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmp_2zcdge1
+[2025-02-08 01:19:27,805] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:27,817] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:27,866] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:27,884] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:28,033] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:28,054] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:28,179] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:28,181] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:28,258] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:28,281] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:28,469] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:28,494] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:28,698] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:28,720] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:28,854] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:28,892] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:28,909] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:29,072] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:29,089] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:29,201] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:29,234] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:29,250] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:29,383] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:29,400] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:29,609] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:29,633] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:29,987] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:30,013] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:30,145] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:30,185] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:30,203] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:30,385] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:30,404] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:30,519] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:30,583] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:30,601] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:30,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:30,733] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:30,735] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:30,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:30,737] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:30,772] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:30,788] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:30,916] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:30,931] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:31,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:31,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:31,058] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:31,074] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:31,169] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:31,171] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:31,242] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:31,260] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:31,385] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:31,386] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:31,422] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:31,439] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:31,611] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:31,630] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:31,824] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:31,843] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:31,965] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:31,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:32,047] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:32,066] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:32,184] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:32,249] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:32,269] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:32,394] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:32,432] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:32,448] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:32,565] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:32,566] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:32,567] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:32,637] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor_lcwgs-SeqLane_SequenceNameDecode_ALL.tsv
+[2025-02-08 01:19:32,656] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor_lcwgs-SeqLane_SequenceNameDecode_ALL.tsv
+[2025-02-08 01:19:32,768] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:32,786] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:32,981] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:32,999] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:33,183] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:33,202] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:33,329] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:33,332] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:33,366] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:33,382] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:33,491] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:33,492] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:33,522] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:33,536] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:33,656] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:33,694] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:33,712] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:33,830] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:33,868] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:33,886] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:34,046] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:34,066] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:34,194] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:34,195] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:34,260] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:34,280] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:34,468] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:34,486] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:34,603] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:34,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:34,683] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:34,704] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:34,834] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:34,835] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:34,836] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:34,902] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:34,922] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:35,110] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:35,130] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:35,289] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:35,307] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:35,426] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:35,463] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:35,480] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:35,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:35,638] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:35,658] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:35,776] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:35,778] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:35,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:35,780] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:35,782] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:35,815] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:35,831] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:36,013] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:36,034] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:36,213] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:36,231] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:36,414] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:36,434] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:36,561] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:36,598] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:36,615] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:36,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:36,775] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:36,794] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:36,977] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:36,996] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:37,195] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:37,216] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:37,416] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:37,437] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:37,565] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:37,601] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:37,618] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:37,765] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:37,781] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:37,912] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:37,926] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:38,017] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:38,017] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:38,048] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:38,062] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:38,179] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:38,194] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:38,310] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:38,326] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:38,442] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:38,457] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:38,544] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:38,545] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:38,548] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:38,578] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:38,593] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:38,703] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:38,716] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:38,852] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:38,870] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:38,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:38,951] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:38,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:38,953] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:38,954] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:39,009] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:39,026] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:39,139] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:39,153] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:39,232] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:39,261] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:39,274] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:39,426] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:39,445] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:39,630] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:39,649] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:39,836] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:39,857] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:40,069] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:40,086] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:40,217] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:40,232] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:40,359] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:40,374] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:40,546] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:40,566] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:40,736] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:40,754] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:40,910] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:40,928] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:41,115] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:41,138] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:41,276] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:41,279] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:41,280] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:41,283] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:41,320] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:41,338] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:41,455] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:41,455] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:41,459] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:41,460] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:41,463] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:41,499] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:41,515] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:41,662] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:41,678] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:41,787] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:41,821] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:41,837] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:41,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:41,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:41,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:41,956] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:41,962] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:41,963] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:41,965] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:41,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:41,968] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:42,030] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:42,050] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:42,158] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:42,160] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:42,224] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:42,243] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:42,361] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:42,436] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:42,457] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:42,624] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:42,641] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:42,824] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:42,843] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:42,994] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:43,010] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:43,118] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:43,152] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:43,168] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:43,265] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:43,266] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:43,327] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:43,344] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:43,446] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:43,449] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:43,450] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:43,482] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:43,498] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:43,598] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:43,598] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:43,659] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:43,676] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:43,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:43,782] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:43,783] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:43,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:43,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:43,785] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:43,788] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:43,788] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:43,789] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:43,824] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:43,842] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:44,012] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:44,030] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:44,200] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:44,216] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:44,366] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:44,383] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:44,500] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:44,568] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:44,588] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:44,711] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:44,712] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:44,776] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:44,796] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:44,947] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:44,964] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:45,147] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:45,166] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:45,339] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:45,357] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:45,522] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:45,539] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:45,711] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:45,730] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:45,886] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:45,903] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:46,079] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:46,097] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:46,268] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:46,286] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:46,441] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:46,457] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:46,614] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:46,634] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:46,822] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:46,840] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:47,004] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:47,021] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:47,173] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:47,189] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:47,295] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:47,296] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:47,355] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:47,372] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:47,583] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:47,603] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:47,772] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:47,789] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:47,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:47,974] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:47,995] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:48,162] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:48,182] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:48,373] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:48,391] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:48,528] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:48,544] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:48,645] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:48,679] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:48,695] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:48,790] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:48,821] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:48,837] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:48,930] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:48,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:48,934] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:48,937] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:48,938] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:48,975] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Undetermined-L2-1_fastqc.html
+[2025-02-08 01:19:48,990] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Undetermined-L2-1_fastqc.html
+[2025-02-08 01:19:49,083] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:49,085] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:49,085] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:49,119] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:49,134] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:49,228] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:49,261] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:49,278] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:49,387] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:49,389] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:49,425] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Undetermined-L3-2_fastqc.html
+[2025-02-08 01:19:49,443] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Undetermined-L3-2_fastqc.html
+[2025-02-08 01:19:49,555] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:49,597] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:49,613] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:49,719] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:49,754] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:49,771] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:49,916] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:49,932] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:50,092] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:50,112] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:50,282] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:50,303] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:50,472] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:50,487] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:50,658] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:50,676] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:50,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:50,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:50,771] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:50,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:50,773] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:50,832] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:50,851] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:50,976] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:51,017] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:51,034] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:51,187] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:51,205] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:51,397] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:51,416] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:51,605] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:51,625] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:51,819] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:51,839] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:51,965] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:52,002] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:52,020] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:52,197] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:52,216] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:52,406] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:52,427] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:52,567] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:52,568] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:52,569] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:52,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:52,608] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:52,626] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:52,741] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:52,807] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:52,826] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:52,940] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:52,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:52,976] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:52,993] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:53,122] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:53,138] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:53,330] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor_lcwgs-SeqLane_SequenceNameDecode.tsv
+[2025-02-08 01:19:53,374] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:53,430] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:53,448] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:53,542] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:53,544] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:53,546] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:53,578] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:53,593] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:53,684] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:53,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:53,717] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:53,731] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:53,822] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:53,824] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:53,877] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:53,894] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:53,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:53,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:54,067] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:54,093] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:54,266] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:54,285] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:54,447] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:54,464] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:54,611] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:54,629] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:54,790] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:54,806] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:54,941] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:54,956] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:55,081] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:55,095] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:55,217] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:55,232] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:55,395] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:55,414] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:55,585] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:55,606] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:55,802] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:55,822] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:55,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:56,007] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:56,026] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:56,187] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:56,201] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:56,354] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:56,372] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:56,470] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:56,472] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:56,503] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:56,519] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:56,644] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:56,659] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:56,807] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:56,821] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:56,966] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:56,981] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:57,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:57,133] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:57,150] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:57,272] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:57,273] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:57,274] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:57,274] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:57,329] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:57,345] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:57,466] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:57,523] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:57,539] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:57,655] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:57,708] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:57,725] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:57,873] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:57,888] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:57,996] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:58,025] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:58,039] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:58,157] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:58,169] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:58,306] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:58,320] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:19:58,436] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:58,449] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:58,545] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:58,546] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:58,548] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:58,608] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:58,624] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:58,709] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:58,759] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:58,775] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:58,881] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:58,913] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:58,927] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:59,032] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:59,061] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:59,074] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:59,229] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: old_new_filenames.log
+[2025-02-08 01:19:59,251] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: old_new_filenames.log
+[2025-02-08 01:19:59,317] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:59,352] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:59,367] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:59,472] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:19:59,532] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:59,548] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:19:59,682] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:59,695] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:19:59,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:19:59,782] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:19:59,783] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:19:59,834] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:59,850] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:19:59,965] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:00,031] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:00,047] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:00,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:00,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:00,185] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Undetermined-L3-1_fastqc.html
+[2025-02-08 01:20:00,200] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Undetermined-L3-1_fastqc.html
+[2025-02-08 01:20:00,325] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:00,338] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:00,453] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:00,466] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:00,556] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:00,584] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Undetermined-L2-2_fastqc.html
+[2025-02-08 01:20:00,596] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Undetermined-L2-2_fastqc.html
+[2025-02-08 01:20:00,689] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:00,747] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:00,762] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_009-Ex1-4F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:00,863] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:00,890] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:00,903] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:00,991] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:01,047] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:01,060] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:01,204] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:01,219] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:01,312] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:01,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Undetermined-L3-2.fq.gz
+[2025-02-08 01:20:01,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:01,354] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:01,368] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:01,462] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Undetermined-L2-1.fq.gz
+[2025-02-08 01:20:01,489] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:01,501] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:01,589] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:01,592] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:01,645] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:01,659] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:01,814] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:01,831] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:01,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:01,924] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:02,001] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: origFileNames_ALL.txt
+[2025-02-08 01:20:02,016] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: origFileNames_ALL.txt
+[2025-02-08 01:20:02,059] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:02,086] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:02,100] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:02,187] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:02,230] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:02,247] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:02,355] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:02,356] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:02,357] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:02,357] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:02,358] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:02,361] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:02,362] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:02,393] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:02,408] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:02,541] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:02,557] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:02,689] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:02,705] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:02,847] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:02,863] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:02,986] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:03,002] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:03,096] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:03,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:03,129] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:03,145] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:03,301] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:03,325] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:03,440] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:03,441] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:03,442] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:03,443] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:03,446] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:03,448] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:03,449] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:03,490] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:03,508] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:03,666] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:03,683] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:03,831] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:03,847] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:03,985] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:04,002] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:04,145] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:04,162] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:04,292] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:04,308] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:04,403] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:04,434] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:04,449] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:04,549] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:04,549] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:04,551] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:04,551] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:04,554] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:04,585] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:04,600] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:04,689] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:04,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:04,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:04,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:04,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:04,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:04,724] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:04,738] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:04,829] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:04,832] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:04,833] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:04,897] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:04,917] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:05,064] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:05,083] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:05,193] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:05,230] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:05,246] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:05,338] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:05,339] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:05,339] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:05,341] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:05,371] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:05,386] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:05,535] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:05,551] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:05,637] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:05,690] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:05,705] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:05,818] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:05,831] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:05,915] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:05,968] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:05,983] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:06,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:06,103] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:06,116] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:06,198] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Undetermined-L2-2.fq.gz
+[2025-02-08 01:20:06,198] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:06,199] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Undetermined-L3-1.fq.gz
+[2025-02-08 01:20:06,257] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:06,275] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:06,458] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:06,479] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:06,606] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:06,645] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:06,664] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:06,798] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:06,800] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:06,801] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:06,836] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:06,853] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:06,972] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:06,973] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:06,974] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:06,974] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:07,009] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:07,026] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:07,168] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:07,184] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:07,322] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:07,338] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:07,444] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:07,445] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:07,446] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:07,448] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:07,480] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:07,495] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:07,592] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:07,593] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:07,594] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:07,654] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:07,674] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:07,840] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:07,857] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:07,977] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:07,978] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:08,052] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:08,071] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:08,202] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:08,204] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:08,269] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:08,289] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:08,465] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: newFileNames.txt
+[2025-02-08 01:20:08,485] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: newFileNames.txt
+[2025-02-08 01:20:08,568] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:08,584] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:08,730] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:08,746] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:08,907] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:08,925] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:09,085] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:09,102] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:09,234] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:09,250] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:09,407] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:09,426] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:09,592] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:09,610] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:09,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:09,786] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:09,806] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:09,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:09,983] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:10,001] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:10,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:10,195] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:10,217] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:10,381] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:10,399] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:10,522] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:10,525] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:10,526] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:10,587] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:10,610] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:10,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:10,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:10,806] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:10,825] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:10,987] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:11,004] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:11,184] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:11,202] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:11,317] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:11,319] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:11,321] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:11,322] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:11,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:11,390] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:11,411] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:11,553] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:11,570] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:11,761] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:11,783] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:11,919] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:11,959] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:11,979] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:12,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:12,142] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:12,158] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:12,309] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:12,326] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:12,431] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:12,491] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:12,508] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:12,670] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:12,689] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:12,881] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:12,901] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:13,070] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,088] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,283] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,303] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,498] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,517] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,629] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:13,664] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,679] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,810] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,825] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:13,950] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:13,963] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:14,114] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:14,131] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:14,262] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:14,277] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:14,378] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:14,414] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:14,429] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:14,599] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:14,618] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:14,733] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:14,797] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:14,814] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:14,943] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:14,958] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:15,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:15,054] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:15,055] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:15,122] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:15,143] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:15,278] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:15,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:15,283] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:15,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:15,345] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: origFileNames.txt
+[2025-02-08 01:20:15,366] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: origFileNames.txt
+[2025-02-08 01:20:15,446] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:15,461] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:15,630] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:15,649] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:15,775] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:15,778] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:15,780] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:15,841] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:15,865] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:15,988] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:16,003] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:16,145] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:16,161] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:16,251] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:16,251] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:16,252] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:16,253] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L2-2.fq.gz
+[2025-02-08 01:20:16,289] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:16,308] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_021-Ex1-4G-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:16,446] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:16,486] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:16,503] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:16,623] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L3-1.fq.gz
+[2025-02-08 01:20:16,672] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: decode_sedlist.txt
+[2025-02-08 01:20:16,691] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: decode_sedlist.txt
+[2025-02-08 01:20:16,772] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:16,789] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:16,960] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:16,979] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:17,093] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:17,162] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:17,182] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:17,348] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:17,365] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:17,479] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:17,544] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:17,565] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:17,731] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:17,749] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L2-2_fastqc.html
+[2025-02-08 01:20:17,875] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:17,911] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:17,926] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:18,013] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L3-2.fq.gz
+[2025-02-08 01:20:18,088] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:18,109] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L2-1_fastqc.html
+[2025-02-08 01:20:18,296] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:18,316] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:18,502] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:18,521] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L3-1_fastqc.html
+[2025-02-08 01:20:18,636] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L2-1.fq.gz
+[2025-02-08 01:20:18,699] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:18,719] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L3-2_fastqc.html
+[2025-02-08 01:20:19,664] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2025-02-08 01:20:19,667] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2025-02-08 01:20:19,670] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2025-02-08 01:20:19,682] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2025-02-08 01:20:19,698] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2025-02-08 01:20:19,714] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2025-02-08 01:20:19,729] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2025-02-08 01:20:19,759] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2025-02-08 01:20:19,774] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2025-02-08 01:20:19,782] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2025-02-08 01:20:19,796] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2025-02-08 01:20:19,808] multiqc                                            [DEBUG  ]  No samples found: quast
+[2025-02-08 01:20:19,819] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2025-02-08 01:20:19,830] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2025-02-08 01:20:19,843] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2025-02-08 01:20:19,852] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2025-02-08 01:20:19,875] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2025-02-08 01:20:19,888] multiqc                                            [DEBUG  ]  No samples found: busco
+[2025-02-08 01:20:19,901] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2025-02-08 01:20:19,917] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2025-02-08 01:20:19,935] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2025-02-08 01:20:19,966] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2025-02-08 01:20:19,980] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2025-02-08 01:20:19,995] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2025-02-08 01:20:20,010] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2025-02-08 01:20:20,027] multiqc                                            [DEBUG  ]  No samples found: happy
+[2025-02-08 01:20:20,041] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2025-02-08 01:20:20,055] multiqc                                            [DEBUG  ]  No samples found: homer
+[2025-02-08 01:20:20,067] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2025-02-08 01:20:20,081] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2025-02-08 01:20:20,096] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2025-02-08 01:20:20,112] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2025-02-08 01:20:20,127] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2025-02-08 01:20:20,140] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2025-02-08 01:20:20,154] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2025-02-08 01:20:20,167] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2025-02-08 01:20:20,188] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2025-02-08 01:20:20,197] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2025-02-08 01:20:20,207] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2025-02-08 01:20:20,259] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2025-02-08 01:20:20,271] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2025-02-08 01:20:20,277] multiqc                                            [DEBUG  ]  No samples found: picard
+[2025-02-08 01:20:20,287] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2025-02-08 01:20:20,298] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2025-02-08 01:20:20,314] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2025-02-08 01:20:20,323] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2025-02-08 01:20:20,337] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2025-02-08 01:20:20,348] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2025-02-08 01:20:20,367] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2025-02-08 01:20:20,382] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2025-02-08 01:20:20,394] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2025-02-08 01:20:20,407] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2025-02-08 01:20:20,445] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2025-02-08 01:20:20,462] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2025-02-08 01:20:20,480] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2025-02-08 01:20:20,495] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2025-02-08 01:20:20,509] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2025-02-08 01:20:20,524] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2025-02-08 01:20:20,539] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2025-02-08 01:20:20,553] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2025-02-08 01:20:20,565] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2025-02-08 01:20:20,578] multiqc                                            [DEBUG  ]  No samples found: star
+[2025-02-08 01:20:20,591] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2025-02-08 01:20:20,605] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2025-02-08 01:20:20,615] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2025-02-08 01:20:20,625] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2025-02-08 01:20:20,637] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2025-02-08 01:20:20,646] multiqc                                            [DEBUG  ]  No samples found: kat
+[2025-02-08 01:20:20,658] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2025-02-08 01:20:20,673] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2025-02-08 01:20:20,686] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2025-02-08 01:20:20,702] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2025-02-08 01:20:20,718] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2025-02-08 01:20:20,732] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2025-02-08 01:20:20,746] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2025-02-08 01:20:20,761] multiqc                                            [DEBUG  ]  No samples found: malt
+[2025-02-08 01:20:20,777] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2025-02-08 01:20:20,791] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2025-02-08 01:20:20,804] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2025-02-08 01:20:20,817] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2025-02-08 01:20:20,831] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2025-02-08 01:20:20,848] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2025-02-08 01:20:20,863] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2025-02-08 01:20:20,879] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2025-02-08 01:20:42,524] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 284 reports
+[2025-02-08 01:21:44,092] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2025-02-08 01:21:44,100] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2025-02-08 01:21:44,108] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2025-02-08 01:21:44,118] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2025-02-08 01:21:44,125] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2025-02-08 01:21:44,134] multiqc                                            [DEBUG  ]  No samples found: interop
+[2025-02-08 01:21:44,141] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2025-02-08 01:21:44,148] multiqc                                            [DEBUG  ]  No samples found: flash
+[2025-02-08 01:21:44,156] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2025-02-08 01:21:44,556] multiqc                                            [INFO   ]  Compressing plot data
+[2025-02-08 01:21:50,077] multiqc                                            [INFO   ]  Report      : fq_raw/fqc_raw_report.html
+[2025-02-08 01:21:50,077] multiqc                                            [INFO   ]  Data        : fq_raw/fqc_raw_report_data
+[2025-02-08 01:21:50,078] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_2zcdge1/multiqc_data' to 'fq_raw/fqc_raw_report_data'
+[2025-02-08 01:21:50,658] multiqc                                            [INFO   ]  Plots       : fq_raw/fqc_raw_report_plots
+[2025-02-08 01:21:50,659] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmp_2zcdge1/multiqc_plots' to 'fq_raw/fqc_raw_report_plots'
+[2025-02-08 01:21:51,483] multiqc                                            [INFO   ]  MultiQC complete
