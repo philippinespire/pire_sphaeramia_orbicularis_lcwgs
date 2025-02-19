@@ -11,15 +11,16 @@ Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbiculari
 
 ## [1st Sequencing Run (Test Lane)](https://github.com/philippinespire/pire_sphaeramia_orbicularis_lcwgs/tree/main/1st_sequencing_run)
 
+**ABur, ACan, ACeb / CBur, CPnd**
+
 1st sequencing run fq.gz processing done by Kevin Labrador (January 2023).
-* ABur, ACan, ACeb
-* CBur, CPnd
+
 
 ## [2nd Sequencing Run](https://github.com/philippinespire/pire_sphaeramia_orbicularis_lcwgs/tree/main/2nd_sequencing_run)
 
+**ACeb / CPnd**
+
 2nd sequencing run fq.gz processing done by John Whalen and Gianna Mazzei (January 2025).
-* ACeb
-* CPnd
 
 ---
 
