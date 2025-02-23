@@ -2,7 +2,7 @@
 
 # *Sphaeramia orbicularis* lcWGS
 
-Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbicularis* from Pandanon Island, Bohol.
+Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbicularis* 
 
 ```
 /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs
