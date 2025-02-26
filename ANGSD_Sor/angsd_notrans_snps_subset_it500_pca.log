@@ -1,0 +1,17 @@
+PCAngsd v1.21
+Time: 24/02/2025 16:30:43
+Directory: /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/ANGSD_Sor
+Options:
+	--beagle angsd_depth1_15_notrans_subset_snplist.beagle.gz
+	--threads 16
+	--out angsd_notrans_snps_subset_it500_pca
+	--maf 0.001
+	--iter 500
+
+Loaded 44118 sites and 85 individuals.
+Number of sites after MAF filtering (0.001): 42894
+
+PCAngsd converged in 447 iterations using 1 eigenvectors.
+Saved covariance matrix as angsd_notrans_snps_subset_it500_pca.cov
+
+Total elapsed time: 0m31s
