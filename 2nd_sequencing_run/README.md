@@ -950,7 +950,7 @@ Submitted batch job 4265444
 
 ## 9. Remove duplicates with clumpify (*)
 
-<details><summary>6a. Remove duplicates</summary>
+<details><summary>9a. Remove duplicates</summary>
 	
 ### 9a. Remove duplicates
 
@@ -959,3 +959,47 @@ Submitted batch job 4265444
 Submitted batch job 4288360
 ```
 </details>
+
+<details><summary>9b. Check duplicate removal success</summary>
+	
+### 9b. Check duplicate removal success
+
+Clumpify failed on 2 samples:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ salloc
+[hpc-0373@d6-w6420b-09 2nd_sequencing_run]$ enable_lmod
+[hpc-0373@d6-w6420b-09 2nd_sequencing_run]$ module load container_env R/4.3 
+[hpc-0373@d6-w6420b-09 2nd_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+
+Clumpify failed on 2 samples. Inspect the following outfiles:
+clmp_r1r2_-4288360_140.out
+clmp_r1r2_-4288360_141.out
+
+[hpc-0373@d6-w6420b-09 2nd_sequencing_run]$ exit
+```
+</details> 
+
+<details><summary>6c. Rerun Clumpify on failed files</summary>
+	
+### 6c. Rerun Clumpify on failed files
+
+Per the out file, the files that failed were both Undetermined reads: `Undetermined-L3` & `Undetermined-L2`.
+
+The `r1.fq.gz` & `r2.fq.gz` files for both `Undetermined-L3` & `Undetermined-L2` are between 20 - 22G, so very large, which I presume is what caused the failure. I'm going to try to rerun without altering anything, and hope that all resources being allocated to only these files will aid in their completion.
+
+Isolate them in a new directory to be rerun:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mkdir fq_fp1_clmp_rpt
+[hpc-0373@wahab-01 2nd_sequencing_run]$ cp fq_fp1/Undetermined-L3* fq_fp1/Undetermined-L2* fq_fp1_clmp_rpt
+```
+
+Re-run Clumpify:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 2
+Submitted batch job 4320666
+```
+Check the out file to make sure it worked:
+```
+```
+
+</details> 
