@@ -995,8 +995,8 @@ Isolate them in a new directory to be rerun:
 
 Re-run Clumpify:
 ```
-[hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 2
-Submitted batch job 4320666
+[hpc-0373@turing1 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 2
+Submitted batch job 10707731
 ```
 Check the out file to make sure it worked:
 ```
