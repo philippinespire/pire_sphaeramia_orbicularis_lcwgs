@@ -575,6 +575,7 @@ Move `*.out` files into `logs` directory
 cd 
 mv *out logs/
 ```
+</details>
 
 <details>
 		<summary>15. MitoZ</summary>
