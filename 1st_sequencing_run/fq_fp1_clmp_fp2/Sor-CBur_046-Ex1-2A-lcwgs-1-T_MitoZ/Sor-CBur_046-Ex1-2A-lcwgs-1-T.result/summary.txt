@@ -1,0 +1,51 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C30451         16500          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C30451         1      629    629        -          rRNA   l-rRNA     16S ribosomal RNA                 2              
+C30451         630    702    73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C30451         704    1661   958        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C30451         1661   1729   69         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C30451         2553   2624   72         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C30451         2624   2696   73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C30451         2696   3837   1142       -          CDS    CYTB       cytochrome b                      1              
+C30451         3843   3912   70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C30451         3912   4434   523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C30451         4431   6250   1820       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C30451         6268   6341   74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+C30451         6347   6415   69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C30451         6415   6484   70         -          tRNA   trnH(gug)  tRNA-His                          1              
+C30451         6479   7865   1387       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C30451         7858   8155   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C30451         8155   8224   70         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C30451         8222   8573   352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C30451         8573   8643   71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C30451         8642   9428   787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C30451         9427   10111  685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C30451         10101  10269  169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C30451         10270  10344  75         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C30451         10336  11035  700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C30451         11041  11114  74         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C30451         11116  11187  72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+C30451         11187  12747  1561       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C30451         12739  12809  71         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C30451         12809  12875  67         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C30451         12913  12986  74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C30451         12987  13056  70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C30451         13060  13132  73         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C30451         13134  14181  1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C30451         14181  14251  71         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C30451         14250  14321  72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C30451         14320  14391  72         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C30451         14393  15368  976        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C30451         15368  15442  75         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C30451         15441  16501  1061       -          rRNA   l-rRNA     16S ribosomal RNA                 2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            3
+--------------------------------------
+Genes totally found:                38

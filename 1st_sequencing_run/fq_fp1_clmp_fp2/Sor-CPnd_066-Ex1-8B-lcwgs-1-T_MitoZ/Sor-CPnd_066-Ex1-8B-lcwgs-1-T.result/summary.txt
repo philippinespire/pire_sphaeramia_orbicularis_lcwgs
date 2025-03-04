@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C13082         16497          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C13082         <3     885    883        -          CDS    CYTB       cytochrome b                      1              
+C13082         891    960    70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C13082         960    1482   523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C13082         1479   3298   1820       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C13082         3316   3389   74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+C13082         3395   3463   69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C13082         3463   3532   70         -          tRNA   trnH(gug)  tRNA-His                          1              
+C13082         3527   4913   1387       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C13082         4906   5203   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C13082         5203   5272   70         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C13082         5270   5621   352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C13082         5621   5691   71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C13082         5690   6476   787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C13082         6475   7159   685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C13082         7149   7317   169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C13082         7318   7392   75         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C13082         7384   8083   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C13082         8089   8162   74         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C13082         8164   8235   72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+C13082         8235   9795   1561       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C13082         9787   9857   71         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C13082         9857   9923   67         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C13082         9961   10034  74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C13082         10035  10104  70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C13082         10108  10180  73         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C13082         10182  11229  1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C13082         11229  11299  71         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C13082         11298  11369  72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C13082         11368  11439  72         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C13082         11441  12416  976        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C13082         12416  12490  75         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C13082         12489  14174  1686       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C13082         14175  14247  73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C13082         14249  15206  958        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C13082         15206  15274  69         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C13082         16098  16169  72         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C13082         16169  16241  73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

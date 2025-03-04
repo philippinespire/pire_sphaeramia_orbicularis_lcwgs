@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C23692         16497          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C23692         178    250    73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C23692         250    321    72         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C23692         1145   1213   69         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C23692         1213   2170   958        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C23692         2172   2244   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C23692         2245   3930   1686       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C23692         3929   4003   75         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C23692         4003   4978   976        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C23692         4980   5051   72         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C23692         5050   5121   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C23692         5120   5190   71         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C23692         5190   6237   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C23692         6239   6311   73         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C23692         6315   6384   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C23692         6385   6458   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C23692         6496   6562   67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C23692         6562   6632   71         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C23692         6633   8184   1552       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C23692         8184   8255   72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C23692         8257   8330   74         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C23692         8336   9035   700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C23692         9027   9101   75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C23692         9102   9270   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C23692         9260   9944   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C23692         9943   10729  787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C23692         10728  10798  71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C23692         10798  11149  352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C23692         11147  11216  70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C23692         11216  11513  298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C23692         11506  12892  1387       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C23692         12887  12956  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C23692         12956  13024  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C23692         13030  13103  74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C23692         13121  14940  1820       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C23692         14937  15459  523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C23692         15459  15528  70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C23692         15534  >16497 964        +          CDS    CYTB       cytochrome b                      1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

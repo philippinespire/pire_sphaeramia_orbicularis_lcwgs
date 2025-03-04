@@ -1,0 +1,58 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C2535          14753          no             Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C2535          1      1073   1073       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C2535          1072   1146   75         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C2535          1146   2121   976        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C2535          2123   2194   72         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C2535          2193   2264   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C2535          2263   2333   71         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C2535          2333   3380   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C2535          3382   3454   73         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C2535          3458   3527   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C2535          3528   3601   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C2535          3639   3705   67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C2535          3705   3775   71         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C2535          3776   5327   1552       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C2535          5327   5398   72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C2535          5400   5473   74         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C2535          5479   6178   700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C2535          6170   6244   75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C2535          6245   6413   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C2535          6403   7087   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C2535          7086   7872   787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C2535          7871   7941   71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C2535          7941   8292   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C2535          8290   8359   70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C2535          8359   8656   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C2535          8649   10035  1387       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C2535          10030  10099  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C2535          10099  10167  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C2535          10173  10246  74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C2535          10264  12083  1820       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C2535          12080  12602  523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C2535          12602  12671  70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C2535          12677  13818  1142       +          CDS    CYTB       cytochrome b                      1              
+C2535          13818  13890  73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C2535          13890  13961  72         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           20
+rRNA genes totally found:            1
+--------------------------------------
+Genes totally found:                34
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+s-rRNA                               1
+tRNA-Phe                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

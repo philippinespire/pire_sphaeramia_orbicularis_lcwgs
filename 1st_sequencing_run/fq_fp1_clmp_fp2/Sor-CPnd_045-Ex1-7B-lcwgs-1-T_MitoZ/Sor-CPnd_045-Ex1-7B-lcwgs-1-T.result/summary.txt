@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C27444         16499          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C27444         655    726    72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C27444         728    801    74         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C27444         807    1506   700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C27444         1498   1572   75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C27444         1573   1741   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C27444         1731   2415   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C27444         2414   3200   787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C27444         3199   3269   71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C27444         3269   3620   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C27444         3618   3687   70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C27444         3687   3984   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C27444         3977   5363   1387       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C27444         5358   5427   70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C27444         5427   5495   69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C27444         5501   5574   74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C27444         5592   7411   1820       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C27444         7408   7930   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C27444         7930   7999   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C27444         8005   9146   1142       +          CDS    CYTB       cytochrome b                      1              
+C27444         9146   9218   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C27444         9218   9289   72         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C27444         10113  10181  69         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C27444         10181  11138  958        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C27444         11140  11212  73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C27444         11213  12900  1688       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C27444         12899  12973  75         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C27444         12973  13948  976        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C27444         13950  14021  72         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C27444         14020  14091  72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C27444         14090  14160  71         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C27444         14160  15207  1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C27444         15209  15281  73         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C27444         15285  15354  70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C27444         15355  15428  74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C27444         15466  15532  67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C27444         15532  15602  71         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C27444         15594  >16500 907        +          CDS    COX1       cytochrome c oxidase subunit I    1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

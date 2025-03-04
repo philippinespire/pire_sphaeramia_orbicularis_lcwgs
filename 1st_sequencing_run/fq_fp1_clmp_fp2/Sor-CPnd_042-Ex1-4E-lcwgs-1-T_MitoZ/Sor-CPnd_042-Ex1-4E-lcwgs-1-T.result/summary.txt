@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C8623          16499          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C8623          37     110    74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C8623          111    180    70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C8623          184    256    73         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C8623          258    1305   1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C8623          1305   1375   71         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C8623          1374   1445   72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C8623          1444   1515   72         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C8623          1517   2492   976        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C8623          2492   2566   75         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C8623          2565   4252   1688       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C8623          4253   4325   73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C8623          4327   5284   958        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C8623          5284   5352   69         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C8623          6176   6247   72         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C8623          6247   6319   73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C8623          6319   7460   1142       -          CDS    CYTB       cytochrome b                      1              
+C8623          7466   7535   70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C8623          7535   8057   523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C8623          8054   9873   1820       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C8623          9891   9964   74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+C8623          9970   10038  69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C8623          10038  10107  70         -          tRNA   trnH(gug)  tRNA-His                          1              
+C8623          10102  11488  1387       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C8623          11481  11778  298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C8623          11778  11847  70         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C8623          11845  12196  352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C8623          12196  12266  71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C8623          12265  13051  787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C8623          13050  13734  685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C8623          13724  13892  169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C8623          13893  13967  75         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C8623          13959  14658  700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C8623          14664  14737  74         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C8623          14739  14810  72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+C8623          14810  16370  1561       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C8623          16362  16432  71         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C8623          16432  16498  67         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

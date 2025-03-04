@@ -1,0 +1,51 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C68169         16500          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C68169         1      1146   1146       +          rRNA   l-rRNA     16S ribosomal RNA                 2              
+C68169         1145   1219   75         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C68169         1219   2194   976        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C68169         2196   2267   72         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C68169         2266   2337   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C68169         2336   2406   71         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C68169         2406   3453   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C68169         3455   3527   73         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C68169         3531   3600   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C68169         3601   3674   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C68169         3712   3778   67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C68169         3778   3848   71         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C68169         3849   5400   1552       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C68169         5400   5471   72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C68169         5473   5546   74         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C68169         5552   6251   700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C68169         6243   6317   75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C68169         6318   6486   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C68169         6476   7160   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C68169         7159   7945   787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C68169         7944   8014   71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C68169         8014   8365   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C68169         8363   8432   70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C68169         8432   8729   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C68169         8722   10108  1387       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C68169         10103  10172  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C68169         10172  10240  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C68169         10246  10319  74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C68169         10337  12156  1820       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C68169         12153  12675  523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C68169         12675  12744  70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C68169         12750  13891  1142       +          CDS    CYTB       cytochrome b                      1              
+C68169         13891  13963  73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C68169         13963  14034  72         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C68169         14858  14926  69         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C68169         14926  15883  958        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C68169         15885  15957  73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C68169         15958  16501  544        +          rRNA   l-rRNA     16S ribosomal RNA                 2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            3
+--------------------------------------
+Genes totally found:                38

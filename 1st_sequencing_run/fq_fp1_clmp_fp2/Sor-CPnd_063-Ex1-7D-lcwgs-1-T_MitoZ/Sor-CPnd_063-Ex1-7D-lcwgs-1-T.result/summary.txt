@@ -1,0 +1,51 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C15728         16500          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C15728         1      664    664        -          rRNA   l-rRNA     16S ribosomal RNA                 2              
+C15728         665    737    73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C15728         739    1696   958        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C15728         1696   1764   69         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C15728         2588   2659   72         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C15728         2659   2731   73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C15728         2731   3872   1142       -          CDS    CYTB       cytochrome b                      1              
+C15728         3878   3947   70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C15728         3947   4469   523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C15728         4466   6285   1820       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C15728         6303   6376   74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+C15728         6382   6450   69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C15728         6450   6519   70         -          tRNA   trnH(gug)  tRNA-His                          1              
+C15728         6514   7900   1387       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C15728         7893   8190   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C15728         8190   8259   70         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C15728         8257   8608   352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C15728         8608   8678   71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C15728         8677   9463   787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C15728         9462   10146  685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C15728         10136  10304  169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C15728         10305  10379  75         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C15728         10371  11070  700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C15728         11076  11149  74         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C15728         11151  11222  72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+C15728         11222  12782  1561       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C15728         12774  12844  71         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C15728         12844  12910  67         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C15728         12948  13021  74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C15728         13022  13091  70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C15728         13095  13167  73         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C15728         13169  14216  1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C15728         14216  14286  71         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C15728         14285  14356  72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C15728         14355  14426  72         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C15728         14428  15403  976        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C15728         15403  15477  75         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C15728         15476  16501  1026       -          rRNA   l-rRNA     16S ribosomal RNA                 2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            3
+--------------------------------------
+Genes totally found:                38

@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C18968         16498          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C18968         <1     967    967        -          CDS    CYTB       cytochrome b                      1              
+C18968         973    1042   70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C18968         1042   1564   523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C18968         1561   3380   1820       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C18968         3398   3471   74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+C18968         3477   3545   69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C18968         3545   3614   70         -          tRNA   trnH(gug)  tRNA-His                          1              
+C18968         3609   4995   1387       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C18968         4988   5285   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C18968         5285   5354   70         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C18968         5352   5703   352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C18968         5703   5773   71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C18968         5772   6558   787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C18968         6557   7241   685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C18968         7231   7399   169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C18968         7400   7474   75         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C18968         7466   8165   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C18968         8171   8244   74         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C18968         8246   8317   72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+C18968         8317   9877   1561       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C18968         9869   9939   71         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C18968         9939   10005  67         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C18968         10043  10116  74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C18968         10117  10186  70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C18968         10190  10262  73         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C18968         10264  11311  1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C18968         11311  11381  71         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C18968         11380  11451  72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C18968         11450  11521  72         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C18968         11523  12498  976        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C18968         12498  12572  75         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C18968         12571  14257  1687       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C18968         14258  14330  73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C18968         14332  15289  958        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C18968         15289  15357  69         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C18968         16181  16252  72         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C18968         16252  16324  73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

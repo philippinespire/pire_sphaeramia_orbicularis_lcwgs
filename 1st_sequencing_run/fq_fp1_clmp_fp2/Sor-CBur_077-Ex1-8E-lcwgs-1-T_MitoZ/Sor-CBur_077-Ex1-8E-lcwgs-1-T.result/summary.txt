@@ -1,0 +1,58 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C36225         16499          no             Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C36225         29     728    700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C36225         720    794    75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C36225         795    963    169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C36225         953    1637   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C36225         1636   2422   787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C36225         2421   2491   71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C36225         2491   2842   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C36225         2840   2909   70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C36225         2909   3206   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C36225         3199   4585   1387       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C36225         4580   4649   70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C36225         4649   4717   69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C36225         4723   4796   74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C36225         4814   6633   1820       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C36225         6630   7152   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C36225         7152   7221   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C36225         7227   8368   1142       +          CDS    CYTB       cytochrome b                      1              
+C36225         8368   8440   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C36225         8440   8511   72         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C36225         9335   9403   69         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C36225         9403   10360  958        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C36225         10362  10434  73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C36225         10435  12123  1689       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C36225         12122  12196  75         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C36225         12196  13171  976        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C36225         13173  13244  72         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C36225         13243  13314  72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C36225         13313  13383  71         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C36225         13383  14430  1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C36225         14432  14504  73         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C36225         14508  14577  70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C36225         14578  14651  74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C36225         14689  14755  67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C36225         14755  14825  71         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C36225         14826  16377  1552       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C36225         16377  16448  72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           21
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                36
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+tRNA-Asp                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

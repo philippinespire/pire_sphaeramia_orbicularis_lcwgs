@@ -1,0 +1,51 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C163028        16498          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C163028        1      1132   1132       +          rRNA   l-rRNA     16S ribosomal RNA                 2              
+C163028        1131   1205   75         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C163028        1205   2180   976        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C163028        2182   2253   72         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C163028        2252   2323   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C163028        2322   2392   71         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C163028        2392   3439   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C163028        3441   3513   73         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C163028        3517   3586   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C163028        3587   3660   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C163028        3698   3764   67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C163028        3764   3834   71         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C163028        3835   5386   1552       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C163028        5386   5457   72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C163028        5459   5532   74         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C163028        5538   6237   700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C163028        6229   6303   75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C163028        6304   6472   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C163028        6462   7146   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C163028        7145   7931   787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C163028        7930   8000   71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C163028        8000   8351   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C163028        8349   8418   70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C163028        8418   8715   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C163028        8708   10094  1387       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C163028        10089  10158  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C163028        10158  10226  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C163028        10232  10305  74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C163028        10323  12142  1820       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C163028        12139  12661  523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C163028        12661  12730  70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C163028        12736  13877  1142       +          CDS    CYTB       cytochrome b                      1              
+C163028        13877  13949  73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C163028        13949  14020  72         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C163028        14844  14912  69         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C163028        14912  15869  958        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C163028        15871  15943  73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C163028        15944  16499  556        +          rRNA   l-rRNA     16S ribosomal RNA                 2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            3
+--------------------------------------
+Genes totally found:                38

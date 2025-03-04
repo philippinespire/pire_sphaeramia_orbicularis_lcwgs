@@ -1,0 +1,51 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C28075         16496          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C28075         1      145    145        +          rRNA   s-rRNA     12S ribosomal RNA                 2              
+C28075         147    219    73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C28075         220    1904   1685       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C28075         1903   1977   75         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C28075         1977   2952   976        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C28075         2954   3025   72         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C28075         3024   3095   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C28075         3094   3164   71         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C28075         3164   4211   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C28075         4213   4285   73         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C28075         4289   4358   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C28075         4359   4432   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C28075         4470   4536   67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C28075         4536   4606   71         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C28075         4607   6158   1552       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C28075         6158   6229   72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C28075         6231   6304   74         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C28075         6310   7009   700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C28075         7001   7075   75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C28075         7076   7244   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C28075         7234   7918   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C28075         7917   8703   787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C28075         8702   8772   71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C28075         8772   9123   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C28075         9121   9190   70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C28075         9190   9487   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C28075         9480   10866  1387       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C28075         10861  10930  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C28075         10930  10998  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C28075         11004  11077  74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C28075         11095  12914  1820       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C28075         12911  13433  523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C28075         13433  13502  70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C28075         13508  14649  1142       +          CDS    CYTB       cytochrome b                      1              
+C28075         14649  14721  73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C28075         14721  14792  72         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C28075         15616  15684  69         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C28075         15684  16497  814        +          rRNA   s-rRNA     12S ribosomal RNA                 2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            3
+--------------------------------------
+Genes totally found:                38
