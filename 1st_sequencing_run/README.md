@@ -576,6 +576,50 @@ cd
 mv *out logs/
 ```
 
+<details>
+		<summary>15. MitoZ</summary>
 
+Copy scripts.
+```
+cd /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/1st_sequencing_run
+
+cp /archive/carpenterlab/pire/pire_lcwgs_data_processing/scripts/MitoZ_wahab/runMitoZ_array.* ./
+```
+The runMitoZ_array.bash and runMitoZ_array.sbatch scripts need to be altered before running. Using nano, I had to edit every instance of _clmp.fp2_r1.fq.gz and change it to .clmp.fp2_r1.fq.gz.
+
+Run MitoZ.
+```
+bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2 32
+```
+
+Move MitoZ\*.out files to `fq_fp1_clmp_fp2`.
+```
+mv MitoZ*.out fq_fp1_clmp_fp2/
+```
+
+Process MitoZ.
+```
+cd fq_fp1_clmp_fp2
+
+cp /archive/carpenterlab/pire/pire_lcwgs_data_processing/scripts/MitoZ_wahab/process_MitoZ_outputs_lcwgs.sh ./
+
+sh process_MitoZ_outputs_lcwgs.sh
+```
+
+Rename duplicate sequence names in the fasta file. 
+```
+cp /archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/3rd_sequencing_run/fq_fp1_clmp_fp2/rename_duplicate_fasta_headers.sh ./
+
+sh rename_duplicate_fasta_headers.sh MitoZ_output.fasta Sor_1st_MitoZ_output_cleaned.fasta
+```
+
+Rename files to include the species code and the sequencing run.
+```
+mv MitoZ_success.txt Sor_1st_MitoZ_success.txt
+mv MitoZ_failure_lowdepth.txt Sor_1st_MitoZ_failure_lowdepth.txt
+mv MitoZ_output.fasta Sor_1st_MitoZ_output.fasta
+```
+
+</details>
 
 
