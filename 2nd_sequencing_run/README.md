@@ -1003,7 +1003,11 @@ Upon checking the out files, it does not seem to have worked. This could have be
 [hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 2
 Submitted batch job 4325440
 ```
-
+I'm having permission errors. Trying again:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 2
+Submitted batch job XXXXXXX
+```
 
 
 </details> 
