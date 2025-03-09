@@ -1003,7 +1003,18 @@ Upon checking the out files, it does not seem to have worked. This could have be
 [hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 2
 Submitted batch job 4325440
 ```
+I'm having permission errors. Trying again:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 2
+Submitted batch job 4326584
+```
+This time, `Undetermined-L2` worked but not L3. Rerun L3:
+```
+[hpc-0373@wahab-01 fq_fp1_clmp_rpt]$ rm *L2*
 
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 1
+Submitted batch job 4326839
+```
 
 
 </details> 
