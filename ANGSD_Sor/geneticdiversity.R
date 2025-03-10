@@ -140,6 +140,12 @@ plot_theta_depth <- angsd_thetas_depth_notrans %>%
   ylim(0.00, 0.25)
 print(plot_theta_depth)
 
+# outFile pattern
+outFile_plot_theta_depth <- paste0("plots/", spp_code, "_plot_theta_depth_subset_FORMAT", ".png")  
+
+# Save the plot to a file
+ggsave(filename = outFile_plot_theta_depth, plot = plot_theta_depth, width = 2.15, height = 2.5)
+
 
 # nucleotide diversity (pi) estimates
 plot_pi_depth <- angsd_thetas_depth_notrans %>%
@@ -150,8 +156,15 @@ plot_pi_depth <- angsd_thetas_depth_notrans %>%
   geom_point(size=1.5, alpha=0.5) +
   geom_smooth() +
   scale_color_manual(values = c("#00BFC4", "#F8766D")) +
-  ylim(0.00, 0.35)
+  ylim(-0.05, 0.35)
 print(plot_pi_depth)
+
+# outFile pattern
+outFile_plot_pi_depth <- paste0("plots/", spp_code, "_plot_pi_depth_subset_FORMAT", ".png")  
+
+# Save the plot to a file
+ggsave(filename = outFile_plot_pi_depth, plot = plot_pi_depth, width = 2.15, height = 2.5)
+
 
 #Subset to depth 3-6X
 
@@ -198,13 +211,20 @@ plot_grid(bol_plot, mta_plot,
 plot_grid(bol_36_plot, mta_36_plot,
           labels=c('A', 'B'))
 
-# # filter out any NaN
-# angsd_thetas_depth_notrans <- angsd_thetas_depth_notrans %>%
-#   filter(!is.na(tP_bysite) & !is.na(tW_bysite))
 
 #Subset by population
 apnd_notrans <- subset(angsd_thetas_depth_notrans, Era=="Historical")
 cpnd_notrans <- subset(angsd_thetas_depth_notrans, Era=="Modern")
+
+# filter out any NaN
+apnd_notrans <- apnd_notrans %>%
+  filter(!is.na(tP_bysite) & !is.na(tW_bysite))
+cpnd_notrans <- cpnd_notrans %>%
+  filter(!is.na(tP_bysite) & !is.na(tW_bysite))
+
+# Assuming 'Chr' as a common identifier column
+apnd_notrans <- apnd_notrans[apnd_notrans$Chr %in% cpnd_notrans$Chr, ]
+cpnd_notrans <- cpnd_notrans[cpnd_notrans$Chr %in% apnd_notrans$Chr, ]
 
 
 #Test to see if theta is normally distributed
@@ -226,13 +246,13 @@ t.test(apnd_notrans$tP_bysite, cpnd_notrans$tP_bysite, paired=TRUE)
 #   mean difference 
 # -0.02329162 
 
-#Bootstrapping of pi
-# filter out any NaN
-apnd_notrans <- apnd_notrans %>%
-  filter(!is.na(tP_bysite) & !is.na(tW_bysite))
-cpnd_notrans <- cpnd_notrans %>%
-  filter(!is.na(tP_bysite) & !is.na(tW_bysite))
+#nonparametric wilcox test
+wilcox.test(apnd_notrans$tP_bysite, cpnd_notrans$tP_bysite, paired = TRUE)
+# V = 764, p-value = 2.37e-09
+# alternative hypothesis: true location shift is not equal to 0
 
+
+#Bootstrapping of pi
 x = as.vector(apnd_notrans$tP_bysite)
 
 samplemean <- function(x, d) {
@@ -318,17 +338,6 @@ hist(apnd_notrans$tW_bysite)
 hist(cpnd_notrans$tW_bysite)
 #Looks normally distributed
 
-##Paired t-test
-
-t.test(apnd_notrans$tW_bysite, cpnd_notrans$tW_bysite, paired=TRUE)
-# Error in complete.cases(x, y) : not all arguments have the same length
-# cpnd_notrans had 100 observations and apnd_notrans had 99. 
-# Remove the Chr from cpnd_notrans that is not in apdn_notrans.
-
-# Assuming 'Chr' as a common identifier column
-apnd_notrans <- apnd_notrans[apnd_notrans$Chr %in% cpnd_notrans$Chr, ]
-cpnd_notrans <- cpnd_notrans[cpnd_notrans$Chr %in% apnd_notrans$Chr, ]
-
 # Now, perform the t-test
 t.test(apnd_notrans$tW_bysite, cpnd_notrans$tW_bysite, paired=TRUE)
 
@@ -344,7 +353,6 @@ t.test(apnd_notrans$tW_bysite, cpnd_notrans$tW_bysite, paired=TRUE)
 # -0.0493085
 
 #Bootstrapping of theta
-
 x = as.vector(apnd_notrans$tW_bysite)
 
 samplemean <- function(x, d) {
@@ -448,9 +456,14 @@ plot_tajima_density <- angsd_thetas_depth_notrans %>%
         axis.ticks = element_line(color = "black")) +  # Black tick mark
   geom_density(alpha=0.65) +
   scale_fill_manual(values = c("#F8766D", "#00BFC4")) +
-  xlim(-3.0, 3.0) +
-  ylim(0.00, 1.1) +
-  scale_y_continuous(breaks = seq(0, 1, by = 0.25))  # Setting custom y-axis ticks
+  scale_x_continuous(breaks = seq(-2, 2, by = 2), 
+                     limits = c(-2.5, 2.5), 
+                     # expand = c(0, 1.1),
+                     labels = scales::number_format(accuracy = 1)) +  # Round to 0 decimal places
+  scale_y_continuous(breaks = seq(0, 1.0, by = 0.2), 
+                     limits = c(0, 1.1), 
+                     #expand = c(0, 0.5),
+                     labels = scales::number_format(accuracy = 0.1))  # Round to 1 decimal places
 print(plot_tajima_density)
 
 # outFile pattern
@@ -458,6 +471,22 @@ outFile_plot_tajima <- paste0("plots/", spp_code, "_plot_tajima_subset_FORMAT", 
 
 # Save the plot to a file
 ggsave(filename = outFile_plot_tajima, plot = plot_tajima_density, width = 2.15, height = 2.5)
+
+
+# PEAKS
+# Compute density estimate for Historical
+density_historical <- density(angsd_thetas_depth_notrans$Tajima[angsd_thetas_depth_notrans$Era == "Historical"], na.rm = TRUE)
+peak_historical <- density_historical$x[which.max(density_historical$y)]
+
+# Compute density estimate for Modern
+density_modern <- density(angsd_thetas_depth_notrans$Tajima[angsd_thetas_depth_notrans$Era == "Modern"], na.rm = TRUE)
+peak_modern <- density_modern$x[which.max(density_modern$y)]
+
+# Print peak values
+print(paste("Peak of Historical:", peak_historical))
+# Peak of Historical: -1.0167198229469
+print(paste("Peak of Modern:", peak_modern))
+# Peak of Modern: -1.38256846599433
 
 
 plot_tajima <- angsd_thetas_depth_notrans %>%
