@@ -159,8 +159,14 @@ PCA <- function(cov_matrix_angsd,
   p <- ggplot(data = e, aes(x = PC1, y = PC2, color = Era, shape = Location)) +
     geom_point(size = 4, alpha = 0.4) +
     scale_color_manual(values = c("#00BFC4", "#F8766D")) +
-    scale_x_continuous(labels = scales::number_format(accuracy = 0.01)) +  # Round to 2 decimal places
-    scale_y_continuous(labels = scales::number_format(accuracy = 0.01)) +  # Round to 2 decimal places
+    scale_x_continuous(breaks = seq(-0.2, 0.2, by = 0.2), 
+                       limits = c(-0.22, 0.2), 
+                       # expand = c(0, 1.1),
+                       labels = scales::number_format(accuracy = 0.1)) +  # Round to 1 decimal places
+    scale_y_continuous(breaks = seq(-0.2, 1.0, by = 0.2), 
+                       limits = c(-0.32, 1.0), 
+                       #expand = c(0, 0.5),
+                       labels = scales::number_format(accuracy = 0.1)) +  # Round to 1 decimal places
     theme_classic() +
     theme(
       legend.position = "none",
@@ -619,6 +625,15 @@ write.csv(table_betdisp_result, outFile_betdisp_result_it500, row.names = TRUE)
 
 
 #### IDENTIFY OUTLIERS ####
+
+# Print PCA Table
+# Select columns: individual, population, PC1, PC2
+pca_table_cleaned <- pca_table %>%
+  select(individual, population, PC1, PC2) %>%
+  mutate(individual = str_remove(individual, "\\..*"))  # Remove first period and everything after
+
+# Write to CSV
+write.csv(pca_table_cleaned, "pca_table_cleaned_subset_k3.csv", row.names = FALSE)
 
 # Define outlier thresholds for PC1 and PC2
 PC1_lower_threshold <- NA   # Set to NA if not applicable
