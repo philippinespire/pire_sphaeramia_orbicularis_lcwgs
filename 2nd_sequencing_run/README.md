@@ -1015,6 +1015,41 @@ This time, `Undetermined-L2` worked but not L3. Rerun L3:
 [hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 1
 Submitted batch job 4326839
 ```
+Okay, now both seem to have run successfully.
 
+Check to make sure:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ salloc
+[hpc-0373@d6-w6420b-09 2nd_sequencing_run]$ enable_lmod
+[hpc-0373@d6-w6420b-09 2nd_sequencing_run]$ module load container_env R/4.3 
+[hpc-0373@d6-w6420b-09 2nd_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+
+Error in `mutate()`:
+```
+I can't get this to work, so I'm going to move forward under the assumption that all files are complete.
 
 </details> 
+
+<details><summary>9d. Clean the scratch drive</summary>
+	
+### 9d. Clean the scratch drive
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0373 "*clumpify*temp*"
+Submitted batch job 4342409
+```
+
+Check:
+```
+ls /scratch/hpc-0373
+```
+Nothing printed, so its cleared.
+
+</details>
+
+<details><summary>9e. Generate metadata on deduplicated FASTQ files (*)</summary>
+
+### 9e. Generate metadata on deduplicated FASTQ files (*)
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+Submitted batch job 4342411
+```
