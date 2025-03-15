@@ -1080,9 +1080,9 @@ Submitted batch job 4342411
 ---
 </details>
 
-<details><summary>9. Second trim (*)</summary>
+<details><summary>10. Second trim (*)</summary>
 
-## 9. Second trim (*)
+## 10. Second trim (*)
  
 ```
 [hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
