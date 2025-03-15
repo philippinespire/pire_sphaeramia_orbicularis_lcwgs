@@ -979,9 +979,9 @@ clmp_r1r2_-4288360_141.out
 ```
 </details> 
 
-<details><summary>6c. Rerun Clumpify on failed files</summary>
+<details><summary>9c. Rerun Clumpify on failed files</summary>
 	
-### 6c. Rerun Clumpify on failed files
+### 9c. Rerun Clumpify on failed files
 
 Per the out file, the files that failed were both Undetermined reads: `Undetermined-L3` & `Undetermined-L2`.
 
@@ -1053,3 +1053,67 @@ Nothing printed, so its cleared.
 [hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 Submitted batch job 4342411
 ```
+
+**Results** (fq_fp1_clmp/fqc_clmp_report.html): 
+* 
+
+```
+‣ % duplication - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ GC content - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ length - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ number of reads -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+```
+</details>
+
+---
+</details>
+
+<details><summary>9. Second trim (*)</summary>
+
+## 9. Second trim (*)
+ 
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
+Submitted batch job 4343531
+```
+### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
+*
+
+```
+‣ % duplication -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ GC content -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ passing filter -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ % adapter -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ number of reads -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+```
+
+---
+</details>
+
