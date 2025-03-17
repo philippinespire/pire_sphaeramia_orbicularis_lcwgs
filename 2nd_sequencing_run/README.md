@@ -1086,7 +1086,7 @@ Submitted batch job 4342411
  
 ```
 [hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
-Submitted batch job 4343531
+Submitted batch job 4343884
 ```
 ### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
 *
