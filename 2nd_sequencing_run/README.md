@@ -1136,3 +1136,149 @@ Submitted batch job 4343884
 JobID: 4346549
 
 </details>
+
+<details><summary>11b. Check for Errors</summary>
+	
+### 11b. Check for Errors
+
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0373@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+Submitted batch job 4366953
+```
+When complete check the $outdir/fqValidateReport.txt file
+```
+less -S $outdir/fqValidationReport.txt file
+```
+
+**Confirm files were succesfully completed:**
+
+Check that all 5 files were created for each fqgz file:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 2nd_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
+142
+142
+142
+142
+142
+142
+142
+142
+142
+142
+```
+
+For each, you should have the same number as the number of input files (number of fq.gz files):
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 2nd_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
+                                        ls $indir/*r2.fq.gz | wc -l
+142
+142
+```
+Check the `*out` files: (no results)
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ grep 'error' slurm-fqscrn.*out
+                                        grep 'No reads in' slurm-fqscrn.*out
+                                        grep 'FATAL' slurm-fqscrn.*out
+```
+Check for any unzipped files with the word temp, which means that the job didn't finish and needs to be rerun: 
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ ls $outdir/*temp*
+ls: cannot access '/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/*temp*': No such file or directory
+```
+
+No errors!
+
+---
+</details>
+
+<details><summary>11d. Move output files</summary>
+
+### 11d. Move output files
+
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mkdir fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mv /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/* /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+```
+Check to see if `/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/` was cleared:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ ls /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+#nothing printed
+```
+---
+</details>
+
+<details><summary>11e. Run MultiQC (*)</summary>
+
+### 11e. Run MultiQC (*)
+
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+Submitted batch job 4366970
+```
+#### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html): 
+*
+
+```
+‣ multiple genomes -
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+‣ no hits -
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+```
+</details>
+
+---
+
+</details>
+
+<details><summary>12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)</summary>
+
+## 12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)
+
+#### Execute `runREPAIR.sbatch`
+
+Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) and reverse (r2) reads so that the `*1.fq.gz` and `*2.fq.gz` files have reads in the same order
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
+Submitted batch job 4257399
+```
+
+#### Confirm that the paired end fq.gz files are complete and formatted correctly:
+
+Start by running the script:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0373@wahab-01 2nd_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch 
+                                        DIR=fq_fp1_clmp_fp2_fqscrn_rprd
+                                        fqPATTERN="*fq.gz"
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+Submitted batch job 4366971
+```
+Check the SLURM `.out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ cat valiate_FQ_-4366971.out
+PAIRED END FASTQ VALIDATION REPORT
+
+Directory: fq_fp1_clmp_fp2_fqscrn_rprd
+File Pattern: *fq.gz
+File extensions found: .R1.fq.gz .R2.fq.gz
+
+XXXX
+
+```
