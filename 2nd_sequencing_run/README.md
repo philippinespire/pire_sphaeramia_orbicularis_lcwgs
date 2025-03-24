@@ -1256,7 +1256,7 @@ Submitted batch job 4366970
 Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) and reverse (r2) reads so that the `*1.fq.gz` and `*2.fq.gz` files have reads in the same order
 ```
 [hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
-Submitted batch job 4366982
+Submitted batch job 4369572
 ```
 
 #### Confirm that the paired end fq.gz files are complete and formatted correctly:
@@ -1268,7 +1268,7 @@ Start by running the script:
                                         DIR=fq_fp1_clmp_fp2_fqscrn_rprd
                                         fqPATTERN="*fq.gz"
 [hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
-Submitted batch job 4367167
+Submitted batch job xxxxx
 ```
 Check the SLURM `.out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid:
 ```
