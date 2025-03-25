@@ -1371,7 +1371,7 @@ Now, I am able to map my reads.
 Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns raw sequencing reads (in FASTQ format) to a reference genome and creates BAM files.
 ```
 [hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
-Submitted batch job 4382360
+Submitted batch job 4382387
 ```
 
 ---
