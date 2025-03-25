@@ -1272,12 +1272,108 @@ Submitted batch job 4372590
 ```
 Check the SLURM `.out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid:
 ```
-[hpc-0373@wahab-01 4th_sequencing_run]$ cat valiate_FQ_-XXXX.out
+[hpc-0373@wahab-01 2nd_sequencing_run]$ cat valiate_FQ_-4372590.out
 PAIRED END FASTQ VALIDATION REPORT
 
 Directory: fq_fp1_clmp_fp2_fqscrn_rprd
 File Pattern: *fq.gz
 File extensions found: .R1.fq.gz .R2.fq.gz
 
-XXXX
+Number of paired end fq files evaluated: 142
+Number of paired end fq files validated: 142
+
+Errors Reported:
 ```
+#### Run `Multi_FASTQC`
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+Submitted batch job 4382206
+```
+
+#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
+*
+
+```
+‣ % duplication -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ GC content -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ length -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ number of reads -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+```
+
+---
+</details>
+
+<details><summary>13. Clean Up</summary>
+
+## 13. Clean Up
+
+Move any .out files into the logs dir
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mkdir logs
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mv *out logs/
+```
+
+---
+</details>
+
+<details><summary>14. Map Re-Paired fq.gz to Reference Genome</summary>
+<p>
+
+## 14. Map Re-Paired `fq.gz` to Reference Genome
+
+The following steps 14-16 are from the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+
+### Get your reference genome
+
+Make a new directory `refGenome` and `cd` into it
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mkdir refGenome
+[hpc-0373@wahab-01 2nd_sequencing_run]$ cd refGenome/
+```
+
+In the deprecated version of this sequencing run, I downloaded the [reference genome from NCBI](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/902/148/855/GCF_902148855.1_fSphaOr1.1/). I'm going to copy it over:
+```
+[hpc-0373@wahab-01 refGenome]$ cp ../../deprecated_2nd_sequencing_run/refGenome/GCF_902148855.1_fSphaOr1.1_genomic.fna.gz .
+```
+### Map your reads to your reference genome
+
+Create a `mkBAM_ddocent` directory and copy all `fq.gz` files from `fq_fp1_clmp_fp2_fqscrn_rprd` into this new directory
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mkdir mkBAM_ddocent
+[hpc-0373@wahab-01 2nd_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
+```
+Copy the reference genome to `mkBAM_ddocent`:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ cp refGenome/GCF_902148855.1_fSphaOr1.1_genomic.fna.gz mkBAM_ddocent/reference.genbank.Sor.fasta
+```
+
+Then, copy the scripts we need to run. Typically, these are copied from the `dDocentHPC` directory, which you have to clone to your repo, but I already downloaded and edited them in the deprecated version, so I'll just copy those instead:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ cd mkBAM_ddocent/
+[hpc-0373@wahab-01 mkBAM_ddocent]$ cp ../../deprecated_2nd_sequencing_run/mkBAM_ddocent/config.6.lcwgs .
+[hpc-0373@wahab-01 mkBAM_ddocent]$ cp ../../deprecated_2nd_sequencing_run/mkBAM_ddocent/dDocentHPC.sbatch .
+```
+
+Now, I am able to map my reads.
+
+Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns raw sequencing reads (in FASTQ format) to a reference genome and creates BAM files.
+```
+[hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+Submitted batch job 4382360
+```
+
+---
+
+</details>
