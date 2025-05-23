@@ -93,10 +93,6 @@ cat("Total number of BAM files:", total_n, "\n")
 
 #### WRANGLE DATA ####
 
-#Add a column for the species
-apnd_thetas_notrans$Species <- "sor"
-cpnd_thetas_notrans$Species <- "sor"
-
 #Add a column for site to each dataset
 apnd_thetas_notrans$Site <- "APnd"
 cpnd_thetas_notrans$Site <- "CPnd"
@@ -127,30 +123,8 @@ angsd_thetas_depth_notrans$tW_bysite <- angsd_thetas_depth_notrans$tW/angsd_thet
 #Add a column with pi (nucleotide diversity) by site (theta for the contig divided by number of sites on the contig)
 angsd_thetas_depth_notrans$tP_bysite <- angsd_thetas_depth_notrans$tP/angsd_thetas_depth_notrans$nSites
 
-# filter out any NaN
-angsd_thetas_depth_notrans <- angsd_thetas_depth_notrans %>%
-  filter(!is.na(tP_bysite) & !is.na(tW_bysite))
-
-# Identify shared Chr values that appear in both Historical and Modern groups
-shared_chr <- angsd_thetas_depth_notrans %>%
-  group_by(Chr) %>%
-  filter(n_distinct(Era) == 2) %>%
-  pull(Chr) %>%
-  unique()
-
-# Filter the dataframe to keep only rows with shared Chr values
-angsd_thetas_depth_notrans <- angsd_thetas_depth_notrans %>%
-  filter(Chr %in% shared_chr)
-
 #Reorder for plotting
 angsd_thetas_depth_notrans$Site <- factor(angsd_thetas_depth_notrans$Site, levels=c("APnd", "CPnd"))
-
-
-
-
-
-# Define colors for the eras
-era_colors <- c("Historical" = "#F8766D", "Modern" = "#00BFC4")
 
 #Theta by Depth plot
 # Waterson's theta estimates
@@ -160,12 +134,10 @@ plot_theta_depth <- angsd_thetas_depth_notrans %>%
   theme_classic() +
   theme(legend.position="none") +
   geom_point(size=1.5, alpha=0.5) +
-  geom_smooth(method = "loess", span = 0.5, se = TRUE) +  # LOESS smoothing
-  scale_color_manual(values = era_colors) +
-  scale_x_log10()  # Apply logarithmic scale to x-axis
-  # scale_color_manual(values = c("#00BFC4", "#F8766D"))
-  # scale_y_continuous(breaks=c(0.05, 0.07, 0.9, 0.11)) +
-  # ylim(0.00, 0.25)
+  geom_smooth() +
+  scale_color_manual(values = c("#00BFC4", "#F8766D")) +
+  scale_y_continuous(breaks=c(0.05, 0.07, 0.9, 0.11)) +
+  ylim(0.00, 0.25)
 print(plot_theta_depth)
 
 # outFile pattern
@@ -182,10 +154,9 @@ plot_pi_depth <- angsd_thetas_depth_notrans %>%
   theme_classic() +
   theme(legend.position="none") +
   geom_point(size=1.5, alpha=0.5) +
-  geom_smooth(method = "loess", span = 0.5, se = TRUE) +  # LOESS smoothing
+  geom_smooth() +
   scale_color_manual(values = c("#00BFC4", "#F8766D")) +
-  scale_x_log10()  # Apply logarithmic scale to x-axis
-  # ylim(-0.05, 0.35)
+  ylim(-0.05, 0.35)
 print(plot_pi_depth)
 
 # outFile pattern
@@ -251,11 +222,9 @@ apnd_notrans <- apnd_notrans %>%
 cpnd_notrans <- cpnd_notrans %>%
   filter(!is.na(tP_bysite) & !is.na(tW_bysite))
 
-# Filter the population dataframes so that they ony retain rows where the Chr values are shared. Assuming 'Chr' as a common identifier column.
+# Assuming 'Chr' as a common identifier column
 apnd_notrans <- apnd_notrans[apnd_notrans$Chr %in% cpnd_notrans$Chr, ]
 cpnd_notrans <- cpnd_notrans[cpnd_notrans$Chr %in% apnd_notrans$Chr, ]
-
-
 
 
 #Test to see if theta is normally distributed
