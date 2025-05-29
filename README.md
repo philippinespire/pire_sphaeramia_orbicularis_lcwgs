@@ -22,6 +22,12 @@ Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbiculari
 
 2nd sequencing run fq.gz processing done by John Whalen and Gianna Mazzei (January 2025).
 
+## [3rd Sequencing Run](https://github.com/philippinespire/pire_sphaeramia_orbicularis_lcwgs/tree/main/3rd_sequencing_run)
+
+**ACeb / CPnd**
+
+3rd sequencing run fq.gz processing done by Gianna Mazzei (June 2025).
+
 ---
 
 ## [GenErode_Sor](https://github.com/philippinespire/pire_sphaeramia_orbicularis_lcwgs/tree/main/GenErode_Sor_20k)
