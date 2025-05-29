@@ -1,0 +1,13 @@
+Undetermined-L3
+Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2
+Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2
+Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3
+Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2
+Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3
+Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2
+Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3
+Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2
+Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2
+Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2
+Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3
+Undetermined-L2

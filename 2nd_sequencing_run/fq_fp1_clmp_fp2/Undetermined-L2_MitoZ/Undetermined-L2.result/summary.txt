@@ -1,0 +1,51 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C4504567       16569          yes            Homo heidelbergensis
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C4504567       1      858    858        +          rRNA   l-rRNA     16S ribosomal RNA                 2              
+C4504567       858    933    76         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C4504567       935    1892   958        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C4504567       1891   1960   70         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C4504567       1957   2029   73         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C4504567       2030   2098   69         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C4504567       2102   3143   1042       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C4504567       3140   3208   69         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C4504567       3215   3284   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C4504567       3285   3358   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C4504567       3389   3455   67         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C4504567       3455   3520   66         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C4504567       3532   5074   1543       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C4504567       5074   5143   70         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C4504567       5146   5214   69         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C4504567       5214   5898   685        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C4504567       5923   5993   71         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C4504567       5994   6201   208        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C4504567       6155   6836   682        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C4504567       6835   7620   786        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C4504567       7619   7687   69         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C4504567       7687   8033   347        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C4504567       8033   8098   66         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C4504567       8098   8395   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C4504567       8388   9766   1379       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C4504567       9766   9835   70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C4504567       9835   9894   60         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C4504567       9894   9965   72         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C4504567       9965   11777  1813       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C4504567       11777  12302  526        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C4504567       12302  12371  70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C4504567       12375  13536  1162       +          CDS    CYTB       cytochrome b                      1              
+C4504567       13516  13582  67         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C4504567       13584  13652  69         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C4504567       14775  14846  72         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C4504567       14846  15800  955        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C4504567       15800  15869  70         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C4504567       15867  16570  704        +          rRNA   l-rRNA     16S ribosomal RNA                 2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            3
+--------------------------------------
+Genes totally found:                38
