@@ -99,21 +99,44 @@ Submitted batch job 4457961
 ```
 
 ### MultiQC output (fq_raw/fqc_raw_report.html):
-*
+* 81/96 failing Per Base Sequence Content
+* Per Sequence GC Content- uniform peak around 41%
+* High adapter content
 
 ```
 ‣ % duplication - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Contemp: 5.2 - 17.7%
 ‣ GC content - 
-    • Alb: 
-    • Contemp: 
-    • Undetermined: 
+    • Contemp: 40 - 48%
 ‣ number of reads - 
-    • Alb: 
+    • Contemp: 0.3 - 20.0 mil
+```
+---
+</details>
+
+<details><summary>5. First trim (*)</summary>
+
+## 5. First trim (*)
+
+Run `runFASTP_1st_trim.sbatch`:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+Submitted batch job 4458905
+```
+### Review the FastQC output (fq_fp1/1st_fastp_report.html):
+* 
+
+```
+‣ % duplication - 
     • Contemp: 
-    • Undetermined: 
+‣ GC content -
+    • Contemp: 
+‣ passing filter - 
+    • Contemp: 
+‣ % adapter - 
+    • Contemp: 
+‣ number of reads - 
+    • Contemp: 
 ```
 ---
 </details>
