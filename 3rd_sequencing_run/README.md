@@ -124,20 +124,34 @@ Run `runFASTP_1st_trim.sbatch`:
 Submitted batch job 4458905
 ```
 ### Review the FastQC output (fq_fp1/1st_fastp_report.html):
-* 
+* Graph of average sequencing quality over each base of all reads evened out after filtering
+* GC content graph good after filtering- some stochasticity between read positions 0-10; no outliers
 
 ```
 ‣ % duplication - 
-    • Contemp: 
+    • Contemp: 4.7 - 17.3%
 ‣ GC content -
-    • Contemp: 
+    • Contemp: 38.3 - 40.6%
 ‣ passing filter - 
-    • Contemp: 
+    • Contemp: 90.0 - 98.6%
 ‣ % adapter - 
-    • Contemp: 
+    • Contemp: 17.1 - 74.3%
 ‣ number of reads - 
-    • Contemp: 
+    • Contemp: 0.5 - 39.2 mil
 ```
 ---
 </details>
 
+<details><summary>6. Remove duplicates with clumpify (*)</summary>
+
+## 6. Remove duplicates with clumpify (*)
+
+<details><summary>9a. Remove duplicates</summary>
+	
+### 6a. Remove duplicates
+
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0373 20
+Submitted batch job 4459984
+```
+</details>
