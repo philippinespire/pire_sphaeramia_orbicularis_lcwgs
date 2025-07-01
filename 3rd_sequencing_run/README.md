@@ -213,3 +213,34 @@ Submitted batch job 4464960
     • Contemp: 0.3 - 16.9 mil
 ```
 </details>
+
+---
+</details>
+
+<details><summary>7. Second trim (*)</summary>
+
+## 7. Second trim (*)
+ 
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
+Submitted batch job 4567046
+```
+
+### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
+*
+
+```
+‣ % duplication -
+    • Contemp: 
+‣ GC content -
+    • Contemp: 
+‣ passing filter -
+    • Contemp: 
+‣ % adapter -
+    • Contemp: 
+‣ number of reads -
+    • Contemp: 
+```
+
+---
+</details>
