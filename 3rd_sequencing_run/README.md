@@ -227,20 +227,53 @@ Submitted batch job 4567046
 ```
 
 ### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
-*
+* Sequence quality before and after filtering looks good
+* GC content before and after filtering looks good; some variation between reads 0-10
+* N Content looks good after filtering
 
 ```
 ‣ % duplication -
-    • Contemp: 
+    • Contemp: 0.5 - 2.5%
 ‣ GC content -
-    • Contemp: 
+    • Contemp: 38.2 - 40.6%
 ‣ passing filter -
-    • Contemp: 
+    • Contemp: 99.5 - 99.7%
 ‣ % adapter -
-    • Contemp: 
+    • Contemp: 0.1 - 0.6%
 ‣ number of reads -
-    • Contemp: 
+    • Contemp: 0.5 - 33.6 mil
 ```
 
 ---
 </details>
+
+<details><summary>8. Decontaminate files (*)</summary>
+
+## 8. Decontaminate files (*)
+
+<details><summary>8a. Run fastq_screen</summary>
+	
+### 8a. Run fastq_screen
+
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash
+[hpc-0373@wahab-01 3rd_sequencing_run]$ fqScrnPATH=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash
+[hpc-0373@wahab-01 3rd_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 3rd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 3rd_sequencing_run]$ nodes=20
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
+```
+JobID: 4567117
+
+</details>
+
+<details><summary>8b. Check for Errors</summary>
+	
+### 8b. Check for Errors
+
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash
+[hpc-0373@wahab-01 3rd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+Submitted batch job xxxxxxx
+```
