@@ -198,16 +198,18 @@ Submitted batch job 4464960
 ```
 
 **Results** (fq_fp1_clmp/fqc_clmp_report.html): 
-* 
+* Per Base Sequence Content: 67/96 have warnings
+* Per Sequence GC Content: 1 sample has a warning (Sor-CPnd_016)
+* No samples found with any adapter contamination > 0.1%
 
 ```
 ‣ % duplication - 
-    • Contemp: 
+    • Contemp: 0.6 - 5.3%
 ‣ GC content - 
-    • Contemp: 
+    • Contemp: 38 - 40%
 ‣ length - 
-    • Contemp: 
+    • Contemp: 99 - 144 bp
 ‣ number of reads -
-    • Contemp: 
+    • Contemp: 0.3 - 16.9 mil
 ```
 </details>
