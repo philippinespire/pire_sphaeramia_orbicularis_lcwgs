@@ -4,7 +4,7 @@
 
 ## 3rd Sequencing Run
 
-Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbicularis* from Pandanon Island (CPnd). Only contemporary individuals were re-sequenced for this run.
+Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbicularis* from Pandanon Island (CPnd). **Only contemporary individuals were re-sequenced for this run.**
 
 fq.gz processing done by Gianna Mazzei (June 2025).
 
