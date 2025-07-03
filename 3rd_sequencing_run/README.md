@@ -540,3 +540,60 @@ Submitted batch job xxxxxx
 ---
 
 </details>
+
+<details><summary>14. Extract mitochondrial genomes from read data</summary>
+
+## 14. Extract mitochondrial genomes from read data
+
+If there are potential cryptic species in the data, we should try to extract mitochondrial genes from the read data to get an idea of species IDs. You use MitoZ to do so.
+
+Copy the runMitoZ bash and sbatch scripts to your sequencing project directory. I copied them from a previous directory so I didn't have to edit every instance of `_clmp.fp2_r1.fq.gz` and replace it with `.clmp.fp2_r1.fq.gz` again.
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ cp -r ../../pire_ostorhinchus_chrysopomus_lcwgs/4th_sequencing_run/runMitoZ* .
+```
+
+Now, execute the runMitoZ script:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/3rd_sequencing_run/fq_fp1_clmp_fp2 32
+Submitted batch job 4584381
+```
+For the next script to work, I need my MitoZ output files to be in my fq_fp1_clmp_fp2 directory.
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ mv MitoZ*.out fq_fp1_clmp_fp2/
+```
+
+Now run the `process_MitoZ_outputs.sh` script:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ cd fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/process_MitoZ_outputs.sh .
+
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ sh process_MitoZ_outputs.sh
+```
+Now, we can see which individuals MitoZ worked for:
+
+<details><summary>Individuals that succeeded/failed:</summary>
+<p>
+		
+**Individuals that succeeded:** 
+```
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_success.txt
+
+```
+
+**Individuals that failed:** 
+```
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_failure_lowdepth.txt
+
+```
+
+</details>
+
+### Results:
+The FASTA formatted sequences were uploaded to [BOLD](https://www.boldsystems.org/index.php) to identify species matches.
+
+COI sequences were able to be recovered for some of the samples that passed MitoZ (sequences in `MitoZ_output.fasta`). 
+
+|	Query ID	|	Best ID	|	Search DB	|	Top %	|	Low %	|
+|---|---|---|---|---|	
+
+
