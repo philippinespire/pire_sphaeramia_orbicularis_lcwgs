@@ -418,18 +418,125 @@ Submitted batch job 4584163
 ```
 
 #### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
-*
+* Per Base Sequence Content: 56/96 still have warnings
+* Per Sequence GC Content: 3/96 have warnings, but all individuals centered around the same peak ~38%
+* All samples had less than 1% of reads made up of overrepresented sequences
+* No samples found with any adapter contamination > 0.1%
 
 ```
 ‣ % duplication - 
-    • Contemp: 
+    • Contemp: 0.5 - 4.9%
 ‣ GC content -
-    • Contemp: 
+    • Contemp: 38 - 40%
 ‣ length -
-    • Contemp: 
+    • Contemp: 99 - 143 bp
 ‣ number of reads -
-    • Contemp: 
+    • Contemp: 0.2 - 15.8 mil
 ```
 
 ---
+</details>
+
+<details><summary>10. Clean Up</summary>
+
+## 10. Clean Up
+
+Move any .out files into the logs dir
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ mkdir logs
+[hpc-0373@wahab-01 3rd_sequencing_run]$ mv *out logs/
+```
+
+---
+</details>
+
+<details><summary>11. Map Re-Paired fq.gz to Reference Genome</summary>
+<p>
+
+## 11. Map Re-Paired `fq.gz` to Reference Genome
+
+The following steps 11-13 follow steps in the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+
+### Get your reference genome
+
+Make a new directory `refGenome` and copy the genome from a previous directory:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ mkdir refGenome
+[hpc-0373@wahab-01 3rd_sequencing_run]$ cp ../2nd_sequencing_run/refGenome/GCF_902148855.1_fSphaOr1.1_genomic.fna.gz refGenome
+```
+### Map your reads to your reference genome
+
+Create a `mkBAM_ddocent` directory and copy all `fq.gz` files from `fq_fp1_clmp_fp2_fqscrn_rprd` into this new directory
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ mkdir mkBAM_ddocent
+[hpc-0373@wahab-01 3rd_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
+```
+Copy the reference genome to `mkBAM_ddocent`:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ cp refGenome/GCF_902148855.1_fSphaOr1.1_genomic.fna.gz mkBAM_ddocent/reference.genbank.Sor.fasta
+```
+
+Then, copy the scripts we need to run. Typically, these are copied from the `dDocentHPC` directory, which you have to clone to your repo, but I already downloaded and edited them in the last run, so I'll just copy those instead:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ cp ../2nd_sequencing_run/mkBAM_ddocent/config.6.lcwgs mkBAM_ddocent/.
+[hpc-0373@wahab-01 3rd_sequencing_run]$ cp ../2nd_sequencing_run/mkBAM_ddocent/dDocentHPC.sbatch mkBAM_ddocent/.
+```
+Now, I am able to map my reads.
+
+Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns raw sequencing reads (in FASTQ format) to a reference genome and creates BAM files.
+```
+[hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+Submitted batch job 4584337
+```
+---
+
+</details>
+
+<details><summary>12. Filter BAM Files</summary>
+
+## 12. Filter BAM Files
+
+Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
+```
+[hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
+Submitted batch job xxxx
+```
+---
+</details>
+
+<details><summary>13. Generate Number of Mapped Reads</summary>
+
+## 13. Generate Number of Mapped Reads
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$  sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
+Submitted batch job xxxxxx
+```
+
+#### Review Output (coverageMappedReads/out__ReadStats.tsv):
+* 
+
+```
+‣ numreads:
+    • Contemp: 
+
+‣ meanreadlength:
+    • Contemp: 
+
+‣ meandepth_wcvg:
+    • Contemp: 
+
+‣ numpos:
+    • 
+
+‣ numpos_wcvg:
+    • Contemp: 
+
+‣ meandepth:
+    • Contemp: 
+
+‣ pctpos_wcvg:
+     • Contemp: 
+```
+---
+
 </details>
