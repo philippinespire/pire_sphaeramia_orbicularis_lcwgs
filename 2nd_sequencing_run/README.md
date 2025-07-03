@@ -890,21 +890,24 @@ Submitted batch job 4256518
 ```
 
 ### MultiQC output (fq_raw/fqc_raw_report.html):
-*
+* High duplication in contemporary libraries
+* Fairly low number of reads in albatross and contemporary libraries, particularily albatross
+* Per Sequence GC Content: two peaks- one ~40%, other ~65% (smaller)
+* All failing adapter content
 
 ```
 ‣ % duplication - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 6.2 - 26.6%
+    • Contemp: 10.3 - 34.3%
+    • Undertermined: 28.1 - 31.2%
 ‣ GC content - 
-    • Alb: 
-    • Contemp: 
-    • Undetermined: 
+    • Alb: 42 - 54%
+    • Contemp: 39 - 46%
+    • Undetermined: 41 - 42%
 ‣ number of reads - 
-    • Alb: 
-    • Contemp: 
-    • Undetermined: 
+    • Alb: 0.0 - 1.0 mil: [ACeb_001]
+    • Contemp: 0.4 - 4.9 mil
+    • Undetermined: 317.9 - 340.2 mil
 ```
 ---
 </details>
@@ -919,29 +922,32 @@ Run `runFASTP_1st_trim.sbatch`:
 Submitted batch job 4265444
 ```
 ### Review the FastQC output (fq_fp1/1st_fastp_report.html):
-* 
+* GC Content averages dropped a bit after first trim
+* Sequence Quality: looks better after filtering, quality still begins to drop around read 90
+* GC Content: Base content percent becomes a lot more stable after filtering, but begins to drift upwards around read position 75. `Sor-ACeb_001` L2 & L3 stand out as being a bit below the average ~32%
+* N Content: actually looks worse after filtering
 
 ```
 ‣ % duplication - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 5.0 - 21.6%
+    • Contemp: 9.2 - 38.2%
+    • Undertermined: 19.5 - 22.8%
 ‣ GC content -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 32.7 - 45.7%
+    • Contemp: 37.1 - 39.3%
+    • Undertermined: 37.8 - 37.9%
 ‣ passing filter - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 83.7 - 96.1%
+    • Contemp: 91.8 - 97.4%
+    • Undertermined: 95.7 - 95.8%
 ‣ % adapter - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 57.6 - 96.3%
+    • Contemp: 15.6 - 72.2%
+    • Undertermined: 52.6 - 54.4%
 ‣ number of reads - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 0.002 - 1.8 mil
+    • Contemp: 0.8 - 9.5 mil
+    • Undertermined: 608.2 - 652 mil
 ```
 ---
 </details>
@@ -1055,25 +1061,27 @@ Submitted batch job 4342411
 ```
 
 **Results** (fq_fp1_clmp/fqc_clmp_report.html): 
-* 
+* Per Base Sequence Content: 47/284 samples with warnings- all contemporary
+* Per Sequence GC Content: main peak around 40% getting stronger while smaller peak at 65% is reducing in size. Only failing individuals display this secondary peak, all of which are albatross (16/284– actually only 4 individuals: ACeb 005, 011, 013, 022)
+* No samples found with any adapter contamination > 0.1%
 
 ```
 ‣ % duplication - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 0.3 - 2.5%
+    • Contemp: 0.9 - 6.8%
+    • Undertermined: 6.2 - 8.4%
 ‣ GC content - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 32%: [ACeb_001 L2 & L3]; 35 - 44%
+    • Contemp: 37 - 39%
+    • Undertermined: 37%
 ‣ length - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 70 - 107 bp
+    • Contemp: 95 - 140 bp
+    • Undertermined: 122 bp
 ‣ number of reads -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 0.0 - 0.8 mil
+    • Contemp: 0.3 - 3.8 mil
+    • Undertermined: 199.7 - 206.3 mil
 ```
 </details>
 
@@ -1088,8 +1096,9 @@ Submitted batch job 4342411
 [hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
 Submitted batch job 4343884
 ```
+_The mqc report was somehow lost/deleted, but the data was processed properly. This step needs to be rerun to acquire the report._
+
 ### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
-*
 
 ```
 ‣ % duplication -
@@ -1228,8 +1237,9 @@ Check to see if `/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/` was cleared:
 [hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
 Submitted batch job 4366970
 ```
+_The mqc report was somehow lost/deleted, but the data was processed properly. This step needs to be rerun to acquire the report._
+
 #### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html): 
-*
 
 ```
 ‣ multiple genomes -
@@ -1291,25 +1301,26 @@ Submitted batch job 4382206
 ```
 
 #### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
-*
+* Per Sequence GC Content: primary peak ~40% looks more uniform, and secondary peak ~65% is almost completley gone. Only 9/284 samples failing (3 individuals: ACeb 005, 013, 022). ACeb_011 moved to warning level, along with 022-L3.R1 and 022-L2.R2.
+* No samples found with any adapter contamination > 0.1%
 
 ```
 ‣ % duplication -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 0.3 - 1.7%
+    • Contemp: 0.7 - 5.0%
+    • Undertermined: 5.2 - 6.9%
 ‣ GC content -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 32%: [ACeb_001 L2 & L3]; 35 - 41%
+    • Contemp: 37 - 39%
+    • Undertermined: 37%
 ‣ length -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 69 - 104 bp
+    • Contemp: 94 - 139 bp
+    • Undertermined: 121 bp
 ‣ number of reads -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 0.0 - 0.7 mil
+    • Contemp: 0.3 - 3.4 mil
+    • Undertermined: 178.1 - 183.9 mil
 ```
 
 ---
@@ -1399,41 +1410,44 @@ Submitted batch job 4584338
 ```
 
 #### Review Output (coverageMappedReads/out__ReadStats.tsv):
-* 
+* Number of reads very low for both alb and contmep, but especially albatross
+* While mean depth with coverage was over 1 in all cases, depth did not surpass 1.3
+* Number of positions with coverage is very low for both albatross and contemporary. undetermined mapped very well
+* Consequently, percent positions with coverage is extremely low for albatross (0.005 - 3.5%) and decently low for contemporary: (2.1 - 24.7%). undetermined is good (>80%)
 
 ```
 ‣ numreads:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 1,431 - 457,820; 943,756 - 1,056,004: [ACeb_001 L2 & L3]
+    • Contemp: 503,954 - 5,814,312
+    • Undertermined: 286,432,071 - 286,744,905
 
 ‣ meanreadlength:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 69.3 - 103.9
+    • Contemp: 95.7 - 139.8
+    • Undertermined: 121.9 - 122.3
 
 ‣ meandepth_wcvg:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 1.0 - 1.1
+    • Contemp: 1.0 - 1.3
+    • Undertermined: 19.7 - 20.5
 
 ‣ numpos:
-    • 
+    • 1,342,662,642 bp
 
 ‣ numpos_wcvg:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 66,753 - 17,337,032; 40,700,097 - 46,478,495: [ACeb_001 L2 & L3]
+    • Contemp: 28,229,269 - 331,452,619
+    • Undertermined: 1,083,791,954 - 1,117,869,451
 
 ‣ meandepth:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 0.00005 - 0.04
+    • Contemp: 0.02 - 0.3
+    • Undertermined: 16.4 - 16.5
 
 ‣ pctpos_wcvg:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 0.005 - 1.3%; 3.0 - 3.5%: [ACeb_001 L2 & L3]
+    • Contemp: 2.1 - 24.7%
+    • Undertermined: 80.7 - 83.3%
 ```
 ---
 
@@ -1454,7 +1468,7 @@ Copy the runMitoZ bash and sbatch scripts to your sequencing project directory.
 Now, execute the runMitoZ script:
 ```
 [hpc-0373@wahab-01 2nd_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2 32
-Submitted batch job 4388271
+Submitted batch job 4589855
 ```
 For the next script to work, I need my MitoZ output files to be in my fq_fp1_clmp_fp2 directory.
 ```
@@ -1476,147 +1490,13 @@ Now, we can see which individuals MitoZ worked for:
 **Individuals that succeeded:** 
 ```
 [hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_success.txt
-Undetermined-L3
-Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2
-Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2
-Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3
-Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2
-Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3
-Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2
-Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3
-Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2
-Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2
-Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2
-Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3
-Undetermined-L2
+
 ```
 
 **Individuals that failed:** 
 ```
 [hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_failure_lowdepth.txt
-Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L2
-Sor-ACeb_001-Ex1-8E-lcwgs-1-2-L3
-Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L2
-Sor-ACeb_002-Ex1-9E-lcwgs-1-2-L3
-Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L2
-Sor-ACeb_003-Ex1-10E-lcwgs-1-2-L3
-Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L2
-Sor-ACeb_004-Ex1-11E-lcwgs-1-2-L3
-Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L2
-Sor-ACeb_005-Ex1-12E-lcwgs-1-2-L3
-Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L2
-Sor-ACeb_006-Ex1-1F-lcwgs-1-2-L3
-Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L2
-Sor-ACeb_007-Ex1-2F-lcwgs-1-2-L3
-Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L2
-Sor-ACeb_008-Ex1-3F-lcwgs-1-2-L3
-Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L2
-Sor-ACeb_010-Ex1-5F-lcwgs-1-2-L3
-Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L2
-Sor-ACeb_011-Ex1-6F-lcwgs-1-2-L3
-Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L2
-Sor-ACeb_012-Ex1-7F-lcwgs-1-2-L3
-Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L2
-Sor-ACeb_013-Ex1-8F-lcwgs-1-2-L3
-Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L2
-Sor-ACeb_014-Ex1-9F-lcwgs-1-2-L3
-Sor-ACeb_015-Ex1-10F-lcwgs-1-2-L3
-Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L2
-Sor-ACeb_016-Ex1-11F-lcwgs-1-2-L3
-Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L2
-Sor-ACeb_017-Ex1-12F-lcwgs-1-2-L3
-Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L2
-Sor-ACeb_018-Ex1-1G-lcwgs-1-2-L3
-Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L2
-Sor-ACeb_019-Ex1-3G-lcwgs-1-2-L3
-Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L2
-Sor-ACeb_020-Ex1-2G-lcwgs-1-2-L3
-Sor-ACeb_022-Ex1-5G-lcwgs-1-2-L3
-Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L2
-Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L3
-Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L2
-Sor-CPnd_002-Ex1-5E-lcwgs-1-2-L3
-Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L2
-Sor-CPnd_003-Ex1-2B-lcwgs-1-2-L3
-Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L2
-Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L3
-Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L3
-Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L2
-Sor-CPnd_006-Ex1-2D-lcwgs-1-2-L3
-Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L2
-Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L3
-Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L2
-Sor-CPnd_010-Ex1-1H-lcwgs-1-2-L3
-Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L2
-Sor-CPnd_012-Ex1-5B-lcwgs-1-2-L3
-Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L2
-Sor-CPnd_013-Ex1-7F-lcwgs-1-2-L3
-Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L2
-Sor-CPnd_015-Ex1-5F-lcwgs-1-2-L3
-Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L2
-Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L3
-Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L2
-Sor-CPnd_017-Ex1-3G-lcwgs-1-2-L3
-Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L2
-Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L3
-Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L2
-Sor-CPnd_019-Ex1-6G-lcwgs-1-2-L3
-Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L2
-Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L3
-Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L2
-Sor-CPnd_022-Ex1-7C-lcwgs-1-2-L3
-Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L2
-Sor-CPnd_024-Ex1-5G-lcwgs-1-2-L3
-Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L2
-Sor-CPnd_026-Ex1-3H-lcwgs-1-2-L3
-Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L2
-Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L3
-Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L3
-Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L2
-Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L3
-Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L2
-Sor-CPnd_030-Ex1-2H-lcwgs-1-2-L3
-Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L2
-Sor-CPnd_031-Ex1-5D-lcwgs-1-2-L3
-Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L2
-Sor-CPnd_033-Ex1-2F-lcwgs-1-2-L3
-Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L2
-Sor-CPnd_034-Ex1-4G-lcwgs-1-2-L3
-Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L2
-Sor-CPnd_036-Ex1-5C-lcwgs-1-2-L3
-Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L2
-Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L3
-Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L2
-Sor-CPnd_038-Ex1-2A-lcwgs-1-2-L3
-Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L2
-Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L3
-Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L3
-Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L2
-Sor-CPnd_044-Ex1-8G-lcwgs-1-2-L3
-Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L2
-Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L3
-Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L2
-Sor-CPnd_046-Ex1-5A-lcwgs-1-2-L3
-Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L2
-Sor-CPnd_049-Ex1-3B-lcwgs-1-2-L3
-Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L2
-Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L3
-Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L2
-Sor-CPnd_052-Ex1-6D-lcwgs-1-2-L3
-Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L2
-Sor-CPnd_053-Ex1-2C-lcwgs-1-2-L3
-Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L2
-Sor-CPnd_054-Ex1-8F-lcwgs-1-2-L3
-Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L2
-Sor-CPnd_055-Ex1-7G-lcwgs-1-2-L3
-Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L2
-Sor-CPnd_058-Ex1-2G-lcwgs-1-2-L3
-Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L2
-Sor-CPnd_063-Ex1-7D-lcwgs-1-2-L3
-Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L2
-Sor-CPnd_066-Ex1-8B-lcwgs-1-2-L3
-Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L2
-Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L3
+
 ```
 
 </details>
@@ -1626,20 +1506,7 @@ The FASTA formatted sequences were uploaded to [BOLD](https://www.boldsystems.or
 
 COI sequences were able to be recovered for some of the samples that passed MitoZ (sequences in `MitoZ_output.fasta`). 
 
-While no Albatross passed, all Contemporary were correctly identified as Sor. Both Undetermined libraries were 100% human.
 
 |	Query ID	|	Best ID	|	Search DB	|	Top %	|	Low %	|
 |---|---|---|---|---|										
-|	Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
-|	Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
-|	Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
-|	Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
-|	Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
-|	Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
-|	Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
-|	Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	87.21	|
-|	Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
-|	Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.05	|
-|	Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.05	|
-|	Undetermined-L2	|	Homo sapiens	|	COI SPECIES DATABASE	|	100	|	100	|
-|	Undetermined-L3	|	Homo sapiens	|	COI SPECIES DATABASE	|	100	|	100	|
+
