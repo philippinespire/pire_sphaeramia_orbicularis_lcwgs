@@ -1395,7 +1395,7 @@ Submitted batch job 4384457
 ## 16. Generate Number of Mapped Reads
 ```
 [hpc-0373@wahab-01 2nd_sequencing_run]$  sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
-Submitted batch job xxxxxx
+Submitted batch job 4584338
 ```
 
 #### Review Output (coverageMappedReads/out__ReadStats.tsv):
