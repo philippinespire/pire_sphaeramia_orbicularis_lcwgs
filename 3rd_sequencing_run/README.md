@@ -513,29 +513,31 @@ Submitted batch job 4612866
 ```
 
 #### Review Output (coverageMappedReads/out__ReadStats.tsv):
-* 
+* Half of all libraries (24/48) have over 10 million reads. Only one is below 1 million (Sor-CPnd_066).
+* Mean depth with coverage all above 1
+* Okay mapping– percent positions with coverage 2-74%, median: 36.4% mean: 38.6%
 
 ```
 ‣ numreads:
-    • Contemp: 
+    • Contemp: 417,038 - 27,992,788
 
 ‣ meanreadlength:
-    • Contemp: 
+    • Contemp: 100.4 - 143.4
 
 ‣ meandepth_wcvg:
-    • Contemp: 
+    • Contemp: 1.0 - 2.7
 
 ‣ numpos:
-    • 
+    • 1,342,662,642 bp
 
 ‣ numpos_wcvg:
-    • Contemp: 
+    • Contemp: 28,557,901 - 993,425,529 bp
 
 ‣ meandepth:
-    • Contemp: 
+    • Contemp: 0.02 - 2.0
 
 ‣ pctpos_wcvg:
-     • Contemp: 
+     • Contemp: 2.1 - 74.0%
 ```
 ---
 
