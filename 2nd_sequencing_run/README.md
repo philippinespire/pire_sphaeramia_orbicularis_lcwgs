@@ -1629,8 +1629,43 @@ Sor-CPnd_069-Ex1-6B-lcwgs-1-2-L3
 The FASTA formatted sequences were uploaded to [BOLD](https://www.boldsystems.org/index.php) to identify species matches.
 
 COI sequences were able to be recovered for some of the samples that passed MitoZ (sequences in `MitoZ_output.fasta`). 
+No Albatross passed, but 20/48 Contemporary did. All were correctly IDed as Sor. Undetermined matched to human.
 
 
 |	Query ID	|	Best ID	|	Search DB	|	Top %	|	Low %	|
 |---|---|---|---|---|										
-
+|	Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_001-Ex1-3E-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_004-Ex1-1G-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_005-Ex1-3D-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_007-Ex1-1C-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_008-Ex1-1A-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_009-Ex1-6A-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_014-Ex1-1F-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_016-Ex1-1B-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_018-Ex1-1E-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_020-Ex1-2E-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_027-Ex1-3C-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	87.21	|
+|	Sor-CPnd_028-Ex1-3A-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_029-Ex1-8E-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_037-Ex1-6C-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_041-Ex1-7A-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_043-Ex1-1D-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_045-Ex1-7B-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_050-Ex1-3F-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.05	|
+|	Sor-CPnd_072-Ex1-8C-lcwgs-1-2-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.05	|
+|	Undetermined-L2	|	Homo sapiens	|	COI SPECIES DATABASE	|	100	|	100	|
+|	Undetermined-L3	|	Homo sapiens	|	COI SPECIES DATABASE	|	100	|	100	|
