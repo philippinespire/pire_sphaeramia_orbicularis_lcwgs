@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C13529         16498          yes            Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C13529         533    604    72         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C13529         604    676    73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C13529         676    1817   1142       -          CDS    CYTB       cytochrome b                      1              
+C13529         1823   1892   70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C13529         1892   2414   523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C13529         2411   4230   1820       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C13529         4248   4321   74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+C13529         4327   4395   69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C13529         4395   4464   70         -          tRNA   trnH(gug)  tRNA-His                          1              
+C13529         4459   5845   1387       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C13529         5838   6135   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C13529         6135   6204   70         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C13529         6202   6553   352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C13529         6553   6623   71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C13529         6622   7408   787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C13529         7407   8091   685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C13529         8081   8249   169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C13529         8250   8324   75         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C13529         8316   9015   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C13529         9021   9094   74         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C13529         9096   9167   72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+C13529         9167   10727  1561       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C13529         10719  10789  71         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C13529         10789  10855  67         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C13529         10893  10966  74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C13529         10967  11036  70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C13529         11040  11112  73         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C13529         11114  12161  1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C13529         12161  12231  71         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C13529         12230  12301  72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C13529         12300  12371  72         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C13529         12373  13348  976        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C13529         13348  13422  75         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C13529         13421  15107  1687       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C13529         15108  15180  73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C13529         15182  16139  958        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C13529         16139  16207  69         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

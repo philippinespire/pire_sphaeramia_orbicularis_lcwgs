@@ -1,0 +1,56 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C5039          6234           no             Apogon semilineatus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C5039          26     1137   1112       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C5039          1134   1656   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C5039          1656   1725   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C5039          1731   2872   1142       +          CDS    CYTB       cytochrome b                      1              
+C5039          2872   2944   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C5039          2944   3015   72         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C5039          3839   3907   69         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C5039          3907   4864   958        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C5039          4866   4938   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C5039          4939   6235   1297       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+
+
+Protein coding genes totally found:  3
+tRNA genes totally found:            5
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                10
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP6                                 1
+ATP8                                 1
+COX1                                 1
+COX2                                 1
+COX3                                 1
+ND1                                  1
+ND2                                  1
+ND3                                  1
+ND4                                  1
+ND4L                                 1
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             2
+tRNA-Lys                             1
+tRNA-Met                             1
+tRNA-Ser                             2
+tRNA-Trp                             1
+tRNA-Tyr                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!
