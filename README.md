@@ -24,9 +24,15 @@ Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbiculari
 
 ## [3rd Sequencing Run](https://github.com/philippinespire/pire_sphaeramia_orbicularis_lcwgs/tree/main/3rd_sequencing_run)
 
-**ACeb / CPnd**
+**CPnd**
 
-3rd sequencing run fq.gz processing done by Gianna Mazzei (June 2025).
+3rd sequencing run fq.gz processing done by Gianna Mazzei (June 2025). Only Contemporary indiviudals were re-sequenced for this run.
+
+## [4th Sequencing Run](https://github.com/philippinespire/pire_sphaeramia_orbicularis_lcwgs/tree/main/4th_sequencing_run)
+
+**ACeb**
+
+4th sequencing run fq.gz processing done by Gianna Mazzei (July 2025). Only Albatross individuals were re-sequenced for this run.
 
 ---
 
