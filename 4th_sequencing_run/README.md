@@ -6,7 +6,7 @@
 
 Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbicularis* from Cebu City Market (ACeb). **Only Albatross individuals were re-sequenced for this run.**
 
-fq.gz processing done by Gianna Mazzei (June 2025).
+fq.gz processing done by Gianna Mazzei (July 2025).
 
 ---
 	
