@@ -85,6 +85,7 @@ Now run:
 [hpc-0373@wahab-01 fq_raw]$ bash process_decode_FileNames_all.sh
 ```
 <details><summary>Contents of the created Sor-ACeb_lcwgs-reSeqLane_SequenceNameDecode_ALL.tsv file:</summary>
+
 ```
 [hpc-0373@wahab-01 fq_raw]$ cat Sor-ACeb_lcwgs-reSeqLane_SequenceNameDecode_ALL.tsv
 Sequence_Name	Extraction_ID
