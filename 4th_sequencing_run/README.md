@@ -183,16 +183,47 @@ Execute `Multi_FASTQC.sh`:
 Submitted batch job 4627401
 ```
 ### MultiQC output (fq_raw/fqc_raw_report.html):
+* Many duplicate reads, especially in individuals with high read numbers
+* All failing Per Base Sequence Content
+* Per Sequence GC Content: 3 peaks. Main one ~41%, second ~65%, final @ 100%
+* Some overrepresentation present (59/88 failing)
+* All failing adapter content
+
+```
+‣ % duplication - 
+    • Alb: 3.0 - 80.5%
+‣ GC content - 
+    • Alb: 41 - 55%
+‣ number of reads - 
+    • Alb: 0.0 - 254.7 mil
+```
+
+---
+</details>
+
+<details><summary>5. First trim (*)</summary>
+
+## 5. First trim (*)
+
+Run `runFASTP_1st_trim.sbatch`:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+Submitted batch job 4632226
+```
+### Review the FastQC output (fq_fp1/1st_fastp_report.html):
 * 
 
 ```
 ‣ % duplication - 
-    • Alb: 
-‣ GC content - 
-    • Alb: 
+    • Alb:
+‣ GC content -
+    • Alb:
+‣ passing filter - 
+    • Alb:
+‣ % adapter - 
+    • Alb:
 ‣ number of reads - 
-    • Alb: 
+    • Alb:
 ```
-
 ---
 </details>
