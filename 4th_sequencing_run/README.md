@@ -211,19 +211,50 @@ Run `runFASTP_1st_trim.sbatch`:
 Submitted batch job 4632226
 ```
 ### Review the FastQC output (fq_fp1/1st_fastp_report.html):
-* 
+* Sequence Quality improves significantly after filtering
+* GC Content also improves, but there appears to be two distinct bands of individuals, seen at ~40% and ~50%.
+	* Base content % also seems to increase as read position gets higher, particularily after ~read position 70
 
 ```
 ‣ % duplication - 
-    • Alb:
+    • Alb: 0.8 - 78.0%
 ‣ GC content -
-    • Alb:
+    • Alb: 33.4 - 53.2%
 ‣ passing filter - 
-    • Alb:
+    • Alb: 90.8 - 98.3%
 ‣ % adapter - 
-    • Alb:
+    • Alb: 66.6 - 97.8%
 ‣ number of reads - 
-    • Alb:
+    • Alb: 0.007 - 494.8 mil
 ```
 ---
 </details>
+
+## 6. Remove duplicates with clumpify (*)
+
+<details><summary>6a. Remove duplicates</summary>
+	
+### 6a. Remove duplicates
+
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0373 20
+Submitted batch job 4634461
+```
+</details>
+
+<details><summary>6b. Check duplicate removal success</summary>
+	
+### 6b. Check duplicate removal success
+
+Check if clumpify worked:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ salloc
+[hpc-0373@d1-w6420a-16 4th_sequencing_run]$ enable_lmod
+[hpc-0373@d1-w6420a-16 4th_sequencing_run]$ module load container_env R/4.3 
+[hpc-0373@d1-w6420a-16 4th_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+
+
+
+[hpc-0373@d1-w6420a-16 4th_sequencing_run]$ exit
+```
+</details> 
