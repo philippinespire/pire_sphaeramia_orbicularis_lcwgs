@@ -230,6 +230,8 @@ Submitted batch job 4632226
 ---
 </details>
 
+<details><summary>6. Remove duplicates with clumpify (*)</summary>
+
 ## 6. Remove duplicates with clumpify (*)
 
 <details><summary>6a. Remove duplicates</summary>
@@ -253,8 +255,90 @@ Check if clumpify worked:
 [hpc-0373@d1-w6420a-16 4th_sequencing_run]$ module load container_env R/4.3 
 [hpc-0373@d1-w6420a-16 4th_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
 
-
+Clumpify Successfully worked on all samples
 
 [hpc-0373@d1-w6420a-16 4th_sequencing_run]$ exit
 ```
 </details> 
+
+<details><summary>6c. Clean the scratch drive</summary>
+	
+### 6c. Clean the scratch drive
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0373 "*clumpify*temp*"
+Submitted batch job 4634949
+```
+
+Check:
+```
+ls /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/
+```
+Nothing printed, so its cleared.
+
+</details>
+
+<details><summary>6d. Generate metadata on deduplicated FASTQ files (*)</summary>
+
+### 6d. Generate metadata on deduplicated FASTQ files (*)
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+Submitted batch job 4634951
+```
+
+**Results** (fq_fp1_clmp/fqc_clmp_report.html): 
+* GC Content and Average Sequence Length are potentially realted– longer reads have higher GC Content
+* Per Base Sequence Content: 12/88 have warnings
+* Per Sequence GC Content: only 12/88 passing. 56/88 warning. 20/88 failing.
+	* Warning samples generally follow the same curve as passing with a peak ~35%, but both lanes of ACeb_001 peak ~31%.
+ 	* Failing reads do not follow the same peak as passing/warning. One peak very roughly ~35%, another ~67%.
+  		* ACeb_005
+    		* ACeb_011
+   		* ACeb_013
+    		* ACeb_020
+    		* ACeb_022
+* Overrepresentaion present in ACeb_020
+* Adapter Content all below 1%
+
+```
+‣ % duplication - 
+    • Alb: 0.1 - 13.1%
+‣ GC content - 
+    • Alb: 33 - 52%
+‣ length - 
+    • Alb: 75 - 116 bp
+‣ number of reads -
+    • Alb: 0.0 - 97.2 mil
+```
+</details>
+
+---
+
+</details>
+
+<details><summary>7. Second trim (*)</summary>
+
+## 7. Second trim (*)
+ 
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
+Submitted batch job 4635002
+```
+
+### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
+* 
+
+```
+‣ % duplication -
+    • Alb: 
+‣ GC content -
+    • Alb: 
+‣ passing filter -
+    • Alb: 
+‣ % adapter -
+    • Alb: 
+‣ number of reads -
+    • Alb: 
+```
+
+---
+</details>
