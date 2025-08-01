@@ -1,0 +1,23 @@
+[2025-08-01 15:46:14,316] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2025-08-01 15:46:14,318] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2025-08-01 15:46:14,319] multiqc                                            [DEBUG  ]  New config: {'max_table_rows': 3000}
+[2025-08-01 15:46:14,319] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename fastq_screen_report --outdir fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn
+[2025-08-01 15:46:14,712] multiqc                                            [DEBUG  ]  Could not connect to multiqc.info for version check: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.multiqc.info'. (_ssl.c:1129)>
+[2025-08-01 15:46:14,714] multiqc                                            [DEBUG  ]  Working dir : /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/4th_sequencing_run
+[2025-08-01 15:46:14,714] multiqc                                            [DEBUG  ]  Template    : default
+[2025-08-01 15:46:14,715] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2025-08-01 15:46:14,716] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2025-08-01 15:46:14,716] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpk6y27hnm
+[2025-08-01 15:46:14,938] multiqc                                            [INFO   ]  Search path : /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/4th_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+[2025-08-01 15:47:10,383] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 1149] // [skipped_no_match: 353] // [skipped_ignore_pattern: 176]
+[2025-08-01 15:47:11,799] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2025-08-01 15:47:11,800] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2025-08-01 15:47:11,802] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2025-08-01 15:47:13,079] multiqc.modules.fastq_screen.fastq_screen          [INFO   ]  Found 88 reports
+[2025-08-01 15:47:33,711] multiqc                                            [INFO   ]  Compressing plot data
+[2025-08-01 15:47:33,741] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html
+[2025-08-01 15:47:33,741] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2_fqscrn/fastq_screen_report_data
+[2025-08-01 15:47:33,741] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpk6y27hnm/multiqc_data' to 'fq_fp1_clmp_fp2_fqscrn/fastq_screen_report_data'
+[2025-08-01 15:47:33,811] multiqc                                            [INFO   ]  Plots       : fq_fp1_clmp_fp2_fqscrn/fastq_screen_report_plots
+[2025-08-01 15:47:33,811] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpk6y27hnm/multiqc_plots' to 'fq_fp1_clmp_fp2_fqscrn/fastq_screen_report_plots'
+[2025-08-01 15:47:34,071] multiqc                                            [INFO   ]  MultiQC complete
