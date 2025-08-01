@@ -457,16 +457,35 @@ Check to see if `/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/` was cleared:
 Submitted batch job 4636793
 ```
 #### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html): 
-* 
+* Some reads have significant bacterial contamination:
+	* ACeb_005: 12.9 - 13.3%
+	* ACeb_011: 16.2 - 16.6%
+ 	* ACeb_013: 8.0 - 8.1%
+  	* ACeb_020: 10.1 - 11.1%
+  	* ACeb_022: 11.7 - 12.3%
+ * Human contamination in ACeb_005: 6.2%
 
 ```
 ‣ multiple genomes -
-    • Alb:
+    • Alb: 2.3 - 21.0%
 ‣ no hits -
-    • Alb:
+    • Alb: 67.5 - 96.4%
 ```
 </details>
 
 ---
 
 </details>
+
+<details><summary>9. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)</summary>
+
+## 9. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)
+
+#### Execute `runREPAIR.sbatch`
+
+Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) and reverse (r2) reads so that the `*1.fq.gz` and `*2.fq.gz` files have reads in the same order
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
+Submitted batch job 4636860
+```
+
