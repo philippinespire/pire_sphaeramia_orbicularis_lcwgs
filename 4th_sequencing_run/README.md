@@ -342,3 +342,131 @@ Submitted batch job 4635002
 
 ---
 </details>
+
+<details><summary>8. Decontaminate files (*)</summary>
+
+## 8. Decontaminate files (*)
+
+<details><summary>8a. Run fastq_screen</summary>
+	
+### 8a. Run fastq_screen
+
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ bash
+[hpc-0373@wahab-01 4th_sequencing_run]$ fqScrnPATH=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash
+[hpc-0373@wahab-01 4th_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 4th_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 4th_sequencing_run]$ nodes=20
+[hpc-0373@wahab-01 4th_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
+```
+JobID: 4635035
+
+</details>
+
+<details><summary>8b. Check for Errors</summary>
+	
+### 8b. Check for Errors
+
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ bash
+[hpc-0373@wahab-01 4th_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+Submitted batch job 4636550
+```
+
+When complete check the $outdir/fqValidateReport.txt file
+```
+less -S $outdir/fqValidationReport.txt file
+```
+
+**Confirm files were succesfully completed:**
+
+Check that all 5 files were created for each fqgz file:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 4th_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
+44
+44
+44
+44
+44
+44
+44
+44
+44
+44
+```
+
+For each, you should have the same number as the number of input files (number of fq.gz files):
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 4th_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
+                                        ls $indir/*r2.fq.gz | wc -l
+44
+44
+```
+
+Check the `*out` files: (no results)
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ grep 'error' slurm-fqscrn.*out
+                                        grep 'No reads in' slurm-fqscrn.*out
+                                        grep 'FATAL' slurm-fqscrn.*out
+```
+Check for any unzipped files with the word temp, which means that the job didn't finish and needs to be rerun: 
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ ls $outdir/*temp*
+ls: cannot access '/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/*temp*': No such file or directory
+```
+
+No errors!
+
+---
+</details>
+
+<details><summary>8c. Move output files</summary>
+
+### 8c. Move output files
+
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ mkdir fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 4th_sequencing_run]$ mv /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/* /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/4th_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+```
+Check to see if `/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/` was cleared:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ ls /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+#nothing printed
+```
+---
+</details>
+
+<details><summary>8d. Run MultiQC (*)</summary>
+
+### 8d. Run MultiQC (*)
+
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+Submitted batch job 4636793
+```
+#### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html): 
+* 
+
+```
+‣ multiple genomes -
+    • Alb:
+‣ no hits -
+    • Alb:
+```
+</details>
+
+---
+
+</details>
