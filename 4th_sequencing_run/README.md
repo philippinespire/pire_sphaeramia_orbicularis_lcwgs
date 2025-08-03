@@ -488,4 +488,216 @@ Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) an
 [hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
 Submitted batch job 4636860
 ```
+#### Confirm that the paired end fq.gz files are complete and formatted correctly:
 
+Start by running the script:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ bash
+[hpc-0373@wahab-01 4th_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch 
+                                        DIR=fq_fp1_clmp_fp2_fqscrn_rprd
+                                        fqPATTERN="*fq.gz"
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+Submitted batch job 4637951
+```
+
+Check the SLURM `.out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ cat valiate_FQ_-4637951.out
+PAIRED END FASTQ VALIDATION REPORT
+
+Directory: fq_fp1_clmp_fp2_fqscrn_rprd
+File Pattern: *fq.gz
+File extensions found: .R1.fq.gz .R2.fq.gz
+
+Number of paired end fq files evaluated: 44
+Number of paired end fq files validated: 44
+
+Errors Reported:
+```
+#### Run `Multi_FASTQC`
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+Submitted batch job 4637963
+```
+
+#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
+* Still some duplicate reads present
+* Per Sequence GC Content:
+	* 22/88 passing, peak ~ 37%
+ 	* 50/88 with warnings, follow the same peak ~37%. ACeb_001 peaks ~32%. ACeb_011 only has a warning, but follows the same pattern as failing individuals.
+  	* 16/88 failing. Primary peak ~35%, secondary peak ~67%. ACeb_011 from warning group follows this pattern.
+
+```
+‣ % duplication - 
+    • Alb: 0.1 - 11.9%
+‣ GC content -
+    • Alb: 33 - 48%
+‣ length -
+    • Alb: 75 - 112 bp
+‣ number of reads -
+    • Alb: 0.0 - 86.1 mil
+```
+
+---
+</details>
+
+<details><summary>10. Clean Up</summary>
+
+## 10. Clean Up
+
+Move any .out files into the logs dir
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ mkdir logs
+[hpc-0373@wahab-01 4th_sequencing_run]$ mv *out logs/
+```
+
+---
+</details>
+
+<details><summary>11. Map Re-Paired fq.gz to Reference Genome</summary>
+<p>
+
+## 11. Map Re-Paired `fq.gz` to Reference Genome
+
+The following steps 11-13 follow steps in the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+
+### Get your reference genome
+
+Make a new directory `refGenome` and copy the genome from a previous directory:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ mkdir refGenome
+[hpc-0373@wahab-01 4th_sequencing_run]$ cp ../3rd_sequencing_run/refGenome/GCF_902148855.1_fSphaOr1.1_genomic.fna.gz refGenome
+```
+### Map your reads to your reference genome
+
+Create a `mkBAM_ddocent` directory and copy all `fq.gz` files from `fq_fp1_clmp_fp2_fqscrn_rprd` into this new directory
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ mkdir mkBAM_ddocent
+[hpc-0373@wahab-01 4th_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
+```
+Copy the reference genome to `mkBAM_ddocent`:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ cp refGenome/GCF_902148855.1_fSphaOr1.1_genomic.fna.gz mkBAM_ddocent/reference.genbank.Sor.fasta
+```
+
+Then, copy the scripts we need to run. Typically, these are copied from the `dDocentHPC` directory, which you have to clone to your repo, but I already downloaded and edited them in the last run, so I'll just copy those instead:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ cp ../3rd_sequencing_run/mkBAM_ddocent/config.6.lcwgs mkBAM_ddocent/.
+[hpc-0373@wahab-01 4th_sequencing_run]$ cp ../3rd_sequencing_run/mkBAM_ddocent/dDocentHPC.sbatch mkBAM_ddocent/.
+```
+Now, I am able to map my reads.
+
+Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns raw sequencing reads (in FASTQ format) to a reference genome and creates BAM files.
+```
+[hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+Submitted batch job 4637964
+```
+---
+
+</details>
+
+<details><summary>12. Filter BAM Files</summary>
+
+## 12. Filter BAM Files
+
+Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
+```
+[hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
+Submitted batch job xxxx
+```
+---
+</details>
+
+<details><summary>13. Generate Number of Mapped Reads</summary>
+
+## 13. Generate Number of Mapped Reads
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$  sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
+Submitted batch job xxxx
+```
+#### Review Output (coverageMappedReads/out__ReadStats.tsv):
+* 
+
+```
+‣ numreads:
+    • Alb:
+
+‣ meanreadlength:
+    • Alb:
+
+‣ meandepth_wcvg:
+    • Alb:
+
+‣ numpos:
+    • 
+
+‣ numpos_wcvg:
+    • Alb:
+
+‣ meandepth:
+    • Alb:
+
+‣ pctpos_wcvg:
+    • Alb:
+```
+---
+
+</details>
+
+
+<details><summary>14. Extract mitochondrial genomes from read data</summary>
+
+## 14. Extract mitochondrial genomes from read data
+
+If there are potential cryptic species in the data, we should try to extract mitochondrial genes from the read data to get an idea of species IDs. You use MitoZ to do so.
+
+Copy the runMitoZ bash and sbatch scripts to your sequencing project directory. I copied them from a previous directory so I didn't have to edit every instance of `_clmp.fp2_r1.fq.gz` and replace it with `-clmp.fp2_r1.fq.gz` again.
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ cp -r ../../pire_plotosus_lineatus_lcwgs/3rd_sequencing_run/runMitoZ* .
+```
+
+Now, execute the runMitoZ script:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/4th_sequencing_run/fq_fp1_clmp_fp2 32
+Submitted batch job 4637966
+```
+For the next script to work, I need my MitoZ output files to be in my fq_fp1_clmp_fp2 directory.
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ mv MitoZ*.out fq_fp1_clmp_fp2/
+```
+Now run the `process_MitoZ_outputs.sh` script:
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ cd fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/process_MitoZ_outputs.sh .
+
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ sh process_MitoZ_outputs.sh
+```
+Now, we can see which individuals MitoZ worked for:
+
+<details><summary>Individuals that succeeded/failed:</summary>
+<p>
+		
+**Individuals that succeeded:** 
+```
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_success.txt
+
+```
+**Individuals that failed:** 
+```
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_failure_lowdepth.txt
+
+```
+</details>
+
+### Results:
+The FASTA formatted sequences were uploaded to [BOLD](https://www.boldsystems.org/index.php) to identify species matches.
+
+COI sequences were able to be recovered for the samples that passed MitoZ (sequences in `MitoZ_output.fasta`). 
+
+|	Query ID	|	Best ID	|	Search DB	|	Top %	|	Low %	|
+|---|---|---|---|---|	
+
+
+
+---
+</details>
