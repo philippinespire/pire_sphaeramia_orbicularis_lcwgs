@@ -603,7 +603,7 @@ Submitted batch job 4637964
 Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
 ```
 [hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
-Submitted batch job xxxx
+Submitted batch job 4648831
 ```
 ---
 </details>
@@ -680,12 +680,53 @@ Now, we can see which individuals MitoZ worked for:
 **Individuals that succeeded:** 
 ```
 [hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_success.txt
-
+Sor-ACeb_022-Ex1-5G-lcwgs-1-3-L3
+Sor-ACeb_005-Ex1-12E-lcwgs-1-3-L2
+Sor-ACeb_005-Ex1-12E-lcwgs-1-3-L3
+Sor-ACeb_006-Ex1-1F-lcwgs-1-3-L2
+Sor-ACeb_006-Ex1-1F-lcwgs-1-3-L3
+Sor-ACeb_008-Ex1-3F-lcwgs-1-3-L2
+Sor-ACeb_008-Ex1-3F-lcwgs-1-3-L3
+Sor-ACeb_010-Ex1-5F-lcwgs-1-3-L2
+Sor-ACeb_010-Ex1-5F-lcwgs-1-3-L3
+Sor-ACeb_011-Ex1-6F-lcwgs-1-3-L2
+Sor-ACeb_011-Ex1-6F-lcwgs-1-3-L3
+Sor-ACeb_013-Ex1-8F-lcwgs-1-3-L2
+Sor-ACeb_013-Ex1-8F-lcwgs-1-3-L3
+Sor-ACeb_014-Ex1-9F-lcwgs-1-3-L2
+Sor-ACeb_014-Ex1-9F-lcwgs-1-3-L3
+Sor-ACeb_016-Ex1-11F-lcwgs-1-3-L2
+Sor-ACeb_016-Ex1-11F-lcwgs-1-3-L3
+Sor-ACeb_017-Ex1-12F-lcwgs-1-3-L2
+Sor-ACeb_018-Ex1-1G-lcwgs-1-3-L2
+Sor-ACeb_018-Ex1-1G-lcwgs-1-3-L3
+Sor-ACeb_022-Ex1-5G-lcwgs-1-3-L2
 ```
 **Individuals that failed:** 
 ```
 [hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_failure_lowdepth.txt
-
+Sor-ACeb_001-Ex1-8E-lcwgs-1-3-L2
+Sor-ACeb_001-Ex1-8E-lcwgs-1-3-L3
+Sor-ACeb_002-Ex1-9E-lcwgs-1-3-L2
+Sor-ACeb_002-Ex1-9E-lcwgs-1-3-L3
+Sor-ACeb_003-Ex1-10E-lcwgs-1-3-L2
+Sor-ACeb_003-Ex1-10E-lcwgs-1-3-L3
+Sor-ACeb_004-Ex1-11E-lcwgs-1-3-L2
+Sor-ACeb_004-Ex1-11E-lcwgs-1-3-L3
+Sor-ACeb_007-Ex1-2F-lcwgs-1-3-L2
+Sor-ACeb_007-Ex1-2F-lcwgs-1-3-L3
+Sor-ACeb_009-Ex1-4F-lcwgs-1-3-L3
+Sor-ACeb_012-Ex1-7F-lcwgs-1-3-L2
+Sor-ACeb_012-Ex1-7F-lcwgs-1-3-L3
+Sor-ACeb_015-Ex1-10F-lcwgs-1-3-L2
+Sor-ACeb_015-Ex1-10F-lcwgs-1-3-L3
+Sor-ACeb_017-Ex1-12F-lcwgs-1-3-L3
+Sor-ACeb_019-Ex1-3G-lcwgs-1-3-L2
+Sor-ACeb_019-Ex1-3G-lcwgs-1-3-L3
+Sor-ACeb_020-Ex1-2G-lcwgs-1-3-L2
+Sor-ACeb_020-Ex1-2G-lcwgs-1-3-L3
+Sor-ACeb_021-Ex1-4G-lcwgs-1-3-L2
+Sor-ACeb_021-Ex1-4G-lcwgs-1-3-L3
 ```
 </details>
 
@@ -694,10 +735,28 @@ The FASTA formatted sequences were uploaded to [BOLD](https://www.boldsystems.or
 
 COI sequences were able to be recovered for the samples that passed MitoZ (sequences in `MitoZ_output.fasta`). 
 
+Libraries mostly matched to Sphaeramia orbicularis, but several had no match. `Sor-ACeb_005 L2` came back as a bacteria, but per the `fastq_screen_report`, this sample had bacterial contamination present (13%).
+
 |	Query ID	|	Best ID	|	Search DB	|	Top %	|	Low %	|
 |---|---|---|---|---|	
-
-
+|	Sor-ACeb_005-Ex1-12E-lcwgs-1-3-L2	|	Caulobacter crescentus	|	COI SPECIES DATABASE	|	98.98	|	79.43	|
+|	Sor-ACeb_005-Ex1-12E-lcwgs-1-3-L3	|	No match	|	COI SPECIES DATABASE	|	-	|	-	|
+|	Sor-ACeb_006-Ex1-1F-lcwgs-1-3-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-ACeb_006-Ex1-1F-lcwgs-1-3-L3	|	No match	|	COI SPECIES DATABASE	|	-	|	-	|
+|	Sor-ACeb_008-Ex1-3F-lcwgs-1-3-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.09	|
+|	Sor-ACeb_008-Ex1-3F-lcwgs-1-3-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.09	|
+|	Sor-ACeb_010-Ex1-5F-lcwgs-1-3-L2	|	No match	|	COI SPECIES DATABASE	|	-	|	-	|
+|	Sor-ACeb_010-Ex1-5F-lcwgs-1-3-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	87.21	|
+|	Sor-ACeb_011-Ex1-6F-lcwgs-1-3-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-ACeb_011-Ex1-6F-lcwgs-1-3-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	99.89	|	84.95	|
+|	Sor-ACeb_013-Ex1-8F-lcwgs-1-3-L2	|	No match	|	COI SPECIES DATABASE	|	-	|	-	|
+|	Sor-ACeb_013-Ex1-8F-lcwgs-1-3-L3	|	No match	|	COI SPECIES DATABASE	|	-	|	-	|
+|	Sor-ACeb_014-Ex1-9F-lcwgs-1-3-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-ACeb_014-Ex1-9F-lcwgs-1-3-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-ACeb_016-Ex1-11F-lcwgs-1-3-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-ACeb_018-Ex1-1G-lcwgs-1-3-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-ACeb_022-Ex1-5G-lcwgs-1-3-L2	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
+|	Sor-ACeb_022-Ex1-5G-lcwgs-1-3-L3	|	Sphaeramia orbicularis	|	COI SPECIES DATABASE	|	100	|	85.1	|
 
 ---
 </details>
