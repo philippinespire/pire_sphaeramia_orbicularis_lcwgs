@@ -613,32 +613,34 @@ Submitted batch job 4648831
 ## 13. Generate Number of Mapped Reads
 ```
 [hpc-0373@wahab-01 4th_sequencing_run]$  sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
-Submitted batch job xxxx
+Submitted batch job 4649867
 ```
 #### Review Output (coverageMappedReads/out__ReadStats.tsv):
-* 
+* Half of individuals (23/44) above 10 million reads; 6/44 under 1 million
+* Percent positions with coverage: avg: 28%, median: 26.3%
+* Mean Depth w coverage: avg: 1.8, median: 1.3
 
 ```
 ‣ numreads:
-    • Alb:
+    • Alb: 4,659 - 134,852,949 bp
 
 ‣ meanreadlength:
-    • Alb:
+    • Alb: 75.8 - 95.8 bp
 
 ‣ meandepth_wcvg:
-    • Alb:
+    • Alb: 1.0 - 5.7
 
 ‣ numpos:
-    • 
+    • 1,342,662,642 bp
 
 ‣ numpos_wcvg:
-    • Alb:
+    • Alb: 193,425 - 1,046,231,217 bp
 
 ‣ meandepth:
-    • Alb:
+    • Alb: 0.0001 - 4.5
 
 ‣ pctpos_wcvg:
-    • Alb:
+    • Alb: 0.01 - 77.9%
 ```
 ---
 
