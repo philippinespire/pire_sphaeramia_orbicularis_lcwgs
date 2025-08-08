@@ -1,0 +1,3 @@
+scaffold307	Aplysina cauliformis
+C1033819	Apogon semilineatus
+C1034069_FivePCGs	Plakina

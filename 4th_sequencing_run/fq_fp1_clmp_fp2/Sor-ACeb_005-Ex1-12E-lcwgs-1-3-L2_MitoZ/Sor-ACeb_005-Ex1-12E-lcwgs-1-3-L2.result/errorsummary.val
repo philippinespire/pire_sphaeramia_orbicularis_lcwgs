@@ -1,0 +1,5 @@
+     6 ERROR:   SEQ_FEAT.NoStop
+     1 WARNING: SEQ_FEAT.CollidingGeneNames
+     4 WARNING: SEQ_FEAT.PartialProblem
+     6 INFO:    SEQ_DESCR.OrganismIsUndefinedSpecies
+     1 INFO:    SEQ_FEAT.PartialProblem

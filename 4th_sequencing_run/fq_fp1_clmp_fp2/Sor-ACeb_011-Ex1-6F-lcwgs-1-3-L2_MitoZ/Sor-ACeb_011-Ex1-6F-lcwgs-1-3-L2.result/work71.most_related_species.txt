@@ -1,0 +1,4 @@
+scaffold2157	Caenolestes fuliginosus
+scaffold2222	Echinogorgia complexa
+C257037	Apogon semilineatus
+C259967	Plakina

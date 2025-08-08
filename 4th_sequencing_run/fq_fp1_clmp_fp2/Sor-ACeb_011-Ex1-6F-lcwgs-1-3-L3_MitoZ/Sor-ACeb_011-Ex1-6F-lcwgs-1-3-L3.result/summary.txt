@@ -1,0 +1,60 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C239822        1128           no             Apogon semilineatus 
+C253112        3379           no             Lutjanus johnii     
+scaffold1863   3991           no             Rhyncholestes raphanurus
+scaffold3152   201968         no             Indostomus paradoxus
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold1863   2277   3150   874        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+scaffold3152   70748  71413  666        -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+scaffold3152   72066  73118  1053       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+scaffold3152   73936  75251  1316       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+scaffold3152   <76901 77789  889        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+scaffold3152   83977  84316  340        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C239822        <1     553    553        -          CDS    CYTB       cytochrome b                      1              
+C239822        559    628    70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C239822        628    >1129  502        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C253112        <1     262    262        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C253112        252    420    169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C253112        421    495    75         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C253112        487    1186   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C253112        1192   1265   74         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C253112        1267   1338   72         +          tRNA   trnS(uga)  tRNA-Ser                          1              
+C253112        1338   2898   1561       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C253112        2890   2960   71         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C253112        2960   3026   67         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C253112        3064   3137   74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C253112        3138   3207   70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C253112        3211   3283   73         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+
+
+Protein coding genes totally found: 12
+tRNA genes totally found:            9
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                21
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ND4L                                 1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Arg                             1
+tRNA-Gln                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             2
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             1
+tRNA-Thr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

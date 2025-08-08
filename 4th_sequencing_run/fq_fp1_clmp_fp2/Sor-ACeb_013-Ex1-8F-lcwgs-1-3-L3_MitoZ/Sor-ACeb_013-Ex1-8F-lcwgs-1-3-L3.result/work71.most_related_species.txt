@@ -1,0 +1,4 @@
+scaffold577	Euplexaura crassa
+C245250_FivePCGs	Oscarella malakhovi
+C245348	Plakina
+C245360	Asymmetron inferum

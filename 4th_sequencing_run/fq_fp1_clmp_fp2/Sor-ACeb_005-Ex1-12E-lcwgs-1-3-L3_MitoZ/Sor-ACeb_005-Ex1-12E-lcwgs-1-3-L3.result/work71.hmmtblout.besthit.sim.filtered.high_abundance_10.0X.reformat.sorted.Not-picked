@@ -1,0 +1,12 @@
+>scaffold1114 Locus_43645_0 12.1 LINEAR length=952 score=2.834
+COX1	2	270	1003	1240	+	2
+>scaffold1067 Locus_40299_0 6.6 LINEAR length=659 score=3.184
+COX1	1	552	11	494	-	2
+>scaffold532 Locus_3176_1 9.5 FORK length=2138 score=7.658
+COX1	1	921	159	1063	-	4
+>scaffold531 Locus_3176_0 9.7 FORK length=1328 score=0.868
+COX1	8	111	159	225	-	4
+>scaffold1394 Locus_69352_0 6.3 LINEAR length=1490 score=3.271
+ND5	3	722	662	1319	+	2
+>scaffold102 Locus_449_0 8.1 FORK length=1359 score=8.683
+COX1	1	1224	9	1172	-	4

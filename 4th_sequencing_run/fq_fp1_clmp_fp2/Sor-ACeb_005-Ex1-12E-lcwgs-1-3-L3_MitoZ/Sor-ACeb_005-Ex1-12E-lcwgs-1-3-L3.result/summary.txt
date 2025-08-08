@@ -1,0 +1,62 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C175292        3681           no             Gambelia wislizenii 
+scaffold103    2252           no             Johnius belangerii  
+scaffold139    1307           no             Polypterus ansorgii 
+C144860        612            no             Saccoglossus kowalevskii
+C173774        2291           no             Tetrabrachium ocellatum
+scaffold790    1953           no             Microhyla pulchra   
+scaffold466    823            no             Branchiostoma japonicum
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold103    509    >2105  1597       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+scaffold139    6      1180   1175       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+scaffold466    244    620    377        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+scaffold790    <3     708    706        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C144860        16     281    266        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C173774        1559   >2237  679        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C175292        275    477    203        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C175292        853    >1117  265        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C175292        1281   2527   1247       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+
+
+Protein coding genes totally found:  9
+tRNA genes totally found:            0
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                 9
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP6                                 1
+ATP8                                 1
+CYTB                                 1
+ND2                                  1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Glu                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             2
+tRNA-Lys                             1
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             2
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

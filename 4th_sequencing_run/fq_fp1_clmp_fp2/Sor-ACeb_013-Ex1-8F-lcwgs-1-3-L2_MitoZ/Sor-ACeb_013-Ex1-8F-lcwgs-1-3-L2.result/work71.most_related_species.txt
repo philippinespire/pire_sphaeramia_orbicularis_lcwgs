@@ -1,0 +1,5 @@
+scaffold335	Euplexaura crassa
+scaffold2151_FivePCGs	Arctica islandica
+C249155_FivePCGs	Aleurodicus dispersus
+C249271	Plakina
+C249293	Clava multicornis

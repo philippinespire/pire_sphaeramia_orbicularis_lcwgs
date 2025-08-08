@@ -1,0 +1,73 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+scaffold335    9565           no             Himantura granulata 
+scaffold2151_FivePCGs873272         no             Peltorhamphus novaezeelandiae
+C249271        243915         no             Myxine glutinosa    
+C249293        416039         no             Acomys cahirinus    
+C249155_FivePCGs46383          no             Fistularia petimba  
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold335    6897   8074   1178       +          CDS    CYTB       cytochrome b                      2              
+scaffold2151_FivePCGs308485 309404 920        +          CDS    ND5        NADH dehydrogenase subunit 5      4              
+scaffold2151_FivePCGs326654 327792 1139       +          CDS    ND5        NADH dehydrogenase subunit 5      4              
+scaffold2151_FivePCGs756385 756459 75         +          tRNA   trnR(ccg)  tRNA-Arg                          2              
+scaffold2151_FivePCGs810075 810148 74         +          tRNA   trnA(cgc)  tRNA-Ala                          2              
+scaffold2151_FivePCGs810280 810354 75         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+scaffold2151_FivePCGs815059 815132 74         +          tRNA   trnA(ugc)  tRNA-Ala                          2              
+scaffold2151_FivePCGs830421 830884 464        +          CDS    COX2       cytochrome c oxidase subunit II   2              
+scaffold2151_FivePCGs831254 832793 1540       +          CDS    COX1       cytochrome c oxidase subunit I    2              
+scaffold2151_FivePCGs833055 833439 385        +          CDS    COX3       cytochrome c oxidase subunit III  3              
+scaffold2151_FivePCGs835276 836279 1004       +          CDS    CYTB       cytochrome b                      2              
+C249155_FivePCGs29524  29749  226        +          CDS    ND3        NADH dehydrogenase subunit 3      2              
+C249155_FivePCGs35333  36285  953        +          CDS    ND1        NADH dehydrogenase subunit 1      2              
+C249155_FivePCGs37940  39252  1313       +          CDS    ND5        NADH dehydrogenase subunit 5      4              
+C249155_FivePCGs39882  41146  1265       +          CDS    ND4        NADH dehydrogenase subunit 4      2              
+C249271        26528  27193  666        -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C249271        27846  28898  1053       -          CDS    ND4        NADH dehydrogenase subunit 4      2              
+C249271        29716  31031  1316       -          CDS    ND5        NADH dehydrogenase subunit 5      4              
+C249271        <32681 33569  889        -          CDS    ND1        NADH dehydrogenase subunit 1      2              
+C249271        39757  40096  340        -          CDS    ND3        NADH dehydrogenase subunit 3      2              
+C249293        23357  23431  75         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C249293        136783 137020 238        +          CDS    COX2       cytochrome c oxidase subunit II   2              
+C249293        182273 >1838541582       +          CDS    COX1       cytochrome c oxidase subunit I    2              
+C249293        185081 185498 418        +          CDS    COX3       cytochrome c oxidase subunit III  3              
+C249293        185809 186256 448        +          CDS    COX3       cytochrome c oxidase subunit III  3              
+C249293        218480 218551 72         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C249293        286493 286565 73         +          tRNA   trnR(ccg)  tRNA-Arg                          2              
+C249293        378945 >379401457        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+
+
+Protein coding genes totally found: 21
+tRNA genes totally found:            7
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                28
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP8                                 1
+ND4L                                 1
+ND6                                  1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Gln                             1
+tRNA-Glu                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Leu                             2
+tRNA-Lys                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             2
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

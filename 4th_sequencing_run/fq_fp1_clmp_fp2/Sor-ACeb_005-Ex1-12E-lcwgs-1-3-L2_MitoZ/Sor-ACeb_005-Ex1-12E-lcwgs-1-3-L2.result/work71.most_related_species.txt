@@ -1,0 +1,6 @@
+scaffold645	Carapus bermudensis
+scaffold1513	Aplysina cauliformis
+C167291	Martes americana
+C180361	Oscarella viridis
+C180807	Oscarella tuberculata
+C181671	Halisarca dujardini

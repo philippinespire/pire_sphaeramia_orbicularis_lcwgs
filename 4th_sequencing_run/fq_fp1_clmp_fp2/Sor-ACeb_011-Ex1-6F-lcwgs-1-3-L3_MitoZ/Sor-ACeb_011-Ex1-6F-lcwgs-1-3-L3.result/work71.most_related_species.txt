@@ -1,0 +1,4 @@
+scaffold1863	Caenolestes fuliginosus
+scaffold3152	Plakina
+C239822	Apogon semilineatus
+C253112	Apogon semilineatus

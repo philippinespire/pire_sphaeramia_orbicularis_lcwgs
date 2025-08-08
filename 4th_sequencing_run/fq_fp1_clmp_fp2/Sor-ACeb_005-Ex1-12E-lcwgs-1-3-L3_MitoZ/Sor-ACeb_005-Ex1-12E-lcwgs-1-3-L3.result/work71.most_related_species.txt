@@ -1,0 +1,7 @@
+scaffold103	Dendronephthya putteri
+scaffold139	Craspedacusta sowerbyi
+scaffold466	Plakina jani
+scaffold790	Microhyla pulchra
+C144860	Saccoglossus kowalevskii
+C173774	Oscarella viridis
+C175292	Tethya
