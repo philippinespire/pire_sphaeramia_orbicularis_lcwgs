@@ -4,6 +4,10 @@
 
 Analysis of low-coverage whole genome sequencing data for *Sphaeramia orbicularis* 
 
+Metadata: https://n2t.net/ark:/21547/GZe2; https://n2t.net/ark:/21547/GZk2; https://n2t.net/ark:/21547/GZY2; https://n2t.net/ark:/21547/GZq2
+
+SRA BioProjects: PRJNA1336811; PRJNA1336813; PRJNA1337112; PRJNA1337154
+
 ```
 /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs
 ```
