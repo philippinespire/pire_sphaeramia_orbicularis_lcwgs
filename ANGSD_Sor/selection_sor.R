@@ -56,11 +56,12 @@ site = "pnd"
 ## Effective population size (Ne)
 # Jorde-Ryman estimates & number of generations based on difference between Historical & Modern sampling years
 Ne = 58
+# Ne_x10  = Ne * 10   # to check on the effect of effective population size on number of significant snps
+# Ne_x100 = Ne * 100   # to check on the effect of effective population size on number of significant snps
 
 ## Generations (gen) based on sampling years 
 a_year = 1908 # 4/7/1908
 c_year = 2021 # 11/6/2021
-
 
 # Generation time calculated from FishLife
 gen_time = 2.51
@@ -77,24 +78,113 @@ gen <- c(min, max)
 #######################
 #### READ IN FILES ####
 #######################
-## Minor allele frequency output files from ANGSD
-apnd_mafs <- fread("ACeb_sites_notrans_subset.mafs.gz", header=TRUE)
+### Minor allele frequency output files from ANGSD ###
+apnd_mafs <- fread("ACeb_sites_notrans_subset.mafs.gz", header=TRUE) 
 cpnd_mafs <- fread("CPnd_sites_notrans_subset.mafs.gz", header=TRUE)
+
+# Create chrpos identifiers for all SNPs. This is the same as the single column in the .regions files. 
+apnd_mafs <- apnd_mafs %>%
+  mutate(chrpos = paste(chromo, position, sep = ":"))
+
+cpnd_mafs <- cpnd_mafs %>%
+  mutate(chrpos = paste(chromo, position, sep = ":"))
+
+length(unique(apnd_mafs$chrpos)) # 40244
+length(unique(cpnd_mafs$chrpos)) # 44118
+# 3,874 missing MAFs
+
+
+## Check missing MAFs
+# Check which MAFs that are in apnd_mafs, but are missing from cpnd_mafs
+missing_mafs <- setdiff(apnd_mafs$chrpos, cpnd_mafs$chrpos)
+print(missing_mafs)
+# 0 
+
+# Check which MAFs that are in cpnd_mafs, but are missing from apnd_mafs
+missing_mafs <- setdiff(cpnd_mafs$chrpos, apnd_mafs$chrpos)
+print(missing_mafs)
+# 3,874 MAFs in CPnd that are missing from APnd
+
+# filter out missing MAFs from cpnd_mafs
+cpnd_mafs <- cpnd_mafs %>%
+  filter(!(chrpos %in% missing_mafs))
+
+length(unique(apnd_mafs$chrpos)) # 40244
+length(unique(cpnd_mafs$chrpos)) # 40244
+# same length. check order.
+
+# check that apnd_mafs & cpnd_mafs are in the same order before combining.
+identical(apnd_mafs$chrpos, cpnd_mafs$chrpos)
+# TRUE
+
+# IF FALSE: Reorder cpnd_mafs to match apnd_mafs by chrpos
+cpnd_mafs <- cpnd_mafs[match(apnd_mafs$chrpos, cpnd_mafs$chrpos), ]
 
 # Create minor allele frequency matrix
 apnd_cpnd_freq <- data.frame(apnd_maf = apnd_mafs$knownEM, 
-                             cpnd_maf = cpnd_mafs$knownEM)
+                             cpnd_maf = cpnd_mafs$knownEM,
+                             chrpos   = cpnd_mafs$chrpos)
 
-# Error in data.frame(apnd_maf = apnd_mafs$knownEM, cpnd_maf = cpnd_mafs$knownEM) : 
-#   arguments imply differing number of rows: 40244, 44118
 
-## Coverage output files from ANGSD
+
+### Coverage depth output files from ANGSD ###
 apnd_pos <- fread("ACeb_sites_notrans_subset.pos.gz", header=TRUE)
 cpnd_pos <- fread("CPnd_sites_notrans_subset.pos.gz", header=TRUE)
 
+# Create chrpos identifiers for all depths. This is the same as the single column in the .regions files. 
+apnd_pos <- apnd_pos %>%
+  mutate(chrpos = paste(chr, pos, sep = ":"))
+
+cpnd_pos <- cpnd_pos %>%
+  mutate(chrpos = paste(chr, pos, sep = ":"))
+
+length(unique(apnd_pos$chrpos)) # 40244
+length(unique(cpnd_pos$chrpos)) # 44118
+# 3,874 missing depths
+
+
+## Check missing depths
+# Check which depths that are in apnd_pos, but are missing from cpnd_pos
+missing_depths <- setdiff(apnd_pos$chrpos, cpnd_pos$chrpos)
+print(missing_depths)
+# 0 
+
+# Check which depths that are in cpnd_pos, but are missing from apnd_pos
+missing_depths <- setdiff(cpnd_pos$chrpos, apnd_pos$chrpos)
+print(missing_depths)
+# 3,874 depths in CPnd that are missing from APnd
+
+# filter out missing depths from cpnd_pos
+cpnd_pos <- cpnd_pos %>%
+  filter(!(chrpos %in% missing_depths))
+
+length(unique(apnd_pos$chrpos)) # 40244
+length(unique(cpnd_pos$chrpos)) # 40244
+# same length. check order.
+
+# check that apnd_pos & cpnd_pos are in the same order before combining.
+identical(apnd_pos$chrpos, cpnd_pos$chrpos)
+# TRUE
+
+# IF FALSE: Reorder cpnd_pos to match apnd_pos by chrpos
+cpnd_pos <- cpnd_pos[match(apnd_pos$chrpos, cpnd_pos$chrpos), ]
+
 # Create coverage matrix
 apnd_cpnd_cov_mat <- data.frame(apnd_totDepth = apnd_pos$totDepth,
-                                cpnd_totDepth = cpnd_pos$totDepth)
+                                cpnd_totDepth = cpnd_pos$totDepth,
+                                chrpos        = cpnd_pos$chrpos)
+
+# Check order of MAF and depth dataframes
+identical(apnd_cpnd_freq$chrpos, apnd_cpnd_cov_mat$chrpos)
+# TRUE
+
+# filter out chrpos columns 
+apnd_cpnd_cov_mat <- apnd_cpnd_cov_mat %>%
+  select(apnd_totDepth, cpnd_totDepth)
+
+apnd_cpnd_freq <- apnd_cpnd_freq %>%
+  select(apnd_maf, cpnd_maf)
+
 
 ## Load global SNP list output file from ANGSD
 snp_list <- fread("global_snp_list_depth1_15_notrans.txt", header = FALSE)
@@ -108,7 +198,7 @@ reg_list <- fread("global_snp_list_depth1_15_notrans.regions", header = FALSE)
 ##########################
 ## ACER adpated chi-square test to generate p-values & test statistic for each SNP
 pnd_pval <- data.frame(
-  adapted.chisq.test(freq     = apnd_cpnd_freq,      # allele frequency matrix. rows are SNPs, columns are temporal populations
+  adapted.chisq.test(freq     = apnd_cpnd_freq,     # allele frequency matrix. rows are SNPs, columns are temporal populations
                      coverage = apnd_cpnd_cov_mat,  # coverage matrix. rows are SNPs, columns are temporal populations
                      Ne       = Ne,
                      gen      = gen,
@@ -166,7 +256,9 @@ pnd_sel$change_abs   <- abs(pnd_sel$cpnd_maf - pnd_sel$apnd_maf) # absolute chan
 cat("Species: ", spp, " at Site: ", site, " has a total of ", total_snps, " SNPs, with ",
     pnd_sel_sig_fdr_05_count, " SNPs < 0.05 (", pnd_sel_sig_fdr_05_per, "% ) and", 
     pnd_sel_sig_fdr_01_count, " SNPs < 0.01 (", pnd_sel_sig_fdr_01_per, "% ) using FDR-corrected p-values.")
-# Species:  sin  at Site:  pnd  has a total of  2106  SNPs, with  1730  SNPs < 0.05 ( 82.14625 % ) and 1572  SNPs < 0.01 ( 74.64387 % ) using FDR-corrected p-values.
+# Ne = 58:    Species:  sor  at Site:  pnd  has a total of  40244  SNPs, with  26564  SNPs < 0.05 ( 66.00736 % ) and 23637  SNPs < 0.01 ( 58.73422 % ) using FDR-corrected p-values.
+# Ne = 580:   Species:  sor  at Site:  pnd  has a total of  40244  SNPs, with  27504  SNPs < 0.05 ( 68.34311 % ) and 24521  SNPs < 0.01 ( 60.93082 % ) using FDR-corrected p-values.
+# Ne = 5,800: Species:  sor  at Site:  pnd  has a total of  40244  SNPs, with  27918  SNPs < 0.05 ( 69.37183 % ) and 24851  SNPs < 0.01 ( 61.75082 % ) using FDR-corrected p-values.
 
 # rename p.value
 pnd_sel <- pnd_sel %>%
@@ -418,8 +510,8 @@ plot_histo_afd_fdr <-
        y = "Count") +
   scale_color_manual(values = c("Historical" = "#F8766D", "Modern" = "#00BFC4")) +
   scale_fill_manual(values  = c("Historical" = "#F8766D", "Modern" = "#00BFC4")) +
-  # scale_y_continuous(breaks = seq(0, 30, by = 5),
-  #                    limits = c(0, 30)) +
+  scale_y_continuous(breaks = seq(0, 30000, by = 10000),
+                     limits = c(0, 30000)) +
   # coord_cartesian(xlim = c(0, 1)) +
   # scale_x_continuous(breaks = seq(0, 1.0, by = 0.25),
   #                    limits = c(0, 1)) +
@@ -449,30 +541,40 @@ reg_list <- reg_list %>%
   rename(chrpos = V1)
 
 # count SNPs in snp_list and pnd_sel
-n_distinct(snp_list$chrpos) # 
-n_distinct(reg_list$chrpos) # 
-n_distinct(pnd_sel$chrpos)  # 
+n_distinct(snp_list$chrpos) # 44126
+n_distinct(reg_list$chrpos) # 44126
+n_distinct(pnd_sel$chrpos)  # 40244
 
 
 ## Check missing SNPs
-# Check which SNPs are missing from pnd_sel that are in snp_list
+# Check which SNPs are in snp_list, but missing from pnd_sel
 missing_snps <- setdiff(snp_list$chrpos, pnd_sel$chrpos)
 print(missing_snps)
 
 
-# Check which SNPs are missing from pnd_sel that are in reg_list
+# Check which SNPs are in reg_list, but missing from pnd_sel
 missing_snps_reg <- setdiff(reg_list$chrpos, pnd_sel$chrpos)
 print(missing_snps_reg)
 
 
 # filter out missing SNPs from snp_list
-# snp_list <- snp_list %>%
-#   filter(!(chrpos %in% missing_snps))
+snp_list <- snp_list %>%
+  filter(!(chrpos %in% missing_snps))
 # 
-# # filter out missing SNPs from reg_list
-# reg_list <- reg_list %>%
-#   filter(!(chrpos %in% missing_snps_reg))
+# filter out missing SNPs from reg_list
+reg_list <- reg_list %>%
+  filter(!(chrpos %in% missing_snps_reg))
 
+# check that snp_list & reg_list are in the same order
+identical(snp_list$chrpos, reg_list$chrpos)
+# TRUE
+
+# IF FALSE: Reorder reg_list to match snp_list by chrpos
+reg_list <- reg_list[match(snp_list$chrpos, reg_list$chrpos), ]
+
+# check that snp_list & reg_list are in the same order
+identical(snp_list$chrpos, pnd_sel$chrpos)
+# TRUE
 
 ### Create neutral lists
 ## SNPs
@@ -487,31 +589,31 @@ n_distinct(snp_list_neutral$chrpos)  #
 
 # Check how many SNPs were filtered
 cat("Original SNPs:", nrow(snp_list), "\n")
-# Original SNPs: 
+# Original SNPs: 40244
 cat("Significant SNPs (FDR < 0.05):", nrow(sig_snps), "\n")
-# Significant SNPs (FDR < 0.05): 
+# Significant SNPs (FDR < 0.05): 26564 
 cat("Neutral SNPs remaining:", nrow(snp_list_neutral), "\n")
-# Neutral SNPs remaining: 
+# Neutral SNPs remaining: 13680
 
 # Export the neutral SNP list (first 4 columns only)
 neutral_outfile <- "neutral_fdr_snp_list_depth1_15_notrans.txt"
-# write.table(
-#   snp_list_neutral[, 1:4],
-#   neutral_outfile,
-#   sep = "\t",
-#   row.names = FALSE,
-#   col.names = FALSE,
-#   quote = FALSE
-# )
+write.table(
+  snp_list_neutral[, 1:4],
+  neutral_outfile,
+  sep = "\t",
+  row.names = FALSE,
+  col.names = FALSE,
+  quote = FALSE
+)
 cat("Neutral SNP list saved as:", neutral_outfile, "\n")
 
 
 ## Chromosomes
 # Check chromosome counts
 cat("Original unique chromosomes:", length(unique(snp_list$V1)), "\n")
-# Original unique chromosomes: 
+# Original unique chromosomes: 103
 cat("Neutral unique chromosomes:", length(unique(snp_list_neutral$V1)), "\n")
-# Neutral unique chromosomes: 
+# Neutral unique chromosomes: 95
 
 # make neutral chr list
 chr_list_neutral <- data.frame(chr = sort(unique(snp_list_neutral$V1)))
@@ -519,13 +621,13 @@ nrow(chr_list_neutral) #
 
 # Export chromosome list for ANGSD input
 neutral_chr_outfile <- "neutral_fdr_snp_list_depth1_15_notrans.chrs"
-# write.table(
-#   data.frame(chr_list_neutral$chr),
-#   neutral_chr_outfile,
-#   row.names = FALSE,
-#   col.names = FALSE,
-#   quote = FALSE
-# )
+write.table(
+  data.frame(chr_list_neutral$chr),
+  neutral_chr_outfile,
+  row.names = FALSE,
+  col.names = FALSE,
+  quote = FALSE
+)
 cat("Neutral chromosome list saved as:", neutral_chr_outfile, "\n")
 
 
@@ -537,17 +639,17 @@ n_distinct(reg_list_neutral$chrpos)  #
 
 # Check region counts
 cat("Original unique regions:", length(unique(reg_list$chrpos)), "\n")
-# Original unique regions: 
+# Original unique regions: 40244
 cat("Neutral unique regions:", length(unique(reg_list_neutral$chrpos)), "\n")
-# Neutral unique regions: 
+# Neutral unique regions: 13680
 
 #Export regions list for ANGSD input
 neutral_reg_outfile <- "neutral_fdr_snp_list_depth1_15_notrans.regions"
-# write.table(
-#   data.frame(reg_list_neutral$chrpos),
-#   neutral_reg_outfile,
-#   row.names = FALSE,
-#   col.names = FALSE,
-#   quote = FALSE
-# )
+write.table(
+  data.frame(reg_list_neutral$chrpos),
+  neutral_reg_outfile,
+  row.names = FALSE,
+  col.names = FALSE,
+  quote = FALSE
+)
 cat("Neutral regions list saved as:", neutral_reg_outfile, "\n")
