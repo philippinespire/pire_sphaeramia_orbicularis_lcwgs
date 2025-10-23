@@ -1,8 +1,22 @@
+################
+#### README ####
+################
+### Ran with the ANGSD output that removed SorCPnd041 a PC2 outlier.
+### Datasets with outliers removed should all have 'subset' somewhere in the filename. 
+### However, 1st & 2nd seq runs were identified by BOLD as Sphaeramia orbicularis, so it should not be removed. 
+### But this directory moved forward with the 'subset' dataset. 
+### 3rd sequencing run received on 5/14/25 with 48 modern individuals (CPnd).
+### 4th sequencing run received on 7/1/25 with 22 historical individuals (ACeb).
+### GenErode and ANGSD are being rerun with all sequencing runs in directories with '3seqruns' in the name.
+### The '3seqruns' datasets should not remove SorCPnd041, unless further justification is identified. 
+
 #### Testing for Selection with χ² tests from the package ACER
 # 1 species, 2 time points (modern = C, historical = A), 1 site
 # only 1 site means that there are no temporal replicates 
 # i.e. only 1 site means that there are no replicates
 # no replicates means that the CMH Test cannot be conducted
+
+
 
 ####################
 #### INITIALIZE ####
@@ -321,7 +335,7 @@ final_maf_bin_summary_3 <- counts_all_bin3 %>%
   arrange(factor(allele_freq_bin_3, levels = c("< 0.25", "0.25–0.75", "> 0.75")))
 
 print(final_maf_bin_summary_3)
-# fwrite(final_maf_bin_summary_3, paste0("./output/", spp, "_pnd_selection_snps_maf_bins_3.txt"), sep = "\t")
+# fwrite(final_maf_bin_summary_3, paste0("./output/", spp, "_pnd_selection_subset_snps_maf_bins_3.txt"), sep = "\t")
 
 
 ## SUMMARY TABLE W/ 5 BINS
@@ -349,7 +363,7 @@ final_maf_bin_summary_5 <- counts_all_bin5 %>%
                  levels = c("= 0.00", "< 0.25", "0.25–0.75", "> 0.75", "= 1.00")))
 
 print(final_maf_bin_summary_5)
-# fwrite(final_maf_bin_summary_5, paste0("./output/", spp, "_pnd_selection_snps_maf_bins_5.txt"), sep = "\t")
+# fwrite(final_maf_bin_summary_5, paste0("./output/", spp, "_pnd_selection_subset_snps_maf_bins_5.txt"), sep = "\t")
 
 
 ## Create significant (FDR) matrices
@@ -366,10 +380,10 @@ pnd_sel_sig_fdr_05_long <- pnd_sel_sig_fdr_05_long %>%
                 fdr, neg_log_10_fdr, p_value, test_statistic)
 
 ## SAVE FREQUENCY MATRICES ##
-# fwrite(pnd_sel,                 paste0("./output/", spp, "_pnd_selection_snps_all.txt"), sep = "\t")
-# fwrite(pnd_sel_long,            paste0("./output/", spp, "_pnd_selection_snps_all_long.txt"), sep = "\t")
-# fwrite(pnd_sel_sig_fdr_05,      paste0("./output/", spp, "_pnd_selection_snps_sig_pval_fdr_05.txt"), sep = "\t")
-# fwrite(pnd_sel_sig_fdr_05_long, paste0("./output/", spp, "_pnd_selection_snps_sig_pval_fdr_05_long.txt"), sep = "\t")
+# fwrite(pnd_sel,                 paste0("./output/", spp, "_pnd_selection_subset_snps_all.txt"), sep = "\t")
+# fwrite(pnd_sel_long,            paste0("./output/", spp, "_pnd_selection_subset_snps_all_long.txt"), sep = "\t")
+# fwrite(pnd_sel_sig_fdr_05,      paste0("./output/", spp, "_pnd_selection_subset_snps_sig_pval_fdr_05.txt"), sep = "\t")
+# fwrite(pnd_sel_sig_fdr_05_long, paste0("./output/", spp, "_pnd_selection_subset_snps_sig_pval_fdr_05_long.txt"), sep = "\t")
 
 
 
@@ -414,7 +428,7 @@ manhattan_plot <- ggplot(pnd_sel, aes(x = pos_cum, y = -log10(fdr), color = as.f
   )
 
 print(manhattan_plot)
-# ggsave(paste0("./plots/", spp, "_plot_manhattan_fdr_05.png"), manhattan_plot, width = 20, height = 10, dpi = 300)
+# ggsave(paste0("./plots/", spp, "_plot_subset_manhattan_fdr_05.png"), manhattan_plot, width = 20, height = 10, dpi = 300)
 
 
 ## Manhattan plot: sig threshold = 0.05, ylim = 10
@@ -446,7 +460,7 @@ manhattan_plot <- ggplot(pnd_sel, aes(x = pos_cum, y = -log10(fdr), color = as.f
   )
 
 print(manhattan_plot)
-# ggsave(paste0("./plots/", spp, "_plot_manhattan_fdr_05_ylim_10.png"), manhattan_plot, width = 20, height = 10, dpi = 300)
+# ggsave(paste0("./plots/", spp, "_plot_subset_manhattan_fdr_05_ylim_10.png"), manhattan_plot, width = 20, height = 10, dpi = 300)
 
 
 
@@ -497,7 +511,7 @@ plot_density_afd_fdr <-
   )
 
 print(plot_density_afd_fdr)
-# ggsave(paste0("./plots/", spp, "_plot_selection_afd_density_fdr_05_mod.png"), plot_density_afd_fdr, width = 20, height = 10, dpi = 300)
+# ggsave(paste0("./plots/", spp, "_plot_subset_selection_afd_density_fdr_05_mod.png"), plot_density_afd_fdr, width = 20, height = 10, dpi = 300)
 
 
 ## HISTOGRAM ##
@@ -525,7 +539,7 @@ plot_histo_afd_fdr <-
   )
 
 print(plot_histo_afd_fdr)
-# ggsave(paste0("./plots/", spp, "_plot_selection_afd_histo_fdr_05_bins_20_mod.png"), plot_histo_afd_fdr, width = 20, height = 10, dpi = 300)
+# ggsave(paste0("./plots/", spp, "_plot_subset_selection_afd_histo_fdr_05_bins_20_mod.png"), plot_histo_afd_fdr, width = 20, height = 10, dpi = 300)
 
 
 
@@ -596,7 +610,7 @@ cat("Neutral SNPs remaining:", nrow(snp_list_neutral), "\n")
 # Neutral SNPs remaining: 13680
 
 # Export the neutral SNP list (first 4 columns only)
-neutral_outfile <- "neutral_fdr_snp_list_depth1_15_notrans.txt"
+neutral_outfile <- "neutral_fdr_snp_list_depth1_15_notrans_subset.txt"
 write.table(
   snp_list_neutral[, 1:4],
   neutral_outfile,
@@ -620,7 +634,7 @@ chr_list_neutral <- data.frame(chr = sort(unique(snp_list_neutral$V1)))
 nrow(chr_list_neutral) # 
 
 # Export chromosome list for ANGSD input
-neutral_chr_outfile <- "neutral_fdr_snp_list_depth1_15_notrans.chrs"
+neutral_chr_outfile <- "neutral_fdr_snp_list_depth1_15_notrans_subset.chrs"
 write.table(
   data.frame(chr_list_neutral$chr),
   neutral_chr_outfile,
@@ -644,7 +658,7 @@ cat("Neutral unique regions:", length(unique(reg_list_neutral$chrpos)), "\n")
 # Neutral unique regions: 13680
 
 #Export regions list for ANGSD input
-neutral_reg_outfile <- "neutral_fdr_snp_list_depth1_15_notrans.regions"
+neutral_reg_outfile <- "neutral_fdr_snp_list_depth1_15_notrans_subset.regions"
 write.table(
   data.frame(reg_list_neutral$chrpos),
   neutral_reg_outfile,
