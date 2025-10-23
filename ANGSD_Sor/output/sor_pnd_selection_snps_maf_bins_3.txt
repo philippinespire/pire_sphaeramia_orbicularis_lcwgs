@@ -1,0 +1,4 @@
+allele_freq_bin_3	n_his_all	n_mod_all	n_mod_sig	n_his_sig
+< 0.25	36289	36042	24449	25747
+0.25–0.75	3092	4199	2113	0
+> 0.75	863	3	2	817
