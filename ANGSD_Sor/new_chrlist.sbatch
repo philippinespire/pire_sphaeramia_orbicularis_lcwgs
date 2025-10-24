@@ -16,4 +16,4 @@ OUTDIR=$1
 
 cd ${OUTDIR}
 
-crun angsd sites index neutral_fdr_snp_list_depth1_15_notrans.txt
+crun angsd sites index neutral_fdr_snp_list_depth1_15_notrans_subset.txt
