@@ -757,25 +757,6 @@ print(paste("Peak of Historical:", peak_historical))
 print(paste("Peak of Modern:", peak_modern))
 # Peak of Modern: -0.427412044847865
 
-plot_tajima <- angsd_thetas_depth_notrans %>%
-  ggplot(aes(x=Tajima, fill=Era)) +
-  labs(x="Tajima's D",y="Density") +
-  theme_classic() +
-  theme(legend.position = "none",
-        axis.text.x = element_text(family = "Times New Roman", size = 12),  # Font for x-axis values
-        axis.title.x = element_text(family = "Times New Roman", size = 12),  # Font for x-axis title
-        axis.ticks.x = element_blank(),  # Hides x-axis ticks
-        axis.text.y = element_text(family = "Times New Roman", size = 12),  # Font for y-axis values
-        axis.title.y = element_text(family = "Times New Roman", size = 12),  # Font for y-axis title
-        axis.ticks.length = unit(3, "pt"),  # Small tick marks
-        axis.ticks = element_line(color = "black")) +  # Black tick mark
-  geom_density(alpha=0.65) +
-  scale_fill_manual(values = c("#F8766D", "#00BFC4")) +
-  print(plot_tajima)
-
-plot_grid(bol_tajima_all, mta_tajima_all,
-          labels=c('A', 'B'))
-
 
 #### FILTER: DEPTH ####
 
