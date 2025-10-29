@@ -193,7 +193,7 @@ PCA <- function(cov_matrix_angsd,
 pca <- PCA(cov_matrix_angsd, ind_label_angsd, pop_label_angsd, x_axis, y_axis)
 print(pca)
 # outFile pattern
-outFile_plot_pca <- paste0("plots/", spp_code, "_plot_pca_angsd_neutral_snps_subset_k2", ".png")  
+outFile_plot_pca <- paste0("plots/", spp_code, "_plot_pca_angsd_neutral_snps_subset_k6", ".png")  
 
 # Save the plot to a file
 ggsave(filename = outFile_plot_pca, plot = pca, width = 2.15, height = 2.5)
@@ -267,6 +267,12 @@ PCA <- function(cov_matrix_angsd, ind_label_angsd, pop_label_angsd, x_axis, y_ax
 
 # create pca plot
 pca <- PCA(cov_matrix_angsd, ind_label_angsd, pop_label_angsd,x_axis,y_axis)
+print(pca)
+# outFile pattern
+outFile_plot_pca <- paste0("plots/", spp_code, "_plot_pca_angsd_neutral_snps_subset_k6_leg", ".png")  
+
+# Save the plot to a file
+ggsave(filename = outFile_plot_pca, plot = pca, width = 2.15, height = 2.5)
 
 
 #### PLOT PCA W/O TITLE & LEGEND ####
