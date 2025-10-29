@@ -126,7 +126,11 @@ angsd_thetas_depth_notrans$tP_bysite <- angsd_thetas_depth_notrans$tP/angsd_thet
 #Reorder for plotting
 angsd_thetas_depth_notrans$Site <- factor(angsd_thetas_depth_notrans$Site, levels=c("APnd", "CPnd"))
 
-#Theta by Depth plot
+
+
+################################
+#### PLOTS - THETA BY DEPTH ####
+################################
 # Waterson's theta estimates
 plot_theta_depth <- angsd_thetas_depth_notrans %>%
   ggplot(aes(x=ind_depth, y=tW_bysite, color=Era), show.legend=FALSE) +
