@@ -39,12 +39,14 @@ options(bitmapType = "cairo")  # Set Cairo as the default graphics device
 #### READ IN DATA ####
 ######################
 ##Load in theta outputs by population (abol, amta, cbol, cmta)
-apnd_thetas_notrans <- read_table("APnd_notrans_subset_neutral_fdr.thetas.idx.pestPG")
+apnd_thetas_notrans <- read_table("ACeb_notrans_subset_neutral_fdr.thetas.idx.pestPG")
 cpnd_thetas_notrans <- read_table("CPnd_notrans_subset_neutral_fdr.thetas.idx.pestPG")
 
 ##Import depth information
 angsd_depth_notrans <- read_table("combined_sites_notrans_subset_neutral_fdr.pos.gz")
 #This is by site, we need it by chromosome to match with the theta calculations
+apnd_depth_notrans <- read_table("ACeb_sites_notrans_subset_neutral_fdr.pos.gz") 
+cpnd_depth_notrans <- read_table("CPnd_sites_notrans_subset_neutral_fdr.pos.gz")
 
 # Read the BAM list file
 bamlist <- read.table("bam_list_all_subset.txt")
@@ -57,7 +59,7 @@ bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
 #### USER DEFINED VARIABLES ####
 ################################
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Cha"
+spp_code="Sor"
 
 # location longform
 site_long = "Pandanon"
@@ -93,6 +95,7 @@ cat("Total number of BAM files:", total_n, "\n")
 ##########################
 #### WRANGLE RAW DATA ####
 ##########################
+## THETA
 #Add a column for site to each dataset
 apnd_thetas_notrans$Site <- "APnd"
 cpnd_thetas_notrans$Site <- "CPnd"
@@ -104,6 +107,8 @@ cpnd_thetas_notrans$Era <- "Modern"
 #Merge datasets for plotting
 angsd_thetas_notrans <- rbind(apnd_thetas_notrans, cpnd_thetas_notrans)
 
+
+## DEPTH
 #Take the average of total Depth for all the sites within a chromosome
 angsd_avgdepth_notrans <- angsd_depth_notrans %>% group_by(chr) %>% summarise(avg_Depth = mean(totDepth))
 #This gets us average total depth (summed across individuals) for each chromosome
@@ -112,7 +117,9 @@ angsd_avgdepth_notrans <- angsd_depth_notrans %>% group_by(chr) %>% summarise(av
 angsd_avgdepth_notrans$ind_depth <- angsd_avgdepth_notrans$avg_Depth/total_n
 
 #Rename Chr column to match angsd_thetas dataframe
-names(angsd_avgdepth_notrans)[1] <- "Chr"
+angsd_avgdepth_notrans <- angsd_avgdepth_notrans %>%
+  rename(Chr = chr)
+# names(angsd_avgdepth_notrans)[1] <- "Chr"
 
 #Merge with angsd_thetas dataframe
 angsd_thetas_depth_notrans <- merge(angsd_thetas_notrans, angsd_avgdepth_notrans, by="Chr")
@@ -145,23 +152,23 @@ cpnd_angsd_thetas_depth_notrans <- cpnd_angsd_thetas_depth_notrans %>%
 #   dir.create("output")
 # }
 
-# Outfile pattern all
-outfile_all <- paste0("out/", spp_code, "_angsd_thetas_depth_notrans_neutral_fdr_", Sys.Date(), ".rds")
-
-# Save the all dataframe as an RDS file
-saveRDS(angsd_thetas_depth_notrans, file = outfile_all)
-
-# Outfile pattern apnd
-outfile_all <- paste0("out/", spp_code, "_apnd_angsd_thetas_depth_notrans_neutral_fdr_", Sys.Date(), ".rds")
-
-# Save the all dataframe as an RDS file
-saveRDS(apnd_angsd_thetas_depth_notrans, file = outfile_all)
-
-# Outfile pattern cpnd
-outfile_all <- paste0("out/", spp_code, "_cpnd_angsd_thetas_depth_notrans_neutral_fdr_", Sys.Date(), ".rds")
-
-# Save the all dataframe as an RDS file
-saveRDS(cpnd_angsd_thetas_depth_notrans, file = outfile_all)
+# # Outfile pattern all
+# outfile_all <- paste0("output/", spp_code, "_angsd_thetas_depth_notrans_neutral_fdr_", Sys.Date(), ".rds")
+# 
+# # Save the all dataframe as an RDS file
+# saveRDS(angsd_thetas_depth_notrans, file = outfile_all)
+# 
+# # Outfile pattern apnd
+# outfile_apnd <- paste0("output/", spp_code, "_apnd_angsd_thetas_depth_notrans_neutral_fdr_", Sys.Date(), ".rds")
+# 
+# # Save the all dataframe as an RDS file
+# saveRDS(apnd_angsd_thetas_depth_notrans, file = outfile_apnd)
+# 
+# # Outfile pattern cpnd
+# outfile_cpnd <- paste0("output/", spp_code, "_cpnd_angsd_thetas_depth_notrans_neutral_fdr_", Sys.Date(), ".rds")
+# 
+# # Save the all dataframe as an RDS file
+# saveRDS(cpnd_angsd_thetas_depth_notrans, file = outfile_cpnd)
 
 
 
@@ -173,54 +180,73 @@ saveRDS(cpnd_angsd_thetas_depth_notrans, file = outfile_all)
 plot_theta_depth <- angsd_thetas_depth_notrans %>%
   filter(!is.na(tW_bysite)) %>%
   ggplot(aes(x=ind_depth, y=tW_bysite, color=Era), show.legend=FALSE) +
-  labs(x="Mean Depth Per Individual",y="Theta") +
+  labs(
+    title =paste0(spp_code, " ", site_long, ": Mean Depth per Individual vs Theta"),
+    x="Mean Depth Per Individual",
+    y="Theta"
+  ) +
   theme_classic() +
-  theme(legend.position="none") +
+  theme(
+    legend.position = "right",
+    legend.text  = element_text(family = "Times New Roman", size = 12),
+    axis.title   = element_text(family = "Times New Roman", size = 12, face = "bold"),  # Font for axis titles
+    axis.text.x  = element_text(size = 12, family = "Times New Roman"),
+    axis.text.y  = element_text(size = 12, family = "Times New Roman"),
+    plot.title   = element_text(family = "Times New Roman", face = "bold")) +
   geom_point(size=1.5, alpha=0.5) +
   geom_smooth() +
   scale_color_manual(values = c("#00BFC4", "#F8766D")) 
 
 print(plot_theta_depth)
 
-plot_theta_depth + 
-  scale_y_continuous(
-    limits = c(0, 0.125),
-    breaks = seq(0, 0.12, by = 0.03)#,
-    #expand = expansion(mult = c(0, 0))
-  )
+# plot_theta_depth + 
+#   scale_y_continuous(
+#     limits = c(0, 0.125),
+#     breaks = seq(0, 0.12, by = 0.03)#,
+#     #expand = expansion(mult = c(0, 0))
+#   )
 
 # # outFile pattern
-# outFile_plot_theta_depth <- paste0("plots/", spp_code, "_plot_theta_depth_subset_neutral_fdr", ".png")  
+outFile_plot_theta_depth <- paste0("plots/", spp_code, "_plot_theta_depth_subset_neutral_fdr_leg", ".png")
 # 
 # # Save the plot to a file
-# ggsave(filename = outFile_plot_theta_depth, plot = plot_theta_depth, width = 2.15, height = 2.5)
+ggsave(filename = outFile_plot_theta_depth, plot = plot_theta_depth, width = 2.15, height = 2.5)
 
 
 # nucleotide diversity (pi) estimates
 plot_pi_depth <- angsd_thetas_depth_notrans %>%
   filter(!is.na(tP_bysite)) %>%
   ggplot(aes(x=ind_depth, y=tP_bysite, color=Era)) +
-  labs(x="Mean Depth Per Individual",y="Nucleotide Diversity") +
+  labs(
+    # title =paste0(spp_code, " ", site_long, ": Mean Depth per Individual vs Pi"),
+    x="Mean Depth Per Individual",
+    y="Nucleotide Diversity") +
   theme_classic() +
-  theme(legend.position="none") +
+  theme(
+    legend.position = "none",
+    legend.text  = element_text(family = "Times New Roman", size = 12),
+    axis.title   = element_text(family = "Times New Roman", size = 12, face = "bold"),  # Font for axis titles
+    axis.text.x  = element_text(size = 12, family = "Times New Roman"),
+    axis.text.y  = element_text(size = 12, family = "Times New Roman"),
+    plot.title   = element_text(family = "Times New Roman", face = "bold")) +
   geom_point(size=1.5, alpha=0.5) +
   geom_smooth() +
   scale_color_manual(values = c("#00BFC4", "#F8766D"))
 
 print(plot_pi_depth)
 
-plot_pi_depth +
-  scale_y_continuous(
-    limits = c(0, 0.131),
-    breaks = seq(0, 0.12, by = 0.03)#,
-    #expand = expansion(mult = c(0, 0))
-  )
+# plot_pi_depth +
+#   scale_y_continuous(
+#     limits = c(0, 0.131),
+#     breaks = seq(0, 0.12, by = 0.03)#,
+#     #expand = expansion(mult = c(0, 0))
+#   )
 
-# # outFile pattern
-# outFile_plot_pi_depth <- paste0("plots/", spp_code, "_plot_pi_depth_subset_neutral_fdr", ".png")  
-# 
-# # Save the plot to a file
-# ggsave(filename = outFile_plot_pi_depth, plot = plot_pi_depth, width = 2.15, height = 2.5)
+# outFile pattern
+outFile_plot_pi_depth <- paste0("plots/", spp_code, "_plot_pi_depth_subset_neutral_fdr", ".png")
+
+# Save the plot to a file
+ggsave(filename = outFile_plot_pi_depth, plot = plot_pi_depth, width = 2.15, height = 2.5)
 
 
 
@@ -228,20 +254,29 @@ plot_pi_depth +
 #### STATS: PI NEUTRAL ####
 ###########################
 # Test to see if theta is normally distributed
-hist(apnd_angsd_thetas_depth_notrans$tP_bysite)
-hist(cpnd_angsd_thetas_depth_notrans$tP_bysite)
-# Look's normally distributed
+hist(apnd_angsd_thetas_depth_notrans$tP_bysite) # looks normal
+hist(cpnd_angsd_thetas_depth_notrans$tP_bysite) # looks skewed right
+# run both t.test and wilcoxon
 
-## Paired t-test
+## PARAMETRIC
+# Paired t-test
 t.test(apnd_angsd_thetas_depth_notrans$tP_bysite, cpnd_angsd_thetas_depth_notrans$tP_bysite, paired=TRUE)
 # data:  apnd_angsd_thetas_depth_notrans$tP_bysite and cpnd_angsd_thetas_depth_notrans$tP_bysite
-# t = 18.614, df = 120, p-value < 2.2e-16
+# t = 8.1309, df = 87, p-value = 2.681e-12
 # alternative hypothesis: true mean difference is not equal to 0
 # 95 percent confidence interval:
-#   0.01165399 0.01442825
+#   0.04185828 0.06894386
 # sample estimates:
 #   mean difference 
-# 0.01304112 
+# 0.05540107 
+
+## NONPARAMETRIC
+# Paired Wilcoxon test
+wilcox.test(apnd_angsd_thetas_depth_notrans$tP_bysite, cpnd_angsd_thetas_depth_notrans$tP_bysite, paired = TRUE)
+# data:  apnd_angsd_thetas_depth_notrans$tP_bysite and cpnd_angsd_thetas_depth_notrans$tP_bysite
+# V = 3580, p-value = 1.511e-11
+# alternative hypothesis: true location shift is not equal to 0
+
 
 # HISTORICAL Bootstrapping of pi
 x = as.vector(apnd_angsd_thetas_depth_notrans$tP_bysite)
@@ -255,11 +290,11 @@ apnd_boot_pi = boot(x, samplemean, R=1000)
 apnd_boot_pi
 plot(apnd_boot_pi)
 # Bootstrap Statistics :
-#   original       bias    std. error
-# t1* 0.09323076 -8.971435e-07 0.001359124
+#   original        bias    std. error
+# t1* 0.1463584 -1.791099e-05  0.00589669
 
 # check type = norm not type = bca
-boot.ci(boot.out=apnd_boot_pi, type="norm") #95%   ( 0.0906,  0.0959 ) 
+boot.ci(boot.out=apnd_boot_pi, type="norm") #95%   ( 0.1348,  0.1579 ) 
 
 # MODERN Bootstrapping of pi
 x = as.vector(cpnd_angsd_thetas_depth_notrans$tP_bysite)
@@ -269,19 +304,19 @@ cpnd_boot_pi
 plot(cpnd_boot_pi)
 # Bootstrap Statistics :
 #   original       bias    std. error
-# t1* 0.08018964 -8.590568e-06 0.001393815
+# t1* 0.09095729 0.0003421525 0.009441734
 
 # check type = norm not type = bca
-boot.ci(boot.out=cpnd_boot_pi, type="norm") #95%   ( 0.0775,  0.0829 )
+boot.ci(boot.out=cpnd_boot_pi, type="norm") #95%   ( 0.0721,  0.1091 )
 
 ## Save values to create a dataframe for plotting
 species         <- c(spp_code, spp_code)
 population      <- c("APnd","CPnd")
 location        <- c("Pandanon Island", "Pandanon Island")
 era             <- c("Historical", "Modern")
-pi_neutral_pval <- c(2.2e-16, 2.2e-16)
-pi_neutral_mean <- c(0.09323076, 0.08018964)
-pi_neutral_se   <- c(0.001359124, 0.001393815)
+pi_neutral_pval <- c(2.681e-12, 2.681e-12)
+pi_neutral_mean <- c(0.1463584, 0.09095729)
+pi_neutral_se   <- c(0.00589669, 0.009441734)
 
 
 
@@ -289,20 +324,29 @@ pi_neutral_se   <- c(0.001359124, 0.001393815)
 #### STATS: THETA NEUTRAL ####
 ##############################
 # Test to see if theta is normally distributed
-hist(apnd_angsd_thetas_depth_notrans$tW_bysite)
-hist(cpnd_angsd_thetas_depth_notrans$tW_bysite)
-# Looks normally distributed
+hist(apnd_angsd_thetas_depth_notrans$tW_bysite) # Looks normally distributed
+hist(cpnd_angsd_thetas_depth_notrans$tW_bysite) # Looks normally distributed
 
-## Paired t-test
+
+## PARAMETRIC
+# Paired t-test
 t.test(apnd_angsd_thetas_depth_notrans$tW_bysite, cpnd_angsd_thetas_depth_notrans$tW_bysite, paired=TRUE)
 # data:  apnd_angsd_thetas_depth_notrans$tW_bysite and cpnd_angsd_thetas_depth_notrans$tW_bysite
-# t = -3.5956, df = 120, p-value = 0.0004709
+# t = 6.6288, df = 87, p-value = 2.724e-09
 # alternative hypothesis: true mean difference is not equal to 0
 # 95 percent confidence interval:
-#   -0.003647430 -0.001056936
+#   0.01515386 0.02813335
 # sample estimates:
 #   mean difference 
-# -0.002352183
+# 0.02164361 
+
+
+## NONPARAMETRIC
+# Paired Wilcoxon test
+wilcox.test(apnd_angsd_thetas_depth_notrans$tW_bysite, cpnd_angsd_thetas_depth_notrans$tW_bysite, paired = TRUE)
+# data:  apnd_angsd_thetas_depth_notrans$tW_bysite and cpnd_angsd_thetas_depth_notrans$tW_bysite
+# V = 3421, p-value = 1.163e-09
+# alternative hypothesis: true location shift is not equal to 0
 
 ## HISTORICAL Bootstrapping of theta
 x = as.vector(apnd_angsd_thetas_depth_notrans$tW_bysite)
@@ -316,7 +360,7 @@ apnd_boot_theta = boot(x, samplemean, R=1000)
 apnd_boot_theta
 plot(apnd_boot_theta)
 # original        bias     std. error
-# t1* 0.0820916 -3.478025e-06 0.0008155535
+# t1* 0.1446258 3.581458e-05 0.003688758
 
 # check type = norm not type = bca
 boot.ci(boot.out=apnd_boot_theta, type="norm") #95%   ( 0.0805,  0.0837 ) 
@@ -329,16 +373,16 @@ cpnd_boot_theta = boot(x, samplemean, R=1000)
 cpnd_boot_theta
 plot(cpnd_boot_theta)
 # original        bias     std. error
-# t1* 0.08444378 -2.138663e-05 0.000837748
+# t1* 0.1229822 -0.0003362865 0.004449702
 
 # check type = norm not type = bca
 boot.ci(boot.out=cpnd_boot_theta, type="norm") #95%   ( 0.0855,  0.0886 ) 
 
 ##Create data frame with means and 95% CI for plotting
 era                 <- c("Historical", "Modern")
-theta_neutral_pval  <- c(0.0004709, 0.0004709)
-theta_neutral_mean  <- c(0.0820916, 0.08444378)
-theta_neutral_se    <- c(0.0008155535, 0.000837748)
+theta_neutral_pval  <- c(1.163e-09, 1.163e-09)
+theta_neutral_mean  <- c(0.1446258, 0.1229822)
+theta_neutral_se    <- c(0.003688758, 0.004449702)
 
 
 ## CREATE PI THETA DATAFRAME ##
@@ -349,7 +393,7 @@ df_neutral_theta_pi <- data.frame(species, population, location, era,
 print(df_neutral_theta_pi)
 
 # Outfile pattern
-outfile_pi_theta <- paste0("out/", spp_code, "_gendiv_stats_depth_notrans_neutral_fdr_", Sys.Date(), ".rds")
+outfile_pi_theta <- paste0("output/", spp_code, "_gendiv_stats_depth_notrans_neutral_fdr_", Sys.Date(), ".rds")
 
 # Save the all dataframe as an RDS file
 saveRDS(df_neutral_theta_pi, file = outfile_pi_theta)
@@ -450,16 +494,19 @@ plot_pi <- df_neutral_theta_pi %>%
   theme(legend.position="none") +
   geom_point(size=2) +
   geom_errorbar(aes(ymin=pi_neutral_mean-1.96*pi_neutral_se, ymax=pi_neutral_mean+1.96*pi_neutral_se), width=0.0) +
-  ylim(0.07, 0.10) +
+  # ylim(0.07, 0.10) +
   scale_color_manual(values = c("#F8766D", "#00BFC4"))
 print(plot_pi)
 
 # FORMATTED
 plot_pi <- df_neutral_theta_pi %>%
   ggplot(aes(x = era, y = pi_neutral_mean, color = era)) +
-  labs(y = "Mean Pi") +
+  labs(
+    #title = paste0(spp_code, " ", site_long, ": Mean Pi of Neutral SNPs by Era"),
+    y = "Mean Pi") +
   theme_classic() +
   theme(legend.position = "none",
+        legend.text  = element_text(family = "Times New Roman", size = 12),
         axis.text.x = element_blank(),  # Hides x-axis labels
         axis.title.x = element_blank(),  # Hides x-axis title
         axis.ticks.x = element_blank(),  # Hides x-axis ticks
@@ -470,7 +517,7 @@ plot_pi <- df_neutral_theta_pi %>%
   geom_point(size = 2, position = position_dodge(width = 0.3)) +  
   geom_errorbar(aes(ymin = pi_neutral_mean - 1.96 * pi_neutral_se, ymax = pi_neutral_mean + 1.96 * pi_neutral_se),
                 width = 0.1, position = position_dodge(width = 0.3)) +  
-  ylim(0.0, 0.2) +  # Adjusted to fit your data
+  # ylim(0.0, 0.2) +  # Adjusted to fit your data
   scale_color_manual(values = c("#F8766D", "#00BFC4")) 
 print(plot_pi)
 
@@ -488,9 +535,12 @@ ggsave(filename = outFile_plot_pi, plot = plot_pi, width = 2.15, height = 2.5)
 # FORMATTED
 plot_theta <- df_neutral_theta_pi %>%
   ggplot(aes(x = era, y = theta_neutral_mean, color = era)) +
-  labs(y = "Mean Theta") +
+  labs(
+    #title = paste0(spp_code, " ", site_long, ": Mean Theta of Neutral SNPs by Era"),
+    y = "Mean Theta") +
   theme_classic() +
   theme(legend.position = "none",
+        legend.text  = element_text(family = "Times New Roman", size = 12),
         axis.text.x = element_blank(),  # Hides x-axis labels
         axis.title.x = element_blank(),  # Hides x-axis title
         axis.ticks.x = element_blank(),  # Hides x-axis ticks
@@ -501,7 +551,7 @@ plot_theta <- df_neutral_theta_pi %>%
   geom_point(size = 2, position = position_dodge(width = 0.3)) +  
   geom_errorbar(aes(ymin = theta_neutral_mean - 1.96 * theta_neutral_se, ymax = theta_neutral_mean + 1.96 * theta_neutral_se),
                 width = 0.1, position = position_dodge(width = 0.3)) +  
-  ylim(0.00, 0.20) +  # Adjusted to fit your data
+  # ylim(0.00, 0.20) +  # Adjusted to fit your data
   scale_color_manual(values = c("#F8766D", "#00BFC4"))
 print(plot_theta)
 
@@ -521,7 +571,7 @@ plot_pi_nolegend <- plot_pi + theme(legend.position = "none")
 plot_theta_pi <- plot_grid(
   plot_theta_nolegend,
   plot_pi_nolegend,
-  labels = c('A', 'B'),
+  # labels = c('A', 'B'),
   ncol = 2  # ensures 2 plots side by side
 )
 
@@ -534,11 +584,10 @@ outFile_plot_theta_pi <- paste0("plots/", spp_code, "_plot_theta_pi_subset_neutr
 ggsave(filename = outFile_plot_theta_pi, plot = plot_theta_pi, width = 2.15, height = 2.5)
 
 
-#####################################################################################################
 
-
-
+###########################
 #### PLOTS: TAJIMA'S D ####
+###########################
 # Function to compute mean and 95% CI
 calculate_mean_ci <- function(data) {
   n <- sum(!is.na(data$Tajima))  # Count non-NA values
@@ -559,6 +608,10 @@ tajima_summary <- angsd_thetas_depth_notrans %>%
 
 # Print result
 print(tajima_summary)
+# Era        mean_Tajima lower_CI upper_CI
+# <chr>            <dbl>    <dbl>    <dbl>
+#   1 Historical     -0.0318   -0.101   0.0372
+#   2 Modern         -0.614    -0.826  -0.403
 
 # Define colors to match the density fill but with lower transparency for lines
 era_colors <- c("Historical" = "#F8766D", "Modern" = "#00BFC4")
@@ -587,16 +640,74 @@ plot_tajima_density <- angsd_thetas_depth_notrans %>%
   geom_vline(data = tajima_summary, aes(xintercept = upper_CI, color = Era), 
              linetype = "dotted", alpha = 0.5, linewidth = 1) +
   scale_fill_manual(values = era_colors) +  # Match density fill color
-  scale_color_manual(values = era_colors) +  # Match vertical line color
-  scale_x_continuous(breaks = seq(-2, 2, by = 2), 
-                     limits = c(-2.5, 2.5), 
-                     labels = scales::number_format(accuracy = 1)) +  # Round to 0 decimal places
-  scale_y_continuous(breaks = seq(0, 1.0, by = 0.2), 
-                     limits = c(0, 1.1), 
-                     labels = scales::number_format(accuracy = 0.1))  # Round to 1 decimal place
+  scale_color_manual(values = era_colors)   # Match vertical line color
 
 # Print the plot
 print(plot_tajima_density)
+
+plot_tajima_density <- plot_tajima_density + 
+  scale_x_continuous(breaks = seq(-2., 2, by = 2),
+                     limits = c(-2.9, 3.1),
+                     labels = scales::number_format(accuracy = 1)) +  # Round to 0 decimal places
+  scale_y_continuous(breaks = seq(0, 2.0, by = 0.5),
+                     limits = c(0, 2.0),
+                     labels = scales::number_format(accuracy = 0.1))  # Round to 1 decimal place
+
+# outFile pattern
+outFile_plot_tajima <- paste0("plots/", spp_code, "_plot_tajima_neutral_subset_mean_95", ".png")  
+
+# Save the plot to a file
+ggsave(filename = outFile_plot_tajima, plot = plot_tajima_density, width = 2.15, height = 2.5)
+
+## SCALED DENSITY
+# Use stat_density() manually (advanced control)
+# To normalize across all groups (so all densities share the same scaling reference)
+# y range of both eras will be 0.0 to 1.0
+plot_tajima_density_scale <- angsd_thetas_depth_notrans %>%
+  ggplot(aes(x = Tajima, fill = Era)) +
+  stat_density(
+    aes(y = after_stat(density / max(density))),  # normalize to 0–1
+    geom = "area", alpha = 0.65, position = "identity", color = "black", linewidth = 0.3
+  ) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "black") +
+  geom_vline(data = tajima_summary, aes(xintercept = mean_Tajima, color = Era),
+             linetype = "solid", alpha = 0.75, linewidth = 1) +
+  geom_vline(data = tajima_summary, aes(xintercept = lower_CI, color = Era),
+             linetype = "dotted", alpha = 0.5, linewidth = 1) +
+  geom_vline(data = tajima_summary, aes(xintercept = upper_CI, color = Era),
+             linetype = "dotted", alpha = 0.5, linewidth = 1) +
+  labs(x = "Tajima's D", y = "Scaled Density (0–1)") +
+  theme_classic() +
+  theme(
+    legend.position = "none",
+    axis.text.x  = element_text(family = "Times New Roman", size = 12),
+    axis.title.x = element_text(family = "Times New Roman", size = 12),
+    axis.ticks.x = element_blank(),
+    axis.text.y  = element_text(family = "Times New Roman", size = 12),
+    axis.title.y = element_text(family = "Times New Roman", size = 12),
+    axis.ticks.length = unit(3, "pt"),
+    axis.ticks   = element_line(color = "black")
+  ) +
+  scale_fill_manual(values = era_colors) +   # choose colors manually
+  scale_color_manual(values = era_colors)
+
+# Print the plot
+print(plot_tajima_density_scale)
+
+plot_tajima_density_scale <- plot_tajima_density_scale + 
+  scale_x_continuous(breaks = seq(-2, 2, by = 2),
+                     limits = c(-3.1, 3.1),
+                     labels = scales::number_format(accuracy = 1)) +  # Round to 0 decimal places
+  scale_y_continuous(breaks = seq(0, 1.0, by = 0.25))
+                     # limits = c(0, 2.0),
+                     # labels = scales::number_format(accuracy = 0.2))  # Round to 1 decimal place
+
+# outFile pattern
+outFile_plot_tajima_scale <- paste0("plots/", spp_code, "_plot_tajima_neutral_subset_mean_95_yscaled", ".png")  
+
+# Save the plot to a file
+ggsave(filename = outFile_plot_tajima_scale, plot = plot_tajima_density_scale, width = 2.15, height = 2.5)
+
 
 # FORMATTED
 plot_tajima_density <- angsd_thetas_depth_notrans %>%
@@ -625,7 +736,7 @@ plot_tajima_density <- angsd_thetas_depth_notrans %>%
 print(plot_tajima_density)
 
 # outFile pattern
-outFile_plot_tajima <- paste0("plots/", spp_code, "_plot_tajima_subset_FORMAT_mean_95", ".png")  
+outFile_plot_tajima <- paste0("plots/", spp_code, "_plot_tajima_neutral_subset_FORMAT_mean_95", ".png")  
 
 # Save the plot to a file
 ggsave(filename = outFile_plot_tajima, plot = plot_tajima_density, width = 2.15, height = 2.5)
