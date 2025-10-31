@@ -31,23 +31,6 @@ lapply(packages_used,
 
 options(bitmapType = "cairo")  # Set Cairo as the default graphics device
 
-# install packages
-# install.packages("tidyverse")
-# install.packages("dplyr")
-# install.packages("cowplot")
-# install.packages("RcppCNPy")
-# install.packages("Cairo")
-# install.packages("vegan")
-
-# load libraries
-# library(tidyverse)
-# library(dplyr)
-# library(cowplot)
-# library(RcppCNPy)
-# library(Cairo)
-# library(vegan)
-
-
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
 spp_code="Sor"
@@ -193,10 +176,19 @@ PCA <- function(cov_matrix_angsd,
 pca <- PCA(cov_matrix_angsd, ind_label_angsd, pop_label_angsd, x_axis, y_axis)
 print(pca)
 # outFile pattern
-outFile_plot_pca <- paste0("plots/", spp_code, "_plot_pca_angsd_neutral_snps_subset_k6", ".png")  
+# outFile_plot_pca <- paste0("plots/", spp_code, "_plot_pca_angsd_neutral_snps_subset_k2", ".png")  
+# 
+# # Save the plot to a file
+# ggsave(filename = outFile_plot_pca, plot = pca, width = 2.15, height = 2.5)
 
-# Save the plot to a file
-ggsave(filename = outFile_plot_pca, plot = pca, width = 2.15, height = 2.5)
+
+## SAVE PCA TABLE ##
+# Outfile pattern
+outfile_pca_neu <- paste0("output/", spp_code, "_pnd_pca_table_snps_neutral_subset.rds")
+
+# Save dataframe as an RDS file
+saveRDS(pca_table, file = outfile_pca_neu)
+
 
 #### PLOT PCA ####
 
