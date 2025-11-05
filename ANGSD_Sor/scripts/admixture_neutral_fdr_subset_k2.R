@@ -27,18 +27,7 @@ lapply(packages_used,
 
 options(bitmapType = "cairo")  # Set Cairo as the default graphics device
 
-# install packages
-# install.packages("devtools")
-# install.packages("pophelper") #v.2.3.1
-# devtools::install_github("royfrancis/pophelper")
-# install.packages("Cairo")
-# install.packages("ggplot2")
 
-# load libraries
-# library(devtools)
-# library(pophelper) #v.2.3.1
-# library(Cairo)
-# library(ggplot2)
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
@@ -59,14 +48,14 @@ spp_era_C_site_pattern=paste0(spp_code,"C",site_C_code)
 
 #### READ IN DATA ####
 
-# K = 2
+K = 2
 
 # Define the input file with the full directory path
-k2_angsd_not <- read.table("angsd_admix_notrans_subset_neutral_fdr.admix.2.Q")
+k2_angsd_not <- read.table("../angsd_admix_notrans_subset_neutral_fdr.admix.2.Q")
 k2_angsd_not <- as.data.frame(k2_angsd_not) # is this data read in alphanumerically?
 
 # Read the BAM list file
-bamlist <- read.table("bam_list_all_subset.txt")
+bamlist <- read.table("../bam_list_all_subset.txt")
 # Ensure it's treated as a vector
 bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
 
@@ -86,13 +75,11 @@ cat("Total number of BAM files:", total_n, "\n")
 
 
 #### ADD POP LABELS ####
-
-#meta.data <- data.frame(loc=pop_label_angsd)
 meta.data <- data.frame(matrix(ncol=1,nrow=total_n)) # total number of individuals (*.bam files) 
-colnames(meta.data)="loc"
-meta.data$loc <- c(
-  rep("Albatross",albatross_n), # 
-  rep("Contemporary",contemporary_n)
+colnames(meta.data)="era"
+meta.data$era <- c(
+  rep("Historical", albatross_n), # 
+  rep("Modern", contemporary_n)
 )
 
 # Combine ancestry proportions with population labels
@@ -103,15 +90,36 @@ colnames(admixture_data) <- c("population","cluster1", "cluster2")
 
 
 #### PLOT ADMIXTURE ####
-
 q2_not <- list(k2_angsd_not)
+
 plot_q2_not <- 
   plotQ(as.qlist(q2_not), imgoutput = "sep", returnplot = TRUE, exportpath=getwd(), dpi=1000,
         clustercol = c("#00BFC4", "#F8766D"),
-        showsp = FALSE, spbgcol = "white", splab = "K = 2", splabsize = 12,
-        showyaxis = TRUE, showticks = FALSE, indlabsize = 12, ticksize = 0.5,
-        grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = FALSE, grplabspacer = 0.1,)
-print(plot_q2_not) # save to your directory
+        showsp = TRUE, spbgcol = "white", splab = "K = 2", splabsize = 6,
+        showyaxis = TRUE, showticks = FALSE, indlabsize = 6, ticksize = 0.5, grplab = meta.data, 
+        linecol = "white", linesize = 3.0, linetype = "solid",  
+        pointsize = 2, showgrplab = FALSE, grplabspacer = 0.1)
+print(plot_q2_not)
+
+ggsave(
+  filename = paste0("/archive/carpenterlab/pire/pire_pandanon_island/figures/snps_all_neu/admixture/", 
+                    spp_code,"_admix_q2_neutral.png"),
+  plot = plot_q2_not$plot[[1]],
+  width = 2.83, height = 1.15, units = "in", dpi = 1000
+)
+
+
+admixture_export <- list(
+  qlist = q2_not,
+  meta.data = meta.data,
+  plot_data = plot_q2_not$data
+)
+
+saveRDS(admixture_export, 
+        file = paste0("/archive/carpenterlab/pire/pire_pandanon_island/admixture/", 
+                      spp_code,"_admix_q2_neutral_list.rds"))
+
+
 
 
 #### BOXPLOT ANCESTRY PROPORTIONS BY POPULATION ####
