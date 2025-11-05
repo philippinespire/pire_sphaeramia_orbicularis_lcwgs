@@ -321,11 +321,11 @@ find /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/GenErode_Sor_2
 22
 
 # historical output *.merged.rmdup.merged.realn.bam
-ls /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/GenErode_Sor_20k_3seqruns/results/historical/mapping/reference.genbank.Sor20k/*.merged.rmdup.merged.realn.bam | wc -l
+ls /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/GenErode_Sor_20k_3seqruns/results/historical/mapping/reference.genbank.Sor20k/*.merged.rmdup.merged.realn.rescaled.bam | wc -l
 22
 
 # historical output *.merged.rmdup.merged.realn.bai
-ls /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/GenErode_Sor_20k_3seqruns/results/historical/mapping/reference.genbank.Sor20k/*.merged.rmdup.merged.realn.bai | wc -l
+ls /archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/GenErode_Sor_20k_3seqruns/results/historical/mapping/reference.genbank.Sor20k/*.merged.rmdup.merged.realn.rescaled.bam .bai | wc -l
 22
 ```
 GenErode successfully created all 22 historical `.merged.rmdup.merged.realn.bam` & `.merged.rmdup.merged.realn.bai`files. All of these files were generated on the 2nd run (JobID: 4848217). Most files took ~2.5 days to generate. However, it took a total of 12 days to generate all files. There are 10 files per sample. 
