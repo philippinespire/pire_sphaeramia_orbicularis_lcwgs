@@ -53,12 +53,12 @@ spp_era_C_site_pattern=paste0(spp_code,"C",site_C_code)
 
 #### READ IN DATA ####
 
-cov_matrix_angsd <- as.matrix(read.table("angsd_pca_notrans_subset_neutral_fdr.cov"))
+cov_matrix_angsd <- as.matrix(read.table("../angsd_pca_notrans_subset_neutral_fdr.cov"))
 #Matrix is in order 1-222 on each side
 #sample_table <- read_table("sample_table_merged_allpop.tsv")
 
 # Read the BAM list file
-bamlist <- read.table("bam_list_all_subset.txt")
+bamlist <- read.table("../bam_list_all_subset.txt")
 # Ensure it's treated as a vector
 bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
 
@@ -112,6 +112,10 @@ PCA <- function(cov_matrix_angsd,
   e_value <- e$values
   x_variance <- e_value[x_axis] / sum(e_value) * 100
   y_variance <- e_value[y_axis] / sum(e_value) * 100
+  
+  # Calculate percent variance explained by each PC
+  pc_variance <- (e_value / sum(e_value)) * 100 
+  
   e <- as.data.frame(e$vectors)
   e <- cbind(ind_label_angsd, pop_label_angsd, e) 
   colnames(e)[3:(dim(e)[1])] <- paste0("PC", 1:(dim(e)[1] - 2)) 
@@ -183,6 +187,19 @@ print(pca)
 
 
 ## SAVE PCA TABLE ##
+
+# Subsample and rename
+pca_reduced <- list(
+  data = pca[["data"]],
+  pca_metadata = list(
+    eigenvalues = pca[["plot_env"]][["e_value"]],
+    pc_variance = pca[["plot_env"]][["pc_variance"]]
+  )
+)
+
+outfile_pca_reduced <- paste0("../output/", spp_code, "_pnd_pca_list_snps_neutral_subset.rds")
+saveRDS(pca_reduced, file = outfile_pca_reduced)
+
 # Outfile pattern
 outfile_pca_neu <- paste0("output/", spp_code, "_pnd_pca_table_snps_neutral_subset.rds")
 

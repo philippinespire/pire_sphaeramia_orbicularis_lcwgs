@@ -28,30 +28,18 @@ lapply(packages_used,
 
 options(bitmapType = "cairo")  # Set Cairo as the default graphics device
 
-# install packages
-# install.packages("tidyverse")
-# install.packages("cowplot")
-# install.packages("boot")
-# install.packages("Cairo")
-
-# load libraries
-# library(tidyverse)
-# library(cowplot)
-# library(boot)
-# library(Cairo)
-
 
 #### READ IN DATA ####
 ##Load in theta outputs by population (abol, amta, cbol, cmta)
-apnd_thetas_notrans <- read_table("ACeb_sites_notrans_subset.thetas.idx.pestPG")
-cpnd_thetas_notrans <- read_table("CPnd_sites_notrans_subset.thetas.idx.pestPG")
+apnd_thetas_notrans <- read_table("../ACeb_sites_notrans_subset.thetas.idx.pestPG")
+cpnd_thetas_notrans <- read_table("../CPnd_sites_notrans_subset.thetas.idx.pestPG")
 
 ##Import depth information
-angsd_depth_notrans <- read_table("combined_sites_notrans_subset.pos.gz")
+angsd_depth_notrans <- read_table("../combined_sites_notrans_subset.pos.gz")
 #This is by site, we need it by chromosome to match with the theta calculations
 
 # Read the BAM list file
-bamlist <- read.table("bam_list_all_subset.txt")
+bamlist <- read.table("../bam_list_all_subset.txt")
 # Ensure it's treated as a vector
 bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
 
@@ -68,9 +56,6 @@ site_A_code="Ceb"
 
 # change your site_C_code to the 3 letter site code of the contemporary (modern) population (e.g. Pnd, Gal, Mvi)
 site_C_code="Pnd"
-
-
-#### VARIABLES FROM USER INPUT  ####
 
 # era site pattern (e.g. APnd, CPal). do not change. 
 spp_era_A_site_pattern=paste0(spp_code,"A",site_A_code)
@@ -89,6 +74,98 @@ total_n <- as.numeric(sum(grepl(paste0(".*\\.bam$"), bamlist)))  # Count all lin
 cat("Number of Albatross (historical) BAM files:", albatross_n, "\n")
 cat("Number of Contemporary (modern) BAM files:", contemporary_n, "\n")
 cat("Total number of BAM files:", total_n, "\n")
+
+
+
+##########################
+#### WRANGLE RAW DATA ####
+##########################
+## THETA
+#Add a column for site to each dataset
+apnd_thetas_notrans$Site <- "APnd"
+cpnd_thetas_notrans$Site <- "CPnd"
+
+#Add a column for era to each dataset
+apnd_thetas_notrans$Era <- "Historical"
+cpnd_thetas_notrans$Era <- "Modern"
+
+#Merge datasets for plotting
+angsd_thetas_notrans <- rbind(apnd_thetas_notrans, cpnd_thetas_notrans)
+
+
+## DEPTH
+#Take the average of total Depth for all the sites within a chromosome
+angsd_avgdepth_notrans <- angsd_depth_notrans %>% group_by(chr) %>% summarise(avg_Depth = mean(totDepth))
+#This gets us average total depth (summed across individuals) for each chromosome
+
+#Add a column with average depth by individual
+angsd_avgdepth_notrans$ind_depth <- angsd_avgdepth_notrans$avg_Depth/total_n
+
+#Rename Chr column to match angsd_thetas dataframe
+angsd_avgdepth_notrans <- angsd_avgdepth_notrans %>%
+  rename(Chr = chr)
+# names(angsd_avgdepth_notrans)[1] <- "Chr"
+
+#Merge with angsd_thetas dataframe
+angsd_thetas_depth_notrans <- merge(angsd_thetas_notrans, angsd_avgdepth_notrans, by="Chr")
+
+#Add a column with theta by site (theta for the contig divided by number of sites on the contig)
+angsd_thetas_depth_notrans$tW_bysite <- angsd_thetas_depth_notrans$tW/angsd_thetas_depth_notrans$nSites
+
+#Add a column with pi (nucleotide diversity) by site (theta for the contig divided by number of sites on the contig)
+angsd_thetas_depth_notrans$tP_bysite <- angsd_thetas_depth_notrans$tP/angsd_thetas_depth_notrans$nSites
+
+#Reorder for plotting
+angsd_thetas_depth_notrans$Site <- factor(angsd_thetas_depth_notrans$Site, levels=c("APnd", "CPnd"))
+
+#Subset by population
+apnd_angsd_thetas_depth_notrans <- subset(angsd_thetas_depth_notrans, Era=="Historical")
+cpnd_angsd_thetas_depth_notrans <- subset(angsd_thetas_depth_notrans, Era=="Modern")
+
+# filter out any NaN
+apnd_angsd_thetas_depth_notrans <- apnd_angsd_thetas_depth_notrans %>%
+  filter(!is.na(tP_bysite) & !is.na(tW_bysite))
+cpnd_angsd_thetas_depth_notrans <- cpnd_angsd_thetas_depth_notrans %>%
+  filter(!is.na(tP_bysite) & !is.na(tW_bysite))
+
+
+################################
+#### SAVE RAW WRANGLED DATA ####
+################################
+# Ensure the 'out' directory exists
+# if (!dir.exists("output")) {
+#   dir.create("output")
+# }
+
+# # Outfile pattern all
+# outfile_all <- paste0("../output/", spp_code, "_angsd_thetas_depth_notrans_subset_", Sys.Date(), ".rds")
+# 
+# # Save the all dataframe as an RDS file
+# saveRDS(angsd_thetas_depth_notrans, file = outfile_all)
+# 
+# # Outfile pattern apnd
+# outfile_apnd <- paste0("../output/", spp_code, "_apnd_angsd_thetas_depth_notrans_subset_", Sys.Date(), ".rds")
+# 
+# # Save the dataframe as an RDS file
+# saveRDS(apnd_angsd_thetas_depth_notrans, file = outfile_apnd)
+# 
+# # Outfile pattern cpnd
+# outfile_cpnd <- paste0("../output/", spp_code, "_cpnd_angsd_thetas_depth_notrans_subset_", Sys.Date(), ".rds")
+# 
+# # Save the dataframe as an RDS file
+# saveRDS(cpnd_angsd_thetas_depth_notrans, file = outfile_cpnd)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #### WRANGLE DATA ####
