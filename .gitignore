@@ -21,6 +21,10 @@
 *.svg
 
 # BIG files
+ANGSD_Sor_3seqruns/output/Sor_pnd_selection_snps_all.txt
+ANGSD_Sor_3seqruns/output/Sor_pnd_selection_snps_all_long.txt
+ANGSD_Sor_3seqruns/output/Sor_pnd_selection_snps_sig_pval_fdr_05.txt
+ANGSD_Sor_3seqruns/output/Sor_pnd_selection_snps_sig_pval_fdr_05_long.txt
 *.ld
 *.LD_blocks
 *.gz
